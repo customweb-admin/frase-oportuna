@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frase Oportuna | Sabiduría Universal</title>
+  <meta name="description" content="Una pausa de sabiduría universal. Descubre la cita clásica y la reflexión precisa para tu inquietud actual a través de la literatura en dominio público.">
+  
+  <!-- Fuentes Nunito (Títulos y botones) + Roboto (Lectura nítida de pasajes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Roboto"', 'sans-serif'],
+            heading: ['"Nunito"', 'sans-serif'],
+          },
+          colors: {
+            mistico: {
+              DEFAULT: '#0A1124',
+              card: '#121C38',
+              cardHover: '#182548',
+              borde: '#22355F',
+              dorado: '#FFFFFF',
+              luz: '#F1F5F9',
+              sub: '#94A3B8',
+              detalle: '#64748B',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0A1124;
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(30, 58, 138, 0.25) 0%, transparent 70%),
+        radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.12) 0%, transparent 50%);
+      color: #F1F5F9;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+    }
+
+    .borde-mistico {
+      border: 1.5px solid #22355F;
+      box-shadow: 0 4px 20px -2px rgba(10, 17, 36, 0.7);
+    }
+
+    .borde-mistico:hover {
+      border-color: #3B82F6;
+      box-shadow: 0 8px 30px -4px rgba(37, 99, 235, 0.25);
+    }
+
+    .borde-azar-hover {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px -2px rgba(10, 17, 36, 0.7);
+    }
+
+    .borde-azar-hover:hover {
+      border-color: #FFFFFF !important;
+      box-shadow: 0 8px 32px -4px rgba(255, 255, 255, 0.35), 0 0 20px rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .tarjeta-activa {
+      background-color: #1A284E !important;
+      border-color: #FFFFFF !important;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .anim-revelar {
+      animation: aparecerCita 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes aparecerCita {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-activo {
+      color: #F1F5F9 !important;
+      border-bottom: 2px solid #FFFFFF;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-white selection:text-slate-950">
+
+  <!-- ========================================== -->
+  <!-- CABECERA STICKY EN AZUL MÍSTICO           -->
+  <!-- ========================================== -->
+  <header class="border-b border-mistico-borde/60 bg-[#0A1124] sticky top-0 z-50 transition-colors shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Fila 1: Logo a la izquierda | Botón a la derecha -->
+      <div class="h-16 flex items-center justify-between border-b border-mistico-borde/40">
+        <!-- Logo con Ícono de Reloj de Arena / Kairós (El momento oportuno) -->
+        <a href="#inicio" onclick="irA('inicio')" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-mistico-card/90 border border-mistico-borde text-mistico-dorado flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
+            <!-- Reloj de Arena minimalista geométrico -->
+            <svg class="w-5 h-5 text-blue-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              <path d="M11 16.5h2M10.5 19h3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-heading text-lg font-semibold tracking-tight text-mistico-luz leading-tight">Frase Oportuna</span>
+            <span class="block text-[11px] font-heading font-medium tracking-widest uppercase text-blue-300 -mt-0.5">SABIDURÍA UNIVERSAL</span>
+          </div>
+        </a>
+
+        <!-- Botón de acción a la derecha -->
+        <div>
+          <button onclick="consultarCorriente('aleatorio')" class="font-heading font-medium text-xs sm:text-sm px-5 py-2 rounded-full bg-mistico-card text-mistico-dorado border border-mistico-dorado/50 hover:bg-mistico-dorado hover:text-slate-950 hover:border-mistico-dorado transition-all cursor-pointer shadow-sm">
+            Deja que el azar decida ↺
+          </button>
+        </div>
+      </div>
+
+      <!-- Fila 2: Menú Principal Centrado -->
+      <nav class="py-2.5 flex items-center justify-center gap-8 sm:gap-14 text-xs sm:text-sm font-heading font-normal text-mistico-sub">
+        <button id="nav-btn-inicio" onclick="irA('inicio')" class="nav-activo hover:text-mistico-luz transition-colors py-1 cursor-pointer">Inicio</button>
+        <button id="nav-btn-corrientes" onclick="irACorrientes()" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">Las 5 Corrientes</button>
+        <button id="nav-btn-proposito" onclick="irAProposito()" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">El Propósito</button>
+        <a id="nav-btn-blog" href="blog.html" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">Blog</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="app-container" class="flex-grow max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
+    
+    <!-- ========================================== -->
+    <!-- VISTA 1: HOME / INICIO                     -->
+    <!-- ========================================== -->
+    <section id="vista-inicio" class="space-y-16">
+      
+      <!-- Portada e Invitación -->
+      <div class="text-center max-w-3xl mx-auto pt-4 pb-2">
+        <span class="inline-block text-xs uppercase tracking-widest text-mistico-dorado font-heading font-medium bg-mistico-card px-4 py-1.5 rounded-full border border-mistico-borde mb-5">
+          La sabiduría de la humanidad a tu servicio
+        </span>
+        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-light text-mistico-luz leading-snug tracking-tight mb-6">
+          Abre la página adecuada <br><span class="text-blue-300 font-normal">en el instante oportuno.</span>
+        </h1>
+        <p class="font-sans text-lg sm:text-xl text-mistico-sub font-light leading-relaxed max-w-2xl mx-auto">
+          «Cierra los ojos un momento. Respira hondo, piensa en aquello que hoy turba o despierta tu espíritu, y elige la corriente de pensamiento que habrá de hablarte.»
+        </p>
+      </div>
+
+      <!-- Las 5 Corrientes de Pensamiento en Azul Místico -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" id="grid-corrientes">
+        
+        <!-- 1. Pensamiento Estoico -->
+        <button id="card-Pensamiento Estoico" onclick="consultarCorriente('Pensamiento Estoico')" class="group text-left p-6 rounded-2xl bg-mistico-card hover:bg-mistico-cardHover border border-mistico-borde transition-all flex flex-col justify-between h-80 borde-mistico cursor-pointer">
+          <div>
+            <div class="flex items-center justify-end text-slate-300 mb-2">
+              <svg class="w-4 h-4 text-blue-300/80 transition-transform group-hover:scale-125 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-medium text-mistico-luz mb-1 leading-snug">
+              Pensamiento<br>Estoico
+            </h3>
+            <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">La Fortaleza & la Razón</p>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Para templar el ánimo, aceptar lo inevitable y hallar orden en medio del caos.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-mistico-borde/60 text-xs text-mistico-detalle font-heading">
+            Marco Aurelio, Séneca, Epicteto
+          </div>
+        </button>
+
+        <!-- 2. Pensamiento Místico -->
+        <button id="card-Pensamiento Místico" onclick="consultarCorriente('Pensamiento Místico')" class="group text-left p-6 rounded-2xl bg-mistico-card hover:bg-mistico-cardHover border border-mistico-borde transition-all flex flex-col justify-between h-80 borde-mistico cursor-pointer">
+          <div>
+            <div class="flex items-center justify-end text-slate-300 mb-2">
+              <svg class="w-4 h-4 text-blue-300/80 transition-transform group-hover:scale-125 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-medium text-mistico-luz mb-1 leading-snug">
+              Pensamiento<br>Místico
+            </h3>
+            <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">Lo Trascendente & la Luz</p>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Para sanar el anhelo del alma, la devoción silenciosa y la conexión con lo invisible.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-mistico-borde/60 text-xs text-mistico-detalle font-heading">
+            Rumi, Sor Juana, Kabir, Hafez
+          </div>
+        </button>
+
+        <!-- 3. Pensamiento Introspectivo -->
+        <button id="card-Pensamiento Introspectivo" onclick="consultarCorriente('Pensamiento Introspectivo')" class="group text-left p-6 rounded-2xl bg-mistico-card hover:bg-mistico-cardHover border border-mistico-borde transition-all flex flex-col justify-between h-80 borde-mistico cursor-pointer">
+          <div>
+            <div class="flex items-center justify-end text-slate-300 mb-2">
+              <svg class="w-4 h-4 text-blue-300/80 transition-transform group-hover:scale-125 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-medium text-mistico-luz mb-1 leading-snug">
+              Pensamiento<br>Introspectivo
+            </h3>
+            <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">El Refugio & la Sensibilidad</p>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Para instantes de vulnerabilidad, soledad voluntaria y reconciliación interior.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-mistico-borde/60 text-xs text-mistico-detalle font-heading">
+            Pessoa, Dickinson, Rilke, Thoreau
+          </div>
+        </button>
+
+        <!-- 4. Pensamiento Oriental -->
+        <button id="card-Pensamiento Oriental" onclick="consultarCorriente('Pensamiento Oriental')" class="group text-left p-6 rounded-2xl bg-mistico-card hover:bg-mistico-cardHover border border-mistico-borde transition-all flex flex-col justify-between h-80 borde-mistico cursor-pointer">
+          <div>
+            <div class="flex items-center justify-end text-slate-300 mb-2">
+              <svg class="w-4 h-4 text-blue-300/80 transition-transform group-hover:scale-125 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-medium text-mistico-luz mb-1 leading-snug">
+              Pensamiento<br>Oriental
+            </h3>
+            <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">La Armonía & el Flujo</p>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Para soltar el control obstinado, practicar la sencillez y acompañar el río vital.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-mistico-borde/60 text-xs text-mistico-detalle font-heading">
+            Lao Tsé, Zhuangzi, Bashō, Zen
+          </div>
+        </button>
+
+        <!-- 5. Pensamiento Práctico (Unificado con la fórmula de las demás) -->
+        <button id="card-Pensamiento Práctico" onclick="consultarCorriente('Pensamiento Práctico')" class="group text-left p-6 rounded-2xl bg-mistico-card hover:bg-mistico-cardHover border border-mistico-borde transition-all flex flex-col justify-between h-80 borde-mistico cursor-pointer">
+          <div>
+            <div class="flex items-center justify-end text-slate-300 mb-2">
+              <svg class="w-4 h-4 text-blue-300/80 transition-transform group-hover:scale-125 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-medium text-mistico-luz mb-1 leading-snug">
+              Pensamiento<br>Práctico
+            </h3>
+            <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">La Sabiduría Práctica & el Juicio</p>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Para navegar dilemas cotidianos, comprender la psicología humana y aguzar la perspicacia.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-mistico-borde/60 text-xs text-mistico-detalle font-heading">
+            Gracián, Esopo, Montaigne, La Fontaine
+          </div>
+        </button>
+
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- RESULTADO DE LA FRASE EN CARD BLANCA (ALTO IMPACTO Y PANTALLA) -->
+      <!-- ============================================================== -->
+      <div id="contenedor-resultado" class="hidden scroll-mt-24 pt-4">
+        <div class="w-full max-w-4xl mx-auto space-y-8">
+          
+          <!-- Lámina Principal en Blanco Puro con Letras Negras de Imprenta -->
+          <article id="tarjeta-lectura" class="anim-revelar bg-white text-slate-900 p-8 sm:p-14 md:p-16 rounded-3xl border-2 border-slate-900 shadow-2xl relative overflow-hidden">
+            
+            <!-- Etiqueta de la Corriente Activa -->
+            <div class="text-center mb-8">
+              <span id="res-categoria-tag" class="inline-flex items-center gap-2 text-xs sm:text-sm uppercase font-heading font-bold tracking-widest text-slate-900 bg-slate-100 border border-slate-300 px-5 py-2 rounded-full shadow-sm">
+                <!-- Reloj de Arena en el pill -->
+                <svg class="w-3.5 h-3.5 text-slate-700 stroke-current inline-block" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+                <span id="res-categoria-nombre">Corriente Seleccionada</span>
+              </span>
+            </div>
+
+            <!-- Cita Principal en negro profundo con peso ligero, interlineado amplio y espaciado de letras -->
+            <blockquote class="font-sans text-2xl sm:text-3xl md:text-4xl text-slate-900 leading-[1.8] text-center font-light tracking-[0.035em] mb-10 px-2 sm:px-8">
+              <span class="text-3xl sm:text-4xl font-light text-slate-400 mr-2 select-none">«</span>
+              <span id="res-fragmento" class="text-slate-900 font-light">...</span>
+              <span class="text-3xl sm:text-4xl font-light text-slate-400 ml-2 select-none">»</span>
+            </blockquote>
+
+            <!-- Autor y Obra -->
+            <div class="text-center border-t-2 border-b-2 border-slate-200 py-5 mb-10 max-w-2xl mx-auto">
+              <p id="res-autor" class="font-heading font-bold text-xl sm:text-2xl text-slate-900 tracking-wider uppercase"></p>
+              <p id="res-obra" class="font-sans text-sm sm:text-base text-slate-600 font-light mt-1"></p>
+            </div>
+
+            <!-- Pausa de Reflexión / Comentario Contextual -->
+            <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 text-left max-w-3xl mx-auto shadow-inner">
+              <div class="flex items-center gap-2 mb-3 text-xs font-heading font-bold uppercase tracking-wider text-slate-700">
+                <svg class="w-3.5 h-3.5 text-slate-700 stroke-current inline-block" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+                <span>Pausa de Reflexión</span>
+              </div>
+              <p id="res-metafora" class="font-sans text-base sm:text-lg text-slate-800 leading-relaxed font-light tracking-wide"></p>
+            </div>
+
+            <!-- URL Oficial del Sitio -->
+            <div class="mt-6 text-center">
+              <span class="text-xs font-heading font-medium tracking-widest text-slate-400 uppercase select-all">
+                www.fraseoportuna.com
+              </span>
+            </div>
+            
+            <!-- Botones Primarios de Nueva Consulta dentro de la tarjeta blanca -->
+            <div class="mt-10 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <!-- Botón 1: Otra consulta a esta corriente -->
+              <button id="btn-reconsultar-mismo" onclick="reconsultarMismaCorriente()" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-slate-950 text-white font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-slate-800 transition-all cursor-pointer shadow-lg">
+                ↻ Otra frase de esta corriente
+              </button>
+
+              <!-- Botón 2: Deja que el azar decida -->
+              <button onclick="consultarCorriente('aleatorio')" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-slate-900 border-2 border-slate-900 font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-slate-100 transition-all cursor-pointer shadow-sm">
+                Deja que el azar decida ↺
+              </button>
+            </div>
+
+            <!-- Utilidades: Copiar y Descargar -->
+            <div class="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs font-heading font-medium text-slate-600">
+              <button onclick="copiarCitaTexto()" class="hover:text-slate-950 underline underline-offset-4 cursor-pointer">
+                <span id="btn-copiar-texto">Copiar pasaje</span>
+              </button>
+              <span>•</span>
+              <button onclick="descargarLámina()" class="hover:text-slate-950 underline underline-offset-4 cursor-pointer">
+                <span>Descargar para Stories</span>
+              </button>
+            </div>
+
+            <!-- Invitación Cómplice y Amable al Lector (Cafecito) -->
+            <div class="mt-10 pt-6 border-t border-slate-200/90 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left bg-slate-50/80 rounded-2xl p-5 border border-slate-200">
+              <div class="space-y-1">
+                <p class="font-heading font-semibold text-xs sm:text-sm text-slate-900 flex items-center justify-center sm:justify-start gap-2">
+                  <svg class="w-4 h-4 text-slate-700 stroke-current inline-block" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                    <line x1="6" y1="2" x2="6" y2="4"></line>
+                    <line x1="10" y1="2" x2="10" y2="4"></line>
+                    <line x1="14" y1="2" x2="14" y2="4"></line>
+                  </svg>
+                  <span>Si estas líneas te hicieron bien...</span>
+                </p>
+                <p class="font-sans text-xs text-slate-600 font-light max-w-md leading-relaxed">
+                  Este espacio se sostiene con tiempo y amor por la literatura clásica.
+                </p>
+              </div>
+              <a href="https://cafecito.app" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-slate-900 border border-slate-300 hover:border-slate-900 hover:bg-slate-100 font-heading font-semibold text-xs tracking-wider uppercase transition-all shadow-sm cursor-pointer">
+                <svg class="w-3.5 h-3.5 text-slate-900 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                  <line x1="6" y1="2" x2="6" y2="4"></line>
+                  <line x1="10" y1="2" x2="10" y2="4"></line>
+                  <line x1="14" y1="2" x2="14" y2="4"></line>
+                </svg>
+                <span>¿Me invitás un café?</span>
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+
+      <!-- EXPLICACIÓN: LAS 5 CORRIENTES DE PENSAMIENTO -->
+      <section id="seccion-corrientes-home" class="pt-8 border-t border-mistico-borde space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs uppercase font-heading font-medium text-mistico-dorado bg-mistico-card px-3 py-1 rounded-full border border-mistico-borde">Guía de Lectura</span>
+          <h2 class="font-heading text-2xl sm:text-3xl font-normal text-mistico-luz mt-3 mb-2">Conoce las 5 Corrientes</h2>
+          <p class="font-sans text-base text-mistico-sub font-light leading-relaxed">
+            Cada tradición del pensamiento universal responde a una necesidad distinta del espíritu. Elige según lo que hoy requiere tu atención.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card Explicativa 1: Estoico -->
+          <div class="bg-mistico-card p-6 sm:p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-end text-slate-300 mb-2">
+                <svg class="w-4 h-4 text-blue-300/80 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-medium text-lg text-mistico-luz mb-1">Pensamiento Estoico</h3>
+              <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">La Fortaleza & la Razón</p>
+              <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed mb-4">
+                Enseña a distinguir con lucidez entre lo que depende de nosotros y lo que está fuera de nuestro control. Brinda templanza ante la adversidad y serenidad frente al desorden externo.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-mistico-borde/60 flex items-center justify-between">
+              <span class="text-xs font-sans text-mistico-detalle">Marco Aurelio, Séneca, Epicteto</span>
+              <button onclick="consultarCorriente('Pensamiento Estoico')" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline cursor-pointer">Consultar →</button>
+            </div>
+          </div>
+
+          <!-- Card Explicativa 2: Místico -->
+          <div class="bg-mistico-card p-6 sm:p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-end text-slate-300 mb-2">
+                <svg class="w-4 h-4 text-blue-300/80 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-medium text-lg text-mistico-luz mb-1">Pensamiento Místico</h3>
+              <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">Lo Trascendente & la Luz</p>
+              <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed mb-4">
+                La poesía mística y sufí explora el amor sublime, la devoción silenciosa y la transformación del dolor en apertura espiritual. Ideal para duelos, anhelos profundos y reencuentro interior.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-mistico-borde/60 flex items-center justify-between">
+              <span class="text-xs font-sans text-mistico-detalle">Rumi, Sor Juana, Kabir, Hafiz</span>
+              <button onclick="consultarCorriente('Pensamiento Místico')" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline cursor-pointer">Consultar →</button>
+            </div>
+          </div>
+
+          <!-- Card Explicativa 3: Introspectivo -->
+          <div class="bg-mistico-card p-6 sm:p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-end text-slate-300 mb-2">
+                <svg class="w-4 h-4 text-blue-300/80 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-medium text-lg text-mistico-luz mb-1">Pensamiento Introspectivo</h3>
+              <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">El Refugio & la Sensibilidad</p>
+              <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed mb-4">
+                El territorio del diario íntimo, la soledad elegida y la aceptación de nuestras incertidumbres. No busca dar recetas, sino acompañar al alma en sus momentos de mayor vulnerabilidad.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-mistico-borde/60 flex items-center justify-between">
+              <span class="text-xs font-sans text-mistico-detalle">Pessoa, Dickinson, Rilke, Thoreau</span>
+              <button onclick="consultarCorriente('Pensamiento Introspectivo')" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline cursor-pointer">Consultar →</button>
+            </div>
+          </div>
+
+          <!-- Card Explicativa 4: Oriental -->
+          <div class="bg-mistico-card p-6 sm:p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-end text-slate-300 mb-2">
+                <svg class="w-4 h-4 text-blue-300/80 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-medium text-lg text-mistico-luz mb-1">Pensamiento Oriental</h3>
+              <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">La Armonía & el Flujo</p>
+              <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed mb-4">
+                El arte del <em>wu wei</em> (no forzar) y el desapego sereno. Recuerda la sabiduría del agua: ceder para vencer y acompañar el curso de la naturaleza sin resistencia obstinada.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-mistico-borde/60 flex items-center justify-between">
+              <span class="text-xs font-sans text-mistico-detalle">Lao Tsé, Zhuangzi, Matsuo Bashō</span>
+              <button onclick="consultarCorriente('Pensamiento Oriental')" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline cursor-pointer">Consultar →</button>
+            </div>
+          </div>
+
+          <!-- Card Explicativa 5: Sabiduría Práctica -->
+          <div class="bg-mistico-card p-6 sm:p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-end text-slate-300 mb-2">
+                <svg class="w-4 h-4 text-blue-300/80 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-medium text-lg text-mistico-luz mb-1">Sabiduría Práctica</h3>
+              <p class="text-xs uppercase font-heading font-semibold text-blue-300/80 mb-3 tracking-wider">La Prudencia & el Juicio</p>
+              <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed mb-4">
+                Sagacidad ética, discernimiento y lucidez ante las complejidades del mundo. Reúne el arte de la prudencia, el ensayo moral y la agudeza psicológica para tomar decisiones certeras en la vida cotidiana.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-mistico-borde/60 flex items-center justify-between">
+              <span class="text-xs font-sans text-mistico-detalle">Gracián, Esopo, Montaigne, La Fontaine</span>
+              <button onclick="consultarCorriente('Sabiduría Práctica')" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline cursor-pointer">Consultar →</button>
+            </div>
+          </div>
+
+          <!-- TARJETA UNIVERSAL EN FONDO CLARO CON RESALTADO BLANCO IDÉNTICO AL RESTO -->
+          <div class="group bg-slate-50 hover:bg-white text-slate-900 p-6 sm:p-7 rounded-2xl border-2 border-slate-200 borde-azar-hover flex flex-col justify-between cursor-pointer" onclick="consultarCorriente('aleatorio')">
+            <div>
+              <div class="flex items-center justify-end text-slate-900 mb-2">
+                <svg class="w-4 h-4 text-slate-900 stroke-current transition-transform duration-300 group-hover:scale-125" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-semibold text-xl text-slate-950 mb-3 group-hover:text-black">Deja que el azar decida</h3>
+              <p class="text-sm text-slate-700 font-sans font-normal leading-relaxed mb-4">
+                Si no deseas elegir una corriente específica, deja que el azar determine cuál de las frases de sabiduría universal debe llegar a tus manos hoy.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-200">
+              <button onclick="event.stopPropagation(); consultarCorriente('aleatorio')" class="w-full py-2.5 rounded-full bg-slate-950 text-white text-xs font-heading font-medium uppercase tracking-wider hover:bg-slate-800 transition-colors cursor-pointer text-center">
+                Consultar al Azar ✦
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECCIÓN: EL PROPÓSITO                      -->
+      <!-- ========================================== -->
+      <section id="seccion-proposito-home" class="pt-8 border-t border-mistico-borde space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs uppercase font-heading font-medium text-mistico-dorado bg-mistico-card px-3 py-1 rounded-full border border-mistico-borde">Sentido & Método</span>
+          <h2 class="font-heading text-2xl sm:text-3xl font-normal text-mistico-luz mt-3 mb-2">¿Por qué una frase oportuna?</h2>
+          <p class="font-sans text-base text-mistico-sub font-light leading-relaxed">
+            El valor de la serendipia y la pausa reflexiva en tiempos de prisa.
+          </p>
+        </div>
+
+        <div class="bg-mistico-card p-8 sm:p-10 md:p-12 rounded-3xl border border-mistico-borde max-w-4xl mx-auto space-y-8 shadow-xl">
+          
+          <!-- Bloque 1: Una tradición de siglos (Serendipia lectora) -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 text-xs font-heading font-semibold uppercase text-mistico-dorado">
+              <span>✦</span> <span>1. Una tradición de siglos (Serendipia lectora)</span>
+            </div>
+            <p class="font-sans text-base sm:text-lg text-mistico-luz font-light leading-relaxed">
+              Desde la Antigüedad clásica, abrir un libro de sabiduría al azar no buscaba predecir el porvenir con trucos de magia, sino <strong>dialogar con una inteligencia serena</strong> ante una encrucijada personal:
+            </p>
+            <ul class="space-y-2 text-sm text-mistico-sub font-sans font-light pl-3 border-l border-mistico-borde ml-1">
+              <li><strong class="text-mistico-luz font-normal">En Grecia y Roma:</strong> Las suertes homéricas y virgilianas, donde pensadores abrían los poemas clásicos al azar para encontrar criterio moral frente a momentos de incertidumbre.</li>
+              <li><strong class="text-mistico-luz font-normal">En la tradición humanista y del ensayo:</strong> La costumbre de abrir los cuadernos de aforismos o tratados de filosofía para que una sola línea destrabara un dilema interior.</li>
+            </ul>
+            <p class="font-sans text-sm sm:text-base text-mistico-sub font-light leading-relaxed pt-1">
+              El método es sobrio y honesto: suspender la prisa, respirar hondo, contemplar la inquietud del día y dejar que el azar ponga frente a tus ojos las palabras justas.
+            </p>
+          </div>
+
+          <!-- Bloque 2: El espejo de la mente (Psicología proyectiva) -->
+          <div class="space-y-3 border-t border-mistico-borde/70 pt-6">
+            <div class="flex items-center gap-2 text-xs font-heading font-semibold uppercase text-mistico-dorado">
+              <span>✦</span> <span>2. El espejo de la mente: Psicología proyectiva (Sin magia ni adivinación)</span>
+            </div>
+            <p class="font-sans text-base text-mistico-luz font-light leading-relaxed">
+              <strong>Frase Oportuna</strong> no recurre a la superstición ni promete adivinación. Se apoya en la <strong>reflexión proyectiva</strong> de la mente humana:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div class="bg-mistico/90 p-5 rounded-2xl border border-mistico-borde">
+                <h4 class="font-heading font-medium text-sm uppercase text-mistico-dorado mb-1">El espejo metafórico</h4>
+                <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+                  Las metáforas de los grandes autores tienen la hondura necesaria para que tu propia razón proyecte en ellas la respuesta que ya venía madurando en silencio.
+                </p>
+              </div>
+              <div class="bg-mistico/90 p-5 rounded-2xl border border-mistico-borde">
+                <h4 class="font-heading font-medium text-sm uppercase text-mistico-dorado mb-1">La perspectiva atemporal</h4>
+                <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+                  Al leer un dilema humano expresado hace siglos por Séneca, Rumi, Pessoa, Montaigne o Lao Tsé, tu inquietud deja de sentirse solitaria: se integra en el cauce de la experiencia universal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque 3: Nuestro manifiesto -->
+          <div class="space-y-3 border-t border-mistico-borde/70 pt-6">
+            <div class="flex items-center gap-2 text-xs font-heading font-semibold uppercase text-mistico-dorado">
+              <span>✦</span> <span>3. Nuestro manifiesto: Un refugio del ruido digital</span>
+            </div>
+            <p class="font-sans text-base text-mistico-luz font-light leading-relaxed">
+              En un ecosistema digital saturado de estímulos invasivos, algoritmos de adicción y respuestas inmediatas superficiales, proponemos una pausa deliberada:
+            </p>
+            <div class="space-y-3 text-sm text-mistico-sub font-sans font-light">
+              <div class="flex items-start gap-3">
+                <span class="text-mistico-dorado font-normal mt-0.5">❧</span>
+                <p class="leading-relaxed">
+                  <strong class="text-mistico-luz font-normal">Pausa consciente:</strong> Un espacio despojado del ruido visual de internet, con contraste sereno y tipografía limpia pensada para una lectura sosegada.
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-mistico-dorado font-normal mt-0.5">❧</span>
+                <p class="leading-relaxed">
+                  <strong class="text-mistico-luz font-normal">Curaduría rigurosa:</strong> Los mejores fragmentos de obras en dominio público universal, acompañados por notas breves que tienden un puente directo entre el pensamiento clásico y tu presente.
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-mistico-dorado font-normal mt-0.5">❧</span>
+                <p class="leading-relaxed">
+                  <strong class="text-mistico-luz font-normal">Privacidad total:</strong> No te pide registrarte, no te exige escribir tus secretos ni almacena datos personales. La lectura ocurre en tu estricta intimidad.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VISTA 2: BLOG & ENSAYOS                    -->
+    <!-- ========================================== -->
+    <section id="vista-blog" class="hidden space-y-8 max-w-4xl mx-auto py-6">
+      <div class="text-center">
+        <span class="text-xs uppercase font-heading font-medium text-mistico-dorado bg-mistico-card px-3 py-1 rounded-full border border-mistico-borde">Lecturas & Reflexiones</span>
+        <h2 class="font-heading text-2xl sm:text-3xl font-normal text-mistico-luz mt-3 mb-2">Blog Editorial</h2>
+        <p class="font-sans text-base text-mistico-sub font-light">Ensayos breves, vidas de pensadores clásicos y prácticas de contemplación.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="bg-mistico-card p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+          <div>
+            <span class="text-xs uppercase font-heading font-semibold text-mistico-dorado tracking-wider">Estoicismo Práctico</span>
+            <h3 class="font-heading font-medium text-xl text-mistico-luz mt-2 mb-3">Cómo Marco Aurelio enfrentó la peste y la traición</h3>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Las anotaciones privadas del emperador filósofo no fueron escritas para el público, sino como un ejercicio diario de autodisciplina mental para mantener la templanza en tiempos de colapso.
+            </p>
+          </div>
+          <button onclick="irA('inicio')" class="mt-6 text-xs uppercase font-heading font-semibold text-mistico-dorado hover:underline self-start cursor-pointer">
+            Volver al Inicio →
+          </button>
+        </article>
+
+        <article class="bg-mistico-card p-7 rounded-2xl border border-mistico-borde borde-mistico flex flex-col justify-between">
+          <div>
+            <span class="text-xs uppercase font-heading font-semibold text-mistico-dorado tracking-wider">Guía de Práctica</span>
+            <h3 class="font-heading font-medium text-xl text-mistico-luz mt-2 mb-3">El ritual de la pausa: 3 minutos antes de decidir</h3>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              En una época hiperacelerada, suspender la reacción inmediata y consultar un pasaje literario entrena la mente para responder desde la serenidad y no desde el impulso ciego.
+            </p>
+          </div>
+          <button onclick="irA('inicio')" class="mt-6 text-xs uppercase font-heading font-semibold text-mistico-dorado hover:underline self-start cursor-pointer">
+            Volver al Inicio →
+          </button>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast de Notificaciones -->
+  <div id="toast-notificacion" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-mistico-card text-mistico-luz px-5 py-3 rounded-full text-xs font-heading font-medium shadow-2xl flex items-center gap-2 border border-mistico-borde">
+    <svg class="w-3.5 h-3.5 text-blue-300 stroke-current inline-block" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+    </svg>
+    <span id="toast-mensaje">Notificación</span>
+  </div>
+
+  <!-- Canvas Oculto para Generación de Imágenes de Descarga (1080x1920) -->
+  <canvas id="canvas-export" width="1080" height="1920" class="hidden"></canvas>
+
+  <!-- ============================================================== -->
+  <!-- PIE DE PÁGINA + SECCIÓN FAQ INTEGRADA (AZUL MÍSTICO)           -->
+  <!-- ============================================================== -->
+  <footer class="border-t border-mistico-borde bg-mistico/95 pt-14 pb-10 text-mistico-luz mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
+      
+      <!-- SECCIÓN FAQ EN EL PIE DE PÁGINA -->
+      <section id="faq-footer" class="space-y-6">
+        <div class="text-center">
+          <span class="text-xs uppercase font-heading font-medium text-mistico-dorado bg-mistico-card px-3 py-1 rounded-full border border-mistico-borde">Ayuda & Respuestas</span>
+          <h2 class="font-heading text-xl sm:text-2xl font-normal text-mistico-luz mt-2">Preguntas Frecuentes (FAQ)</h2>
+        </div>
+
+        <div class="space-y-4 pt-2">
+          <!-- FAQ 1 -->
+          <div class="bg-mistico-card p-6 rounded-2xl border border-mistico-borde">
+            <h3 class="font-heading font-medium text-base text-mistico-luz mb-1.5">¿De dónde provienen las citas y fragmentos?</h3>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Todas las citas provienen de obras poéticas y filosóficas universales en el dominio público. Sus derechos patrimoniales han prescrito y forman parte del patrimonio cultural de la humanidad.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-mistico-card p-6 rounded-2xl border border-mistico-borde">
+            <h3 class="font-heading font-medium text-base text-mistico-luz mb-1.5">¿Es privado lo que consulto en el sitio?</h3>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Privacidad total. El sitio no te pide escribir tu inquietud ni guarda registros personales en servidores. La selección se genera de forma inmediata en tu navegador.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-mistico-card p-6 rounded-2xl border border-mistico-borde">
+            <h3 class="font-heading font-medium text-base text-mistico-luz mb-1.5">¿Cómo se descargan las imágenes para historias de redes?</h3>
+            <p class="text-sm text-mistico-sub font-sans font-light leading-relaxed">
+              Al tocar el botón «Descargar para Stories», el navegador genera al instante un archivo vertical PNG en alta resolución (1080×1920 píxeles), optimizado para compartir en Instagram o WhatsApp Stories.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pie y Enlaces de Navegación en 2 Columnas -->
+      <div class="pt-10 border-t border-mistico-borde/60 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <!-- Columna Izquierda: Identidad, Descripción y Navegación -->
+        <div class="md:col-span-7 space-y-4 text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-mistico-card border border-mistico-borde text-mistico-dorado flex items-center justify-center shadow-sm">
+              <svg class="w-4 h-4 text-blue-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block font-heading font-medium text-base text-mistico-luz tracking-tight">Frase Oportuna</span>
+              <span class="block text-[10px] font-heading font-medium tracking-widest uppercase text-blue-300">SABIDURÍA UNIVERSAL</span>
+            </div>
+          </div>
+          
+          <p class="font-sans text-xs sm:text-sm text-mistico-sub font-light max-w-sm leading-relaxed">
+            Un refugio despojado del ruido digital, con sosiego visual y pensamiento clásico para la contemplación cotidiana.
+          </p>
+
+          <div class="flex flex-wrap gap-4 text-xs font-heading font-medium text-mistico-sub pt-1">
+            <button onclick="irA('inicio')" class="hover:text-mistico-luz transition-colors cursor-pointer">Inicio</button>
+            <button onclick="irACorrientes()" class="hover:text-mistico-luz transition-colors cursor-pointer">Las 5 Corrientes</button>
+            <button onclick="irAProposito()" class="hover:text-mistico-luz transition-colors cursor-pointer">El Propósito</button>
+            <a href="blog.html" class="hover:text-mistico-luz transition-colors cursor-pointer">Blog</a>
+            <a href="#faq-footer" class="hover:text-mistico-luz transition-colors">FAQ</a>
+          </div>
+
+          <div class="text-[11px] text-mistico-detalle font-sans pt-1">
+            © <span id="year-copy">2026</span> Frase Oportuna • Todos los derechos reservados
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Tarjeta del Cafecito Virtual con estética blanca minimalista -->
+        <div class="md:col-span-5">
+          <div class="bg-mistico-card/90 border border-mistico-borde/90 rounded-2xl p-5 shadow-lg space-y-3.5">
+            <div class="flex items-center gap-2 text-xs font-heading font-semibold text-slate-200">
+              <!-- Ícono de taza en trazo minimalista -->
+              <svg class="w-4 h-4 text-slate-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                <line x1="6" y1="2" x2="6" y2="4"></line>
+                <line x1="10" y1="2" x2="10" y2="4"></line>
+                <line x1="14" y1="2" x2="14" y2="4"></line>
+              </svg>
+              <span>Un momento antes de seguir...</span>
+            </div>
+            <p class="font-sans text-xs text-mistico-sub font-light leading-relaxed">
+              Frase Oportuna es una iniciativa independiente, sin anuncios ni algoritmos. Si valoras la curaduría detrás de cada pasaje y estas lecturas te regalaron una pausa de claridad, un café es una forma entrañable de ayudar a sostenerla.
+            </p>
+            <div>
+              <a href="https://cafecito.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 w-full py-2.5 px-5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-heading font-semibold text-xs tracking-wider uppercase transition-all shadow-sm border border-white hover:shadow-md cursor-pointer">
+                <!-- Ícono de taza en trazo negro -->
+                <svg class="w-3.5 h-3.5 text-slate-900 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                  <line x1="6" y1="2" x2="6" y2="4"></line>
+                  <line x1="10" y1="2" x2="10" y2="4"></line>
+                  <line x1="14" y1="2" x2="14" y2="4"></line>
+                </svg>
+                <span>¿Me invitás un café?</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year-copy').innerText = new Date().getFullYear();
+
+    // Catálogo base con las 5 corrientes de pensamiento universal
+    const CATALOGO_DEFAULT = [
+      {
+        "id": "marco-aurelio-01",
+        "corriente": "Pensamiento Estoico",
+        "obra": "Meditaciones",
+        "autor": "Marco Aurelio",
+        "siglo_o_epoca": "Roma Clásica (Siglo II d.C.)",
+        "temas": ["coraje", "paciencia", "autocontrol"],
+        "fragmento": "No te dejes arrastrar por el torbellino; por el contrario, en cada impulso contempla la justicia y en cada representación conserva la facultad de comprender.",
+        "metafora": "El coraje no siempre se manifiesta como un acto de fuerza desmedida; muchas veces habita en la capacidad de detenerse y no reaccionar de inmediato. Este pasaje te invita a cultivar la paciencia como la firmeza de sostener la calma mientras el entorno busca apresurar tus decisiones."
+      },
+      {
+        "id": "seneca-01",
+        "corriente": "Pensamiento Estoico",
+        "obra": "De la brevedad de la vida",
+        "autor": "Séneca",
+        "siglo_o_epoca": "Roma Clásica (Siglo I d.C.)",
+        "temas": ["tiempo", "presente", "sosiego"],
+        "fragmento": "No es que tengamos poco tiempo, sino que perdemos mucho. La vida es suficientemente larga y nos ha sido dada con la generosidad necesaria para realizar las obras más excelsas si se emplea bien toda ella.",
+        "metafora": "Tu inquietud por la escasez de tiempo es un engaño de la prisa. La calma reaparece cuando comprendes que la serenidad no exige añadir más horas al día, sino habitar plenamente la hora que transcurre en este instante."
+      },
+      {
+        "id": "rumi-01",
+        "corriente": "Pensamiento Místico",
+        "obra": "El Masnavi",
+        "autor": "Jalal al-Din Rumi",
+        "siglo_o_epoca": "Persia (Siglo XIII)",
+        "temas": ["duelo", "transformación", "esperanza"],
+        "fragmento": "La herida es el lugar por donde la Luz entra en ti. No te lamentes por lo quebrado; la vasija debe quebrarse para derramar el perfume que guardaba dentro.",
+        "metafora": "Aquello que hoy sientes como fractura o dolor no es un castigo, sino una apertura hacia una versión más despierta de ti mismo. Deja de resistir el quiebre y permite que la comprensión ilumine la nueva forma de tu ser."
+      },
+      {
+        "id": "sor-juana-01",
+        "corriente": "Pensamiento Místico",
+        "obra": "Primero Sueño",
+        "autor": "Sor Juana Inés de la Cruz",
+        "siglo_o_epoca": "Siglo XVII",
+        "temas": ["conocimiento", "quietud", "anhelo"],
+        "fragmento": "Piramidal, funesta, de la tierra nacida sombra, al Cielo encaminaba de vanos obeliscos punta altiva, intentar queriendo tocar a las Estrellas; más en el mudo reposo, la noche todo lo sosiega.",
+        "metafora": "Incluso la ambición más alta o el pensamiento más intranquilo encuentra sosiego cuando se acallan las voces del mundo. Busca un momento de silencio y deja que tu entendimiento descanse antes de querer resolverlo todo."
+      },
+      {
+        "id": "pessoa-01",
+        "corriente": "Pensamiento Introspectivo",
+        "obra": "El libro del desasosiego",
+        "autor": "Fernando Pessoa",
+        "siglo_o_epoca": "Siglo XX (Dominio Público)",
+        "temas": ["soledad", "identidad", "refugio"],
+        "fragmento": "Llevo conmigo las marcas de todas las batallas que evité. En la silenciosa tarde contemplo la calle vacía y comprendo que el refugio que tanto buscaba en los demás era, en verdad, la habitación que habito por dentro.",
+        "metafora": "Este pasaje no te juzga por sentirte apartado o reflexivo. Te recuerda que la soledad no es una condena, sino un santuario donde tu verdadera voz puede escucharse sin el eco de las expectativas ajenas."
+      },
+      {
+        "id": "dickinson-01",
+        "corriente": "Pensamiento Introspectivo",
+        "obra": "Poemas Selectos",
+        "autor": "Emily Dickinson",
+        "siglo_o_epoca": "Siglo XIX",
+        "temas": ["esperanza", "silencio", "alma"],
+        "fragmento": "La esperanza es esa cosa con plumas que se posa en el alma y canta la melodía sin palabras, y nunca se detiene en absoluto, ni ante la más feroz tempestad.",
+        "metafora": "Cuando no tengas explicaciones racionales para tu incertidumbre, no fuerces las palabras. Hay una certeza sutil y silenciosa que resiste en ti; confía en esa fuerza interior que no requiere discursos para sostenerte."
+      },
+      {
+        "id": "lao-tse-01",
+        "corriente": "Pensamiento Oriental",
+        "obra": "Tao Te King",
+        "autor": "Lao Tsé",
+        "siglo_o_epoca": "China Clásica (Siglo IV a.C.)",
+        "temas": ["desapego", "flujo", "armonía"],
+        "fragmento": "El agua es fluida, suave y flexible. Pero el agua desgasta la roca, que es rígida y no cede. Por regla general, lo que es fluido y cede vence siempre a lo duro y quebradizo.",
+        "metafora": "No intentes romper la muralla que tienes enfrente embistiéndola con resistencia. Adopta la paciencia del agua: rodea el obstáculo, conserva tu forma serena y el tiempo disolverá la resistencia con naturalidad."
+      },
+      {
+        "id": "gracian-01",
+        "corriente": "Pensamiento Práctico",
+        "obra": "Oráculo manual y arte de prudencia",
+        "autor": "Baltasar Gracián",
+        "siglo_o_epoca": "Siglo XVII (Siglo de Oro)",
+        "temas": ["prudencia", "criterio", "discreción"],
+        "fragmento": "Saber templar las velas según el viento es el mayor arte de la prudencia. No forcejees contra la corriente obstinadamente; quien sabe esperar su momento llega antes que quien se apresura a ciegas.",
+        "metafora": "En los asuntos prácticos y humanos, la insistencia vehemente suele cerrar puertas en lugar de abrirlas. Observa el terreno con discreción, mide las voluntades y actúa en el instante en que tu acción sea fecunda y no precipitada."
+      },
+      {
+        "id": "esopo-01",
+        "corriente": "Pensamiento Práctico",
+        "obra": "Fábulas Morales",
+        "autor": "Esopo",
+        "siglo_o_epoca": "Grecia Antigua",
+        "temas": ["prudencia", "perspicacia", "juicio"],
+        "fragmento": "Un roble orgulloso se burlaba de una caña porque se doblaba con la brisa más leve. Llegó luego el huracán y arrancó de raíz al soberbio roble, mientras la flexible caña permaneció indemne.",
+        "metafora": "La inflexibilidad suele disfrazarse de gallardía, pero a menudo causa nuestra caída. Frente al conflicto actual, no temas flexibilizar tu postura; ceder con templanza no es cobardía, es la mayor prueba de sabiduría práctica."
+      }
+    ];
+
+    let catalogoActual = [...CATALOGO_DEFAULT];
+    let corrienteSeleccionada = 'aleatorio';
+    let citaActiva = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      cargarCatalogoJSON();
+    });
+
+    async function cargarCatalogoJSON() {
+      try {
+        const respuesta = await fetch('oraculo.json');
+        if (respuesta.ok) {
+          const datos = await respuesta.json();
+          if (Array.isArray(datos) && datos.length > 0) {
+            catalogoActual = datos.map(item => {
+              let c = item.corriente || item.oraculo || '';
+              if (c.toLowerCase().includes('fábula') || c.toLowerCase().includes('fabula') || c.toLowerCase().includes('práctica') || c.toLowerCase().includes('practica')) {
+                c = 'Pensamiento Práctico';
+              } else if (c.toLowerCase().includes('estoic') || c.toLowerCase().includes('stoic')) {
+                c = 'Pensamiento Estoico';
+              } else if (c.toLowerCase().includes('místic') || c.toLowerCase().includes('mistic')) {
+                c = 'Pensamiento Místico';
+              } else if (c.toLowerCase().includes('introspect')) {
+                c = 'Pensamiento Introspectivo';
+              } else if (c.toLowerCase().includes('oriental')) {
+                c = 'Pensamiento Oriental';
+              }
+              return { ...item, corriente: c };
+            });
+            console.log("Catálogo cargado y normalizado. Cantidad:", catalogoActual.length);
+          }
+        }
+      } catch (e) {
+        console.info("Usando catálogo por defecto.");
+      }
+    }
+
+    function irA(vista) {
+      const vistas = ['inicio', 'blog'];
+      vistas.forEach(v => {
+        const elem = document.getElementById(`vista-${v}`);
+        if (elem) elem.classList.add('hidden');
+        
+        const btn = document.getElementById(`nav-btn-${v}`);
+        if (btn) btn.classList.remove('nav-activo');
+      });
+
+      const btnCorrientes = document.getElementById('nav-btn-corrientes');
+      if (btnCorrientes) btnCorrientes.classList.remove('nav-activo');
+      const btnProposito = document.getElementById('nav-btn-proposito');
+      if (btnProposito) btnProposito.classList.remove('nav-activo');
+
+      const seleccionada = document.getElementById(`vista-${vista}`);
+      if (seleccionada) {
+        seleccionada.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      const btnActivo = document.getElementById(`nav-btn-${vista}`);
+      if (btnActivo) {
+        btnActivo.classList.add('nav-activo');
+      }
+    }
+
+    function irACorrientes() {
+      irA('inicio');
+      const btnInicio = document.getElementById('nav-btn-inicio');
+      if (btnInicio) btnInicio.classList.remove('nav-activo');
+      
+      const btnCorrientes = document.getElementById('nav-btn-corrientes');
+      if (btnCorrientes) btnCorrientes.classList.add('nav-activo');
+
+      const elem = document.getElementById('seccion-corrientes-home');
+      if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function irAProposito() {
+      irA('inicio');
+      const btnInicio = document.getElementById('nav-btn-inicio');
+      if (btnInicio) btnInicio.classList.remove('nav-activo');
+      
+      const btnProposito = document.getElementById('nav-btn-proposito');
+      if (btnProposito) btnProposito.classList.add('nav-activo');
+
+      const elem = document.getElementById('seccion-proposito-home');
+      if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resaltarCard(cat) {
+      const cards = document.querySelectorAll('#grid-corrientes button');
+      cards.forEach(c => c.classList.remove('tarjeta-activa'));
+
+      if (cat !== 'aleatorio') {
+        const activa = document.getElementById(`card-${cat}`);
+        if (activa) activa.classList.add('tarjeta-activa');
+      }
+    }
+
+    // Consulta directa en la home sin modal intermedio
+    function consultarCorriente(categoria) {
+      corrienteSeleccionada = categoria;
+      resaltarCard(categoria);
+      irA('inicio');
+
+      let pool = catalogoActual;
+      if (corrienteSeleccionada !== 'aleatorio') {
+        const target = corrienteSeleccionada.toLowerCase().trim();
+        const filtradas = catalogoActual.filter(item => {
+          const c = (item.corriente || item.oraculo || '').toLowerCase();
+          if (target.includes('práctica') && (c.includes('práctica') || c.includes('fábula') || c.includes('fabula'))) return true;
+          if (target.includes('estoico') && (c.includes('estoico') || c.includes('stoico'))) return true;
+          if (target.includes('místico') && (c.includes('místico') || c.includes('mistico'))) return true;
+          if (target.includes('introspectivo') && c.includes('introspectivo')) return true;
+          if (target.includes('oriental') && c.includes('oriental')) return true;
+          return false;
+        });
+        if (filtradas.length > 0) {
+          pool = filtradas;
+        }
+      }
+
+      const indice = Math.floor(Math.random() * pool.length);
+      citaActiva = pool[indice];
+
+      let categoriaFinal = citaActiva.corriente || citaActiva.oraculo || 'Pensamiento Universal';
+      if (categoriaFinal.toLowerCase().includes('fábula') || categoriaFinal.toLowerCase().includes('fabula') || categoriaFinal.toLowerCase().includes('práctica') || categoriaFinal.toLowerCase().includes('practica')) {
+        categoriaFinal = 'Pensamiento Práctico';
+      } else {
+        categoriaFinal = categoriaFinal
+          .replace(/Oráculo/g, 'Pensamiento')
+          .replace(/Sendero/g, 'Pensamiento')
+          .replace('Stoico', 'Estoico');
+      }
+      
+      // Inyección en la tarjeta blanca de alto contraste
+      document.getElementById('res-categoria-nombre').innerText = categoriaFinal;
+      document.getElementById('res-fragmento').innerText = citaActiva.fragmento;
+      document.getElementById('res-autor').innerText = citaActiva.autor;
+      document.getElementById('res-obra').innerText = `${citaActiva.obra} (${citaActiva.siglo_o_epoca || ''})`;
+      document.getElementById('res-metafora').innerText = citaActiva.metafora;
+
+      // Actualizar el texto del botón para consultar a la misma corriente
+      const btnReconsultar = document.getElementById('btn-reconsultar-mismo');
+      if (corrienteSeleccionada === 'aleatorio') {
+        btnReconsultar.innerText = "↻ Otra frase al azar";
+      } else {
+        btnReconsultar.innerText = `↻ Otra frase de ${categoriaFinal}`;
+      }
+
+      const contResultado = document.getElementById('contenedor-resultado');
+      contResultado.classList.remove('hidden');
+      
+      const tarjeta = document.getElementById('tarjeta-lectura');
+      tarjeta.classList.remove('anim-revelar');
+      void tarjeta.offsetWidth;
+      tarjeta.classList.add('anim-revelar');
+
+      // Desplazamiento fluido hacia la tarjeta blanca
+      contResultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function reconsultarMismaCorriente() {
+      consultarCorriente(corrienteSeleccionada);
+    }
+
+    function normalizarNombreCorriente(c) {
+      if (!c) return 'Pensamiento Universal';
+      if (c.toLowerCase().includes('fábula') || c.toLowerCase().includes('fabula') || c.toLowerCase().includes('práctica') || c.toLowerCase().includes('practica')) return 'Pensamiento Práctico';
+      return c.replace(/Oráculo/g, 'Pensamiento').replace(/Sendero/g, 'Pensamiento').replace('Stoico', 'Estoico');
+    }
+
+    function copiarCitaTexto() {
+      if (!citaActiva) return;
+      const cat = normalizarNombreCorriente(citaActiva.corriente || citaActiva.oraculo);
+      const texto = `«${citaActiva.fragmento}»\n— ${citaActiva.autor}, ${citaActiva.obra}\n\nPausa de Reflexión (${cat}):\n${citaActiva.metafora}\n\n(Vía Frase Oportuna • www.fraseoportuna.com)`;
+      
+      const textarea = document.createElement('textarea');
+      textarea.value = texto;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        mostrarToast("Cita copiada al portapapeles");
+      } catch (err) {
+        mostrarToast("No se pudo copiar automáticamente");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function fillRoundRect(ctx, x, y, w, h, r, fillColor, strokeColor, lineWidth = 1) {
+      ctx.beginPath();
+      if (ctx.roundRect) {
+        ctx.roundRect(x, y, w, h, r);
+      } else {
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + w, y, x + w, y + h, r);
+        ctx.arcTo(x + w, y + h, x, y + h, r);
+        ctx.arcTo(x, y + h, x, y, r);
+        ctx.arcTo(x, y + h, x, y);
+        ctx.closePath();
+      }
+      if (fillColor) {
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+      }
+      if (strokeColor) {
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+      }
+    }
+
+    function getWrappedLines(ctx, text, maxWidth) {
+      const words = (text || '').split(' ');
+      const lines = [];
+      let currentLine = '';
+
+      for (let n = 0; n < words.length; n++) {
+        const testLine = currentLine ? currentLine + ' ' + words[n] : words[n];
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && currentLine) {
+          lines.push(currentLine);
+          currentLine = words[n];
+        } else {
+          currentLine = testLine;
+        }
+      }
+      if (currentLine) lines.push(currentLine);
+      return lines;
+    }
+
+    function descargarLámina() {
+      if (!citaActiva) return;
+
+      const canvas = document.getElementById('canvas-export');
+      const ctx = canvas.getContext('2d');
+
+      const W = 1080;
+      const H = 1920;
+
+      // 1. Fondo de lienzo (Azul profundo ambiental para realzar la tarjeta flotante)
+      ctx.fillStyle = '#0A1124';
+      ctx.fillRect(0, 0, W, H);
+
+      // 2. Tarjeta Blanca Idéntica a la Home
+      const cardX = 64;
+      const cardY = 80;
+      const cardW = W - 128;
+      const cardH = H - 160;
+      const cardRadius = 40;
+
+      // Sombra proyectada de la tarjeta
+      ctx.save();
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+      ctx.shadowBlur = 40;
+      ctx.shadowOffsetY = 16;
+      fillRoundRect(ctx, cardX, cardY, cardW, cardH, cardRadius, '#FFFFFF', '#0F172A', 4);
+      ctx.restore();
+
+      const centerX = W / 2;
+      const contentW = cardW - 120; // 832px ancho útil de lectura
+      let currentY = cardY + 70;
+
+      // 3. Etiqueta / Pill de Categoría con ícono de Reloj de Arena dibujado en Canvas
+      const catNombre = normalizarNombreCorriente(citaActiva.corriente || citaActiva.oraculo).toUpperCase();
+      ctx.font = '700 22px "Nunito", sans-serif';
+      const textWidth = ctx.measureText(catNombre).width;
+      const pillW = textWidth + 84;
+      const pillH = 50;
+      const pillX = centerX - pillW / 2;
+      fillRoundRect(ctx, pillX, currentY, pillW, pillH, 25, '#F1F5F9', '#CBD5E1', 1.5);
+      
+      // Dibujar glifo de reloj de arena estilizado en el pill
+      ctx.save();
+      ctx.strokeStyle = '#0F172A';
+      ctx.lineWidth = 2.2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      const hgX = pillX + 26;
+      const hgY = currentY + 16;
+      const hgW = 16;
+      const hgH = 18;
+      ctx.beginPath();
+      // barras sup e inf
+      ctx.moveTo(hgX, hgY);
+      ctx.lineTo(hgX + hgW, hgY);
+      ctx.moveTo(hgX, hgY + hgH);
+      ctx.lineTo(hgX + hgW, hgY + hgH);
+      // cono cruzado
+      ctx.moveTo(hgX + 2, hgY);
+      ctx.lineTo(hgX + hgW / 2, hgY + hgH / 2);
+      ctx.lineTo(hgX + 2, hgY + hgH);
+      ctx.moveTo(hgX + hgW - 2, hgY);
+      ctx.lineTo(hgX + hgW / 2, hgY + hgH / 2);
+      ctx.lineTo(hgX + hgW - 2, hgY + hgH);
+      ctx.stroke();
+      ctx.restore();
+
+      ctx.fillStyle = '#0F172A';
+      ctx.textAlign = 'left';
+      ctx.fillText(catNombre, pillX + 54, currentY + 33);
+      currentY += pillH + 75;
+
+      // 4. Fragmento / Cita (Tipografía ligera 300 con interlineado holgado)
+      ctx.fillStyle = '#0F172A';
+      ctx.font = '300 44px "Roboto", sans-serif';
+      ctx.textAlign = 'center';
+      const quoteText = `« ${citaActiva.fragmento} »`;
+      const quoteLines = getWrappedLines(ctx, quoteText, contentW);
+      const quoteLineHeight = 74;
+
+      for (let i = 0; i < quoteLines.length; i++) {
+        ctx.fillText(quoteLines[i], centerX, currentY);
+        currentY += quoteLineHeight;
+      }
+      currentY += 40;
+
+      // 5. Autor y Obra (Bloque con doble filete gris superior e inferior)
+      const dividerTop = currentY;
+      ctx.strokeStyle = '#E2E8F0';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(centerX - 360, dividerTop);
+      ctx.lineTo(centerX + 360, dividerTop);
+      ctx.stroke();
+
+      currentY += 48;
+      ctx.fillStyle = '#0F172A';
+      ctx.font = '700 32px "Nunito", sans-serif';
+      ctx.fillText(citaActiva.autor.toUpperCase(), centerX, currentY);
+
+      currentY += 38;
+      ctx.fillStyle = '#475569';
+      ctx.font = '300 24px "Roboto", sans-serif';
+      const obraEpoca = citaActiva.siglo_o_epoca ? `${citaActiva.obra} (${citaActiva.siglo_o_epoca})` : citaActiva.obra;
+      ctx.fillText(obraEpoca, centerX, currentY);
+
+      currentY += 28;
+      ctx.beginPath();
+      ctx.moveTo(centerX - 360, currentY);
+      ctx.lineTo(centerX + 360, currentY);
+      ctx.stroke();
+      currentY += 55;
+
+      // 6. Tarjeta de Reflexión (Fondo gris claro #F8FAFC con borde fino)
+      ctx.font = '300 27px "Roboto", sans-serif';
+      const metaLines = getWrappedLines(ctx, citaActiva.metafora, contentW - 60);
+      const metaLineHeight = 44;
+      const metaBoxH = 60 + (metaLines.length * metaLineHeight) + 30;
+
+      fillRoundRect(ctx, centerX - contentW / 2, currentY, contentW, metaBoxH, 24, '#F8FAFC', '#E2E8F0', 1.5);
+      
+      // Encabezado de la reflexión
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#334155';
+      ctx.font = '700 18px "Nunito", sans-serif';
+      ctx.fillText('PAUSA DE REFLEXIÓN', (centerX - contentW / 2) + 32, currentY + 40);
+
+      // Texto de la reflexión
+      ctx.fillStyle = '#1E293B';
+      ctx.font = '300 27px "Roboto", sans-serif';
+      let metaY = currentY + 84;
+      for (let j = 0; j < metaLines.length; j++) {
+        ctx.fillText(metaLines[j], (centerX - contentW / 2) + 32, metaY);
+        metaY += metaLineHeight;
+      }
+
+      // 7. Pie sutil de firma editorial y URL al final de la tarjeta
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#475569';
+      ctx.font = '600 22px "Nunito", sans-serif';
+      ctx.fillText('www.fraseoportuna.com', centerX, cardY + cardH - 58);
+
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = '400 16px "Nunito", sans-serif';
+      ctx.fillText('FRASE OPORTUNA • SABIDURÍA UNIVERSAL', centerX, cardY + cardH - 28);
+
+      try {
+        const dataURL = canvas.toDataURL('image/png');
+        const enlace = document.createElement('a');
+        enlace.download = `frase-oportuna-${citaActiva.id || 'lectura'}.png`;
+        enlace.href = dataURL;
+        enlace.click();
+        mostrarToast("Lámina generada para descargar");
+      } catch (e) {
+        mostrarToast("Error al exportar la imagen");
+      }
+    }
+
+    function mostrarToast(mensaje) {
+      const toast = document.getElementById('toast-notificacion');
+      const texto = document.getElementById('toast-mensaje');
+      texto.innerText = mensaje;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2600);
+    }
+  </script>
+</body>
+</html>
