@@ -14,17 +14,17 @@
                         libro: {
                             fondo: '#F9F9F6',
                             tarjeta: '#FFFFFF',
-                            texto: '#1A1D20',
-                            secundario: '#525866',
-                            borde: '#E2E4E9',
+                            texto: '#1C1917',
+                            secundario: '#57534E',
+                            borde: '#E7E5E4',
                             acento: '#0A1124',
-                            destacado: '#22252A'
+                            destacado: '#292524'
                         }
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'Merriweather', 'Georgia', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
+                        sans: ['Nunito', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        mono: ['Roboto Mono', 'monospace']
                     }
                 }
             }
@@ -33,23 +33,21 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Nunito:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="bg-libro-fondo text-libro-texto font-sans antialiased selection:bg-slate-200 selection:text-slate-900 flex flex-col min-h-screen">
 
     <!-- CABECERA STICKY UNIFICADA -->
     <header class="sticky top-0 z-50 bg-[#0A1124] text-white shadow-md border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-wrap justify-between items-center gap-4">
-            <!-- LOGO / BRANDING -->
+            <!-- LOGO / BRANDING CON RELOJ DE ARENA -->
             <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-lg bg-blue-300 border border-blue-400 flex items-center justify-center text-[#0A1124] transition-all duration-300 group-hover:scale-105 shadow-sm">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
+                <div class="w-10 h-10 rounded-lg bg-[#93C5FD] flex items-center justify-center text-[#0A1124] transition-all duration-300 group-hover:scale-105 shadow-sm">
+                    <span class="text-xl">⌛</span>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-blue-300 transition-colors">Frase Oportuna</span>
-                    <span class="font-mono text-[10px] tracking-widest text-blue-300 uppercase">SABIDURÍA UNIVERSAL</span>
+                    <span class="font-sans text-xl sm:text-2xl font-extrabold tracking-tight text-white group-hover:text-blue-300 transition-colors">Frase Oportuna</span>
+                    <span class="font-mono text-[9px] tracking-widest text-blue-300 uppercase">SABIDURÍA UNIVERSAL</span>
                 </div>
             </a>
 
@@ -57,75 +55,70 @@
             <nav class="hidden md:flex items-center gap-6 font-medium text-sm">
                 <a href="index.html" class="text-slate-300 hover:text-white transition-colors">Inicio</a>
                 <a href="index.html#proposito" class="text-slate-300 hover:text-white transition-colors">El Propósito</a>
-                <a href="blog.html" class="text-blue-300 font-semibold border-b-2 border-blue-300 pb-0.5">Blog</a>
+                <a href="blog.html" class="text-white font-bold border-b-2 border-white pb-0.5">Blog</a>
                 <a href="contacto.html" class="text-slate-300 hover:text-white transition-colors">Contacto & Aportes</a>
             </nav>
 
-            <!-- ACCIÓN AZAR / BOTÓN SUPERIOR EN BLANCO -->
-            <a href="index.html#lamina-lectura" class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-white rounded-lg shadow-sm hover:bg-slate-100 transition-all active:scale-95">
-                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                </svg>
-                <span>Deja que el azar decida</span>
+            <!-- ACCIÓN AZAR / BOTÓN SUPERIOR BLANCO REDONDEADO -->
+            <a href="index.html#lamina-lectura" class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold text-slate-950 bg-white rounded-full shadow-sm hover:bg-slate-100 transition-all active:scale-95">
+                Deja que el azar decida
             </a>
         </div>
     </header>
 
-    <!-- CONTENIDO DEL BLOG -->
+    <!-- CONTENIDO DEL BLOG ALINEADO ESTÉTICAMENTE CON LA HOME -->
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 py-12">
         <!-- CABECERA SECCIÓN -->
-        <div class="text-center mb-12 border-b border-libro-borde pb-8">
-            <span class="inline-block px-3 py-1 bg-slate-200/60 rounded-full text-slate-700 font-mono text-xs uppercase tracking-wider mb-3">
-                Bitácora de Lectura
+        <div class="text-center mb-12">
+            <span class="inline-block px-4 py-1.5 bg-white border border-slate-200 rounded-full text-slate-600 font-mono text-xs uppercase tracking-widest mb-6 shadow-sm">
+                BITÁCORA DE LECTURA & REFLEXIÓN
             </span>
-            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-slate-900 mb-4">
+            <h1 class="font-sans text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
                 Reflexiones & Ensayos
             </h1>
-            <p class="font-serif italic text-slate-600 text-lg max-w-2xl mx-auto">
-                Escrutinio sobre el pensamiento clásico, la lectura pausada y el arte de encontrar claridad en la palabra escrita.
+            <p class="font-serif italic text-slate-500 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                “Escrutinio sobre el pensamiento clásico, la lectura pausada y el arte de encontrar claridad en la palabra escrita.”
             </p>
         </div>
 
-        <!-- LISTA DE ARTÍCULOS -->
+        <!-- LISTA DE ARTÍCULOS CON TARJETAS IDÉNTICAS A LA HOME -->
         <div class="space-y-8">
             <!-- ARTÍCULO 1 -->
-            <article class="bg-white p-8 rounded-2xl border border-libro-borde shadow-sm hover:shadow-md transition-all">
-                <div class="flex items-center gap-3 text-xs font-mono text-slate-500 mb-3">
-                    <span class="text-blue-800 font-semibold uppercase">Ensayo I</span>
-                    <span>•</span>
-                    <span>Lectura de 5 min</span>
+            <article class="bg-white p-8 rounded-3xl border border-libro-borde shadow-sm hover:shadow-md transition-all relative">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
+                    <span class="text-[#0A1124] font-bold uppercase tracking-wider">ENSAYO I • Lectura de 5 min</span>
+                    <span class="text-lg">⌛</span>
                 </div>
-                <h2 class="font-serif text-2xl font-bold text-slate-900 mb-3 hover:text-blue-900 transition-colors">
+                <h2 class="font-sans text-2xl font-extrabold text-slate-900 mb-3 hover:text-blue-900 transition-colors tracking-tight">
                     El valor de la sentencia breve en la era del ruido
                 </h2>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                <p class="text-slate-600 text-base leading-relaxed mb-6 font-normal">
                     Desde los aforismos estoicos hasta los ensayos de Montaigne, la brevedad concisa ha servido como vehículo para comprimir años de experiencia en una sola frase capaz de iluminar una decisión diaria.
                 </p>
                 <div class="flex items-center justify-between pt-4 border-t border-slate-100">
                     <span class="text-xs text-slate-400 font-mono">Publicado en Frase Oportuna</span>
-                    <a href="#" class="text-xs font-bold uppercase tracking-wider text-[#0A1124] hover:text-blue-600 transition-colors">
-                        Leer ensayo completo →
+                    <a href="#" class="text-xs font-bold uppercase tracking-wider text-[#0A1124] hover:text-blue-600 transition-colors flex items-center gap-1">
+                        Leer ensayo completo <span>→</span>
                     </a>
                 </div>
             </article>
 
             <!-- ARTÍCULO 2 -->
-            <article class="bg-white p-8 rounded-2xl border border-libro-borde shadow-sm hover:shadow-md transition-all">
-                <div class="flex items-center gap-3 text-xs font-mono text-slate-500 mb-3">
-                    <span class="text-blue-800 font-semibold uppercase">Ensayo II</span>
-                    <span>•</span>
-                    <span>Lectura de 4 min</span>
+            <article class="bg-white p-8 rounded-3xl border border-libro-borde shadow-sm hover:shadow-md transition-all relative">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
+                    <span class="text-[#0A1124] font-bold uppercase tracking-wider">ENSAYO II • Lectura de 4 min</span>
+                    <span class="text-lg">⌛</span>
                 </div>
-                <h2 class="font-serif text-2xl font-bold text-slate-900 mb-3 hover:text-blue-900 transition-colors">
+                <h2 class="font-sans text-2xl font-extrabold text-slate-900 mb-3 hover:text-blue-900 transition-colors tracking-tight">
                     Sostenimiento de la atención: La filosofía como refugio
                 </h2>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                <p class="text-slate-600 text-base leading-relaxed mb-6 font-normal">
                     Una exploración sobre cómo el hábito de contemplar una idea al día puede reconfigurar nuestra disposición mental frente a la prisa y la saturación informativa.
                 </p>
                 <div class="flex items-center justify-between pt-4 border-t border-slate-100">
                     <span class="text-xs text-slate-400 font-mono">Publicado en Frase Oportuna</span>
-                    <a href="#" class="text-xs font-bold uppercase tracking-wider text-[#0A1124] hover:text-blue-600 transition-colors">
-                        Leer ensayo completo →
+                    <a href="#" class="text-xs font-bold uppercase tracking-wider text-[#0A1124] hover:text-blue-600 transition-colors flex items-center gap-1">
+                        Leer ensayo completo <span>→</span>
                     </a>
                 </div>
             </article>
@@ -140,12 +133,10 @@
             <div class="flex flex-col justify-between space-y-6">
                 <div>
                     <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-lg bg-blue-300 border border-blue-400 flex items-center justify-center text-[#0A1124]">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
+                        <div class="w-8 h-8 rounded-lg bg-[#93C5FD] flex items-center justify-center text-[#0A1124]">
+                            <span class="text-sm">⌛</span>
                         </div>
-                        <span class="font-serif text-xl font-bold text-white">Frase Oportuna</span>
+                        <span class="font-sans text-xl font-extrabold text-white">Frase Oportuna</span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">
                         Un refugio despojado del ruido digital, con sosiego visual y pensamiento clásico para la contemplación cotidiana.
