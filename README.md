@@ -1,1 +1,1 @@
-# oraculo-literario
+# frase-oportuna
