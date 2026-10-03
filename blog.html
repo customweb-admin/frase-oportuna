@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Editorial | Frase Oportuna</title>
-  <meta name="description" content="Lecturas, ensayos y biografías de pensadores clásicos para cultivar la templanza y la pausa consciente.">
+  <meta name="description" content="Lecturas, ensayos y reflexiones sobre literatura clásica para cultivar la templanza y la pausa consciente.">
   <meta name="theme-color" content="#0A1124">
 
   <!-- Open Graph / WhatsApp / Redes Sociales -->
@@ -13,14 +13,15 @@
   <meta property="og:title" content="Blog Editorial | Frase Oportuna">
   <meta property="og:description" content="Ensayos breves sobre literatura clásica, semblanzas de autores universales y ejercicios de contemplación cotidiana.">
   <meta property="og:site_name" content="Frase Oportuna">
+  <meta name="twitter:card" content="summary">
 
   <!-- Favicon Reloj de Arena / Kairós -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2393C5FD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2'/%3E%3Cpath d='M11 16.5h2M10.5 19h3'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111827' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2'/%3E%3Cpath d='M11 16.5h2M10.5 19h3'/%3E%3C/svg%3E">
   
-  <!-- Fuentes Nunito + Roboto -->
+  <!-- Fuentes Nunito + Playfair Display + Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,17 +32,20 @@
           fontFamily: {
             sans: ['"Roboto"', 'sans-serif'],
             heading: ['"Nunito"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
           },
           colors: {
-            mistico: {
-              DEFAULT: '#0A1124',
-              card: '#121C38',
-              cardHover: '#182548',
-              borde: '#22355F',
-              dorado: '#FFFFFF',
-              luz: '#F1F5F9',
-              sub: '#94A3B8',
-              detalle: '#64748B',
+            libro: {
+              papel: '#F9F9F6',        /* Fondo papel de libro nuevo */
+              papelCard: '#FFFFFF',    /* Hoja blanca pura */
+              papelSuave: '#F3F3EE',   /* Matiz sutil de encuadernación */
+              borde: '#E2E2DC',        /* Línea de pliego editorial */
+              bordeOscuro: '#C8C8BE',  /* Separador de imprenta */
+              tinta: '#111827',        /* Negro tinta de imprenta */
+              tintaSub: '#4B5563',     /* Gris oscuro de lectura */
+              tintaMuda: '#71717A',    /* Notas al pie */
+              tintaClara: '#9CA3AF',   /* Glifos y ornamentos tenues */
+              nocheAzulada: '#0A1124', /* Negro azulado institucional */
             },
           }
         }
@@ -51,183 +55,210 @@
 
   <style>
     body {
-      background-color: #0A1124;
-      background-image: 
-        radial-gradient(ellipse at 50% 0%, rgba(30, 58, 138, 0.25) 0%, transparent 70%),
-        radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.12) 0%, transparent 50%);
-      color: #F1F5F9;
+      background-color: #F9F9F6;
+      color: #111827;
       font-family: 'Roboto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     h1, h2, h3, h4, .font-heading {
       font-family: 'Nunito', sans-serif;
-      font-weight: 600;
+      letter-spacing: -0.015em;
     }
 
-    .borde-mistico {
-      border: 1.5px solid #22355F;
-      box-shadow: 0 4px 20px -2px rgba(10, 17, 36, 0.7);
+    .borde-libro {
+      border: 1px solid #E2E2DC;
+      box-shadow: 0 2px 10px -2px rgba(17, 24, 39, 0.04);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .borde-mistico:hover {
-      border-color: #3B82F6;
-      box-shadow: 0 8px 30px -4px rgba(37, 99, 235, 0.25);
+    .borde-libro:hover {
+      border-color: #111827;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -6px rgba(17, 24, 39, 0.08);
     }
 
     .nav-activo {
-      color: #F1F5F9 !important;
+      color: #FFFFFF !important;
       border-bottom: 2px solid #FFFFFF;
-      font-weight: 600;
+      font-weight: 700;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-white selection:text-slate-950">
+<body class="min-h-screen flex flex-col selection:bg-neutral-900 selection:text-white">
 
-  <!-- CABECERA STICKY -->
-  <header class="border-b border-mistico-borde/60 bg-[#0A1124] sticky top-0 z-50 transition-colors shadow-lg">
+  <!-- ========================================== -->
+  <!-- CABECERA STICKY EN NEGRO AZULADO           -->
+  <!-- ========================================== -->
+  <header class="border-b border-[#1E293B] bg-[#0A1124] sticky top-0 z-50 transition-colors shadow-md">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <!-- Fila 1 -->
-      <div class="h-16 flex items-center justify-between border-b border-mistico-borde/40">
+      <!-- Fila 1: Logo a la izquierda | Botón a la derecha -->
+      <div class="h-16 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-mistico-card/90 border border-mistico-borde text-mistico-dorado flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-[#121C38] border border-[#22355F] text-blue-200 flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
             <svg class="w-5 h-5 text-blue-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
               <path d="M11 16.5h2M10.5 19h3"/>
             </svg>
           </div>
           <div>
-            <span class="block font-heading text-lg font-semibold tracking-tight text-mistico-luz leading-tight">Frase Oportuna</span>
-            <span class="block text-[11px] font-heading font-medium tracking-widest uppercase text-blue-300 -mt-0.5">SABIDURÍA UNIVERSAL</span>
+            <span class="block font-heading text-lg font-bold tracking-tight text-white leading-tight">Frase Oportuna</span>
+            <span class="block text-[11px] font-heading font-semibold tracking-widest uppercase text-blue-300 -mt-0.5">SABIDURÍA UNIVERSAL</span>
           </div>
         </a>
 
         <div>
-          <a href="index.html" class="font-heading font-medium text-xs sm:text-sm px-5 py-2 rounded-full bg-mistico-card text-mistico-dorado border border-mistico-dorado/50 hover:bg-mistico-dorado hover:text-slate-950 transition-all inline-block shadow-sm">
-            Ir a la consulta ↺
+          <a href="index.html" class="font-heading font-semibold text-xs sm:text-sm px-5 py-2 rounded-full bg-white text-slate-950 border border-white hover:bg-slate-100 transition-all inline-block shadow-sm">
+            Deja que el azar decida
           </a>
         </div>
       </div>
 
       <!-- Fila 2: Menú Principal Centrado -->
-      <nav class="py-2.5 flex items-center justify-center gap-8 sm:gap-14 text-xs sm:text-sm font-heading font-normal text-mistico-sub">
-        <a href="index.html" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">Inicio</a>
-        <a href="index.html#seccion-corrientes-home" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">Las 5 Corrientes</a>
-        <a href="index.html#seccion-proposito-home" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">El Propósito</a>
-        <a href="blog.html" class="nav-activo hover:text-mistico-luz transition-colors py-1 cursor-pointer">Blog</a>
+      <nav class="pb-2.5 pt-0.5 flex items-center justify-center gap-10 sm:gap-16 text-xs sm:text-sm font-heading font-normal text-slate-300">
+        <a href="index.html" class="hover:text-white transition-colors py-1 cursor-pointer">Inicio</a>
+        <a href="index.html#seccion-proposito-home" class="hover:text-white transition-colors py-1 cursor-pointer">El Propósito</a>
+        <a href="blog.html" class="nav-activo hover:text-white transition-colors py-1 cursor-pointer">Blog</a>
       </nav>
 
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL DEL BLOG -->
+  <!-- ========================================== -->
+  <!-- CONTENIDO PRINCIPAL DEL BLOG               -->
+  <!-- ========================================== -->
   <main class="flex-grow max-w-5xl mx-auto w-full px-4 sm:px-6 py-12 md:py-16 space-y-12">
     
+    <!-- Encabezado de la página -->
     <div class="text-center max-w-2xl mx-auto space-y-3">
-      <span class="text-xs uppercase font-heading font-medium text-mistico-dorado bg-mistico-card px-4 py-1.5 rounded-full border border-mistico-borde">
+      <span class="text-xs uppercase font-heading font-semibold text-libro-tinta bg-libro-papelCard px-4 py-1.5 rounded-full border border-libro-borde shadow-xs">
         Lecturas & Reflexiones
       </span>
-      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-light text-mistico-luz tracking-tight">
+      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-light text-libro-tinta tracking-tight">
         Blog Editorial
       </h1>
-      <p class="font-sans text-base sm:text-lg text-mistico-sub font-light leading-relaxed">
+      <p class="font-sans text-base sm:text-lg text-libro-tintaSub font-light leading-relaxed">
         Ensayos breves sobre literatura clásica, semblanzas de autores universales y ejercicios de contemplación cotidiana.
       </p>
     </div>
 
-    <!-- Rejilla de Artículos -->
+    <!-- Rejilla de Artículos (2 columnas) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
       
-      <!-- Ensayo 1 -->
-      <article class="bg-mistico-card p-8 rounded-3xl border border-mistico-borde borde-mistico flex flex-col justify-between space-y-6">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between text-xs text-blue-300 uppercase font-heading font-semibold tracking-wider">
-            <span>Pensamiento Estoico</span>
-            <span class="text-mistico-detalle font-sans">Lectura de 4 min</span>
+      <!-- Ensayo 1: Marco Aurelio -->
+      <article class="bg-libro-papelCard p-8 sm:p-9 rounded-3xl border border-libro-borde borde-libro flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-heading font-bold tracking-wider">
+            <span class="text-neutral-700 uppercase">Pensamiento Estoico</span>
+            <span class="text-libro-tintaMuda font-sans font-normal">Lectura de 4 min</span>
           </div>
-          <h2 class="font-heading text-2xl font-normal text-mistico-luz leading-snug hover:text-blue-200 transition-colors">
+          <h2 class="font-heading text-2xl font-semibold text-libro-tinta leading-snug hover:text-neutral-700 transition-colors">
             <a href="articulo-marco-aurelio.html">
               Cómo Marco Aurelio enfrentó la peste y la traición
             </a>
           </h2>
-          <p class="font-sans text-sm text-mistico-sub font-light leading-relaxed">
-            Las <em>Meditaciones</em> del emperador filósofo no fueron redactadas para el aplauso público, sino como un cuaderno íntimo de autodisciplina mental para no perder la serenidad en medio del colapso del Imperio.
+          <p class="font-sans text-sm text-libro-tintaSub font-light leading-relaxed">
+            Las <em>Meditaciones</em> del emperador filósofo no fueron redactadas para el aplauso público, sino como un cuaderno íntimo de autodisciplina mental para no perder la serenidad en medio del colapso del Imperio Romano.
           </p>
         </div>
-        <div class="pt-4 border-t border-mistico-borde/70 flex items-center justify-between">
-          <span class="text-xs text-mistico-detalle font-sans">Por Redacción Editorial</span>
-          <a href="articulo-marco-aurelio.html" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline inline-flex items-center gap-1">
-            Leer ensayo completo →
+        <div class="pt-4 border-t border-libro-borde flex items-center justify-between">
+          <span class="text-xs font-sans text-libro-tintaMuda font-light">Por Redacción Editorial</span>
+          <a href="articulo-marco-aurelio.html" class="inline-flex items-center gap-1.5 text-xs font-heading font-semibold text-libro-tinta hover:underline underline-offset-4">
+            <span>Leer ensayo completo</span>
+            <span>→</span>
           </a>
         </div>
       </article>
 
-      <!-- Ensayo 2 -->
-      <article class="bg-mistico-card p-8 rounded-3xl border border-mistico-borde borde-mistico flex flex-col justify-between space-y-6">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between text-xs text-blue-300 uppercase font-heading font-semibold tracking-wider">
-            <span>Guía de Práctica</span>
-            <span class="text-mistico-detalle font-sans">Lectura de 3 min</span>
+      <!-- Ensayo 2: El ritual de la pausa -->
+      <article class="bg-libro-papelCard p-8 sm:p-9 rounded-3xl border border-libro-borde borde-libro flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-heading font-bold tracking-wider">
+            <span class="text-neutral-700 uppercase">Guía de Práctica</span>
+            <span class="text-libro-tintaMuda font-sans font-normal">Lectura de 3 min</span>
           </div>
-          <h2 class="font-heading text-2xl font-normal text-mistico-luz leading-snug hover:text-blue-200 transition-colors">
+          <h2 class="font-heading text-2xl font-semibold text-libro-tinta leading-snug hover:text-neutral-700 transition-colors">
             <a href="articulo-ritual-pausa.html">
               El ritual de la pausa: tres minutos antes de reaccionar
             </a>
           </h2>
-          <p class="font-sans text-sm text-mistico-sub font-light leading-relaxed">
-            En un entorno acelerado por las notificaciones, suspender el impulso reactivo y recurrir a un pasaje clásico entrena a la mente para responder con criterio y ecuanimidad en lugar de apresuramiento.
+          <p class="font-sans text-sm text-libro-tintaSub font-light leading-relaxed">
+            Una reflexión práctica sobre la suspensión del juicio y el espacio entre el estímulo y la respuesta, inspirada en las enseñanzas de Séneca y Viktor Frankl.
           </p>
         </div>
-        <div class="pt-4 border-t border-mistico-borde/70 flex items-center justify-between">
-          <span class="text-xs text-mistico-detalle font-sans">Por Redacción Editorial</span>
-          <a href="articulo-ritual-pausa.html" class="text-xs font-heading font-semibold text-mistico-dorado hover:underline inline-flex items-center gap-1">
-            Leer artículo completo →
+        <div class="pt-4 border-t border-libro-borde flex items-center justify-between">
+          <span class="text-xs font-sans text-libro-tintaMuda font-light">Por Redacción Editorial</span>
+          <a href="articulo-ritual-pausa.html" class="inline-flex items-center gap-1.5 text-xs font-heading font-semibold text-libro-tinta hover:underline underline-offset-4">
+            <span>Leer guía completa</span>
+            <span>→</span>
           </a>
         </div>
       </article>
 
     </div>
 
+    <!-- Bloque de llamado a la consulta -->
+    <div class="p-8 sm:p-10 rounded-3xl bg-libro-papelCard border border-libro-borde text-center space-y-4 max-w-3xl mx-auto shadow-xs">
+      <h3 class="font-heading text-xl sm:text-2xl font-light text-libro-tinta">
+        ¿Buscás una perspectiva para tu momento actual?
+      </h3>
+      <p class="font-sans text-sm text-libro-tintaSub font-light max-w-md mx-auto leading-relaxed">
+        Consulta las 5 corrientes o deja que el azar elija el pasaje exacto que tu espíritu necesita hoy.
+      </p>
+      <div class="pt-2">
+        <a href="index.html" class="inline-block px-7 py-3 rounded-full bg-libro-tinta text-white font-heading font-semibold text-xs tracking-wider uppercase hover:bg-neutral-800 transition-all shadow-md">
+          Deja que el azar decida
+        </a>
+      </div>
+    </div>
+
   </main>
 
-  <!-- PIE DE PÁGINA IDÉNTICO AL HOME -->
-  <footer class="border-t border-mistico-borde bg-mistico/95 pt-12 pb-10 text-mistico-luz mt-16">
+  <!-- ============================================================== -->
+  <!-- PIE DE PÁGINA EDITORIAL EN NEGRO AZULADO (SIN FAQ)            -->
+  <!-- ============================================================== -->
+  <footer class="border-t border-[#1E293B] bg-[#0A1124] pt-14 pb-12 text-white mt-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         
+        <!-- Columna Izquierda: Identidad y Menú -->
         <div class="md:col-span-7 space-y-4 text-left">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-mistico-card border border-mistico-borde text-mistico-dorado flex items-center justify-center shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-[#121C38] border border-[#22355F] text-blue-200 flex items-center justify-center shadow-xs">
               <svg class="w-4 h-4 text-blue-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
               </svg>
             </div>
             <div>
-              <span class="block font-heading font-medium text-base text-mistico-luz tracking-tight">Frase Oportuna</span>
-              <span class="block text-[10px] font-heading font-medium tracking-widest uppercase text-blue-300">SABIDURÍA UNIVERSAL</span>
+              <span class="block font-heading font-bold text-base text-white tracking-tight">Frase Oportuna</span>
+              <span class="block text-[10px] font-heading font-semibold tracking-widest uppercase text-blue-300">SABIDURÍA UNIVERSAL</span>
             </div>
           </div>
           
-          <p class="font-sans text-xs sm:text-sm text-mistico-sub font-light max-w-sm leading-relaxed">
+          <p class="font-sans text-xs sm:text-sm text-slate-300 font-light max-w-sm leading-relaxed">
             Un refugio despojado del ruido digital, con sosiego visual y pensamiento clásico para la contemplación cotidiana.
           </p>
 
-          <div class="flex flex-wrap gap-4 text-xs font-heading font-medium text-mistico-sub pt-1">
-            <a href="index.html" class="hover:text-mistico-luz transition-colors">Inicio</a>
-            <a href="index.html#seccion-corrientes-home" class="hover:text-mistico-luz transition-colors">Las 5 Corrientes</a>
-            <a href="index.html#seccion-proposito-home" class="hover:text-mistico-luz transition-colors">El Propósito</a>
-            <a href="blog.html" class="text-white font-semibold">Blog</a>
+          <div class="flex flex-wrap gap-4 text-xs font-heading font-medium text-slate-300 pt-1">
+            <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+            <a href="index.html#seccion-proposito-home" class="hover:text-white transition-colors">El Propósito</a>
+            <a href="blog.html" class="text-white font-bold">Blog</a>
           </div>
 
-          <div class="text-[11px] text-mistico-detalle font-sans pt-1">
-            © 2026 Frase Oportuna • Todos los derechos reservados
+          <div class="text-[11px] text-slate-400 font-sans pt-1 flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>© 2026 Frase Oportuna • Todos los derechos reservados</span>
+            <span class="hidden sm:inline">•</span>
+            <span>Sitio desarrollado por <a href="https://customweb.webnode.page/" target="_blank" rel="noopener noreferrer" class="text-white font-medium underline underline-offset-2 hover:text-blue-200 transition-colors">Custom Web</a></span>
           </div>
         </div>
 
+        <!-- Columna Derecha: Tarjeta del Cafecito en Blanco con Botón en Negro Azulado -->
         <div class="md:col-span-5">
-          <div class="bg-mistico-card/90 border border-mistico-borde/90 rounded-2xl p-5 shadow-lg space-y-3.5">
-            <div class="flex items-center gap-2 text-xs font-heading font-semibold text-slate-200">
-              <svg class="w-4 h-4 text-slate-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xl space-y-3.5">
+            <div class="flex items-center gap-2 text-xs font-heading font-bold text-slate-900">
+              <svg class="w-4 h-4 text-slate-900 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
                 <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
                 <line x1="6" y1="2" x2="6" y2="4"></line>
@@ -236,12 +267,12 @@
               </svg>
               <span>Un momento antes de seguir...</span>
             </div>
-            <p class="font-sans text-xs text-mistico-sub font-light leading-relaxed">
-              Frase Oportuna es una iniciativa independiente, sin anuncios ni algoritmos. Si valoras la curaduría detrás de cada pasaje, un café es una forma entrañable de ayudar a sostenerla.
+            <p class="font-sans text-xs text-slate-600 font-normal leading-relaxed">
+              Frase Oportuna es una iniciativa independiente, sin anuncios ni algoritmos. Si valoras la curaduría detrás de cada pasaje y estas lecturas te regalaron una pausa de claridad, un café es una forma entrañable de ayudar a sostenerla.
             </p>
             <div>
-              <a href="https://cafecito.app/frase-oportuna" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 w-full py-2.5 px-5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-heading font-semibold text-xs tracking-wider uppercase transition-all shadow-sm border border-white hover:shadow-md cursor-pointer">
-                <svg class="w-3.5 h-3.5 text-slate-900 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <a href="https://cafecito.app/frase-oportuna" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 w-full py-2.5 px-5 rounded-full bg-[#0A1124] text-white hover:bg-[#182548] font-heading font-semibold text-xs tracking-wider uppercase transition-all shadow-md cursor-pointer border border-[#0A1124]">
+                <svg class="w-3.5 h-3.5 text-white stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
                   <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
                   <line x1="6" y1="2" x2="6" y2="4"></line>
