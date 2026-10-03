@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Marco Aurelio enfrentó la peste y la traición | Frase Oportuna</title>
+  <meta name="description" content="Un ensayo sobre las Meditaciones de Marco Aurelio, la Peste Antonina y cómo forjar la ciudadela interior en medio del colapso.">
+  
+  <!-- Fuentes Nunito + Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Roboto"', 'sans-serif'],
+            heading: ['"Nunito"', 'sans-serif'],
+          },
+          colors: {
+            mistico: {
+              DEFAULT: '#0A1124',
+              card: '#121C38',
+              cardHover: '#182548',
+              borde: '#22355F',
+              dorado: '#FFFFFF',
+              luz: '#F1F5F9',
+              sub: '#94A3B8',
+              detalle: '#64748B',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0A1124;
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(30, 58, 138, 0.25) 0%, transparent 70%),
+        radial-gradient(circle at 85% 30%, rgba(79, 70, 229, 0.12) 0%, transparent 50%);
+      color: #F1F5F9;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+    }
+
+    .borde-mistico {
+      border: 1.5px solid #22355F;
+      box-shadow: 0 4px 20px -2px rgba(10, 17, 36, 0.7);
+    }
+
+    .nav-activo {
+      color: #F1F5F9 !important;
+      border-bottom: 2px solid #FFFFFF;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-white selection:text-slate-950">
+
+  <!-- CABECERA STICKY -->
+  <header class="border-b border-mistico-borde/60 bg-[#0A1124] sticky top-0 z-50 transition-colors shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Fila 1 -->
+      <div class="h-16 flex items-center justify-between border-b border-mistico-borde/40">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-mistico-card/90 border border-mistico-borde text-mistico-dorado flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
+            <svg class="w-5 h-5 text-blue-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              <path d="M11 16.5h2M10.5 19h3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-heading text-lg font-semibold tracking-tight text-mistico-luz leading-tight">Frase Oportuna</span>
+            <span class="block text-[11px] font-heading font-medium tracking-widest uppercase text-blue-300 -mt-0.5">SABIDURÍA UNIVERSAL</span>
+          </div>
+        </a>
+
+        <div>
+          <a href="index.html" class="font-heading font-medium text-xs sm:text-sm px-5 py-2 rounded-full bg-mistico-card text-mistico-dorado border border-mistico-dorado/50 hover:bg-mistico-dorado hover:text-slate-950 transition-all inline-block shadow-sm">
+            Ir a la consulta ↺
+          </a>
+        </div>
+      </div>
+
+      <!-- Fila 2: Menú Principal Centrado -->
+      <nav class="py-2.5 flex items-center justify-center gap-8 sm:gap-14 text-xs sm:text-sm font-heading font-normal text-mistico-sub">
+        <a href="index.html" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">Inicio</a>
+        <a href="index.html#seccion-corrientes-home" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">Las 5 Corrientes</a>
+        <a href="index.html#seccion-proposito-home" class="hover:text-mistico-luz transition-colors py-1 cursor-pointer">El Propósito</a>
+        <a href="blog.html" class="nav-activo hover:text-mistico-luz transition-colors py-1 cursor-pointer">Blog</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- CUERPO DEL ARTÍCULO -->
+  <main class="flex-grow max-w-3xl mx-auto w-full px-4 sm:px-6 py-12 md:py-16">
+    
+    <!-- Enlace de regreso -->
+    <div class="mb-8">
+      <a href="blog.html" class="inline-flex items-center gap-2 text-xs font-heading font-semibold text-blue-300 hover:text-mistico-luz transition-colors uppercase tracking-wider">
+        ← Volver al Blog Editorial
+      </a>
+    </div>
+
+    <!-- Encabezado del Ensayo -->
+    <header class="space-y-4 mb-10 pb-8 border-b border-mistico-borde/70">
+      <div class="flex items-center gap-3 text-xs uppercase font-heading font-semibold text-blue-300 tracking-wider">
+        <span>Pensamiento Estoico</span>
+        <span>•</span>
+        <span class="text-mistico-detalle font-sans">Lectura de 4 min</span>
+        <span>•</span>
+        <span class="text-mistico-detalle font-sans">Por Redacción Editorial</span>
+      </div>
+      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-light text-mistico-luz leading-tight tracking-tight">
+        Cómo Marco Aurelio enfrentó la peste y la traición
+      </h1>
+      <p class="font-sans text-lg sm:text-xl text-mistico-sub font-light leading-relaxed">
+        Las <em>Meditaciones</em> no fueron escritas en la placidez de una biblioteca imperial, sino a la luz de una vela militar, mientras el Imperio Romano se desmoronaba entre epidemias y rebeliones.
+      </p>
+    </header>
+
+    <!-- Contenido del Ensayo -->
+    <article class="prose prose-invert max-w-none space-y-6 text-mistico-sub font-light text-base sm:text-lg leading-relaxed">
+      
+      <p>
+        Existe una imagen distorsionada de Marco Aurelio como un emperador plácido que filosofaba desde el mármol reluciente de Roma. La realidad histórica fue dramáticamente distinta. Durante la mayor parte de su reinado (161-180 d.C.), Roma atravesó dos de sus peores pesadillas: la <strong>Peste Antonina</strong> —que diezmó a millones de ciudadanos y soldados— y la rebelión armada de <strong>Avidio Casio</strong>, uno de sus generales más leales y cercanos.
+      </p>
+
+      <p>
+        En medio del frío del frente danubiano, enfermo y exhausto, el hombre más poderoso del mundo occidental no recurrió a la ira ni al desespero. Cada noche, en su tienda de campaña, abría su cuaderno privado para recordarse quién era. Ese texto íntimo, originalmente titulado simplemente <em>«A sí mismo»</em> (lo que hoy conocemos como sus <em>Meditaciones</em>), fue su botiquín de supervivencia psicológica.
+      </p>
+
+      <!-- Tarjeta destacada con cita clásica -->
+      <div class="my-8 bg-white text-slate-900 p-8 rounded-2xl border-2 border-slate-900 shadow-xl space-y-3">
+        <span class="text-xs uppercase font-heading font-bold tracking-widest text-slate-600 block">
+          Meditaciones • Libro IV, 3
+        </span>
+        <blockquote class="font-sans text-xl sm:text-2xl font-light text-slate-950 leading-relaxed italic">
+          «En ninguna parte puede hallar el hombre un retiro más apacible y tranquilo que en su propia alma. Concede, pues, constantemente a ti mismo este retiro, y renuévate.»
+        </blockquote>
+        <div class="text-right text-xs font-heading font-bold text-slate-700 uppercase tracking-wider">
+          — Marco Aurelio
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-normal text-mistico-luz mt-10 mb-4">
+        1. La ciudadela interior: distinguir lo que no controlas
+      </h2>
+
+      <p>
+        Frente a una peste que no entendía la medicina de su tiempo y que amenazaba su propia vida, Marco Aurelio aplicó el principio estoico fundamental que aprendió del esclavo liberto Epicteto: la <strong>dicotomía del control</strong>.
+      </p>
+
+      <p>
+        No dependía de él que la peste llegara a Roma, ni que los inviernos fueran gélidos, ni que las personas murmuraran a sus espaldas. Lo único que dependía enteramente de él era el temple moral de su juicio:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2 text-mistico-sub">
+        <li>Podía elegir no dejarse intoxicar por el pánico colectivo.</li>
+        <li>Podía mantenerse en su puesto y cumplir con su deber cívico sin huir.</li>
+        <li>Podía no añadir sufrimiento imaginario a un dolor que ya era real.</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-normal text-mistico-luz mt-10 mb-4">
+        2. La traición sin veneno: la respuesta ante Avidio Casio
+      </h2>
+
+      <p>
+        Cuando en el año 175 llegó la noticia de que Avidio Casio se había autoproclamado emperador en Oriente, la reacción habitual de un autócrata romano hubiera sido el exterminio sangriento y la venganza inmediata.
+      </p>
+
+      <p>
+        Marco Aurelio reunió a sus tropas y expresó un lamento desconcertante para la época: su mayor temor no era perder el trono, sino que Casio muriera antes de que él pudiera perdonarlo personalmente y demostrarle al mundo que dos viejos camaradas podían reconciliarse. Cuando Casio fue asesinado por sus propios oficiales, Marco Aurelio prohibió ejecutar a la familia del rebelde y ordenó quemar sus cartas privadas sin leerlas, para no verse tentado a sospechar de otros senadores.
+      </p>
+
+      <h2 class="font-heading text-2xl font-normal text-mistico-luz mt-10 mb-4">
+        Una enseñanza para nuestro presente
+      </h2>
+
+      <p>
+        En los días contemporáneos, cuando las crisis geopolíticas, los despidos laborales o las decepciones personales sacuden nuestra estabilidad, la lección de Marco Aurelio permanece intacta: <strong>el caos exterior no tiene el poder de arruinar tu carácter a menos que tú consientas en degradarte con el odio o la histeria</strong>.
+      </p>
+
+      <p>
+        La próxima vez que un acontecimiento inesperado altere tus planes, no preguntes con amargura <em>«¿por qué a mí?»</em>. Recuerda al emperador frente a la carpa helada de Carnuntum escribiendo para sí: <em>«Lo que impide la acción adelanta la acción. Lo que se interpone en el camino se convierte en el camino.»</em>
+      </p>
+
+    </article>
+
+    <!-- Bloque de llamado a la consulta -->
+    <div class="mt-14 p-8 rounded-3xl bg-mistico-card border border-mistico-borde borde-mistico text-center space-y-4">
+      <h3 class="font-heading text-xl text-mistico-luz font-normal">
+        ¿Buscás una perspectiva clásica para tu momento actual?
+      </h3>
+      <p class="font-sans text-sm text-mistico-sub max-w-md mx-auto">
+        Consulta el Pensamiento Estoico o deja que el azar elija el pasaje exacto que tu espíritu necesita hoy.
+      </p>
+      <div>
+        <a href="index.html" class="inline-block px-6 py-3 rounded-full bg-white text-slate-900 font-heading font-semibold text-xs tracking-wider uppercase hover:bg-slate-100 transition-all shadow-md">
+          Consultar a Marco Aurelio en el Inicio ↺
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA IDÉNTICO -->
+  <footer class="border-t border-mistico-borde bg-mistico/95 pt-12 pb-10 text-mistico-luz mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <div class="md:col-span-7 space-y-4 text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-mistico-card border border-mistico-borde text-mistico-dorado flex items-center justify-center shadow-sm">
+              <svg class="w-4 h-4 text-blue-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block font-heading font-medium text-base text-mistico-luz tracking-tight">Frase Oportuna</span>
+              <span class="block text-[10px] font-heading font-medium tracking-widest uppercase text-blue-300">SABIDURÍA UNIVERSAL</span>
+            </div>
+          </div>
+          
+          <p class="font-sans text-xs sm:text-sm text-mistico-sub font-light max-w-sm leading-relaxed">
+            Un refugio despojado del ruido digital, con sosiego visual y pensamiento clásico para la contemplación cotidiana.
+          </p>
+
+          <div class="flex flex-wrap gap-4 text-xs font-heading font-medium text-mistico-sub pt-1">
+            <a href="index.html" class="hover:text-mistico-luz transition-colors">Inicio</a>
+            <a href="index.html#seccion-corrientes-home" class="hover:text-mistico-luz transition-colors">Las 5 Corrientes</a>
+            <a href="index.html#seccion-proposito-home" class="hover:text-mistico-luz transition-colors">El Propósito</a>
+            <a href="blog.html" class="text-white font-semibold">Blog</a>
+          </div>
+
+          <div class="text-[11px] text-mistico-detalle font-sans pt-1">
+            © 2026 Frase Oportuna • Todos los derechos reservados
+          </div>
+        </div>
+
+        <div class="md:col-span-5">
+          <div class="bg-mistico-card/90 border border-mistico-borde/90 rounded-2xl p-5 shadow-lg space-y-3.5">
+            <div class="flex items-center gap-2 text-xs font-heading font-semibold text-slate-200">
+              <svg class="w-4 h-4 text-slate-200 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                <line x1="6" y1="2" x2="6" y2="4"></line>
+                <line x1="10" y1="2" x2="10" y2="4"></line>
+                <line x1="14" y1="2" x2="14" y2="4"></line>
+              </svg>
+              <span>Un momento antes de seguir...</span>
+            </div>
+            <p class="font-sans text-xs text-mistico-sub font-light leading-relaxed">
+              Frase Oportuna es una iniciativa independiente, sin anuncios ni algoritmos. Si valoras la curaduría detrás de cada pasaje, un café es una forma entrañable de ayudar a sostenerla.
+            </p>
+            <div>
+              <a href="https://cafecito.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 w-full py-2.5 px-5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-heading font-semibold text-xs tracking-wider uppercase transition-all shadow-sm border border-white hover:shadow-md cursor-pointer">
+                <svg class="w-3.5 h-3.5 text-slate-900 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                  <line x1="6" y1="2" x2="6" y2="4"></line>
+                  <line x1="10" y1="2" x2="10" y2="4"></line>
+                  <line x1="14" y1="2" x2="14" y2="4"></line>
+                </svg>
+                <span>¿Me invitás un café?</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
