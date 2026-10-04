@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No tienes poder sobre los eventos externos, pero sí sobre tu mente. Aprende esto y encontrarás la fuerza.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "El caos exterior pierde su dominio cuando reconoces que tu único soberano verdadero es tu postura interna."
+  },
+  {
+    "id": 2,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Sufrimos más a menudo en la imaginación que en la realidad.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "Observa cuántos de tus temores actuales son historias no escritas que tu mente anticipa sin necesidad."
+  },
+  {
+    "id": 3,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No pidas que las cosas ocurran como tú deseas; desea más bien que ocurran como ocurren, y fluirás bien.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Enquiridión (Siglo II)",
+    "reflexion": "La verdadera paz surge de soltar la resistencia hacia el presente tal como se despliega ante ti."
+  },
+  {
+    "id": 4,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Si estás afligido por algo externo, el dolor no se debe a la cosa en sí, sino a tu estimación de ella.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Revisa el significado que le asignas a tus obstáculos; cambiar el juicio altera instantáneamente la pena."
+  },
+  {
+    "id": 5,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Ningún viento es favorable para quien no sabe a qué puerto se dirige.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "Antes de buscar velocidad en tus pasos, asegura la nitidez del destino al que aspiras llegar."
+  }
+]
