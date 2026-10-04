@@ -248,5 +248,255 @@
     "autor": "MARCO AURELIO",
     "datos_obra": "Meditaciones (Siglo II)",
     "reflexion": "Imprime sobriedad y excelencia a tu presente despojándote de la ilusión del mañana garantizado."
+  },
+  {
+    "id": 26,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "La herida es el lugar por donde entra la luz en ti.",
+    "autor": "RUMI",
+    "datos_obra": "Masnavi (Siglo XIII)",
+    "reflexion": "No temas a las grietas de la existencia; en ellas se quiebra el ego y penetra la gracia de lo divino."
+  },
+  {
+    "id": 27,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Buscaba a Dios y solo me encontré a mí mismo; me busqué a mí mismo y solo encontré a Dios.",
+    "autor": "AL-HALLAJ",
+    "datos_obra": "Diwan (Siglo X)",
+    "reflexion": "Al descender a lo más hondo del alma, descubres que la frontera entre el buscador y lo buscado se disuelve."
+  },
+  {
+    "id": 28,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "En la noche dichosa, en secreto, que nadie me veía, ni yo miraba cosa, sin otra luz y guía sino la que en el corazón ardía.",
+    "autor": "SAN JUAN DE LA CRUZ",
+    "datos_obra": "Noche oscura del alma (Siglo XVI)",
+    "reflexion": "Cuando los sentidos se apagan, la intuición espiritual se transforma en la linterna más clara del viaje."
+  },
+  {
+    "id": 29,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Dios no está en ningún lugar lejano; está en el centro más íntimo de tu propio ser.",
+    "autor": "SANTA TERESA DE JESÚS",
+    "datos_obra": "Las moradas (Siglo XVI)",
+    "reflexion": "Haz silencio interior; el sagrario que buscas fuera ya habita latente en la quietud de tu pecho."
+  },
+  {
+    "id": 30,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "El silencio es el lenguaje de Dios; todo lo demás es una mala traducción.",
+    "autor": "RUMI",
+    "datos_obra": "Masnavi (Siglo XIII)",
+    "reflexion": "Aquiepa el ruido de los conceptos para escuchar la presencia pura que habla sin palabras."
+  },
+  {
+    "id": 31,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "La gota de agua no se pierde en el océano, el océano se encuentra en la gota de agua.",
+    "autor": "KABIR",
+    "datos_obra": "Bijak (Siglo XV)",
+    "reflexion": "Tu pequeñez aparente contiene la totalidad de la vida cuando reconoces tu naturaleza esencial."
+  },
+  {
+    "id": 32,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Para llegar a lo que no sabes, has de ir por camino que no sabes.",
+    "autor": "SAN JUAN DE LA CRUZ",
+    "datos_obra": "Subida del Monte Carmelo (Siglo XVI)",
+    "reflexion": "Entrega la certidumbre del intelecto y permite que la fe te adentre en el fecundo misterio del no-saber."
+  },
+  {
+    "id": 33,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Si Dios estuviera en otro lugar, el alma tendría que viajar; pero como reside dentro, basta con estar en quietud.",
+    "autor": "MAESTRO ECKHART",
+    "datos_obra": "Sermones Alemanes (Siglo XIV)",
+    "reflexion": "Suspende las peregrinaciones externas; el misterio se revela cuando cesas todo movimiento y estás presente."
+  },
+  {
+    "id": 34,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Todo lo visible es solo un velo que oculta la luz invisible del Origen.",
+    "autor": "ATTAR DE NISHAPUR",
+    "datos_obra": "El lenguaje de los pájaros (Siglo XII)",
+    "reflexion": "Afina la mirada del espíritu para contemplar lo sagrado que late tras las formas efímeras del mundo."
+  },
+  {
+    "id": 35,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Cosas hay tan altas que el entendimiento no las alcanza y el amor solo las abraza.",
+    "autor": "SANTA TERESA DE JESÚS",
+    "datos_obra": "Libro de la vida (Siglo XVI)",
+    "reflexion": "Cuando la razón toca su límite, el afecto devoto cruza la frontera hacia la unión con la verdad."
+  },
+  {
+    "id": 36,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "El amor no tiene razones, no tiene preguntas; arde en su propio fuego y se consume en la Luz.",
+    "autor": "HAFEZ DE SHIRAZ",
+    "datos_obra": "El Diván (Siglo XIV)",
+    "reflexion": "Abandona la necesidad de explicaciones racionales; la entrega del corazón es su propia justificación."
+  },
+  {
+    "id": 37,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Un momento de contemplación pura vale más que cien años de devoción exterior.",
+    "autor": "RABIA AL-ADAWIYYA",
+    "datos_obra": "Dichos y Poemas (Siglo VIII)",
+    "reflexion": "La rituals vacíos no bastan; un instante de presencia sincera transforma el alma desde sus cimientos."
+  },
+  {
+    "id": 38,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Cuanto más vacía está la vasija, más presencia divina puede albergar.",
+    "autor": "MAESTRO ECKHART",
+    "datos_obra": "Tratados (Siglo XIV)",
+    "reflexion": "Despójate de apegos y pretensiones para que la luz infinita llene el espacio liberado en tu interior."
+  },
+  {
+    "id": 39,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "En el corazón del enamorado no hay espacio para dos; allí solo habita el Único.",
+    "autor": "IBN ARABI",
+    "datos_obra": "Las revelaciones de La Meca (Siglo XIII)",
+    "reflexion": "La devoción genuina unifica la mente y elimina toda ilusión de separación en el universo."
+  },
+  {
+    "id": 40,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "En la quietud del alma, el Eterno habla su palabra secreta.",
+    "autor": "JILAN DE SUSBÚ",
+    "datos_obra": "Altura de la mística (Siglo XIV)",
+    "reflexion": "Calma el oleaje de las preocupaciones cotidianas para percibir el murmullo de lo trascendente."
+  },
+  {
+    "id": 41,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "No busques afuera la fuente; dentro de ti manan las aguas de la vida eterna.",
+    "autor": "ANGELUS SILESIUS",
+    "datos_obra": "El peregrino querubínico (Siglo XVII)",
+    "reflexion": "Toda plenitud proviene del manantial interior que no depende de los avatares del mundo visible."
+  },
+  {
+    "id": 42,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "La rosa es sin porqué; florece porque florece, no se cuida de sí misma, no desea ser vista.",
+    "autor": "ANGELUS SILESIUS",
+    "datos_obra": "El peregrino querubínico (Siglo XVII)",
+    "reflexion": "Expande tu ser de forma espontánea y pura, libre de la búsqueda de utilidad o reconocimiento ajeno."
+  },
+  {
+    "id": 43,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Mira el rostro del Amado en cada criatura que cruce tu camino.",
+    "autor": "IBN ARABI",
+    "datos_obra": "El intérprete de los deseos (Siglo XIII)",
+    "reflexion": "Reconoce la chispa sagrada oculta en la mirada de todo ser vivo y santifica tus relaciones cotidianas."
+  },
+  {
+    "id": 44,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "En el amor no hay yo ni tú; la dualidad se apaga en el fuego de la unión.",
+    "autor": "FARID AL-DIN ATTAR",
+    "datos_obra": "El libro del secreto (Siglo XII)",
+    "reflexion": "Trasciende el egoísmo del 'yo' para disolverte en la vasta e indivisible realidad del Todo."
+  },
+  {
+    "id": 45,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "La lámpara de la mente encendida por el espíritu no teme a la noche del mundo.",
+    "autor": "HILDEGARD VON BINGEN",
+    "datos_obra": "Scivias (Siglo XII)",
+    "reflexion": "Quien lleva la luz de la verdad en su interior camina inquebrantable a través de las sombras de la época."
+  },
+  {
+    "id": 46,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Al final de la jornada de la vida, seremos examinados en el amor.",
+    "autor": "SAN JUAN DE LA CRUZ",
+    "datos_obra": "Dichos de luz y amor (Siglo XVI)",
+    "reflexion": "Mide tus días no por tus triunfos o saberes, sino por la capacidad de amar que entregaste en tu andar."
+  },
+  {
+    "id": 47,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Iba buscando la verdad y la encontré oculta en la sencillez del corazón humilde.",
+    "autor": "BAHAUDDÍN SHAH",
+    "datos_obra": "Tradición Sufí (Siglo XIV)",
+    "reflexion": "La verdadera sabiduría no se encuentra en la arrogancia del saber, sino en la apertura de un espíritu llano."
+  },
+  {
+    "id": 48,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "El alma es un castillo de diamante o de muy claro cristal, donde hay muchas moradas.",
+    "autor": "SANTA TERESA DE JESÚS",
+    "datos_obra": "Las moradas (Siglo XVI)",
+    "reflexion": "Explora tus profundidades espirituales; posees una riqueza interior vasta e inexplorada por descubrir."
+  },
+  {
+    "id": 49,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Cuando el corazón despierta, cada piedra se vuelve un altar y cada respiración una oración.",
+    "autor": "RUMI",
+    "datos_obra": "Masnavi (Siglo XIII)",
+    "reflexion": "Transforma lo cotidiano en un acto sagrado mediante la presencia consciente y la devoción interior."
+  },
+  {
+    "id": 50,
+    "corriente": "mistica",
+    "etiqueta": "PENSAMIENTO MÍSTICO",
+    "categoria": "Lo Trascendente & La Luz",
+    "texto": "Quien conoce el Secreto no habla; quien habla no conoce el Secreto.",
+    "autor": "AL-GHAZALI",
+    "datos_obra": "La alquimia de la felicidad (Siglo XI)",
+    "reflexion": "Las experiencias místicas trascienden el lenguaje; la verdadera comprensión se vive en el sagrado silencio."
   }
 ]
