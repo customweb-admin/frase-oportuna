@@ -48,5 +48,205 @@
     "autor": "SÉNECA",
     "datos_obra": "Cartas a Lucilio (Siglo I)",
     "reflexion": "Antes de buscar velocidad en tus pasos, asegura la nitidez del destino al que aspiras llegar."
+  },
+  {
+    "id": 6,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No tienes poder sobre los eventos externos, pero sí sobre tu mente. Aprende esto y encontrarás la fuerza.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "El caos exterior pierde su dominio cuando reconoces que tu único soberano verdadero es tu postura interna."
+  },
+  {
+    "id": 7,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Sufrimos más a menudo en la imaginación que en la realidad.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "Observa cuántos de tus temores actuales son historias no escritas que tu mente anticipa sin necesidad."
+  },
+  {
+    "id": 8,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No pidas que las cosas ocurran como tú deseas; desea más bien que ocurran como ocurren, y fluirás bien.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Enquiridión (Siglo II)",
+    "reflexion": "La verdadera paz surge de soltar la resistencia hacia el presente tal como se despliega ante ti."
+  },
+  {
+    "id": 9,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Si estás afligido por algo externo, el dolor no se debe a la cosa en sí, sino a tu estimación de ella.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Revisa el significado que le asignas a tus obstáculos; cambiar el juicio altera instantáneamente la pena."
+  },
+  {
+    "id": 10,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Ningún viento es favorable para quien no sabe a qué puerto se dirige.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "Antes de buscar velocidad en tus pasos, asegura la nitidez del destino al que aspiras llegar."
+  },
+  {
+    "id": 11,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No es que tengamos poco tiempo, sino que perdemos mucho.",
+    "autor": "SÉNECA",
+    "datos_obra": "Sobre la brevedad de la vida (Siglo I)",
+    "reflexion": "Evalúa el destino de tus horas; la vida es amplia si sabes habitar cada instante con propósito."
+  },
+  {
+    "id": 12,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "La felicidad de tu vida depende de la calidad de tus pensamientos.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Cuida el diálogo interno; las ideas que alimentas hoy construyen el santuario o la prisión de tu mañana."
+  },
+  {
+    "id": 13,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No nos atrevemos a muchas cosas porque son difíciles, pero son difíciles porque no nos atrevemos.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "El tamaño de un reto suele ser una ilusión nacida de tu vacilación inicial antes del primer paso."
+  },
+  {
+    "id": 14,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "No expliques tu filosofía; encárnala.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Discursos (Siglo II)",
+    "reflexion": "Sustituye los discursos elocuentes por la serena elocuencia de tus acciones cotidianas."
+  },
+  {
+    "id": 15,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "El obstáculo es el camino.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Lo que bloquea tu marcha se convierte en la materia prima para forjar tu nuevo avance."
+  },
+  {
+    "id": 16,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Un hombre sabio no se aflige por las cosas que no tiene, sino que se alegra por las que tiene.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Fragmentos (Siglo II)",
+    "reflexion": "La plenitud no proviene del exceso de bienes, sino de apreciar la abundancia que ya te rodea."
+  },
+  {
+    "id": 17,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Si quieres que algo sea bueno, consíguelo de ti mismo.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Discursos (Siglo II)",
+    "reflexion": "No busques en el exterior la virtud y serenidad que únicamente tu propia disciplina puede cultivar."
+  },
+  {
+    "id": 18,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Comienza cada día diciéndote: Hoy me cruzaré con el indiscreto, el ingrato, el insolente...",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Preparar la mente para el desencuentro te protege de perder tu templanza ante las debilidades ajenas."
+  },
+  {
+    "id": 19,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "La suerte es lo que ocurre cuando la preparación se encuentra con la oportunidad.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "Mantén tu carácter a punto; el azar solo favorece a quien ha forjado previamente la aptitud."
+  },
+  {
+    "id": 20,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Solo hay un camino hacia la felicidad: dejar de preocuparse por las cosas que están fuera de nuestro control.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Discursos (Siglo II)",
+    "reflexion": "Libera la energía que malgastas intentando gobernar el destino; enfócate en gobernar tu respuesta."
+  },
+  {
+    "id": 21,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Pobre no es el que tiene poco, sino el que codicia más.",
+    "autor": "SÉNECA",
+    "datos_obra": "Cartas a Lucilio (Siglo I)",
+    "reflexion": "La verdadera escasez reside en la insaciabilidad de un deseo que jamás se declara satisfecho."
+  },
+  {
+    "id": 22,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "La mejor venganza es no ser como tu enemigo.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Preserva tu integridad ante el agravio; replicar la bajeza es la única derrota real del espíritu."
+  },
+  {
+    "id": 23,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Ningún hombre es libre si no es dueño de sí mismo.",
+    "autor": "EPÍCTETO",
+    "datos_obra": "Enquiridión (Siglo II)",
+    "reflexion": "La autonomía externa es una farsa si tus impulsos y emociones gobiernan tus decisiones diarias."
+  },
+  {
+    "id": 24,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Dondequiera que haya un ser humano, hay una oportunidad para la amabilidad.",
+    "autor": "SÉNECA",
+    "datos_obra": "Sobre la clemencia (Siglo I)",
+    "reflexion": "Haz de tu presencia una fuente de benevolencia; el bien común es la razón de ser de la comunidad humana."
+  },
+  {
+    "id": 25,
+    "corriente": "estoica",
+    "etiqueta": "PENSAMIENTO ESTOICO",
+    "categoria": "La Fortaleza & La Razón",
+    "texto": "Haz cada cosa en la vida como si fuera la última.",
+    "autor": "MARCO AURELIO",
+    "datos_obra": "Meditaciones (Siglo II)",
+    "reflexion": "Imprime sobriedad y excelencia a tu presente despojándote de la ilusión del mañana garantizado."
   }
 ]
