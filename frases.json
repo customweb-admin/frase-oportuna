@@ -498,5 +498,255 @@
     "autor": "AL-GHAZALI",
     "datos_obra": "La alquimia de la felicidad (Siglo XI)",
     "reflexion": "Las experiencias místicas trascienden el lenguaje; la verdadera comprensión se vive en el sagrado silencio."
+  },
+  {
+    "id": 51,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Conócete a ti mismo.",
+    "autor": "SÓCRATES",
+    "datos_obra": "Diálogos platónicos (Siglo V a.C.)",
+    "reflexion": "El examen de la propia alma es el punto de partida ineludible para cualquier sabiduría real."
+  },
+  {
+    "id": 52,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "El hombre que no examina su vida no merece vivirla.",
+    "autor": "PLATÓN",
+    "datos_obra": "Apología de Sócrates (Siglo IV a.C.)",
+    "reflexion": "Cuestiona tus certezas e impulsos para dotar a tu paso por el mundo de verdadero propósito ético."
+  },
+  {
+    "id": 53,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Nos transformamos en aquello que contemplamos.",
+    "autor": "PLOTINO",
+    "datos_obra": "Enéadas (Siglo III)",
+    "reflexion": "Selecciona con cuidado las ideas que habitan tu mente; la naturaleza de tu atención moldea tu alma."
+  },
+  {
+    "id": 54,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Nos conocemos solo en la medida en que hemos sido puestos a prueba.",
+    "autor": "SÉNAC DE MEILHAN",
+    "datos_obra": "Consideraciones sobre el espíritu (1795)",
+    "reflexion": "La adversidad saca a la luz aquellos recursos internos que permanecían ocultos en la comodidad."
+  },
+  {
+    "id": 55,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Conocer a los demás es sabiduría; conocerse a uno mismo es iluminación.",
+    "autor": "LAO TSÉ",
+    "datos_obra": "Tao Te Ching (Siglo VI a.C.)",
+    "reflexion": "Descender a los pliegues del propio ser exige un valor mayor que el necesario para comprender el exterior."
+  },
+  {
+    "id": 56,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Nada hay más hondo ni más secreto que el santuario de la propia conciencia.",
+    "autor": "CICERÓN",
+    "datos_obra": "De officiis (44 a.C.)",
+    "reflexion": "Al resguardo del ruido del mundo, tu tribunal interno guarda la medida exacta de tu integridad."
+  },
+  {
+    "id": 57,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Me busqué a mí mismo.",
+    "autor": "HERÁCLITO",
+    "datos_obra": "Fragmentos (Siglo VI a.C.)",
+    "reflexion": "El viaje hacia las profundidades personales es la más exigente y fascinante de las indagaciones."
+  },
+  {
+    "id": 58,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "No vayas afuera, vuelve a ti mismo; en el hombre interior habita la verdad.",
+    "autor": "AGUSTÍN DE HIPONA",
+    "datos_obra": "De vera religione (390)",
+    "reflexion": "Suspende las búsquedas externas; las certezas más definitivas aguardan en la intimidad de la mente."
+  },
+  {
+    "id": 59,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Saber lo que se ignora es la forma más elevada del conocimiento.",
+    "autor": "CONFUCIO",
+    "datos_obra": "Analectas (Siglo V a.C.)",
+    "reflexion": "La humildad intelectual despeja las ilusiones del ego y abre el camino hacia la comprensión lúcida."
+  },
+  {
+    "id": 60,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "En el laberinto del espíritu, la linterna es la atención despierta.",
+    "autor": "BARUCH SPINOZA",
+    "datos_obra": "Ética (1677)",
+    "reflexion": "Observa tus afectos y pasiones sin juzgarlos; la observación serena aporta orden a la vida interior."
+  },
+  {
+    "id": 61,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "El primer deber de un hombre es pensar por sí mismo.",
+    "autor": "JOSÉ MARTÍ",
+    "datos_obra": "Nuestra América (1891)",
+    "reflexion": "Afianza la autonomía de tu criterio antes de adoptar prejuicios o modas intelectuales ajenas."
+  },
+  {
+    "id": 62,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Quien mira adentro no encuentra dogmas, sino un universo en permanente construcción.",
+    "autor": "SØREN KIERKEGAARD",
+    "datos_obra": "La alternativa (1843)",
+    "reflexion": "Asume la libertad y la responsabilidad de modelar tu propia existencia desde tu núcleo más genuino."
+  },
+  {
+    "id": 63,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "El templo de la verdad se erige sobre la roca del autoexamen.",
+    "autor": "MICHEL DE MONTAIGNE",
+    "datos_obra": "Ensayos (1580)",
+    "reflexion": "Registra tus contradicciones y flaquezas con honestidad para madurar una perspectiva realista del ser."
+  },
+  {
+    "id": 64,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Nuestra vida es un experimento continuo cuyo único observador definitivo somos nosotros mismos.",
+    "autor": "ARTHUR SCHOPENHAUER",
+    "datos_obra": "Parerga y paralipómena (1851)",
+    "reflexion": "Concede la debida importancia a la evaluación íntima de tus pasos por encima del veredicto ajeno."
+  },
+  {
+    "id": 65,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "En el corazón de la soledad florece la comprensión.",
+    "autor": "JEAN-JACQUES ROUSSEAU",
+    "datos_obra": "Las ensoñaciones del paseante solitario (1782)",
+    "reflexion": "Busca espacios de recogimiento; el aislamiento elegido sana las grietas causadas por la agitación social."
+  },
+  {
+    "id": 66,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "La introspección es el espejo donde la mente aprende a contemplar sus propios contornos.",
+    "autor": "DAVID HUME",
+    "datos_obra": "Tratado de la naturaleza humana (1739)",
+    "reflexion": "Estudia el flujo de tus pensamientos para comprender los cimientos sobre los que eriges tu realidad."
+  },
+  {
+    "id": 67,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "No somos solo lo que hacemos, sino lo que soñamos y guardamos en silencio.",
+    "autor": "FRIEDRICH SCHILLER",
+    "datos_obra": "Cartas sobre la educación estética del hombre (1795)",
+    "reflexion": "Valora la riqueza invisible de tu mundo interior; allí habita la sustancia real de tu sensibilidad."
+  },
+  {
+    "id": 68,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Solo la verdad interna confiere una dignidad que las circunstancias no pueden arrebatar.",
+    "autor": "IMMANUEL KANT",
+    "datos_obra": "Fundamentación de la metafísica de las costumbres (1785)",
+    "reflexion": "Mantén la fidelidad a tus principios rectores frente a las presiones y conveniencias del entorno."
+  },
+  {
+    "id": 69,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "El pensamiento que no vuelve sobre sí mismo se desvanece en la dispersión.",
+    "autor": "G. W. F. HEGEL",
+    "datos_obra": "Fenomenología del espíritu (1807)",
+    "reflexion": "Haz pausas periódicas para integrar la experiencia y dotar de continuidad a tu maduración personal."
+  },
+  {
+    "id": 70,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "La mayor victoria es la conquista de la propia mente.",
+    "autor": "DHAMMAPADA",
+    "datos_obra": "Texto canónico budista (Siglo III a.C.)",
+    "reflexion": "Aplaca los impulsos desordenados para gozar de la inquebrantable serenidad del autodominio."
+  },
+  {
+    "id": 71,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Somos lo que pensamos; todo lo que somos surge con nuestros pensamientos.",
+    "autor": "BUDA GAUTAMA",
+    "datos_obra": "Dhammapada (Siglo V a.C.)",
+    "reflexion": "Cuida la semilla de cada idea; de ellas brota el paisaje de tus emociones y tus actos."
+  },
+  {
+    "id": 72,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "La contemplación silenciosa revela los lazos invisibles entre el alma y el cosmos.",
+    "autor": "GIORDANO BRUNO",
+    "datos_obra": "Del universo infinito y los mundos (1584)",
+    "reflexion": "Reconoce la escala universal de tu existencia y abre tu sensibilidad al misterio que te rodea."
+  },
+  {
+    "id": 73,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "En el examen de nuestras imperfecciones hallamos el germen del verdadero crecimiento.",
+    "autor": "BENJAMIN FRANKLIN",
+    "datos_obra": "Autobiografía (1791)",
+    "reflexion": "Observa tus yerros sin culpa destructiva, usándolos como escalones hacia una versión más madura."
+  },
+  {
+    "id": 74,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "Nada humano me es ajeno, porque en mi propio ser hallo el eco de todas las pasiones.",
+    "autor": "TERENCIO",
+    "datos_obra": "Heautontimorumenos (163 a.C.)",
+    "reflexion": "Comprenderte a ti mismo es la clave para desarrollar una compasión genuina hacia las luchas ajenas."
+  },
+  {
+    "id": 75,
+    "corriente": "introspectiva",
+    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
+    "categoria": "El Refugio & La Sensibilidad",
+    "texto": "El verdadero viaje de descubrimiento no consiste en buscar nuevos paisajes, sino en tener nuevos ojos.",
+    "autor": "MARCEL PROUST",
+    "datos_obra": "En busca del tiempo perdido (1923)",
+    "reflexion": "Transforma la mirada con la que juzgas lo cotidiano y descubrirás la profundidad oculta en lo habitual."
   }
 ]
