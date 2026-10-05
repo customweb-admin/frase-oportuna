@@ -34,15 +34,15 @@
           },
           colors: {
             libro: {
-              papel: '#F9F9F6',        /* Tono papel editorial sin brillo */
-              papelCard: '#FFFFFF',    /* Hoja blanca pura */
-              papelSuave: '#F3F3EE',   /* Matiz sutil de encuadernación */
-              borde: '#E2E2DC',        /* Línea de pliego editorial */
-              bordeOscuro: '#C8C8BE',  /* Separador de imprenta */
-              tinta: '#111827',        /* Negro tinta de imprenta */
-              tintaSub: '#4B5563',     /* Gris oscuro de lectura */
-              tintaMuda: '#71717A',    /* Notas al pie */
-              nocheAzulada: '#0A1124', /* Negro azulado para cabecera, pie y tarjetas */
+              papel: '#F9F9F6',
+              papelCard: '#FFFFFF',
+              papelSuave: '#F3F3EE',
+              borde: '#E2E2DC',
+              bordeOscuro: '#C8C8BE',
+              tinta: '#111827',
+              tintaSub: '#4B5563',
+              tintaMuda: '#71717A',
+              nocheAzulada: '#0A1124',
             },
           }
         }
@@ -121,13 +121,10 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-neutral-900 selection:text-white">
 
-  <!-- ========================================== -->
-  <!-- CABECERA STICKY EN NEGRO AZULADO           -->
-  <!-- ========================================== -->
+  <!-- CABECERA STICKY EN NEGRO AZULADO -->
   <header class="border-b border-[#1E293B] bg-[#0A1124] sticky top-0 z-50 transition-colors shadow-md">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <!-- Fila 1: Logo a la izquierda | Botón en blanco a la derecha -->
       <div class="h-16 flex items-center justify-between">
         <a href="#inicio" onclick="irA('inicio', event)" class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-xl bg-blue-300 border border-blue-400 text-[#0A1124] flex items-center justify-center transition-transform group-hover:scale-105 shadow-sm">
@@ -142,7 +139,6 @@
           </div>
         </a>
 
-        <!-- Botón de acción directo al azar en blanco -->
         <div>
           <button onclick="consultarCorriente('aleatorio')" class="font-heading font-semibold text-xs sm:text-sm px-5 py-2 rounded-full bg-white text-slate-950 hover:bg-slate-100 transition-all cursor-pointer shadow-sm">
             Deja que el azar decida
@@ -150,7 +146,6 @@
         </div>
       </div>
 
-      <!-- Fila 2: Menú Principal Centrado con 4 ítems -->
       <nav class="pb-2.5 pt-0.5 flex items-center justify-center gap-8 sm:gap-14 text-xs sm:text-sm font-heading font-normal text-slate-300">
         <a id="nav-btn-inicio" href="#inicio" onclick="irA('inicio', event)" class="nav-activo hover:text-white transition-colors py-1 cursor-pointer">Inicio</a>
         <a id="nav-btn-proposito" href="#seccion-proposito-home" onclick="irAProposito(event)" class="hover:text-white transition-colors py-1 cursor-pointer">El Propósito</a>
@@ -161,14 +156,11 @@
     </div>
   </header>
 
-  <!-- ========================================== -->
-  <!-- CONTENEDOR PRINCIPAL                        -->
-  <!-- ========================================== -->
+  <!-- CONTENEDOR PRINCIPAL -->
   <main id="app-container" class="flex-grow max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 md:py-14">
     
     <section id="vista-inicio" class="space-y-16">
       
-      <!-- Portada e Invitación Editorial -->
       <div class="text-center max-w-3xl mx-auto pt-4 pb-2">
         <span class="inline-block text-xs uppercase tracking-widest text-libro-tinta font-heading font-semibold bg-libro-papelCard px-4 py-1.5 rounded-full border border-libro-borde mb-5 shadow-xs">
           La sabiduría de la humanidad a tu servicio
@@ -181,7 +173,7 @@
         </p>
       </div>
 
-      <!-- GRILLA CONSOLIDADA DE CORRIENTES + SERENDIPIA -->
+      <!-- GRILLA DE CORRIENTES -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-corrientes">
         
         <!-- 1. Pensamiento Estoico -->
@@ -319,9 +311,7 @@
 
       </div>
 
-      <!-- ============================================================== -->
-      <!-- RESULTADO DE LA FRASE / LÁMINA INTERACTIVA                     -->
-      <!-- ============================================================== -->
+      <!-- RESULTADO DE LA FRASE / LÁMINA -->
       <div id="contenedor-resultado" class="hidden scroll-mt-24 pt-4">
         <div class="w-full max-w-4xl mx-auto space-y-8">
           
@@ -410,9 +400,7 @@
         </div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- SECCIÓN: EL PROPÓSITO                      -->
-      <!-- ========================================== -->
+      <!-- SECCIÓN: EL PROPÓSITO -->
       <section id="seccion-proposito-home" class="scroll-mt-28 pt-8 border-t border-libro-borde space-y-8">
         <div class="text-center max-w-2xl mx-auto">
           <span class="text-xs uppercase font-heading font-semibold text-libro-tinta bg-libro-papelCard px-3.5 py-1 rounded-full border border-libro-borde shadow-xs">El Propósito</span>
@@ -555,14 +543,11 @@
 
   <canvas id="canvas-export" width="1080" height="1920" class="hidden"></canvas>
 
-  <!-- ============================================================== -->
-  <!-- PIE DE PÁGINA EDITORIAL EN NEGRO AZULADO (3 COLUMNAS NIVELADAS)-->
-  <!-- ============================================================== -->
+  <!-- PIE DE PÁGINA EDITORIAL EN NEGRO AZULADO -->
   <footer class="border-t border-[#1E293B] bg-[#0A1124] pt-14 pb-12 text-white mt-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
-        <!-- Columna 1 (Izquierda): Identidad y Menú (4 columnas) -->
         <div class="lg:col-span-4 flex flex-col justify-between space-y-4 text-left">
           <div class="space-y-4">
             <div class="flex items-center gap-3">
@@ -598,7 +583,6 @@
           </div>
         </div>
 
-        <!-- Columna 2 (Centro): Invitación a Contribuir (4 columnas - Altura igualada) -->
         <div class="lg:col-span-4">
           <div class="bg-[#121C38] border border-[#22355F] rounded-2xl p-6 shadow-xl flex flex-col justify-between h-full space-y-4">
             <div class="space-y-3">
@@ -621,7 +605,6 @@
           </div>
         </div>
 
-        <!-- Columna 3 (Derecha): Cafecito Card (4 columnas - Altura igualada) -->
         <div class="lg:col-span-4">
           <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xl flex flex-col justify-between h-full space-y-4">
             <div class="space-y-3">
@@ -658,363 +641,259 @@
     </div>
   </footer>
 
-  <!-- LÓGICA INTERACTIVA Y BANCO DE FRASES -->
+  <!-- SCRIPT CON CÓDIGO DE RESPALDO Y CARGA DINÁMICA -->
   <script>
-   <script>
-  // Arreglo dinámico que se llenará desde frases.json
-  let FRASES_OPORTUNAS = [];
-  let corrienteSeleccionada = 'aleatorio';
-  let fraseActual = null;
+    // Banco de respaldo estático
+    const FRASES_RESPALDO = [
+      {
+        categoria: "Pensamiento Estoico",
+        fragmento: "No son las cosas las que atormentan a los hombres, sino los principios y juicios que los hombres forman acerca de las cosas.",
+        autor: "Epicteto",
+        obra: "Enquiridión o Manual (Siglo I d.C.)",
+        metafora: "El suceso en sí es neutro; el peso o la angustia que experimentas no viene del hecho exterior, sino del relato con el que tu juicio lo viste."
+      },
+      {
+        categoria: "Pensamiento Estoico",
+        fragmento: "Tienes poder sobre tu mente, no sobre los acontecimientos externos. Comprende esto, y hallarás tu fuerza interior.",
+        autor: "Marco Aurelio",
+        obra: "Meditaciones (Libro XII, Siglo II d.C.)",
+        metafora: "Querer gobernar lo incontrolable engendra impotencia; serenar la ciudadela de tu pensamiento propio es la única verdadera soberanía."
+      },
+      {
+        categoria: "Pensamiento Místico",
+        fragmento: "La herida es el lugar por donde la Luz entra en ti.",
+        autor: "Yalal al-Din Rumi",
+        obra: "Masnavi (Persia, Siglo XIII)",
+        metafora: "Aquello que hoy te quiebra o te hace vulnerable no es tu destrucción: es la grieta por donde tu entendimiento se abre a una comprensión más profunda."
+      },
+      {
+        categoria: "Pensamiento Introspectivo",
+        fragmento: "Llevo sobre mí las heridas de todas las batallas que evité.",
+        autor: "Fernando Pessoa",
+        obra: "Libro del desasosiego (Siglo XX)",
+        metafora: "La postergación no nos liberan del combate; solo lo trasladan al interior. Enfrentar con valor despeja el alma."
+      },
+      {
+        categoria: "Pensamiento Oriental",
+        fragmento: "El agua es fluida, suave y flexible. Pero el agua desgasta la roca. Lo que es fluido vence siempre a lo duro.",
+        autor: "Lao Tsé",
+        obra: "Tao Te King (China Clásica, Siglo IV a.C.)",
+        metafora: "No respondas a la rigidez con más aspereza. La flexibilidad y la paciencia logran superar los obstáculos más duros."
+      },
+      {
+        categoria: "Pensamiento Práctico",
+        fragmento: "Saber olvidar es más dicha que arte; conviene acordarse de las cosas que más importan y olvidar las que no aprovechan.",
+        autor: "Baltasar Gracián",
+        obra: "Oráculo manual y arte de prudencia (1647)",
+        metafora: "La memoria que almacena ofensas envenena la marcha. El juicio prudente selecciona qué conservar y qué soltar."
+      }
+    ];
 
-  // Cargar dinámicamente el archivo frases.json
-  async function cargarFrasesJSON() {
-    try {
-      const respuesta = await fetch('frases.json');
-      if (!respuesta.ok) throw new Error('No se pudo cargar frases.json');
-      FRASES_OPORTUNAS = await respuesta.json();
-    } catch (error) {
-      console.error('Error al cargar frases:', error);
-      mostrarToast("No se pudieron cargar las frases desde el archivo JSON.");
-    }
-  }
+    let FRASES_OPORTUNAS = [...FRASES_RESPALDO];
+    let corrienteSeleccionada = 'aleatorio';
+    let fraseActual = null;
 
-  async function consultarCorriente(corriente) {
-    // Si aún no se han cargado las frases desde el JSON, se descargan primero
-    if (FRASES_OPORTUNAS.length === 0) {
-      await cargarFrasesJSON();
-    }
-
-    if (FRASES_OPORTUNAS.length === 0) return;
-
-    corrienteSeleccionada = corriente;
-
-    document.querySelectorAll('#grid-corrientes > button').forEach(b => b.classList.remove('tarjeta-activa'));
-    if (corriente !== 'aleatorio') {
-      const tarjeta = document.getElementById(`card-${corriente}`);
-      if (tarjeta) tarjeta.classList.add('tarjeta-activa');
-    }
-
-    let banco = FRASES_OPORTUNAS;
-    if (corriente !== 'aleatorio') {
-      banco = FRASES_OPORTUNAS.filter(f => f.categoria === corriente);
-    }
-
-    if (banco.length === 0) {
-      mostrarToast(`No hay frases disponibles para ${corriente}.`);
-      return;
-    }
-
-    let opciones = banco;
-    if (fraseActual && banco.length > 1) {
-      opciones = banco.filter(f => f.fragmento !== fraseActual.fragmento);
-    }
-
-    const indice = Math.floor(Math.random() * opciones.length);
-    fraseActual = opciones[indice];
-
-    mostrarCita(fraseActual);
-  }
-
-  function reconsultarMismaCorriente() {
-    if (!fraseActual) return;
-    consultarCorriente(corrienteSeleccionada);
-  }
-
-  function mostrarCita(cita) {
-    const contenedor = document.getElementById('contenedor-resultado');
-    const tarjeta = document.getElementById('tarjeta-lectura');
-
-    tarjeta.classList.remove('anim-revelar');
-    void tarjeta.offsetWidth;
-    tarjeta.classList.add('anim-revelar');
-
-    document.getElementById('res-categoria-nombre').textContent = cita.categoria;
-    document.getElementById('res-fragmento').textContent = cita.fragmento;
-    document.getElementById('res-autor').textContent = cita.autor;
-    document.getElementById('res-obra').textContent = cita.obra;
-    document.getElementById('res-metafora').textContent = cita.metafora;
-
-    const btnReconsultar = document.getElementById('btn-reconsultar-mismo');
-    if (corrienteSeleccionada === 'aleatorio') {
-      btnReconsultar.textContent = `↻ Otra frase de ${cita.categoria}`;
-    } else {
-      btnReconsultar.textContent = `↻ Otra frase de esta corriente`;
-    }
-
-    contenedor.classList.remove('hidden');
-
-    setTimeout(() => {
-      contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  }
-
-  function copiarCitaTexto() {
-    if (!fraseActual) return;
-    const texto = `“${fraseActual.fragmento}”\n\n— ${fraseActual.autor}, ${fraseActual.obra}\n\nFrase Oportuna • Sabiduría Universal`;
-    
-    const textArea = document.createElement("textarea");
-    textArea.value = texto;
-    textArea.style.position = "fixed";
-    textArea.style.left = "-999999px";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    
-    try {
-      document.execCommand('copy');
-      mostrarToast("Pasaje copiado al portapapeles con éxito.");
-    } catch (err) {
-      mostrarToast("No fue posible copiar automáticamente.");
-    } finally {
-      document.body.removeChild(textArea);
-    }
-  }
-
-  function descargarLámina() {
-    if (!fraseActual) return;
-
-    const canvas = document.getElementById('canvas-export');
-    const ctx = canvas.getContext('2d');
-    const W = 1080;
-    const H = 1920;
-
-    ctx.fillStyle = "#0A1124";
-    ctx.fillRect(0, 0, W, H);
-
-    const cardX = 90;
-    const cardY = 160;
-    const cardW = W - 180;
-    const cardH = H - 320;
-    const radius = 48;
-
-    ctx.save();
-    ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
-    ctx.shadowBlur = 40;
-    ctx.shadowOffsetY = 15;
-    
-    ctx.beginPath();
-    ctx.moveTo(cardX + radius, cardY);
-    ctx.lineTo(cardX + cardW - radius, cardY);
-    ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
-    ctx.lineTo(cardX + cardW, cardY + cardH - radius);
-    ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
-    ctx.lineTo(cardX + radius, cardY + cardH);
-    ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
-    ctx.lineTo(cardX, cardY + radius);
-    ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
-    ctx.closePath();
-    ctx.fillStyle = "#FFFFFF";
-    ctx.fill();
-    ctx.restore();
-
-    ctx.save();
-    ctx.beginPath();
-    ctx.moveTo(cardX + radius, cardY);
-    ctx.lineTo(cardX + cardW - radius, cardY);
-    ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
-    ctx.lineTo(cardX + cardW, cardY + cardH - radius);
-    ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
-    ctx.lineTo(cardX + radius, cardY + cardH);
-    ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
-    ctx.lineTo(cardX, cardY + radius);
-    ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
-    ctx.closePath();
-    ctx.strokeStyle = "#E2E2DC";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    ctx.restore();
-
-    const tagW = 340;
-    const tagH = 50;
-    const tagX = (W - tagW) / 2;
-    const tagY = cardY + 70;
-    
-    ctx.beginPath();
-    ctx.roundRect(tagX, tagY, tagW, tagH, 25);
-    ctx.fillStyle = "#F3F3EE";
-    ctx.fill();
-    ctx.strokeStyle = "#E2E2DC";
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-
-    ctx.fillStyle = "#111827";
-    ctx.font = "bold 18px 'Nunito', sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 32);
-
-    ctx.textAlign = "center";
-    const maxWidth = cardW - 140;
-    const lineHeight = 66;
-    let startY = tagY + 160;
-
-    ctx.fillStyle = "#111827";
-    ctx.font = "300 40px 'Roboto', sans-serif";
-    
-    const words = fraseActual.fragmento.split(' ');
-    let line = '';
-    let lines = [];
-
-    for (let n = 0; n < words.length; n++) {
-      const testLine = line + words[n] + ' ';
-      const metrics = ctx.measureText(testLine);
-      if (metrics.width > maxWidth && n > 0) {
-        lines.push(line.trim());
-        line = words[n] + ' ';
-      } else {
-        line = testLine;
+    // Cargar frases.json o varias alternativas posibles de nombre
+    async function cargarFrasesJSON() {
+      const posiblesNombres = ['frases.json', 'Frases.json', '/frases.json'];
+      
+      for (const archivo of posiblesNombres) {
+        try {
+          const respuesta = await fetch(archivo);
+          if (respuesta.ok) {
+            const datos = await respuesta.json();
+            if (Array.isArray(datos) && datos.length > 0) {
+              FRASES_OPORTUNAS = datos;
+              return;
+            }
+          }
+        } catch (e) {
+          // Intenta el siguiente nombre
+        }
       }
     }
-    lines.push(line.trim());
 
-    const firstLineWidth = ctx.measureText(lines[0]).width;
-    const firstLineX = (W / 2) - (firstLineWidth / 2);
-    ctx.save();
-    ctx.font = "italic 56px 'Playfair Display', Georgia, serif";
-    ctx.fillStyle = "#111827";
-    ctx.textAlign = "right";
-    ctx.fillText("“", firstLineX - 10, startY + 5);
-    ctx.restore();
+    async function consultarCorriente(corriente) {
+      corrienteSeleccionada = corriente;
 
-    for (let i = 0; i < lines.length; i++) {
+      document.querySelectorAll('#grid-corrientes > button').forEach(b => b.classList.remove('tarjeta-activa'));
+      if (corriente !== 'aleatorio') {
+        const tarjeta = document.getElementById(`card-${corriente}`);
+        if (tarjeta) tarjeta.classList.add('tarjeta-activa');
+      }
+
+      let banco = FRASES_OPORTUNAS;
+      if (corriente !== 'aleatorio') {
+        banco = FRASES_OPORTUNAS.filter(f => f.categoria === corriente);
+      }
+
+      if (!banco || banco.length === 0) {
+        banco = FRASES_RESPALDO.filter(f => f.categoria === corriente || corriente === 'aleatorio');
+      }
+
+      let opciones = banco;
+      if (fraseActual && banco.length > 1) {
+        opciones = banco.filter(f => f.fragmento !== fraseActual.fragmento);
+      }
+
+      const indice = Math.floor(Math.random() * opciones.length);
+      fraseActual = opciones[indice];
+
+      mostrarCita(fraseActual);
+    }
+
+    function reconsultarMismaCorriente() {
+      if (!fraseActual) return;
+      consultarCorriente(corrienteSeleccionada);
+    }
+
+    function mostrarCita(cita) {
+      if (!cita) return;
+
+      const contenedor = document.getElementById('contenedor-resultado');
+      const tarjeta = document.getElementById('tarjeta-lectura');
+
+      tarjeta.classList.remove('anim-revelar');
+      void tarjeta.offsetWidth;
+      tarjeta.classList.add('anim-revelar');
+
+      document.getElementById('res-categoria-nombre').textContent = cita.categoria;
+      document.getElementById('res-fragmento').textContent = cita.fragmento;
+      document.getElementById('res-autor').textContent = cita.autor;
+      document.getElementById('res-obra').textContent = cita.obra;
+      document.getElementById('res-metafora').textContent = cita.metafora;
+
+      const btnReconsultar = document.getElementById('btn-reconsultar-mismo');
+      if (corrienteSeleccionada === 'aleatorio') {
+        btnReconsultar.textContent = `↻ Otra frase de ${cita.categoria}`;
+      } else {
+        btnReconsultar.textContent = `↻ Otra frase de esta corriente`;
+      }
+
+      contenedor.classList.remove('hidden');
+
+      setTimeout(() => {
+        contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    function copiarCitaTexto() {
+      if (!fraseActual) return;
+      const texto = `“${fraseActual.fragmento}”\n\n— ${fraseActual.autor}, ${fraseActual.obra}\n\nFrase Oportuna • Sabiduría Universal`;
+      
+      const textArea = document.createElement("textarea");
+      textArea.value = texto;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-999999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        mostrarToast("Pasaje copiado al portapapeles con éxito.");
+      } catch (err) {
+        mostrarToast("No fue posible copiar automáticamente.");
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+
+    function descargarLámina() {
+      if (!fraseActual) return;
+
+      const canvas = document.getElementById('canvas-export');
+      const ctx = canvas.getContext('2d');
+      const W = 1080;
+      const H = 1920;
+
+      ctx.fillStyle = "#0A1124";
+      ctx.fillRect(0, 0, W, H);
+
+      const cardX = 90;
+      const cardY = 160;
+      const cardW = W - 180;
+      const cardH = H - 320;
+      const radius = 48;
+
+      ctx.save();
+      ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+      ctx.shadowBlur = 40;
+      ctx.shadowOffsetY = 15;
+      
+      ctx.beginPath();
+      ctx.moveTo(cardX + radius, cardY);
+      ctx.lineTo(cardX + cardW - radius, cardY);
+      ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
+      ctx.lineTo(cardX + cardW, cardY + cardH - radius);
+      ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
+      ctx.lineTo(cardX + radius, cardY + cardH);
+      ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
+      ctx.lineTo(cardX, cardY + radius);
+      ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
+      ctx.closePath();
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cardX + radius, cardY);
+      ctx.lineTo(cardX + cardW - radius, cardY);
+      ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
+      ctx.lineTo(cardX + cardW, cardY + cardH - radius);
+      ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
+      ctx.lineTo(cardX + radius, cardY + cardH);
+      ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
+      ctx.lineTo(cardX, cardY + radius);
+      ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
+      ctx.closePath();
+      ctx.strokeStyle = "#E2E2DC";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.restore();
+
+      const tagW = 340;
+      const tagH = 50;
+      const tagX = (W - tagW) / 2;
+      const tagY = cardY + 70;
+      
+      ctx.beginPath();
+      ctx.roundRect(tagX, tagY, tagW, tagH, 25);
+      ctx.fillStyle = "#F3F3EE";
+      ctx.fill();
+      ctx.strokeStyle = "#E2E2DC";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = "#111827";
+      ctx.font = "bold 18px 'Nunito', sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 32);
+
+      ctx.textAlign = "center";
+      const maxWidth = cardW - 140;
+      const lineHeight = 66;
+      let startY = tagY + 160;
+
       ctx.fillStyle = "#111827";
       ctx.font = "300 40px 'Roboto', sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText(lines[i], W / 2, startY + (i * lineHeight));
-    }
+      
+      const words = fraseActual.fragmento.split(' ');
+      let line = '';
+      let lines = [];
 
-    const lastLineIndex = lines.length - 1;
-    const lastLineWidth = ctx.measureText(lines[lastLineIndex]).width;
-    const lastLineX = (W / 2) + (lastLineWidth / 2);
-    ctx.save();
-    ctx.font = "italic 56px 'Playfair Display', Georgia, serif";
-    ctx.fillStyle = "#111827";
-    ctx.textAlign = "left";
-    ctx.fillText("”", lastLineX + 10, startY + (lastLineIndex * lineHeight) + 5);
-    ctx.restore();
-
-    let currentY = startY + (lines.length * lineHeight) + 40;
-
-    ctx.beginPath();
-    ctx.moveTo((W / 2) - 180, currentY);
-    ctx.lineTo((W / 2) + 180, currentY);
-    ctx.strokeStyle = "#E2E2DC";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    currentY += 50;
-
-    ctx.textAlign = "center";
-    ctx.fillStyle = "#111827";
-    ctx.font = "bold 27px 'Nunito', sans-serif";
-    ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
-
-    currentY += 34;
-    ctx.fillStyle = "#4B5563";
-    ctx.font = "300 23px 'Roboto', sans-serif";
-    ctx.fillText(fraseActual.obra, W / 2, currentY);
-
-    currentY += 55;
-    const reflBoxW = cardW - 120;
-    const reflBoxX = (W - reflBoxW) / 2;
-    const reflBoxY = currentY;
-
-    ctx.fillStyle = "#F3F3EE";
-    ctx.beginPath();
-    ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, 230, 24);
-    ctx.fill();
-    ctx.strokeStyle = "#E2E2DC";
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-
-    ctx.textAlign = "center";
-    ctx.fillStyle = "#111827";
-    ctx.font = "bold 19px 'Nunito', sans-serif";
-    ctx.fillText("PAUSA DE REFLEXIÓN", W / 2, reflBoxY + 45);
-
-    ctx.fillStyle = "#374151";
-    ctx.font = "300 23px 'Roboto', sans-serif";
-    
-    const reflWords = fraseActual.metafora.split(' ');
-    let reflLine = '';
-    let reflLines = [];
-    for (let m = 0; m < reflWords.length; m++) {
-      const testLine = reflLine + reflWords[m] + ' ';
-      if (ctx.measureText(testLine).width > reflBoxW - 60 && m > 0) {
-        reflLines.push(reflLine.trim());
-        reflLine = reflWords[m] + ' ';
-      } else {
-        reflLine = testLine;
+      for (let n = 0; n < words.length; n++) {
+        const testLine = line + words[n] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && n > 0) {
+          lines.push(line.trim());
+          line = words[n] + ' ';
+        } else {
+          line = testLine;
+        }
       }
-    }
-    reflLines.push(reflLine.trim());
+      lines.push(line.trim());
 
-    for (let k = 0; k < reflLines.length; k++) {
-      ctx.fillText(reflLines[k], W / 2, reflBoxY + 95 + (k * 36));
-    }
-
-    ctx.textAlign = "center";
-    ctx.fillStyle = "#111827";
-    ctx.font = "bold 22px 'Nunito', sans-serif";
-    ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, cardY + cardH - 65);
-
-    ctx.fillStyle = "#6B7280";
-    ctx.font = "400 17px 'Roboto', sans-serif";
-    ctx.fillText("frase-oportuna.vercel.app", W / 2, cardY + cardH - 35);
-
-    try {
-      const dataUrl = canvas.toDataURL("image/png");
-      const link = document.createElement('a');
-      link.download = `Frase-Oportuna-${fraseActual.autor.replace(/\s+/g, '-')}.png`;
-      link.href = dataUrl;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      mostrarToast("Lámina generada para Stories.");
-    } catch (e) {
-      mostrarToast("No fue posible generar la imagen en este dispositivo.");
-    }
-  }
-
-  function mostrarToast(mensaje) {
-    const toast = document.getElementById('toast-notificacion');
-    const toastTexto = document.getElementById('toast-mensaje');
-    toastTexto.textContent = mensaje;
-    
-    toast.classList.remove('translate-y-20', 'opacity-0');
-    toast.classList.add('translate-y-0', 'opacity-100');
-
-    setTimeout(() => {
-      toast.classList.remove('translate-y-0', 'opacity-100');
-      toast.classList.add('translate-y-20', 'opacity-0');
-    }, 3000);
-  }
-
-  function irA(seccion, e) {
-    if (e) e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.getElementById('nav-btn-inicio')?.classList.add('nav-activo');
-    document.getElementById('nav-btn-proposito')?.classList.remove('nav-activo');
-  }
-
-  function irAProposito(e) {
-    if (e) e.preventDefault();
-    const elem = document.getElementById('seccion-proposito-home');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.getElementById('nav-btn-proposito')?.classList.add('nav-activo');
-      document.getElementById('nav-btn-inicio')?.classList.remove('nav-activo');
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const elYear = document.getElementById('year-copy');
-    if (elYear) elYear.textContent = new Date().getFullYear();
-    
-    // Carga inicial del archivo JSON al cargar la página
-    cargarFrasesJSON();
-  });
-</script>
-  </script>
-
-</body>
-</html>
+      const firstLineWidth = ctx.measureText(lines[0]).width;
+      const firstLineX = (W / 2
