@@ -558,5 +558,486 @@
     "autor": "MARCEL PROUST",
     "obra": "En busca del tiempo perdido (1923)",
     "metafora": "Transforma la mirada con la que juzgas lo cotidiano y descubrirás la profundidad oculta en lo habitual."
-  }
+  },
+  {
+"id": 76,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El viaje de diez mil leguas comienza con un solo paso.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "Cualquier gran proyecto o cambio vital abruma si se mira completo; enfócate solo en la pequeña acción que puedes realizar hoy."
+},
+{
+"id": 77,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El agua es blanda y dócil, pero penetra lo duro y resistente. En vencer lo rígido, nada la supera.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "La flexibilidad y la paciencia suelen lograr mejores resultados ante los problemas difíciles que la fuerza bruta o el enfrentamiento directo."
+},
+{
+"id": 78,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Aquel que conoce a los demás es sabio; aquel que se conoce a sí mismo es iluminado.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "Comprender tu propia mente, virtudes y límites te otorga una libertad interna mucho mayor que intentar descifrar las intenciones ajenas."
+},
+{
+"id": 79,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Saber que se sabe lo que se sabe, y saber que no se sabe lo que no se sabe; esa es la verdadera sabiduría.",
+"autor": "CONFUCIO",
+"obra": "Analectas (Siglo V a. C.)",
+"metafora": "Reconocer con honestidad tus lagunas de conocimiento evita errores por arrogancia y abre la puerta a un aprendizaje continuo."
+},
+{
+"id": 80,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Exígete mucho a ti mismo y espera poco de los demás. Así te ahorrarás disgustos.",
+"autor": "CONFUCIO",
+"obra": "Analectas (Siglo V a. C.)",
+"metafora": "Enfocar la energía en la autoexigencia reduce las expectativas frustradas sobre el comportamiento ajeno y aporta paz mental diaria."
+},
+{
+"id": 81,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Quien hace preguntas es un tonto por cinco minutos; quien no hace preguntas sigue siendo un tonto para siempre.",
+"autor": "PROVERBIO CHINO",
+"obra": "Proverbios Tradicionales Chinos (Siglo IV a. C.)",
+"metafora": "Supera la vergüenza momentánea de admitir ignorancia para adquirir el conocimiento permanente que te permitirá resolver dificultades cotidianas."
+},
+{
+"id": 82,
+"categoria": "Pensamiento Oriental",
+"fragmento": "En medio del caos, también hay oportunidad.",
+"autor": "SUN TZU",
+"obra": "El Arte de la Guerra (Siglo V a. C.)",
+"metafora": "Los momentos de desorden e incertidumbre contienen siempre el germen de nuevas soluciones si mantienes la calma y la perspectiva estratégica."
+},
+{
+"id": 83,
+"categoria": "Pensamiento Oriental",
+"fragmento": "No hay fuego como la pasión, no hay malvado como el odio, no hay trampa como la ilusión, no hay torrente como la codicia.",
+"autor": "BUDA GAUTAMA",
+"obra": "Dhammapada (Siglo III a. C.)",
+"metafora": "Identificar los impulsos extremos te ayuda a no tomar decisiones precipitadas guiado por el apego o la aversión del momento."
+},
+{
+"id": 84,
+"categoria": "Pensamiento Oriental",
+"fragmento": "La mente lo es todo; te conviertes en lo que piensas.",
+"autor": "BUDA GAUTAMA",
+"obra": "Dhammapada (Siglo III a. C.)",
+"metafora": "Cuidar la calidad de tu diálogo interno moldea directamente la actitud con la que interpretas y reaccionas ante tu entorno."
+},
+{
+"id": 85,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El que domina a los demás es fuerte; el que se domina a sí mismo es poderoso.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "El verdadero autocontrol emocional ante imprevistos cotidianos constituye una fortaleza superior a cualquier intento de imponer voluntad externa."
+},
+  {
+"id": 86,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El árbol que no sabe doblarse ante el viento, termina rompiéndose.",
+"autor": "PROVERBIO CHINO",
+"obra": "Proverbios Tradicionales Chinos (Siglo IV a. C.)",
+"metafora": "Adaptarse a los cambios imprevistos en lugar de resistirse rígidamente te permite superar las tempestades de la vida sin quebrantarte."
+},
+{
+"id": 87,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Aquel que despliega sus velas antes de que sople el viento, perderá su rumbo.",
+"autor": "LIE ZÉ",
+"obra": "Liezi (Siglo IV a. C.)",
+"metafora": "Aprender a esperar el momento oportuno evita esfuerzos innecesarios y garantiza que actúes con el verdadero impulso a tu favor."
+},
+{
+"id": 88,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Si estás deprimido, estás viviendo en el pasado. Si estás ansioso, estás viviendo en el futuro. Si estás en paz, estás viviendo en el presente.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "Centrar la atención en el instante actual libera a la mente de pesares pasados y de incertidumbres que aún no suceden."
+},
+{
+"id": 89,
+"categoria": "Pensamiento Oriental",
+"fragmento": "La montaña no se mueve por el viento, por fuerte que este sea.",
+"autor": "PROVERBIO JAPONÉS",
+"obra": "Proverbios Tradicionales Japoneses (Siglo XII)",
+"metafora": "Mantén la firmeza de tus principios internos aunque las opiniones ajenas y las dificultades externas intenten desestabilizarte."
+},
+{
+"id": 90,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El que aprende pero no piensa, está perdido. El que piensa pero no aprende, está en gran peligro.",
+"autor": "CONFUCIO",
+"obra": "Analectas (Siglo V a. C.)",
+"metafora": "Combina la lectura y la adquisición de datos con el análisis crítico para convertir la información en verdadera sabiduría práctica."
+},
+{
+"id": 91,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Sostener una taza llena hasta el borde no es tan bueno como detenerse a tiempo.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "Aprender a poner límites al trabajo y la ambición previene el agotamiento y mantiene el equilibrio en tus proyectos cotidianos."
+},
+{
+"id": 92,
+"categoria": "Pensamiento Oriental",
+"fragmento": "No temas ir despacio, teme solamente detenerte.",
+"autor": "PROVERBIO CHINO",
+"obra": "Proverbios Tradicionales Chinos (Siglo IV a. C.)",
+"metafora": "El progreso constante, por pequeño que parezca cada día, te llevará inevitablemente a alcanzar tus metas a largo plazo."
+},
+{
+"id": 93,
+"categoria": "Pensamiento Oriental",
+"fragmento": "La ira es como sostener un carbón encendido con la intención de arrojárselo a alguien; tú eres quien se quema.",
+"autor": "BUDA GAUTAMA",
+"obra": "Dhammapada (Siglo III a. C.)",
+"metafora": "Soltar los rencores no es un favor hacia los demás, sino una decisión vital para sanar tu propia tranquilidad mental."
+},
+{
+"id": 94,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Cuando el sabio señala la luna, el necio mira el dedo.",
+"autor": "PROVERBIO ZEN",
+"obra": "Enseñanzas Tradicionales Zen (Siglo VIII)",
+"metafora": "Enfócate en el propósito esencial de las cosas y no te distraigas con los detalles superficiales o los intermediarios."
+},
+{
+"id": 95,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El sabio no acumula. Cuanto más hace por los demás, más tiene.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "Compartir tus conocimientos y recursos con la comunidad genera un valor intangible que regresa multiplicado a tu vida."
+},
+  [
+{
+"id": 96,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Cae siete veces, levántate ocho.",
+"autor": "PROVERBIO JAPONÉS",
+"obra": "Proverbios Tradicionales Japoneses (Siglo XIV)",
+"metafora": "El fracaso no se define por las caídas que sufres, sino por tu capacidad para levantarte con perseverancia ante cada obstáculo."
+},
+{
+"id": 97,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Aquel que gana a los demás es poderoso; aquel que se vence a sí mismo es fuerte.",
+"autor": "LAO ZÉ",
+"obra": "Tao Te Ching (Siglo VI a. C.)",
+"metafora": "Superar tus propios miedos, impulsos y limitaciones personales representa una victoria mucho mayor que cualquier triunfo competitivo exterior."
+},
+{
+"id": 98,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Lo que piensas, lo te conviertes. Lo que sientes, lo atraes. Lo que imaginas, lo creas.",
+"autor": "BUDA GAUTAMA",
+"obra": "Dhammapada (Siglo III a. C.)",
+"metafora": "Tus pensamientos y emociones diarias van moldeando tu actitud, determinando cómo percibes y construyes las oportunidades de tu vida cotidiana."
+},
+{
+"id": 99,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El sabio busca lo que desea en su interior; el necio lo busca en los demás.",
+"autor": "CONFUCIO",
+"obra": "Analectas (Siglo V a. C.)",
+"metafora": "Busca la aprobación y la paz dentro de ti mismo en lugar de depender constantemente del reconocimiento o juicio de los demás."
+},
+{
+"id": 100,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Una joya no se pule sin fricción, ni el hombre se perfecciona sin pruebas.",
+"autor": "SENECA EN PROVERBIO CHINO",
+"obra": "Proverbios Tradicionales Chinos (Siglo IV a. C.)",
+"metafora": "Las dificultades y contratiempos de la vida son oportunidades valiosas para fortalecer tu carácter y desarrollar resiliencia personal."
+},
+{
+"id": 101,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El bambú que se dobla es más fuerte que el roble que se resiste.",
+"autor": "PROVERBIO ZEN",
+"obra": "Enseñanzas Tradicionales Zen (Siglo VIII)",
+"metafora": "La flexibilidad mental para adaptarte a los cambios inesperados te protege de romperte ante las tensiones del día a día."
+},
+{
+"id": 102,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Vacía tu copa para que pueda ser llenada; quédate sin nada para ganar el todo.",
+"autor": "PROVERBIO ZEN",
+"obra": "Enseñanzas Tradicionales Zen (Siglo IX)",
+"metafora": "Libérate de prejuicios y suposiciones previas para poder aprender ideas nuevas y afrontar tus desafíos con mente abierta."
+},
+{
+"id": 103,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Si un problema tiene solución, ¿para qué preocuparse? Si no la tiene, ¿para qué preocuparse?",
+"autor": "PROVERBIO TIBETANO",
+"obra": "Tradición Oral Tibetana (Siglo XI)",
+"metafora": "Diferencia lo que puedes controlar de lo impredecible para enfocar tu energía en soluciones reales en vez de angustiarte."
+},
+{
+"id": 104,
+"categoria": "Pensamiento Oriental",
+"fragmento": "El mejor momento para plantar un árbol fue hace veinte años. El segundo mejor momento es ahora.",
+"autor": "PROVERBIO CHINO",
+"obra": "Proverbios Tradicionales Chinos (Siglo IV a. C.)",
+"metafora": "No lamentes el tiempo perdido; comienza hoy mismo a construir las metas y hábitos que deseas para tu futuro."
+},
+{
+"id": 105,
+"categoria": "Pensamiento Oriental",
+"fragmento": "Quien supera a los hombres es fuerte; quien se vence a sí mismo es verdaderamente poderoso.",
+"autor": "ZHUANGZI",
+"obra": "Zhuangzi (Siglo IV a. C.)",
+"metafora": "El autodominio sobre tus propios hábitos y emociones genera una fortaleza interior indispensable para cualquier proyecto de vida."
+},
+    {
+"id": 106,
+"categoria": "Pensamiento Práctico",
+"fragmento": "No es que tengamos poco tiempo, sino que perdemos mucho.",
+"autor": "SÉNECA",
+"obra": "Sobre la brevedad de la vida (Siglo I)",
+"metafora": "Organiza tus prioridades diarias eliminando distracciones para aprovechar el tiempo en aquello que realmente aporta valor a tu vida."
+},
+{
+"id": 107,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Lo que deba hacerse bien, hágalo usted mismo.",
+"autor": "BENJAMIN FRANKLIN",
+"obra": "Almanaque del pobre Richard (Siglo XVIII)",
+"metafora": "Asume la responsabilidad directa de tus proyectos más importantes para garantizar el resultado sin depender de la iniciativa de otros."
+},
+{
+"id": 108,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Saber no es suficiente; debemos aplicar. Querer no es suficiente; debemos hacer.",
+"autor": "JOHANN WOLFGANG VON GOETHE",
+"obra": "Máximas y reflexiones (Siglo XIX)",
+"metafora": "Transforma tus conocimientos y buenas intenciones en acciones concretas cotidianas, pues solo la práctica genera cambios reales."
+},
+{
+"id": 109,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Comienza; la audacia tiene genio, poder y magia en ella.",
+"autor": "JOHANN WOLFGANG VON GOETHE",
+"obra": "Fausto (Siglo XIX)",
+"metafora": "Vence la parálisis por análisis dando el primer paso hoy; el movimiento inicial genera la energía y claridad necesarias."
+},
+{
+"id": 110,
+"categoria": "Pensamiento Práctico",
+"fragmento": "La experiencia es una llama que no alumbra sino a quien se quema en ella.",
+"autor": "BENITO PÉRER GALDÓS",
+"obra": "Episodios Nacionales (Siglo XIX)",
+"metafora": "Aprende de tus propios errores cotidianos para fortalecer el criterio personal ante las decisiones futuras que debas tomar."
+},
+{
+"id": 111,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Quien tiene un porqué para vivir se puede adaptar a casi cualquier cómo.",
+"autor": "FRIEDRICH NIETZSCHE",
+"obra": "El crepúsculo de los ídolos (Siglo XIX)",
+"metafora": "Define con claridad tus metas fundamentales; tener un propósito firme te ayudará a superar cualquier contratiempo práctico."
+},
+{
+"id": 112,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Un lugar para cada cosa y cada cosa en su lugar.",
+"autor": "BENJAMIN FRANKLIN",
+"obra": "Autobiografía de Benjamin Franklin (Siglo XVIII)",
+"metafora": "Mantén el orden físico en tu entorno de trabajo para reducir la fatiga mental y optimizar tu rendimiento diario."
+},
+{
+"id": 113,
+"categoria": "Pensamiento Práctico",
+"fragmento": "El camino hacia adelante consiste en empezar.",
+"autor": "MARK TWAIN",
+"obra": "Ensayos y Aforismos (Siglo XIX)",
+"metafora": "Divide las tareas abrumadoras en pequeños pasos manejables para superar la procrastinación y avanzar de manera constante."
+},
+{
+"id": 114,
+"categoria": "Pensamiento Práctico",
+"fragmento": "La prudencia consiste en saber distinguir los inconvenientes y tomar el menos malo por bueno.",
+"autor": "NICOLÁS MAQUIAVELO",
+"obra": "El príncipe (Siglo XVI)",
+"metafora": "Ante situaciones difíciles, analiza con frialdad las opciones disponibles y elige la solución pragmática con menor impacto negativo."
+},
+{
+"id": 115,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Las cosas no valen por lo que cuestan, sino por lo que valen para quien las necesita.",
+"autor": "BALTASAR GRACIÁN",
+"obra": "Oráculo manual y arte de prudencia (Siglo XVII)",
+"metafora": "Valora tus recursos y decisiones en función del uso real y beneficio que aportan a tu vida cotidiana."
+},
+    {
+"id": 116,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Quien de todo se informa, de mucho se engaña; y quien a nada atiende, de todo carece.",
+"autor": "BALTASAR GRACIÁN",
+"obra": "Oráculo manual y arte de prudencia (Siglo XVII)",
+"metafora": "Filtra la sobreinformación diaria para no saturarte, pero mantén la atención en lo esencial para tomar buenas decisiones prácticas."
+},
+{
+"id": 117,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Mucho sabe quien sabe callar a tiempo y esperar el momento oportuno.",
+"autor": "FRANCIS BACON",
+"obra": "Ensayos de moral y política (Siglo XVII)",
+"metafora": "Controla el impulso de responder de inmediato; la pausa estratégica te permite evaluar mejor los contextos y evitar conflictos innecesarios."
+},
+{
+"id": 118,
+"categoria": "Pensamiento Práctico",
+"fragmento": "La preparación es la clave del éxito; sin ella, el fracaso está asegurado.",
+"autor": "BENJAMIN FRANKLIN",
+"obra": "Almanaque del pobre Richard (Siglo XVIII)",
+"metafora": "Anticipa los detalles de tus tareas diarias antes de ejecutarlas para reducir imprevistos y optimizar tus esfuerzos con eficacia."
+},
+{
+"id": 119,
+"categoria": "Pensamiento Práctico",
+"fragmento": "No hay viento favorable para el que no sabe a qué puerto se dirige.",
+"autor": "SÉNECA",
+"obra": "Cartas a Lucilio (Siglo I)",
+"metafora": "Define con claridad tus metas personales para que las oportunidades cotidianas cobren un sentido real y puedas aprovecharlas al máximo."
+},
+{
+"id": 120,
+"categoria": "Pensamiento Práctico",
+"fragmento": "El dinero es un buen siervo pero un mal amo.",
+"autor": "FRANCIS BACON",
+"obra": "Ensayos de moral y política (Siglo XVII)",
+"metafora": "Utiliza los recursos materiales como herramientas para alcanzar tus metas sin permitir que el consumo dirija tus decisiones ni tu bienestar."
+},
+{
+"id": 121,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Lo perfecto es enemigo de lo bueno.",
+"autor": "VOLTAIRE",
+"obra": "Diccionario filosófico (Siglo XVIII)",
+"metafora": "Evita estancarte buscando la perfección absoluta; entrega resultados funcionales a tiempo y perfecciónalos progresivamente sobre la marcha."
+},
+{
+"id": 122,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Es más fácil prevenir las malas costumbres que curarlas.",
+"autor": "BENJAMIN FRANKLIN",
+"obra": "Almanaque del pobre Richard (Siglo XVIII)",
+"metafora": "Establece rutinas saludables hoy para evitar el costo emocional y físico de corregir hábitos dañinos consolidados con el tiempo."
+},
+{
+"id": 123,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Del dicho al hecho hay un gran trecho.",
+"autor": "MIGUEL DE CERVANTES",
+"obra": "El ingenioso hidalgo Don Quijote de la Mancha (Siglo XVII)",
+"metafora": "Mide tu progreso y el de los demás por las acciones concretas realizadas, no por las intenciones o promesas formuladas."
+},
+{
+"id": 124,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Nunca dejes para mañana lo que puedas hacer hoy.",
+"autor": "BENJAMIN FRANKLIN",
+"obra": "Almanaque del pobre Richard (Siglo XVIII)",
+"metafora": "Resuelve de inmediato los pendientes breves para despejar tu mente y liberar tiempo para proyectos de mayor envergadura."
+},
+{
+"id": 125,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Saber elegir es la mitad del arte de conseguir.",
+"autor": "BALTASAR GRACIÁN",
+"obra": "Oráculo manual y arte de prudencia (Siglo XVII)",
+"metafora": "Aprende a renunciar a opciones secundarias para concentrar toda tu energía y recursos en tus verdaderas prioridades vitales."
+},
+{
+"id": 126,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Con el tiempo y la paciencia se adquiere la hoja de seda de la hoja de la morera.",
+"autor": "ROBERT DODSLEY",
+"obra": "El arte de pensar en la vida humana (Siglo XVIII)",
+"metafora": "La constancia silenciosa transforma pequeños esfuerzos diarios en grandes logros personales; no desestimes los procesos lentos pero firmes."
+},
+{
+"id": 127,
+"categoria": "Pensamiento Práctico",
+"fragmento": "El valor de las cosas no está en el tiempo que duran, sino en las huellas que dejan.",
+"autor": "JAIME BALMES",
+"obra": "El criterio (Siglo XIX)",
+"metafora": "Enfoca tus esfuerzos cotidianos en crear un impacto duradero en tu entorno en lugar de buscar la inmediatez efímera."
+},
+{
+"id": 128,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Mide diez veces antes de cortar una sola vez.",
+"autor": "PROVERBIO TRADICIONAL",
+"obra": "Aforismos de la Sabiduría Popular (Siglo XVIII)",
+"metafora": "Analizar en detalle los pasos previos a una decisión importante te ahorrará tiempo, recursos y correcciones costosas en el futuro."
+},
+{
+"id": 129,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Gran parte del éxito consiste en saber qué es lo que se debe ignorar.",
+"autor": "WILLIAM JAMES",
+"obra": "Principios de Psicología (Siglo XIX)",
+"metafora": "Aprende a filtrar el ruido superfluo para mantener tu atención concentrada únicamente en las metas reales de tu día a día."
+},
+{
+"id": 130,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Quien de antemano calcula el costo de la torre, no la dejará a medias por falta de recursos.",
+"autor": "SANTIAGO RAMÓN Y CAJAL",
+"obra": "Reglas y consejos sobre investigación científica (Siglo XIX)",
+"metafora": "Evalúa objetivamente tus fuerzas y medios antes de iniciar un proyecto para asegurar su ejecución de principio a fin."
+},
+{
+"id": 131,
+"categoria": "Pensamiento Práctico",
+"fragmento": "No hay mejor espejo que el amigo viejo para conocer las propias faltas.",
+"autor": "FRANCISCO DE QUEVEDO",
+"obra": "Los sueños y discursos (Siglo XVII)",
+"metafora": "Valora la crítica honesta de quienes te conocen bien; sus observaciones constructivas te permitirán mejorar de forma realista."
+},
+{
+"id": 132,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Poco a poco se llega lejos, paso a paso se sube la cumbre.",
+"autor": "CONCEPCIÓN ARENAL",
+"obra": "El cercedano (Siglo XIX)",
+"metafora": "Divide tus proyectos más ambiciosos en tareas pequeñas para avanzar con seguridad sin caer en el agotamiento mental."
+},
+{
+"id": 133,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Cobra crédito y échate a dormir, mas no te confíes en demasía.",
+"autor": "BALTASAR GRACIÁN",
+"obra": "El Criticón (Siglo XVII)",
+"metafora": "Construye una reputación impecable mediante el cumplimiento diario, pero mantén siempre el esfuerzo activo para conservarla sin descuidos."
+},
+{
+"id": 134,
+"categoria": "Pensamiento Práctico",
+"fragmento": "Un gramo de buena conducta vale más que un kilo de palabras ingeniosas.",
+"autor": "SAMUEL SMILES",
+"obra": "El carácter (Siglo XIX)",
+"metafora": "Tus acciones cotidianas y tu integridad personal comunican tus valores con mayor fuerza y credibilidad que cualquier discurso verbal."
+},
+{
+"id": 135,
+"categoria": "Pensamiento Práctico",
+"fragmento": "El que prevé los peligros con tiempo, los domina cuando se presentan.",
+"autor": "NICOLÁS MAQUIAVELO",
+"obra": "Discursos sobre la primera década de Tito Livio (Siglo XVI)",
+"metafora": "Anticipa posibles obstáculos en tus planes diarios para tener preparadas soluciones pragmáticas que minimicen el impacto negativo."
+}
 ]
