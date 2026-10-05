@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARCO AURELIO: EL EMPERADOR QUE PENSABA EN SU TIENDA DE CAMPAÑA — Frase Oportuna</title>
+  
+  <!-- Google Fonts: Nunito (títulos y UI) y Roboto (cuerpo de lectura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy-dark: #0b1528;
+      --navy-surface: #111d35;
+      --navy-border: #1e2d4a;
+      --cyan-brand: #0284c7;
+      --cyan-light: #38bdf8;
+      --blue-accent: #2563eb;
+      --blue-light-bg: #e0f2fe;
+      --blue-pill-border: #bae6fd;
+      
+      --bg-body: #f8fafc;
+      --bg-surface: #ffffff;
+      --text-main: #1e293b;
+      --text-title: #23272e;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      
+      --font-title: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-ui: 'Nunito', 'Inter', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.85;
+      font-size: 1.0625rem;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    #progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(11, 21, 40, 0.08);
+      z-index: 1000;
+    }
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8, #0284c7);
+      transition: width 0.1s ease-out;
+    }
+
+    /* Pantalla de bloqueo modal completa */
+    #lock-screen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #111d35 0%, #070d18 100%);
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      padding: 20px;
+    }
+    .lock-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 42px 32px;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+    }
+    .pill-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(56, 189, 248, 0.08);
+      color: #38bdf8;
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .lock-title {
+      font-family: var(--font-title);
+      font-size: 1.85rem;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      color: #ffffff;
+      font-weight: 800;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .lock-input {
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(11, 21, 40, 0.6);
+      color: #ffffff;
+      font-size: 1rem;
+      font-family: var(--font-ui);
+      outline: none;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .lock-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+    .lock-btn {
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+      color: #ffffff;
+      font-weight: 700;
+      font-family: var(--font-ui);
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+    .lock-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+    }
+
+    /* Botones flotantes de navegación */
+    .floating-nav {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 900;
+    }
+    .fab-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      color: var(--navy-dark);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 14px rgba(11,21,40,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 1.1rem;
+      transition: transform 0.2s, background-color 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .fab-btn:hover {
+      transform: translateY(-2px);
+      background-color: var(--navy-dark);
+      color: #38bdf8;
+    }
+
+    /* Contenedor central del libro */
+    #book-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 50px 24px 120px;
+    }
+
+    /* Encabezado del Libro (según especificación exacta de la imagen) */
+    .book-title-header {
+      padding: 20px 0 36px;
+      margin-bottom: 28px;
+    }
+    .book-category-label {
+      font-family: var(--font-title);
+      font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+      font-weight: 600;
+      color: #0284c7;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .book-main-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+      line-height: 1.12;
+      color: var(--text-title);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .book-title-underline {
+      width: 52px;
+      height: 5px;
+      background-color: #0284c7;
+      border-radius: 4px;
+    }
+
+    /* Tarjeta de resumen de obra */
+    .fo-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 6px solid #38bdf8;
+      border-radius: 24px;
+      padding: 28px 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(11, 21, 40, 0.035);
+    }
+    .card-top-tag {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-family: var(--font-ui);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Índice */
+    .toc-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 32px 30px;
+      margin-bottom: 64px;
+      box-shadow: 0 6px 24px rgba(11, 21, 40, 0.04);
+    }
+    .toc-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .toc-title {
+      font-family: var(--font-title);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-download-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy-dark);
+      color: #ffffff;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 9999px;
+      border: 1px solid var(--navy-dark);
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(11, 21, 40, 0.15);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-download-pdf:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-family: var(--font-ui);
+    }
+    .toc-list li a {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.98rem;
+      padding: 10px 14px;
+      border-radius: 12px;
+      transition: background-color 0.15s, color 0.15s, transform 0.15s;
+      font-weight: 600;
+    }
+    .toc-list li a:hover {
+      background-color: var(--blue-light-bg);
+      color: var(--blue-accent);
+      transform: translateX(4px);
+    }
+    .toc-num {
+      font-weight: 800;
+      color: var(--cyan-light);
+      font-size: 0.85rem;
+      min-width: 26px;
+    }
+
+    /* Capítulos */
+    .chapter {
+      margin-bottom: 84px;
+      padding-top: 30px;
+    }
+    .chapter-eyebrow {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #0284c7;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    h2.chapter-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      line-height: 1.25;
+      color: var(--navy-dark);
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+      font-weight: 900;
+      letter-spacing: -0.3px;
+    }
+    h3.section-title {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      color: var(--navy-dark);
+      margin: 38px 0 16px;
+      font-weight: 800;
+    }
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
+      color: #334155;
+    }
+    @media (max-width: 640px) {
+      p {
+        text-align: left;
+      }
+    }
+
+    .quote-box {
+      margin: 28px 0;
+      padding: 26px 28px;
+      background: #f1f5f9;
+      border-left: 4px solid var(--navy-dark);
+      border-radius: 0 18px 18px 0;
+    }
+    .quote-box p {
+      font-style: italic;
+      color: #0f172a;
+      margin-bottom: 10px;
+      line-height: 1.8;
+      text-align: left;
+      font-size: 1.05rem;
+    }
+    .quote-author {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #0284c7;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .meditation-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px 26px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(11,21,40,0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .meditation-card:hover {
+      box-shadow: 0 8px 24px rgba(11,21,40,0.07);
+      transform: translateY(-2px);
+    }
+    .meditation-text {
+      font-style: italic;
+      color: #0f172a;
+      margin-bottom: 14px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      text-align: left;
+    }
+    .meditation-ref-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .ref-badge {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0369a1;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      display: inline-block;
+    }
+
+    .custom-list {
+      margin: 18px 0 24px 22px;
+    }
+    .custom-list li {
+      margin-bottom: 12px;
+      padding-left: 6px;
+      color: #334155;
+    }
+
+    .footnote-ref {
+      color: #0284c7;
+      font-weight: 800;
+      font-size: 0.85em;
+      text-decoration: none;
+      padding: 0 3px;
+    }
+    .footnote-ref:hover {
+      color: var(--blue-accent);
+      text-decoration: underline;
+    }
+
+    .footnotes {
+      margin-top: 40px;
+      padding: 22px 24px;
+      background: #f1f5f9;
+      border-radius: 16px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    .footnotes h4 {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      color: var(--navy-dark);
+      margin-bottom: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .footnotes p {
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    /* Tablas */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 30px 0 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(11,21,40,0.04);
+      -webkit-overflow-scrolling: touch;
+    }
+    .table-banner {
+      background: var(--navy-dark);
+      color: #ffffff;
+      padding: 16px 22px;
+      border-radius: 20px 20px 0 0;
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 0.2px;
+      border-bottom: 2px solid #38bdf8;
+    }
+    .modern-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-ui);
+      font-size: 0.94rem;
+      min-width: 580px;
+    }
+    .modern-table th {
+      background: #f8fafc;
+      color: var(--navy-dark);
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 800;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .modern-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .modern-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .modern-table tbody tr:nth-child(even) {
+      background-color: #fbfcfe;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pill-gold {
+      background-color: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .pill-red {
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    .table-action-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 34px;
+    }
+    .btn-download-table {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: var(--navy-dark);
+      border: 1px solid #cbd5e1;
+      padding: 10px 18px;
+      border-radius: 9999px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(11,21,40,0.04);
+      transition: all 0.2s ease;
+    }
+    .btn-download-table:hover {
+      background: #f8fafc;
+      border-color: var(--navy-dark);
+      transform: translateY(-1px);
+    }
+
+    .chapter-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border-color);
+    }
+    .back-to-toc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 9px 20px;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(11,21,40,0.04);
+      transition: all 0.2s ease;
+    }
+    .back-to-toc-btn:hover {
+      background: var(--navy-dark);
+      color: #38bdf8;
+      transform: translateY(-1px);
+    }
+
+    @media print {
+      #lock-screen, #progress-container, .floating-nav, .btn-download-pdf, .btn-download-table, .chapter-footer {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      #book-content {
+        display: block !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progreso superior -->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!-- Pantalla de bloqueo con clave (Siempre activa al abrir) -->
+  <div id="lock-screen">
+    <div class="lock-card">
+      <div class="pill-capsule">Acceso Protegido</div>
+      <h1 class="lock-title">Pensamiento Estoico</h1>
+      <p style="font-family: var(--font-ui); font-size: 0.95rem; color: #cbd5e1; margin-bottom: 22px; line-height: 1.6;">
+        Introduce tu contraseña de acceso para desbloquear el ebook completo de Marco Aurelio.
+      </p>
+      
+      <form id="lock-form" onsubmit="event.preventDefault(); verifyPassword();">
+        <div class="input-group">
+          <input 
+            type="password" 
+            id="password-input" 
+            class="lock-input" 
+            placeholder="Introduce tu contraseña" 
+            autofocus 
+            autocomplete="off"
+            onkeydown="if(event.key === 'Enter'){ event.preventDefault(); verifyPassword(); }"
+          >
+          <button type="button" class="lock-btn" onclick="verifyPassword()">Acceder al Ebook</button>
+        </div>
+        <div id="error-message" style="color: #f87171; font-size: 0.88rem; font-family: var(--font-ui); min-height: 24px; margin-top: 6px; line-height: 1.4; font-weight: 600;"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botones flotantes de navegación -->
+  <div class="floating-nav" id="floating-nav" style="display: none;">
+    <a href="#indice" class="fab-btn" title="Ir al Índice">☰</a>
+    <a href="#top" class="fab-btn" title="Subir al inicio">▲</a>
+  </div>
+
+  <!-- Contenido completo del Libro -->
+  <main id="book-content" style="display: none;">
+    <div id="top"></div>
+
+    <!-- Encabezado del Libro (idéntico a la imagen de referencia) -->
+    <header class="book-title-header">
+      <div class="book-category-label">Pensamiento Estoico</div>
+      <h1 class="book-main-title">
+        MARCO AURELIO:<br>
+        EL EMPERADOR QUE PENSABA<br>
+        EN SU TIENDA DE CAMPAÑA
+      </h1>
+      <div class="book-title-underline"></div>
+    </header>
+
+    <!-- Tarjeta informativa del Ebook -->
+    <div class="fo-card">
+      <div class="card-top-tag">
+        <span>La Fortaleza & La Razón</span>
+        <span>⌛</span>
+      </div>
+      <p style="margin-bottom: 0; color: #475569; font-size: 1.05rem;">
+        Enseña a distinguir con lucidez entre lo que depende de nosotros y lo que está fuera de nuestro control. Ideal para templar el ánimo ante la adversidad, serenar la mente y hallar orden interior en medio del caos.
+      </p>
+    </div>
+
+    <!-- Índice interactivo -->
+    <nav class="toc-card" id="indice">
+      <div class="toc-header-bar">
+        <h2 class="toc-title">
+          <span>📚</span> Índice General
+        </h2>
+        <button type="button" class="btn-download-pdf" onclick="window.print()">
+          📥 Descargar PDF completo
+        </button>
+      </div>
+      <ul class="toc-list">
+        <li><a href="#introduccion"><span class="toc-num">00.</span> Introducción</a></li>
+        <li><a href="#capitulo-1"><span class="toc-num">01.</span> CAPÍTULO I — El Niño de la Colina del Celio y la Red de Poder</a></li>
+        <li><a href="#capitulo-2"><span class="toc-num">02.</span> CAPÍTULO II — La Corona de Espinas y la Tragedia de los Trece Hijos</a></li>
+        <li><a href="#capitulo-3"><span class="toc-num">03.</span> CAPÍTULO III — El Apocalipsis Romano: Traición, Guerra y Misericordia</a></li>
+        <li><a href="#capitulo-4"><span class="toc-num">04.</span> CAPÍTULO IV — La Vela en el Danubio y el Legado Inmortal</a></li>
+        <li><a href="#conclusion"><span class="toc-num">05.</span> Conclusión y Valoración del Ebook</a></li>
+        <li><a href="#anexo-practico"><span class="toc-num">06.</span> ANEXO PRÁCTICO — El Cuaderno del Danubio y Plantillas Diarias</a></li>
+        <li><a href="#capitulo-final"><span class="toc-num">07.</span> CAPÍTULO FINAL — Selección de las Meditaciones de Marco Aurelio</a></li>
+      </ul>
+    </nav>
+
+    <!-- Introducción -->
+    <section class="chapter" id="introduccion">
+      <div class="chapter-eyebrow">Apertura</div>
+      <h2 class="chapter-title">Introducción</h2>
+      
+      <div class="quote-box">
+        <p>«Al amanecer, cuando te cueste levantarte, ten a mano este pensamiento: "Me levanto para hacer el trabajo de un ser humano". ¿Voy a seguir quejándome si voy a hacer aquello para lo que he nacido?»</p>
+        <span class="quote-author">Marco Aurelio — Meditaciones (Libro V)</span>
+      </div>
+
+      <p>Pocos personajes de la historia universal encarnan una paradoja tan fascinante como Marco Aurelio Antonino. Gobernante del imperio militar más formidable de la antigüedad, hombre con potestad absoluta sobre la vida y la muerte de millones de personas desde Britania hasta el río Éufrates, jamás deseó la gloria mundana, el botín militar ni la pompa cortesana.</p>
+      
+      <p>Su verdadero campo de batalla no residió únicamente en las ciénagas congeladas de la Germania bárbara, sino en los pliegues de su propia mente. En medio de epidemias devastadoras, guerras fratricidas, la traición de sus generales más cercanos y la pérdida temprana de la inmensa mayoría de sus hijos, Marco Aurelio encontró en la filosofía estoica un escudo indestructible y un propósito inquebrantable.</p>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Capítulo 1 -->
+    <section class="chapter" id="capitulo-1">
+      <div class="chapter-eyebrow">Capítulo I</div>
+      <h2 class="chapter-title">El Niño de la Colina del Celio y la Red de Poder</h2>
+
+      <h3 class="section-title">El ruido y el polvo de Roma</h3>
+      <p>Para entender al hombre que gobernó el mundo desde una tienda de campaña militar en la frontera helada del Danubio, es necesario alejarse de los mármoles limpios que vemos hoy en los museos. La Roma del año 121 d.C., la ciudad en la que nació Marco Annio Vero —el nombre de nacimiento de Marco Aurelio—, no era un lugar contemplativo ni silencioso. Era una metrópoli caótica de más de un millón de habitantes, un enjambre de madera, ladrillo y sudor donde el lujo insensato de las <em>villae</em> aristocráticas convivía pared con pared con la miseria sofocante de las <em>insulae</em><sup><a href="#fn1-1" id="ref1-1" class="footnote-ref">[1]</a></sup>.</p>
+      
+      <p>En las calles estrechas y sin pavimentar del barrio de la Subura, los carromatos cargados de grano, vino y mármol tenían prohibido circular de día para no colapsar la ciudad, lo que convertía a las noches romanas en un estruendo ininterrumpido de ruedas de hierro contra la piedra, gritos de muleros y ladridos de perros callejeros. El aire olía a humo de leña, a <em>garum</em><sup><a href="#fn1-2" id="ref1-2" class="footnote-ref">[2]</a></sup> y al tufo estancado del río Tíber.</p>
+      
+      <p>Fue en la cima de la colina del Celio, una de las zonas más elevadas y residenciales de la capital, donde Marco abrió los ojos por primera vez el 26 de abril del año 121 d.C. Creció en una familia de la altísima nobleza senatorial con raíces en la Hispania Baetica (la actual Andalucía). Su padre, Marco Annio Vero, era un magistrado prometedor que falleció de forma repentina cuando el pequeño Marco tenía apenas tres años.</p>
+      
+      <p>Aquella primera ausencia marcó el tono de su infancia: el niño no creció bajo la sombra de un padre autoritario, sino bajo la custodia de su abuelo materno y, sobre todo, de su madre, Domicia Lucila. Domicia no era una patricia común. Era una de las mujeres más ricas e instruidas de todo el Imperio romano, heredera de una gigantesca fortuna basada en la fabricación de ladrillos y tejas que abastecían a las grandes obras públicas de la capital.</p>
+      
+      <p>Lucila convirtió su residencia en un refugio de cultura: en sus salones se reunían retóricos griegos, filósofos, juristas y poetas. Mientras otros niños de la aristocracia eran criados por siervos e instruidos únicamente en el arte de la oratoria política para escalar en el <em>cursus honorum</em><sup><a href="#fn1-3" id="ref1-3" class="footnote-ref">[3]</a></sup>, Marco respiró desde la cuna un ambiente de erudición, disciplina ética y devoción por las letras.</p>
+
+      <h3 class="section-title">El chico veraz y el ropaje de los cínicos</h3>
+      <p>Marco era un niño atípico. En una sociedad romana donde los jóvenes aristócratas competían por llamar la atención en el foro o exhibir riquezas, él destacaba por una timidez reflexiva y una honestidad desarmante. Tanto era así que el mismísimo emperador Adriano —un hombre viejo, cínico, brillante y muy difícil de impresionar— se fijó en el pequeño durante las audiencias en la corte. Adriano lo apodó cariñosamente <em>Verissimus</em>, un juego de palabras en latín que significaba «el más veraz» o «el más honesto».</p>
+      
+      <p>A los doce años, la vida de Marco dio un giro definitivo hacia la filosofía. No la descubrió como una teoría abstracta para debatir en un aula, sino como una forma de vida radical. Bajo la influencia de Diogneto, uno de sus preceptores, descubrió a los filósofos estoicos y cínicos que predicaban la austeridad, el autocontrol y el desprecio por los lujos vanos.</p>
+      
+      <p>El impacto en el joven fue tan violento y sincero que decidió ponerlo en práctica de inmediato:</p>
+      <ul class="custom-list">
+        <li>Renunció a las túnicas finas de seda y adoptó el <em>tribon</em><sup><a href="#fn1-4" id="ref1-4" class="footnote-ref">[4]</a></sup>, la manta basta de lana áspera propia de los filósofos callejeros.</li>
+        <li>Se negó a dormir en su cama de plumas cubierta de sábanas de lino e insistió en acostarse en el suelo de piedra dura de su habitación.</li>
+        <li>Se sometió a un régimen estricto de estudios que incluía gramática, retórica, pintura, filosofía y entrenamiento físico en lucha y equitación.</li>
+      </ul>
+      
+      <p>Su madre, Domicia Lucila, contemplaba con una mezcla de orgullo y espanto la rigidez moral de su hijo. Tuvo que rogarle llorando que, al menos durante los inviernos romanos, aceptara cubrir la piedra del suelo con pieles de oveja para no enfermar. Esta autodisciplina no era una pose adolescente; era el entrenamiento previo e inconsciente del hombre que décadas después tendría que soportar el dolor físico, la peste y el frío en las trincheras del Danubio.</p>
+
+      <h3 class="section-title">El juego de ajedrez en el palacio de Adriano</h3>
+      <p>Mientras Marco leía a los filósofos griegos tirado en el suelo, el Imperio romano se preparaba para una crisis de sucesión política. Transcurría el año 136 d.C. y el emperador Adriano, anciano y atormentado por una dolorosa enfermedad del corazón, sabía que su tiempo se agotaba. No tenía hijos legítimos ni herederos directos, por lo que la política imperial se convirtió en un nido de serpientes, intrigas y traiciones en los pasillos del palacio del Palatino.</p>
+      
+      <p>Adriano concibió entonces una jugada maestra geopolítica. Quería asegurar la estabilidad del Imperio no sólo para su sucesor inmediato, sino para las siguientes dos generaciones. Su primera opción para el trono fue un patricio llamado Aelio César, pero éste murió repentinamente de tuberculosis.</p>
+      
+      <p>Sin perder tiempo, Adriano volvió la mirada hacia un senador maduro, respetado, de impecable reputación y carácter sereno: Antonino Pío (de 52 años). Adriano le hizo a Antonino una oferta innegociable: lo nombraría su heredero y futuro emperador con la condición estricta de que Antonino adoptara legal e inmediatamente a dos jóvenes para convertirlos en sus príncipes sucesores:</p>
+      <ul class="custom-list">
+        <li><strong>Lucio Vero</strong>, un niño de 7 años, hijo del difunto Aelio César.</li>
+        <li><strong>Marco Aurelio</strong>, que en ese momento acababa de cumplir 17 años.</li>
+      </ul>
+
+      <h3 class="section-title">La noche de la adopción: La corona como condena</h3>
+      <p>El 25 de febrero del año 138 d.C., la vida del joven Marco Annio Vero saltó por los aires. Por decreto imperial, dejó de ser un noble privado para convertirse en Marco Aurelio Aelio Antonio, heredero del trono imperial.</p>
+      
+      <p>En la sociedad romana, la adopción entre patricios no era un simple trámite familiar; era un acto jurídico de integración total. Marco tuvo que abandonar la casa de su madre en la colina del Celio para mudarse a la residencia imperial en El Palatino. Esto provocó el rompimiento de su compromiso matrimonial previo para lograr otra alianza más conveniente.</p>
+      
+      <p>Aquel nombramiento no vino solo; exigió la reestructuración inmediata de su vida afectiva. En ese momento, Marco estaba prometido con Cejonia Fabia, la hija de Aelio César. El compromiso con Cejonia Fabia no nació del amor romántico, sino que fue arreglado por el propio Adriano cuando Marco tenía solo 15 años para tejer alianzas entre familias nobles. Sin embargo, Marco sentía un profundo respeto por los compromisos asumidos y había aceptado la alianza con la seriedad ética que lo caracterizaba.</p>
+      
+      <p>Sin embargo, la razón de Estado no admitía sentimentalismos: Adriano ordenó anular de inmediato el compromiso con Cejonia para casarlo con Faustina la Menor. Faustina no era una desconocida para él. Era su prima hermana de sangre, hija de su tía Faustina la Mayor y de su nuevo padre adoptivo, Antonino Pío. Al ser adoptado por Antonino, la diplomacia romana convirtió a los dos primos en hermanos ante la ley, un retorcido encaje legal y dinástico destinado a concentrar la sangre noble y la fortuna de ambas familias en una sola línea de sucesión.</p>
+      
+      <p>Para un joven de 17 años que buscaba la verdad y la sobriedad, ver cómo su palabra empeñada con Cejonia Fabia era descartada por conveniencia política fue una lección amarga sobre la servidumbre del poder. Su libertad, su anonimato y su sueño de llevar una vida tranquila dedicada a los libros quedaron destruidos para siempre.</p>
+      
+      <p>Los historiadores de la época, como Dion Casio, registran una escena reveladora: cuando los sirvientes del palacio y las tropas de la guardia pretoriana fueron a felicitar al joven de 17 años por su adopción imperial, no lo encontraron celebrando. Lo encontraron sumido en una profunda tristeza y llorando en silencio en sus aposentos.</p>
+      
+      <p>Cuando sus amigos le preguntaron por qué se lamentaba ante semejante honor y poder, Marco respondió que conocía bien la historia de Roma y sabía los males que el poder absoluto causaba en el alma humana. Para Marco Aurelio, el trono no era un logro ni un privilegio: era una jaula de oro y una servidumbre para con millones de personas.</p>
+
+      <h3 class="section-title">La escuela de la paciencia: Veintitrés años a la sombra de Antonino</h3>
+      <p>A diferencia de otros príncipes romanos que consumieron su juventud en el libertinaje o en conspiraciones para acelerar la muerte de sus predecesores, Marco Aurelio vivió los siguientes veintitrés años de su vida (de los 17 a los 40 años) como un modelo absoluto de lealtad, discreción y aprendizaje silencioso.</p>
+      
+      <p>Su padre adoptivo, el emperador Antonino Pío, gobernó el Imperio durante una época de paz casi milagrosa. Antonino era un hombre metódico, austero y extremadamente dedicado a la administración pública. Rara vez salía de Roma o de su villa de Lanuvio; pasaba los días revisando impuestos, presupuestos militares y leyes civiles.</p>
+      
+      <p>Marco se convirtió en la mano derecha de Antonino. Trabajaban juntos mañana y tarde en el Palacio Imperial. De su padre adoptivo, Marco aprendió las virtudes prácticas que no estaban en los libros de filosofía:</p>
+      <ul class="custom-list">
+        <li>La serenidad ante las críticas injustas y los chismes de palacio.</li>
+        <li>La frugalidad en los gastos del Estado, rechazando los espectáculos innecesarios.</li>
+        <li>La paciencia para escuchar las peticiones de los ciudadanos más humildes sin mostrar cansancio.</li>
+        <li>El valor de examinar cada asunto de Estado con minuciosidad clínica antes de tomar una decisión.</li>
+      </ul>
+      
+      <p>Durante todo ese tiempo, Marco no dejó de estudiar ni de escribir. Mantuvo una intensa correspondencia con su maestro de retórica, Marco Cornelio Fronto, donde compartían pensamientos sobre literatura, medicina y los pequeños detalles cotidianos de la familia imperial.</p>
+      
+      <p>En el año 161 d.C., Antonino Pío se enfermó gravemente tras comer queso alpino en su villa de Lorium. Sintiendo que la muerte llegaba, el anciano emperador ordenó trasladar la estatua de oro de la Fortuna —el símbolo del poder imperial— a la habitación de Marco, dio a los guardias la contraseña del día (<em>"Equanimitas"</em> / Ecuanimidad) y falleció pacíficamente.</p>
+      
+      <p>Cuando Antonino Pío pronunció como última palabra <strong>Equanimitas</strong>, dejó una guía imborrable para su sucesor: mantener el equilibrio interior sin importar las tormentas que estuvieran por desatarse. A los 40 años, el niño veraz de la colina del Celio se convirtió en el gobernante supremo del mundo romano.</p>
+
+      <div class="footnotes">
+        <h4>Notas Capitulo 1</h4>
+        <p id="fn1-1"><strong>[1] Las insulae:</strong> Bloques de viviendas populares de alquiler que llegaban a tener entre 5 y 7 pisos. Eran trampas mortales ante incendios y colapsos frecuentes por su mala calidad constructiva. <a href="#ref1-1" class="footnote-ref">↩</a></p>
+        <p id="fn1-2"><strong>[2] El garum:</strong> Condimento estrella romano a base de vísceras de pescado fermentadas en salmuera con alto sabor umami. <a href="#ref1-2" class="footnote-ref">↩</a></p>
+        <p id="fn1-3"><strong>[3] El cursus honorum:</strong> Carrera político-militar patricia reglamentada (cuestor, edil, pretor, cónsul). <a href="#ref1-3" class="footnote-ref">↩</a></p>
+        <p id="fn1-4"><strong>[4] Tribon:</strong> Manta basta de lana característica de la austeridad de los filósofos cínicos y estoicos. <a href="#ref1-4" class="footnote-ref">↩</a></p>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Capítulo 2 -->
+    <section class="chapter" id="capitulo-2">
+      <div class="chapter-eyebrow">Capítulo II</div>
+      <h2 class="chapter-title">La Corona de Espinas y la Tragedia de los Trece Hijos</h2>
+
+      <h3 class="section-title">El primer día del imperio: La decisión inédita</h3>
+      <p>Con la muerte de Antonino Pío en marzo del año 161 d.C., la etapa de aprendizaje silencioso llegó a su fin. A los cuarenta años, Marco Elio Aurelio Vero se encontró de pronto en el centro del escenario político de Roma, investido con el poder absoluto sobre un territorio que albergaba a más de cincuenta millones de almas.</p>
+      
+      <p>Sin embargo, la primera medida que tomó como gobernante supremo no fue organizar festejos ni emitir decretos de autoelogio, sino ejecutar un acto político y ético que sorprendió al mismísimo Senado. Marco se presentó ante los senadores y exigió una condición innegociable antes de aceptar la púrpura imperial: se negó a asumir el trono a menos que su hermano adoptivo, Lucio Vero, fuera nombrado coemperador con exactamente sus mismos poderes, títulos y prerrogativas.</p>
+      
+      <p>Aquella decisión no tenía precedentes en los más de mil años de historia romana. Por primera vez, el Imperio no pertenecía a un solo hombre, sino a dos (<em>Augusti</em>). Para Marco, que conocía bien la fragilidad de la mente humana expuesta al poder sin límites, no se trataba de una maniobra de debilidad ni de un cálculo político frío; era la aplicación directa de su filosofía estoica: dividir una carga abrumadora y mantenerse leal al pacto familiar que el difunto emperador Adriano había diseñado dos décadas atrás.</p>
+      
+      <p>Mientras Lucio Vero —más joven, impulsivo y aficionado a los placeres de la vida social— asumió gustoso el brillo público del cargo, Marco se reservó el trabajo duro, las interminables audiencias judiciales, las reformas administrativas y la supervisión de las arcas del Estado.</p>
+
+      <h3 class="section-title">Faustina la Menor: Mito, realidad y devoción</h3>
+      <p>Para comprender la vida íntima de Marco Aurelio es indispensable despojar a su esposa, Faustina la Menor, de los chismes maliciosos que los historiadores romanos posteriores vertieron sobre ella. La tradición popular y relatos tardíos intentaron retratar a Faustina como una mujer infiel, promiscua y conspiradora, llegando a insinuar que varios de sus hijos no eran de Marco, sino de gladiadores o marineros del puerto de Ostia.</p>
+      
+      <p>La realidad histórica y las cartas privadas entre Marco y su maestro Fronto muestran una imagen completamente distinta: la de un matrimonio unido por un afecto profundo, una complicidad absoluta y una lealtad a prueba de tragedias. Faustina acompañó a Marco a lo largo de sus destructivas campañas militares en las fronteras heladas del norte y en las calurosas provincias de Oriente. Soportó el polvo de los caminos, el barro de los campamentos legionarios y el peligro constante de las epidemias. Los propios soldados la aclamaron con el título de <em>Mater Castrorum</em> («Madre de los Campamentos»).</p>
+      
+      <div class="quote-box">
+        <p>«Doy gracias a los dioses por haberme concedido una esposa tan obediente, tan afectuosa y tan sencilla». </p>
+        <span class="quote-author">Marco Aurelio — Meditaciones (Libro I)</span>
+      </div>
+
+      <h3 class="section-title">El calvario de la cuna: Trece nacimientos y ocho tumbas</h3>
+      <p>Detrás de las recepciones oficiales, los juicios del Senado y las reformas legales, la vida privada de la pareja imperial estuvo atravesada por una tragedia biológica devastadora. Entre los años 147 y 170 d.C., Faustina dio a luz a trece hijos, incluyendo al menos dos partos de gemelos. De los trece hijos de la pareja real, ocho murieron durante la infancia o la primera juventud.</p>
+      
+      <p>El luto no fue una excepción en el hogar de Marco Aurelio; fue una rutina macabra. Cada dos o tres años, la pareja tenía que vestir de luto, suspender las audiencias imperiales y enterrar a un bebé en el Mausoleo de Adriano (el actual Castillo Sant'Angelo).</p>
+      
+      <div class="quote-box">
+        <p>«Un hombre reza: "¿Cómo puedo evitar perder a mi hijito?". Tú, en cambio, debes rezar: "¿Cómo puedo aprender a no tener miedo de perderlo, y a no desesperar si la muerte se lo lleva?"».</p>
+        <span class="quote-author">Marco Aurelio — Meditaciones (Libro IX)</span>
+      </div>
+      
+      <p>De todos los hijos varones nacidos de su unión con Faustina, solo uno logró sobrevivir hasta la edad adulta: Marco Aurelio Cómodo Antonino (el futuro emperador Cómodo), nacido en el año 161 d.C., cuya supervivencia se convertiría, irónicamente, en la mayor tragedia política para el futuro de Roma.</p>
+
+      <h3 class="section-title">La Peste Antonina: El enemigo invisible</h3>
+      <p>En el año 165 d.C., las legiones que regresaban victoriosas de las campañas en Oriente trajeron consigo una plaga devastadora: la Peste Antonina<sup><a href="#fn2-1" id="ref2-1" class="footnote-ref">[1]</a></sup>. Fiebres abrasadoras, gangrena en la garganta, vómitos negros y pústulas mortales diezmaron al imperio, matando a más de 5.000 personas por día en Roma y cobrándose la vida de más de siete millones de ciudadanos en las provincias, según testimonios de Galeno<sup><a href="#fn2-2" id="ref2-2" class="footnote-ref">[2]</a></sup>.</p>
+      
+      <p>Mientras la nobleza patricia huía aterrorizada a sus fincas en el campo, Marco Aurelio permaneció al pie del cañón en la ciudad. Auxilió a los enfermos, financió los sepelios de los desamparados y, para no esquilmar con impuestos a un pueblo agonizante, convocó una histórica subasta pública de dos meses en el Foro de Trajano donde remató las joyas de la corona, las esculturas griegas, las vajillas de oro y las sedas imperiales.</p>
+
+      <h3 class="section-title">La soledad del mando: La muerte de Lucio Vero</h3>
+      <p>En el invierno del año 169 d.C., Lucio Vero falleció de forma repentina tras una apoplejía o a causa del propio virus de la peste. A los 48 años, Marco Aurelio quedó absolutamente solo al frente de una potencia cercada por la muerte interna y la amenaza bárbara en el norte. La paz de sus libros quedaba postergada: debía marchar al río Danubio.</p>
+
+      <div class="footnotes">
+        <h4>Notas Capitulo 2</h4>
+        <p id="fn2-1"><strong>[1] La Peste Antonina:</strong> Se considera la primera gran pandemia documentada de viruela (o sarampión virulento) en el mundo mediterráneo. <a href="#ref2-1" class="footnote-ref">↩</a></p>
+        <p id="fn2-2"><strong>[2] Galeno de Pérgamo (129-216 d.C.):</strong> Médico personal de Marco Aurelio y padre de la medicina que gobernó los saberes médicos durante más de 1.400 años. <a href="#ref2-2" class="footnote-ref">↩</a></p>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Capítulo 3 -->
+    <section class="chapter" id="capitulo-3">
+      <div class="chapter-eyebrow">Capítulo III</div>
+      <h2 class="chapter-title">El Apocalipsis Romano: Traición, Guerra y Misericordia</h2>
+
+      <h3 class="section-title">La puñalada por la espalda: La rebelión de Avidio Casio</h3>
+      <p>En la primavera del año 175 d.C., tras un rumor falso que aseguraba la muerte del emperador en el frente danubiano, Avidio Casio —el general más admirado de Roma y gobernador de Siria— se autoproclamó emperador con el apoyo de las legiones de Oriente. La sombra de una guerra civil sangrienta se cernía sobre el Estado.</p>
+      
+      <p>Cualquier otro emperador romano habría desatado una cacería feroz. Marco Aurelio, en cambio, ofreció un discurso histórico a sus legiones donde expresó su mayor temor:</p>
+
+      <div class="quote-box">
+        <p>«Lo único que temo es que Avidio Casio se quite la vida al verse descubierto, o que alguien lo asesine antes de que yo pueda llegar. Porque eso me privaría de la mayor victoria de mi vida: la de perdonar a un hombre que me ha traicionado, conservar la amistad con quien la ha roto y demostrar al mundo que aún es posible resolver las guerras de los hombres sin crueldad».</p>
+        <span class="quote-author">Marco Aurelio — Discurso a las legiones (Registrado por Dion Casio)</span>
+      </div>
+
+      <p>Cuando un centurión rebelde decapitó a Casio para cobrar el perdón imperial y presentó su cabeza cortada en un arcón de madera, Marco rechazó mirarla y ordenó darle entierro solemne. Posteriormente, viajó a Oriente no a purgar traidores, sino a perdonar a los involucrados, liberar a los hijos de Casio y quemar en hogueras públicas la correspondencia secreta sin haber leído un solo nombre, evitando así el veneno de la desconfianza.</p>
+
+      <h3 class="section-title">Las Guerras Marcomanas y el Milagro de la Lluvia</h3>
+      <p>Durante ocho largos años, el emperador vivió en barracones de madera en Carnuntum y Vindobona. Con la salud quebrada por úlceras gástricas y consumiendo la Triaca<sup><a href="#fn3-1" id="ref3-1" class="footnote-ref">[1]</a></sup> formulada por Galeno, combatió contra marcomanos, cuados y sármatas.</p>
+      
+      <p>En el verano del 174 d.C., la Legio XII Fulminata quedó cercada sin agua bajo un calor calcinante en territorio enemigo. Al borde del exterminio, una inesperada tormenta torrencial descargó agua sobre los cascos de los exhaustos legionarios, mientras rayos y granizo desarticulaban a las huestes bárbaras. El suceso, tallado en la Columna Aureliana, alimentó mitos paganos y leyendas cristianas, pero para Marco constituyó una prueba más del <em>Amor Fati</em>: el acatamiento consciente y sereno de las leyes de la Naturaleza.</p>
+
+      <div class="footnotes">
+        <h4>Notas Capitulo 3</h4>
+        <p id="fn3-1"><strong>[1] La Triaca de Galeno:</strong> Brebaje magistral formulado con decenas de hierbas, vino, miel y dosis dosificadas de opio para aliviar los dolores crónicos de pecho y estómago del emperador. <a href="#ref3-1" class="footnote-ref">↩</a></p>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Capítulo 4 -->
+    <section class="chapter" id="capitulo-4">
+      <div class="chapter-eyebrow">Capítulo IV</div>
+      <h2 class="chapter-title">La Vela en el Danubio y el Legado Inmortal</h2>
+
+      <h3 class="section-title">El laboratorio de la tienda: Noches a la luz de las velas</h3>
+      <p>En las noches heladas de la frontera, mientras los centinelas vigilaban las trincheras, Marco Aurelio abría su cuaderno en soledad. Aquellos textos no se escribieron para ser aclamados en academias: eran su desahogo íntimo, un diario de supervivencia moral titulado escuetamente <em>Eis heauton</em> («A sí mismo»)<sup><a href="#fn4-1" id="ref4-1" class="footnote-ref">[1]</a></sup>.</p>
+      
+      <p>Escribir era su ancla de cordura. Si durante el día debía tomar decisiones de vida o muerte, juzgar a traidores y dirigir un ejército exhausto, de noche necesitaba recordarse quién era realmente bajo las capas de la túnica purpúrea: un ser humano efímero cuya única obligación era actuar con justicia, mantener la calma y no dejar que el cinismo o el rencor le agriaran el alma.</p>
+
+      <h3 class="section-title">El invierno final en Vindobona</h3>
+      <p>El 17 de marzo del 180 d.C., la salud de Marco colapsó cerca de la actual Viena. A sus soldados que lloraban alrededor del lecho de muerte les dedicó sus últimas palabras:</p>
+      
+      <div class="quote-box">
+        <p>«¿Por qué lloran por mí? Deberían pensar en la peste y en la muerte que los rodea a todos ustedes. Vayan a cuidar de los vivos; yo solo cumplo con el curso natural de la vida».</p>
+        <span class="quote-author">Marco Aurelio — Palabras finales en Vindobona</span>
+      </div>
+
+      <p>Cuando el tribuno le solicitó la consigna del día, pronunció su despedida: <em>"Ve hacia el sol naciente, porque mi sol ya se está poniendo"</em>. Con su fallecimiento se cerró la época de oro de la <em>Pax Romana</em><sup><a href="#fn4-2" id="ref4-2" class="footnote-ref">[2]</a></sup>, dando paso al reinado errático de su hijo Cómodo. Sin embargo, su cuaderno sobrevivió al derrumbe de los imperios, transmitiendo su ejemplo a través de los siglos.</p>
+
+      <div class="footnotes">
+        <h4>Notas Capitulo 4</h4>
+        <p id="fn4-1"><strong>[1] Destino del manuscrito:</strong> Sobrevivió en copias privadas bizantinas hasta su primera impresión tipográfica en 1555 en Zúrich. <a href="#ref4-1" class="footnote-ref">↩</a></p>
+        <p id="fn4-2"><strong>[2] Fin de la Pax Romana:</strong> Período de dos siglos de relativa estabilidad y esplendor iniciado con César Augusto. <a href="#ref4-2" class="footnote-ref">↩</a></p>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Conclusión -->
+    <section class="chapter" id="conclusion">
+      <div class="chapter-eyebrow">Conclusión y Valoración</div>
+      <h2 class="chapter-title">La Vigencia del Emperador Filósofo</h2>
+
+      <p>La vida de Marco Aurelio nos demuestra que la filosofía estoica no es una teoría abstracta para discutir en recintos académicos, sino un arte de vivir y una herramienta práctica de supervivencia. A través de un recorrido por su infancia en la colina del Celio, los veintitrés años de preparación a la sombra de Antonino Pío, las tragedias familiares, las epidemias, las traiciones y las brutales campañas en la frontera del Danubio, esta obra revela al hombre detrás de la corona imperial.</p>
+      
+      <p>El verdadero valor de Marco Aurelio no reside en haber gobernado el Imperio romano en su máxima extensión, sino en haber mantenido intacta su integridad ética y su paz interior en medio del caos. En un mundo impredecible, enseñó que no podemos controlar los eventos externos —como las enfermedades, las injusticias o las acciones ajenas—, pero sí tenemos el control absoluto sobre cómo elegimos juzgarlos y reaccionar ante ellos. Sus escritos íntimos (<em>Meditaciones</em>), redactados a la luz de las velas en campamentos militares helados, continúan siendo una guía atemporal para cultivar la ecuanimidad, la resiliencia y el deber.</p>
+
+      <div class="quote-box">
+        <p><strong>¿Recomendaría este libro? (Opinión y Valoración)</strong><br><br>
+        <strong>Sí, absolutamente recomendable.</strong> La obra destaca por equilibrar un minucioso rigor histórico con una narrativa viva y cercana, despojando al emperador de poses mitológicas para mostrarlo como un ser humano real. Además, su anexo práctico con plantillas de examen diario y la selección temática de las <em>Meditaciones</em> convierten este texto en un manual de entrenamiento directo para el mundo contemporáneo.</p>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Anexo Práctico -->
+    <section class="chapter" id="anexo-practico">
+      <div class="chapter-eyebrow">Anexo Práctico</div>
+      <h2 class="chapter-title">El Cuaderno del Danubio: Tu Diario de Reflexión Estoica</h2>
+
+      <div class="quote-box">
+        <p>«Retírate dentro de ti mismo. La razón gobernante tiene por naturaleza la capacidad de bastarse a sí misma cuando actúa con justicia y mantiene la calma».</p>
+        <span class="quote-author">Marco Aurelio — Meditaciones (Libro VII)</span>
+      </div>
+
+      <h3 class="section-title">I. Las Tres Herramientas Fundamentales</h3>
+      <p>Para aplicar el método que sostenía la serenidad del emperador, recurre a estos tres pilares operativos:</p>
+      
+      <!-- Tabla 1: Dicotomía del Control -->
+      <div class="table-container">
+        <div class="table-banner">⚖️ La Dicotomía del Control (El Filtro de Epicteto)</div>
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th style="width: 50%;">Fuera de tu control (Aceptación Serena)</th>
+              <th style="width: 50%;">Bajo tu control (Acción y Virtud)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="pill pill-red">Externo</span><br>
+                El clima, el tráfico, la economía global, la enfermedad, el paso del tiempo y las decisiones u opiniones de terceras personas.
+              </td>
+              <td>
+                <span class="pill pill-gold">Interno</span><br>
+                Tus juicios mentales sobre lo que ocurre, tus intenciones éticas, tus decisiones, tus hábitos diarios y tu respuesta frente a la ofensa.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>2. La Vista desde Arriba (Megalopsyche):</strong> Cuando una contingencia laboral o personal amenace tu serenidad, eleva tu perspectiva imaginando la situación desde la órbita terrestre, enmarcada en los siglos transcurridos y por venir. La escala reduce la tragedia al tamaño que verdaderamente tiene.</p>
+      <p><strong>3. La Premeditación de los Males (Premeditatio Malorum):</strong> Anticipa los contratiempos antes de salir al mundo. Quien ya esperaba el tráfico, la descortesía o el imprevisto técnico, jamás pierde el control cuando éstos se presentan.</p>
+
+      <h3 class="section-title">II. El Desafío del 5%: De la Lectura a la Acción</h3>
+      <p>Solo una reducida minoría de lectores lleva lo leído al terreno de la disciplina real. Para no quedarte en la contemplación pasiva, copia o utiliza los siguientes marcos operativos cada mañana y cada noche:</p>
+
+      <!-- Tabla 2: Ritual de la Mañana -->
+      <div class="table-container">
+        <div class="table-banner">🌅 RITUAL DE LA MAÑANA: PREPARACIÓN Y PROPÓSITO</div>
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th style="width: 35%;">Pregunta de Reflexión</th>
+              <th style="width: 65%;">Ejemplo Práctico de Registro Diario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. El Obstáculo del Día</strong><br><small style="color: var(--text-muted);">¿Qué tarea o reunión me genera mayor resistencia o fricción?</small></td>
+              <td>«Tener la conversación difícil con el equipo sobre el retraso del proyecto y presentar el informe trimestral ante el directorio».</td>
+            </tr>
+            <tr>
+              <td><strong>2. Virtud en Foco</strong><br><small style="color: var(--text-muted);">Selecciona la virtud que regirá tu conducta.</small></td>
+              <td><span class="pill pill-gold">Paciencia / Templanza</span> Mantener un tono moderado y sereno si los demás se exaltan o si la reunión se prolonga innecesariamente.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Intención Ética</strong><br><small style="color: var(--text-muted);">¿Cómo reaccionaré ante la mala fe o la descortesía?</small></td>
+              <td>«Escucharé con pausa antes de responder, no asumiré ataques personales y recordaré que la ignorancia ajena no me obliga a actuar con malicia».</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-action-row">
+        <button type="button" class="btn-download-table" onclick="downloadMorningRoutine()">
+          📥 Descargar Ritual de la Mañana
+        </button>
+      </div>
+
+      <!-- Tabla 3: Examen de Conciencia Nocturno -->
+      <div class="table-container">
+        <div class="table-banner">🌙 RITUAL DE LA NOCHE: EXAMEN DE CONCIENCIA</div>
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th style="width: 35%;">Punto de Examen</th>
+              <th style="width: 65%;">Registro y Ajuste de Conducta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Hecho Desafiante</strong><br><small style="color: var(--text-muted);">¿Qué evento perturbó mi calma hoy?</small></td>
+              <td>«Un cliente canceló una reunión crucial diez minutos antes de la hora fijada, tras varios días de intenso trabajo de preparación».</td>
+            </tr>
+            <tr>
+              <td><strong>2. Filtrado de Control</strong><br><small style="color: var(--text-muted);">Separación objetiva de hechos.</small></td>
+              <td>
+                • <strong>Fuera de control:</strong> La impuntualidad y cambios de agenda de otros.<br>
+                • <strong>Bajo mi control:</strong> No contaminar mi tarde con rencor y usar ese tiempo para adelantar pendientes estratégicos.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>3. Evaluación sin Culpa</strong><br><small style="color: var(--text-muted);">¿Dónde me desvié y qué hice bien?</small></td>
+              <td>Me mostré áspero los primeros cinco minutos. Rectifiqué, respiré hondo y logré recuperar la compostura para el resto de la jornada.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Gratitud Estoica</strong><br><small style="color: var(--text-muted);">Un hecho humilde que agradecer hoy.</small></td>
+              <td>«El aroma del café caliente por la tarde y la caminata en silencio de regreso a casa».</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-action-row">
+        <button type="button" class="btn-download-table" onclick="downloadNightRoutine()">
+          📥 Descargar Ritual de la Noche
+        </button>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+
+    <!-- Capítulo Final -->
+    <section class="chapter" id="capitulo-final">
+      <div class="chapter-eyebrow">Capítulo Final</div>
+      <h2 class="chapter-title">Selección de las Meditaciones de Marco Aurelio</h2>
+      
+      <p>A continuación se presenta una recopilación rigurosa de los aforismos más trascendentes del emperador, organizados en cuatro pilares temáticos para facilitar su consulta y aplicación cotidiana:</p>
+
+      <h3 class="section-title">1. La Dicotomía del Control y la Ciudadela Interior</h3>
+      <p>El núcleo de la serenidad estoica reside en distinguir aquello que depende de nosotros de lo que se halla fuera de nuestro gobierno directo. Tu mente y tus juicios son tu único e inexpugnable refugio.</p>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Tienes poder sobre tu mente, no sobre los acontecimientos externos. Date cuenta de esto y encontrarás la fuerza».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro IV, pasaje 3</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Borra la fantasía. Detén el impulso de los hilos de la pasión. Rodea el presente de límites. Comprende lo que te ocurre a ti o a otro».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro VII, pasaje 29</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Si te afliges por alguna causa externa, no es ella la que te perturba, sino tu juicio sobre ella. Y en tu poder está el borrar ese juicio de inmediato».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro VIII, pasaje 47</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">2. Resistencia ante la Adversidad y Templanza</h3>
+      <p>Frente al dolor, la enfermedad o los reveses de la fortuna, el sabio estoico no reacciona con victimismo, sino transformando el obstáculo en la materia misma de su virtud.</p>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«El obstáculo para la acción avanza la acción. Lo que se interpone en el camino se convierte en el camino».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro V, pasaje 20</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Sé como el promontorio contra el que chocan incesantemente las olas: él se mantiene firme y a su alrededor se adormece la furia del agua».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro IV, pasaje 49</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«No dejes que el futuro te perturbe. Lo enfrentarás, si es necesario, con las mismas armas de la razón con las que hoy te equipas contra el presente».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro VII, pasaje 8</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">3. El Deber Social, la Convivencia y el Perdón</h3>
+      <p>Marco Aurelio recordaba constantemente que los seres humanos han sido creados para colaborar. La ingratitud o la maldad ajena deben responderse con comprensión, justicia y rectitud, nunca con rencor.</p>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Al amanecer, dime a ti mismo de antemano: me encontraré con el entrometido, con el ingrato, con el violento, con el traidor, con el envidioso, con el insociable. Pero yo, que he comprendido la naturaleza del bien, no puedo recibir daño de ninguno de ellos».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro II, pasaje 1</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Los hombres han sido hechos los unos para los otros. Instrúyelos, pues, o sopórtalos».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro VIII, pasaje 59</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«La mejor venganza es no volverse semejante al enemigo».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro VI, pasaje 6</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">4. La Brevedad de la Vida y la Impermanencia (Memento Mori)</h3>
+      <p>La conciencia permanente de la muerte no busca generar desolación, sino otorgar una perspectiva justa sobre lo superfluo y urgir a vivir el presente con plenitud ética.</p>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«No actúes como si fueras a vivir diez mil años. El destino se cierne sobre ti. Mientras vivas, mientras sea posible, sé bueno».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro IV, pasaje 17</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Puedes dejar la vida en este preciso momento. Deja que eso determine lo que haces, dices y piensas».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro II, pasaje 11</span>
+        </div>
+      </div>
+
+      <div class="meditation-card">
+        <p class="meditation-text">«Mira el pasado: los grandes cambios de los imperios. Puedes prever también el futuro, porque será exactamente de la misma forma».</p>
+        <div class="meditation-ref-container">
+          <span class="ref-badge">Meditaciones, Libro VII, pasaje 49</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">Resumen de Aplicación Práctica</h3>
+      <div class="table-container">
+        <div class="table-banner">🏛 MATRIZ DE INTEGRACIÓN DIARIA</div>
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Eje Temático</th>
+              <th style="width: 40%;">Aforismo Rector</th>
+              <th style="width: 35%;">Acción Cotidiana</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dicotomía del Control</strong></td>
+              <td>«Tienes poder sobre tu mente, no sobre los acontecimientos externos».</td>
+              <td>Al experimentar frustración o ansiedad, haz una pausa de 10 segundos e identifica si la causa depende directamente de ti.</td>
+            </tr>
+            <tr>
+              <td><strong>Resistencia (Amor Fati)</strong></td>
+              <td>«Lo que se interpone en el camino se convierte en el camino».</td>
+              <td>Reencuadra cualquier contratiempo imprevisto como un gimnasio para entrenar paciencia, valentía o inventiva.</td>
+            </tr>
+            <tr>
+              <td><strong>Deber Social</strong></td>
+              <td>«La mejor venganza es no volverse semejante al enemigo».</td>
+              <td>Frente al agravio o desprecio de otros, mantén la calma y responde con rectitud impecable sin rebajarte al mismo tono.</td>
+            </tr>
+            <tr>
+              <td><strong>Memento Mori</strong></td>
+              <td>«Mientras vivas, mientras sea posible, sé bueno».</td>
+              <td>Elimina discusiones estériles y postergaciones absurdas: vive hoy con integridad como si fuera tu última jornada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-action-row">
+        <button type="button" class="btn-download-table" onclick="downloadIntegrationMatrix()">
+          📥 Descargar Matriz de Integración Diaria
+        </button>
+      </div>
+
+      <div class="chapter-footer">
+        <a href="#indice" class="back-to-toc-btn">↑ Volver al Índice</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const SECRET_KEY = "Marco-Aurelio";
+
+    // Verificación de la contraseña obligatoria en cada visita
+    function verifyPassword() {
+      const input = document.getElementById("password-input");
+      const errorMsg = document.getElementById("error-message");
+      if (!input) return;
+
+      const userEntry = input.value.trim();
+
+      if (userEntry === SECRET_KEY || userEntry.toLowerCase() === SECRET_KEY.toLowerCase()) {
+        if (errorMsg) errorMsg.textContent = "";
+        unlockContent();
+      } else {
+        if (errorMsg) {
+          errorMsg.textContent = "Contraseña incorrecta, revisa el email que recibiste con la contraseña.";
+        }
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    // Desbloquear y mostrar el libro
+    function unlockContent() {
+      const lock = document.getElementById("lock-screen");
+      const content = document.getElementById("book-content");
+      const floatingNav = document.getElementById("floating-nav");
+      
+      if (lock) lock.style.display = "none";
+      if (content) content.style.display = "block";
+      if (floatingNav) floatingNav.style.display = "flex";
+      
+      window.scrollTo(0, 0);
+      updateProgressBar();
+    }
+
+    // Barra de progreso de lectura superior
+    function updateProgressBar() {
+      const progressBar = document.getElementById("progress-bar");
+      if (!progressBar) return;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (scrollHeight > 0) {
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = scrolled + "%";
+      }
+    }
+
+    // Función para imprimir/descargar plantillas individuales limpias
+    function printCustomSheet(title, bodyHtml) {
+      const printWindow = window.open('', '_blank', 'width=800,height=900');
+      if (!printWindow) return;
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+          <meta charset="UTF-8">
+          <title>${title}</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+          <style>
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+            body { font-family: 'Roboto', sans-serif; padding: 36px 32px; color: #1e293b; background: #fff; line-height: 1.5; }
+            .header { text-align: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #0b1528; }
+            .brand { font-size: 0.8rem; letter-spacing: 3px; color: #0284c7; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; font-family: 'Nunito', sans-serif; }
+            h1 { font-family: 'Nunito', sans-serif; font-size: 1.5rem; color: #0b1528; margin-bottom: 6px; font-weight: 900; }
+            .subtitle { font-size: 0.88rem; color: #64748b; }
+            .table-box { border: 1px solid #cbd5e1; border-radius: 14px; overflow: hidden; margin-top: 14px; }
+            .table-title { background: #0b1528; color: #ffffff; padding: 12px 18px; font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 800; border-bottom: 2px solid #38bdf8; }
+            table { width: 100%; border-collapse: collapse; }
+            th { background: #f8fafc; color: #0b1528; text-align: left; padding: 12px 14px; font-size: 0.85rem; font-weight: 800; border-bottom: 1px solid #cbd5e1; font-family: 'Nunito', sans-serif; }
+            td { padding: 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; font-size: 0.88rem; color: #334155; }
+            tr:last-child td { border-bottom: none; }
+            .write-line { border-bottom: 1px dashed #94a3b8; height: 28px; margin-top: 6px; }
+            .btn-print { margin: 20px auto 0; display: block; padding: 10px 24px; background: #0b1528; color: #fff; border: none; border-radius: 9999px; font-weight: 700; cursor: pointer; font-size: 0.9rem; font-family: 'Nunito', sans-serif; }
+            @media print { .btn-print { display: none; } body { padding: 0; } }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <div class="brand">Frase Oportuna • Pensamiento Estoico</div>
+            <h1>${title}</h1>
+            <div class="subtitle">Plantilla de Práctica Diaria para Completar</div>
+          </div>
+          ${bodyHtml}
+          <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+        </body>
+        </html>
+      `);
+      printWindow.document.close();
+    }
+
+    // Plantilla 1: Ritual de la Mañana limpia para rellenar
+    function downloadMorningRoutine() {
+      const html = `
+        <div class="table-box">
+          <div class="table-title">🌅 RITUAL DE LA MAÑANA: PREPARACIÓN Y PROPÓSITO</div>
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 40%;">Pregunta de Reflexión</th>
+                <th style="width: 60%;">Tu Registro y Reflexión Diario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. El Obstáculo del Día</strong><br><small style="color: #64748b;">¿Qué tarea o situación me genera mayor resistencia hoy?</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+              <tr>
+                <td><strong>2. Virtud en Foco</strong><br><small style="color: #64748b;">[ ] Sabiduría &nbsp; [ ] Coraje &nbsp; [ ] Justicia &nbsp; [ ] Templanza</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+              <tr>
+                <td><strong>3. Intención Ética</strong><br><small style="color: #64748b;">¿Cómo responderé con serenidad ante imprevistos o personas difíciles?</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+      printCustomSheet("Ritual de la Mañana", html);
+    }
+
+    // Plantilla 2: Ritual de la Noche limpia para rellenar
+    function downloadNightRoutine() {
+      const html = `
+        <div class="table-box">
+          <div class="table-title">🌙 RITUAL DE LA NOCHE: EXAMEN DE CONCIENCIA</div>
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 40%;">Punto de Examen</th>
+                <th style="width: 60%;">Tu Examen y Balance Nocturno</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Hecho Desafiante</strong><br><small style="color: #64748b;">¿Qué situación perturbó mi calma hoy?</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+              <tr>
+                <td><strong>2. Lo que estaba FUERA de mi control</strong><br><small style="color: #64748b;">(Aceptación y serenidad)</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+              <tr>
+                <td><strong>3. Lo que estaba BAJO mi control</strong><br><small style="color: #64748b;">(Mi reacción ética y juicio)</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+              <tr>
+                <td><strong>4. Evaluación sin Culpa</strong><br><small style="color: #64748b;">¿Dónde me desvié y qué hice bien?</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+              <tr>
+                <td><strong>5. Gratitud Estoica</strong><br><small style="color: #64748b;">Un hecho simple y sincero que agradecer:</small></td>
+                <td><div class="write-line"></div><div class="write-line"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+      printCustomSheet("Ritual de la Noche", html);
+    }
+
+    // Matriz de Integración Diaria Completa
+    function downloadIntegrationMatrix() {
+      const html = `
+        <div class="table-box">
+          <div class="table-title">🏛️ MATRIZ DE INTEGRACIÓN DIARIA</div>
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 25%;">Eje Temático</th>
+                <th style="width: 40%;">Aforismo Rector</th>
+                <th style="width: 35%;">Acción Cotidiana</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dicotomía del Control</strong></td>
+                <td>«Tienes poder sobre tu mente, no sobre los acontecimientos externos».</td>
+                <td>Al experimentar frustración o ansiedad, haz una pausa de 10 segundos e identifica si la causa depende directamente de ti.</td>
+              </tr>
+              <tr>
+                <td><strong>Resistencia (Amor Fati)</strong></td>
+                <td>«Lo que se interpone en el camino se convierte en el camino».</td>
+                <td>Reencuadra cualquier contratiempo imprevisto como un gimnasio para entrenar paciencia, valentía o inventiva.</td>
+              </tr>
+              <tr>
+                <td><strong>Deber Social</strong></td>
+                <td>«La mejor venganza es no volverse semejante al enemigo».</td>
+                <td>Frente al agravio o desprecio de otros, mantén la calma y responde con rectitud impecable sin rebajarte al mismo tono.</td>
+              </tr>
+              <tr>
+                <td><strong>Memento Mori</strong></td>
+                <td>«Mientras vivas, mientras sea posible, sé bueno».</td>
+                <td>Elimina discusiones estériles y postergaciones absurdas: vive hoy con integridad como si fuera tu última jornada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+      printCustomSheet("Matriz de Integración Diaria", html);
+    }
+
+    window.addEventListener("scroll", updateProgressBar);
+  </script>
+</body>
+</html>
