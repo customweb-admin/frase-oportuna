@@ -1,752 +1,562 @@
-[
+El problema exacto por el cual te salía el mensaje "No hay frases registradas" es que las propiedades de tu frases.json usaban nombres diferentes a los que buscaba el código de index.html.   Los 3 desajustes que tenía el JSON:El campo para filtrar la categoría: El código de index.html buscaba el texto en la propiedad "categoria", pero en tu JSON la categoría decía "La Fortaleza & La Razón" y el nombre de la corriente estaba en "etiqueta": "PENSAMIENTO ESTOICO".   El texto de la cita: El código buscaba la clave "fragmento", mientras que tu JSON la llamaba "texto".   La reflexión: El código buscaba la clave "metafora", mientras que tu JSON la llamaba "reflexion".   Archivo frases.json corregido y estructuradoA continuación tienes el archivo frases.json completamente adaptado con todos los campos unificados (categoria, fragmento, autor, obra, metafora) para que tu index.html lo lea de forma inmediata:JSON[
   {
     "id": 1,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No tienes poder sobre los eventos externos, pero sí sobre tu mente. Aprende esto y encontrarás la fuerza.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "No tienes poder sobre los eventos externos, pero sí sobre tu mente. Aprende esto y encontrarás la fuerza.",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "El caos exterior pierde su dominio cuando reconoces que tu único soberano verdadero es tu postura interna."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "El caos exterior pierde su dominio cuando reconoces que tu único soberano verdadero es tu postura interna."
   },
   {
     "id": 2,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Sufrimos más a menudo en la imaginación que en la realidad.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Sufrimos más a menudo en la imaginación que en la realidad.",
     "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "Observa cuántos de tus temores actuales son historias no escritas que tu mente anticipa sin necesidad."
+    "obra": "Cartas a Lucilio (Siglo I)",
+    "metafora": "Observa cuántos de tus temores actuales son historias no escritas que tu mente anticipa sin necesidad."
   },
   {
     "id": 3,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No pidas que las cosas ocurran como tú deseas; desea más bien que ocurran como ocurren, y fluirás bien.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "No pidas que las cosas ocurran como tú deseas; desea más bien que ocurran como ocurren, y fluirás bien.",
     "autor": "EPÍCTETO",
-    "datos_obra": "Enquiridión (Siglo II)",
-    "reflexion": "La verdadera paz surge de soltar la resistencia hacia el presente tal como se despliega ante ti."
+    "obra": "Enquiridión (Siglo II)",
+    "metafora": "La verdadera paz surge de soltar la resistencia hacia el presente tal como se despliega ante ti."
   },
   {
     "id": 4,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Si estás afligido por algo externo, el dolor no se debe a la cosa en sí, sino a tu estimación de ella.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Si estás afligido por algo externo, el dolor no se debe a la cosa en sí, sino a tu estimación de ella.",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Revisa el significado que le asignas a tus obstáculos; cambiar el juicio altera instantáneamente la pena."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "Revisa el significado que le asignas a tus obstáculos; cambiar el juicio altera instantáneamente la pena."
   },
   {
     "id": 5,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Ningún viento es favorable para quien no sabe a qué puerto se dirige.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Ningún viento es favorable para quien no sabe a qué puerto se dirige.",
     "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "Antes de buscar velocidad en tus pasos, asegura la nitidez del destino al que aspiras llegar."
-  },
-  {
-    "id": 6,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No tienes poder sobre los eventos externos, pero sí sobre tu mente. Aprende esto y encontrarás la fuerza.",
-    "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "El caos exterior pierde su dominio cuando reconoces que tu único soberano verdadero es tu postura interna."
-  },
-  {
-    "id": 7,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Sufrimos más a menudo en la imaginación que en la realidad.",
-    "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "Observa cuántos de tus temores actuales son historias no escritas que tu mente anticipa sin necesidad."
-  },
-  {
-    "id": 8,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No pidas que las cosas ocurran como tú deseas; desea más bien que ocurran como ocurren, y fluirás bien.",
-    "autor": "EPÍCTETO",
-    "datos_obra": "Enquiridión (Siglo II)",
-    "reflexion": "La verdadera paz surge de soltar la resistencia hacia el presente tal como se despliega ante ti."
-  },
-  {
-    "id": 9,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Si estás afligido por algo externo, el dolor no se debe a la cosa en sí, sino a tu estimación de ella.",
-    "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Revisa el significado que le asignas a tus obstáculos; cambiar el juicio altera instantáneamente la pena."
-  },
-  {
-    "id": 10,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Ningún viento es favorable para quien no sabe a qué puerto se dirige.",
-    "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "Antes de buscar velocidad en tus pasos, asegura la nitidez del destino al que aspiras llegar."
+    "obra": "Cartas a Lucilio (Siglo I)",
+    "metafora": "Antes de buscar velocidad en tus pasos, asegura la nitidez del destino al que aspiras llegar."
   },
   {
     "id": 11,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No es que tengamos poco tiempo, sino que perdemos mucho.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "No es que tengamos poco tiempo, sino que perdemos mucho.",
     "autor": "SÉNECA",
-    "datos_obra": "Sobre la brevedad de la vida (Siglo I)",
-    "reflexion": "Evalúa el destino de tus horas; la vida es amplia si sabes habitar cada instante con propósito."
+    "obra": "Sobre la brevedad de la vida (Siglo I)",
+    "metafora": "Evalúa el destino de tus horas; la vida es amplia si sabes habitar cada instante con propósito."
   },
   {
     "id": 12,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "La felicidad de tu vida depende de la calidad de tus pensamientos.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "La felicidad de tu vida depende de la calidad de tus pensamientos.",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Cuida el diálogo interno; las ideas que alimentas hoy construyen el santuario o la prisión de tu mañana."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "Cuida el diálogo interno; las ideas que alimentas hoy construyen el santuario o la prisión de tu mañana."
   },
   {
     "id": 13,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No nos atrevemos a muchas cosas porque son difíciles, pero son difíciles porque no nos atrevemos.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "No nos atrevemos a muchas cosas porque son difíciles, pero son difíciles porque no nos atrevemos.",
     "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "El tamaño de un reto suele ser una ilusión nacida de tu vacilación inicial antes del primer paso."
+    "obra": "Cartas a Lucilio (Siglo I)",
+    "metafora": "El tamaño de un reto suele ser una ilusión nacida de tu vacilación inicial antes del primer paso."
   },
   {
     "id": 14,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "No expliques tu filosofía; encárnala.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "No expliques tu filosofía; encárnala.",
     "autor": "EPÍCTETO",
-    "datos_obra": "Discursos (Siglo II)",
-    "reflexion": "Sustituye los discursos elocuentes por la serena elocuencia de tus acciones cotidianas."
+    "obra": "Discursos (Siglo II)",
+    "metafora": "Sustituye los discursos elocuentes por la serena elocuencia de tus acciones cotidianas."
   },
   {
     "id": 15,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "El obstáculo es el camino.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "El obstáculo es el camino.",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Lo que bloquea tu marcha se convierte en la materia prima para forjar tu nuevo avance."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "Lo que bloquea tu marcha se convierte en la materia prima para forjar tu nuevo avance."
   },
   {
     "id": 16,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Un hombre sabio no se aflige por las cosas que no tiene, sino que se alegra por las que tiene.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Un hombre sabio no se aflige por las cosas que no tiene, sino que se alegra por las que tiene.",
     "autor": "EPÍCTETO",
-    "datos_obra": "Fragmentos (Siglo II)",
-    "reflexion": "La plenitud no proviene del exceso de bienes, sino de apreciar la abundancia que ya te rodea."
+    "obra": "Fragmentos (Siglo II)",
+    "metafora": "La plenitud no proviene del exceso de bienes, sino de apreciar la abundancia que ya te rodea."
   },
   {
     "id": 17,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Si quieres que algo sea bueno, consíguelo de ti mismo.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Si quieres que algo sea bueno, consíguelo de ti mismo.",
     "autor": "EPÍCTETO",
-    "datos_obra": "Discursos (Siglo II)",
-    "reflexion": "No busques en el exterior la virtud y serenidad que únicamente tu propia disciplina puede cultivar."
+    "obra": "Discursos (Siglo II)",
+    "metafora": "No busques en el exterior la virtud y serenidad que únicamente tu propia disciplina puede cultivar."
   },
   {
     "id": 18,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Comienza cada día diciéndote: Hoy me cruzaré con el indiscreto, el ingrato, el insolente...",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Comienza cada día diciéndote: Hoy me cruzaré con el indiscreto, el ingrato, el insolente...",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Preparar la mente para el desencuentro te protege de perder tu templanza ante las debilidades ajenas."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "Preparar la mente para el desencuentro te protege de perder tu templanza ante las debilidades ajenas."
   },
   {
     "id": 19,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "La suerte es lo que ocurre cuando la preparación se encuentra con la oportunidad.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "La suerte es lo que ocurre cuando la preparación se encuentra con la oportunidad.",
     "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "Mantén tu carácter a punto; el azar solo favorece a quien ha forjado previamente la aptitud."
+    "obra": "Cartas a Lucilio (Siglo I)",
+    "metafora": "Mantén tu carácter a punto; el azar solo favorece a quien ha forjado previamente la aptitud."
   },
   {
     "id": 20,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Solo hay un camino hacia la felicidad: dejar de preocuparse por las cosas que están fuera de nuestro control.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Solo hay un camino hacia la felicidad: dejar de preocuparse por las cosas que están fuera de nuestro control.",
     "autor": "EPÍCTETO",
-    "datos_obra": "Discursos (Siglo II)",
-    "reflexion": "Libera la energía que malgastas intentando gobernar el destino; enfócate en gobernar tu respuesta."
+    "obra": "Discursos (Siglo II)",
+    "metafora": "Libera la energía que malgastas intentando gobernar el destino; enfócate en gobernar tu respuesta."
   },
   {
     "id": 21,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Pobre no es el que tiene poco, sino el que codicia más.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Pobre no es el que tiene poco, sino el que codicia más.",
     "autor": "SÉNECA",
-    "datos_obra": "Cartas a Lucilio (Siglo I)",
-    "reflexion": "La verdadera escasez reside en la insaciabilidad de un deseo que jamás se declara satisfecho."
+    "obra": "Cartas a Lucilio (Siglo I)",
+    "metafora": "La verdadera escasez reside en la insaciabilidad de un deseo que jamás se declara satisfecho."
   },
   {
     "id": 22,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "La mejor venganza es no ser como tu enemigo.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "La mejor venganza es no ser como tu enemigo.",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Preserva tu integridad ante el agravio; replicar la bajeza es la única derrota real del espíritu."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "Preserva tu integridad ante el agravio; replicar la bajeza es la única derrota real del espíritu."
   },
   {
     "id": 23,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Ningún hombre es libre si no es dueño de sí mismo.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Ningún hombre es libre si no es dueño de sí mismo.",
     "autor": "EPÍCTETO",
-    "datos_obra": "Enquiridión (Siglo II)",
-    "reflexion": "La autonomía externa es una farsa si tus impulsos y emociones gobiernan tus decisiones diarias."
+    "obra": "Enquiridión (Siglo II)",
+    "metafora": "La autonomía externa es una farsa si tus impulsos y emociones gobiernan tus decisiones diarias."
   },
   {
     "id": 24,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Dondequiera que haya un ser humano, hay una oportunidad para la amabilidad.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Dondequiera que haya un ser humano, hay una oportunidad para la amabilidad.",
     "autor": "SÉNECA",
-    "datos_obra": "Sobre la clemencia (Siglo I)",
-    "reflexion": "Haz de tu presencia una fuente de benevolencia; el bien común es la razón de ser de la comunidad humana."
+    "obra": "Sobre la clemencia (Siglo I)",
+    "metafora": "Haz de tu presencia una fuente de benevolencia; el bien común es la razón de ser de la comunidad humana."
   },
   {
     "id": 25,
-    "corriente": "estoica",
-    "etiqueta": "PENSAMIENTO ESTOICO",
-    "categoria": "La Fortaleza & La Razón",
-    "texto": "Haz cada cosa en la vida como si fuera la última.",
+    "categoria": "Pensamiento Estoico",
+    "fragmento": "Haz cada cosa en la vida como si fuera la última.",
     "autor": "MARCO AURELIO",
-    "datos_obra": "Meditaciones (Siglo II)",
-    "reflexion": "Imprime sobriedad y excelencia a tu presente despojándote de la ilusión del mañana garantizado."
+    "obra": "Meditaciones (Siglo II)",
+    "metafora": "Imprime sobriedad y excelencia a tu presente despojándote de la ilusión del mañana garantizado."
   },
   {
     "id": 26,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "La herida es el lugar por donde entra la luz en ti.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "La herida es el lugar por donde entra la luz en ti.",
     "autor": "RUMI",
-    "datos_obra": "Masnavi (Siglo XIII)",
-    "reflexion": "No temas a las grietas de la existencia; en ellas se quiebra el ego y penetra la gracia de lo divino."
+    "obra": "Masnavi (Siglo XIII)",
+    "metafora": "No temas a las grietas de la existencia; en ellas se quiebra el ego y penetra la gracia de lo divino."
   },
   {
     "id": 27,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Buscaba a Dios y solo me encontré a mí mismo; me busqué a mí mismo y solo encontré a Dios.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Buscaba a Dios y solo me encontré a mí mismo; me busqué a mí mismo y solo encontré a Dios.",
     "autor": "AL-HALLAJ",
-    "datos_obra": "Diwan (Siglo X)",
-    "reflexion": "Al descender a lo más hondo del alma, descubres que la frontera entre el buscador y lo buscado se disuelve."
+    "obra": "Diwan (Siglo X)",
+    "metafora": "Al descender a lo más hondo del alma, descubres que la frontera entre el buscador y lo buscado se disuelve."
   },
   {
     "id": 28,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "En la noche dichosa, en secreto, que nadie me veía, ni yo miraba cosa, sin otra luz y guía sino la que en el corazón ardía.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "En la noche dichosa, en secreto, que nadie me veía, ni yo miraba cosa, sin otra luz y guía sino la que en el corazón ardía.",
     "autor": "SAN JUAN DE LA CRUZ",
-    "datos_obra": "Noche oscura del alma (Siglo XVI)",
-    "reflexion": "Cuando los sentidos se apagan, la intuición espiritual se transforma en la linterna más clara del viaje."
+    "obra": "Noche oscura del alma (Siglo XVI)",
+    "metafora": "Cuando los sentidos se apagan, la intuición espiritual se transforma en la linterna más clara del viaje."
   },
   {
     "id": 29,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Dios no está en ningún lugar lejano; está en el centro más íntimo de tu propio ser.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Dios no está en ningún lugar lejano; está en el centro más íntimo de tu propio ser.",
     "autor": "SANTA TERESA DE JESÚS",
-    "datos_obra": "Las moradas (Siglo XVI)",
-    "reflexion": "Haz silencio interior; el sagrario que buscas fuera ya habita latente en la quietud de tu pecho."
+    "obra": "Las moradas (Siglo XVI)",
+    "metafora": "Haz silencio interior; el sagrario que buscas fuera ya habita latente en la quietud de tu pecho."
   },
   {
     "id": 30,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "El silencio es el lenguaje de Dios; todo lo demás es una mala traducción.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "El silencio es el lenguaje de Dios; todo lo demás es una mala traducción.",
     "autor": "RUMI",
-    "datos_obra": "Masnavi (Siglo XIII)",
-    "reflexion": "Aquiepa el ruido de los conceptos para escuchar la presencia pura que habla sin palabras."
+    "obra": "Masnavi (Siglo XIII)",
+    "metafora": "Aquiepa el ruido de los conceptos para escuchar la presencia pura que habla sin palabras."
   },
   {
     "id": 31,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "La gota de agua no se pierde en el océano, el océano se encuentra en la gota de agua.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "La gota de agua no se pierde en el océano, el océano se encuentra en la gota de agua.",
     "autor": "KABIR",
-    "datos_obra": "Bijak (Siglo XV)",
-    "reflexion": "Tu pequeñez aparente contiene la totalidad de la vida cuando reconoces tu naturaleza esencial."
+    "obra": "Bijak (Siglo XV)",
+    "metafora": "Tu pequeñez aparente contiene la totalidad de la vida cuando reconoces tu naturaleza esencial."
   },
   {
     "id": 32,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Para llegar a lo que no sabes, has de ir por camino que no sabes.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Para llegar a lo que no sabes, has de ir por camino que no sabes.",
     "autor": "SAN JUAN DE LA CRUZ",
-    "datos_obra": "Subida del Monte Carmelo (Siglo XVI)",
-    "reflexion": "Entrega la certidumbre del intelecto y permite que la fe te adentre en el fecundo misterio del no-saber."
+    "obra": "Subida del Monte Carmelo (Siglo XVI)",
+    "metafora": "Entrega la certidumbre del intelecto y permite que la fe te adentre en el fecundo misterio del no-saber."
   },
   {
     "id": 33,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Si Dios estuviera en otro lugar, el alma tendría que viajar; pero como reside dentro, basta con estar en quietud.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Si Dios estuviera en otro lugar, el alma tendría que viajar; pero como reside dentro, basta con estar en quietud.",
     "autor": "MAESTRO ECKHART",
-    "datos_obra": "Sermones Alemanes (Siglo XIV)",
-    "reflexion": "Suspende las peregrinaciones externas; el misterio se revela cuando cesas todo movimiento y estás presente."
+    "obra": "Sermones Alemanes (Siglo XIV)",
+    "metafora": "Suspende las peregrinaciones externas; el misterio se revela cuando cesas todo movimiento y estás presente."
   },
   {
     "id": 34,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Todo lo visible es solo un velo que oculta la luz invisible del Origen.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Todo lo visible es solo un velo que oculta la luz invisible del Origen.",
     "autor": "ATTAR DE NISHAPUR",
-    "datos_obra": "El lenguaje de los pájaros (Siglo XII)",
-    "reflexion": "Afina la mirada del espíritu para contemplar lo sagrado que late tras las formas efímeras del mundo."
+    "obra": "El lenguaje de los pájaros (Siglo XII)",
+    "metafora": "Afina la mirada del espíritu para contemplar lo sagrado que late tras las formas efímeras del mundo."
   },
   {
     "id": 35,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Cosas hay tan altas que el entendimiento no las alcanza y el amor solo las abraza.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Cosas hay tan altas que el entendimiento no las alcanza y el amor solo las abraza.",
     "autor": "SANTA TERESA DE JESÚS",
-    "datos_obra": "Libro de la vida (Siglo XVI)",
-    "reflexion": "Cuando la razón toca su límite, el afecto devoto cruza la frontera hacia la unión con la verdad."
+    "obra": "Libro de la vida (Siglo XVI)",
+    "metafora": "Cuando la razón toca su límite, el afecto devoto cruza la frontera hacia la unión con la verdad."
   },
   {
     "id": 36,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "El amor no tiene razones, no tiene preguntas; arde en su propio fuego y se consume en la Luz.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "El amor no tiene razones, no tiene preguntas; arde en su propio fuego y se consume en la Luz.",
     "autor": "HAFEZ DE SHIRAZ",
-    "datos_obra": "El Diván (Siglo XIV)",
-    "reflexion": "Abandona la necesidad de explicaciones racionales; la entrega del corazón es su propia justificación."
+    "obra": "El Diván (Siglo XIV)",
+    "metafora": "Abandona la necesidad de explicaciones racionales; la entrega del corazón es su propia justificación."
   },
   {
     "id": 37,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Un momento de contemplación pura vale más que cien años de devoción exterior.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Un momento de contemplación pura vale más que cien años de devoción exterior.",
     "autor": "RABIA AL-ADAWIYYA",
-    "datos_obra": "Dichos y Poemas (Siglo VIII)",
-    "reflexion": "La rituals vacíos no bastan; un instante de presencia sincera transforma el alma desde sus cimientos."
+    "obra": "Dichos y Poemas (Siglo VIII)",
+    "metafora": "La rituals vacíos no bastan; un instante de presencia sincera transforma el alma desde sus cimientos."
   },
   {
     "id": 38,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Cuanto más vacía está la vasija, más presencia divina puede albergar.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Cuanto más vacía está la vasija, más presencia divina puede albergar.",
     "autor": "MAESTRO ECKHART",
-    "datos_obra": "Tratados (Siglo XIV)",
-    "reflexion": "Despójate de apegos y pretensiones para que la luz infinita llene el espacio liberado en tu interior."
+    "obra": "Tratados (Siglo XIV)",
+    "metafora": "Despójate de apegos y pretensiones para que la luz infinita llene el espacio liberado en tu interior."
   },
   {
     "id": 39,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "En el corazón del enamorado no hay espacio para dos; allí solo habita el Único.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "En el corazón del enamorado no hay espacio para dos; allí solo habita el Único.",
     "autor": "IBN ARABI",
-    "datos_obra": "Las revelaciones de La Meca (Siglo XIII)",
-    "reflexion": "La devoción genuina unifica la mente y elimina toda ilusión de separación en el universo."
+    "obra": "Las revelaciones de La Meca (Siglo XIII)",
+    "metafora": "La devoción genuina unifica la mente y elimina toda ilusión de separación en el universo."
   },
   {
     "id": 40,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "En la quietud del alma, el Eterno habla su palabra secreta.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "En la quietud del alma, el Eterno habla su palabra secreta.",
     "autor": "JILAN DE SUSBÚ",
-    "datos_obra": "Altura de la mística (Siglo XIV)",
-    "reflexion": "Calma el oleaje de las preocupaciones cotidianas para percibir el murmullo de lo trascendente."
+    "obra": "Altura de la mística (Siglo XIV)",
+    "metafora": "Calma el oleaje de las preocupaciones cotidianas para percibir el murmullo de lo trascendente."
   },
   {
     "id": 41,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "No busques afuera la fuente; dentro de ti manan las aguas de la vida eterna.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "No busques afuera la fuente; dentro de ti manan las aguas de la vida eterna.",
     "autor": "ANGELUS SILESIUS",
-    "datos_obra": "El peregrino querubínico (Siglo XVII)",
-    "reflexion": "Toda plenitud proviene del manantial interior que no depende de los avatares del mundo visible."
+    "obra": "El peregrino querubínico (Siglo XVII)",
+    "metafora": "Toda plenitud proviene del manantial interior que no depende de los avatares del mundo visible."
   },
   {
     "id": 42,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "La rosa es sin porqué; florece porque florece, no se cuida de sí misma, no desea ser vista.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "La rosa es sin porqué; florece porque florece, no se cuida de sí misma, no desea ser vista.",
     "autor": "ANGELUS SILESIUS",
-    "datos_obra": "El peregrino querubínico (Siglo XVII)",
-    "reflexion": "Expande tu ser de forma espontánea y pura, libre de la búsqueda de utilidad o reconocimiento ajeno."
+    "obra": "El peregrino querubínico (Siglo XVII)",
+    "metafora": "Expande tu ser de forma espontánea y pura, libre de la búsqueda de utilidad o reconocimiento ajeno."
   },
   {
     "id": 43,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Mira el rostro del Amado en cada criatura que cruce tu camino.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Mira el rostro del Amado en cada criatura que cruce tu camino.",
     "autor": "IBN ARABI",
-    "datos_obra": "El intérprete de los deseos (Siglo XIII)",
-    "reflexion": "Reconoce la chispa sagrada oculta en la mirada de todo ser vivo y santifica tus relaciones cotidianas."
+    "obra": "El intérprete de los deseos (Siglo XIII)",
+    "metafora": "Reconoce la chispa sagrada oculta en la mirada de todo ser vivo y santifica tus relaciones cotidianas."
   },
   {
     "id": 44,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "En el amor no hay yo ni tú; la dualidad se apaga en el fuego de la unión.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "En el amor no hay yo ni tú; la dualidad se apaga en el fuego de la unión.",
     "autor": "FARID AL-DIN ATTAR",
-    "datos_obra": "El libro del secreto (Siglo XII)",
-    "reflexion": "Trasciende el egoísmo del 'yo' para disolverte en la vasta e indivisible realidad del Todo."
+    "obra": "El libro del secreto (Siglo XII)",
+    "metafora": "Trasciende el egoísmo del 'yo' para disolverte en la vasta e indivisible realidad del Todo."
   },
   {
     "id": 45,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "La lámpara de la mente encendida por el espíritu no teme a la noche del mundo.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "La lámpara de la mente encendida por el espíritu no teme a la noche del mundo.",
     "autor": "HILDEGARD VON BINGEN",
-    "datos_obra": "Scivias (Siglo XII)",
-    "reflexion": "Quien lleva la luz de la verdad en su interior camina inquebrantable a través de las sombras de la época."
+    "obra": "Scivias (Siglo XII)",
+    "metafora": "Quien lleva la luz de la verdad en su interior camina inquebrantable a través de las sombras de la época."
   },
   {
     "id": 46,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Al final de la jornada de la vida, seremos examinados en el amor.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Al final de la jornada de la vida, seremos examinados en el amor.",
     "autor": "SAN JUAN DE LA CRUZ",
-    "datos_obra": "Dichos de luz y amor (Siglo XVI)",
-    "reflexion": "Mide tus días no por tus triunfos o saberes, sino por la capacidad de amar que entregaste en tu andar."
+    "obra": "Dichos de luz y amor (Siglo XVI)",
+    "metafora": "Mide tus días no por tus triunfos o saberes, sino por la capacidad de amar que entregaste en tu andar."
   },
   {
     "id": 47,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Iba buscando la verdad y la encontré oculta en la sencillez del corazón humilde.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Iba buscando la verdad y la encontré oculta en la sencillez del corazón humilde.",
     "autor": "BAHAUDDÍN SHAH",
-    "datos_obra": "Tradición Sufí (Siglo XIV)",
-    "reflexion": "La verdadera sabiduría no se encuentra en la arrogancia del saber, sino en la apertura de un espíritu llano."
+    "obra": "Tradición Sufí (Siglo XIV)",
+    "metafora": "La verdadera sabiduría no se encuentra en la arrogancia del saber, sino en la apertura de un espíritu llano."
   },
   {
     "id": 48,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "El alma es un castillo de diamante o de muy claro cristal, donde hay muchas moradas.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "El alma es un castillo de diamante o de muy claro cristal, donde hay muchas moradas.",
     "autor": "SANTA TERESA DE JESÚS",
-    "datos_obra": "Las moradas (Siglo XVI)",
-    "reflexion": "Explora tus profundidades espirituales; posees una riqueza interior vasta e inexplorada por descubrir."
+    "obra": "Las moradas (Siglo XVI)",
+    "metafora": "Explora tus profundidades espirituales; posees una riqueza interior vasta e inexplorada por descubrir."
   },
   {
     "id": 49,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Cuando el corazón despierta, cada piedra se vuelve un altar y cada respiración una oración.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Cuando el corazón despierta, cada piedra se vuelve un altar y cada respiración una oración.",
     "autor": "RUMI",
-    "datos_obra": "Masnavi (Siglo XIII)",
-    "reflexion": "Transforma lo cotidiano en un acto sagrado mediante la presencia consciente y la devoción interior."
+    "obra": "Masnavi (Siglo XIII)",
+    "metafora": "Transforma lo cotidiano en un acto sagrado mediante la presencia consciente y la devoción interior."
   },
   {
     "id": 50,
-    "corriente": "mistica",
-    "etiqueta": "PENSAMIENTO MÍSTICO",
-    "categoria": "Lo Trascendente & La Luz",
-    "texto": "Quien conoce el Secreto no habla; quien habla no conoce el Secreto.",
+    "categoria": "Pensamiento Místico",
+    "fragmento": "Quien conoce el Secreto no habla; quien habla no conoce el Secreto.",
     "autor": "AL-GHAZALI",
-    "datos_obra": "La alquimia de la felicidad (Siglo XI)",
-    "reflexion": "Las experiencias místicas trascienden el lenguaje; la verdadera comprensión se vive en el sagrado silencio."
+    "obra": "La alquimia de la felicidad (Siglo XI)",
+    "metafora": "Las experiencias místicas trascienden el lenguaje; la verdadera comprensión se vive en el sagrado silencio."
   },
   {
     "id": 51,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Conócete a ti mismo.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Conócete a ti mismo.",
     "autor": "SÓCRATES",
-    "datos_obra": "Diálogos platónicos (Siglo V a.C.)",
-    "reflexion": "El examen de la propia alma es el punto de partida ineludible para cualquier sabiduría real."
+    "obra": "Diálogos platónicos (Siglo V a.C.)",
+    "metafora": "El examen de la propia alma es el punto de partida ineludible para cualquier sabiduría real."
   },
   {
     "id": 52,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "El hombre que no examina su vida no merece vivirla.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "El hombre que no examina su vida no merece vivirla.",
     "autor": "PLATÓN",
-    "datos_obra": "Apología de Sócrates (Siglo IV a.C.)",
-    "reflexion": "Cuestiona tus certezas e impulsos para dotar a tu paso por el mundo de verdadero propósito ético."
+    "obra": "Apología de Sócrates (Siglo IV a.C.)",
+    "metafora": "Cuestiona tus certezas e impulsos para dotar a tu paso por el mundo de verdadero propósito ético."
   },
   {
     "id": 53,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Nos transformamos en aquello que contemplamos.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Nos transformamos en aquello que contemplamos.",
     "autor": "PLOTINO",
-    "datos_obra": "Enéadas (Siglo III)",
-    "reflexion": "Selecciona con cuidado las ideas que habitan tu mente; la naturaleza de tu atención moldea tu alma."
+    "obra": "Enéadas (Siglo III)",
+    "metafora": "Selecciona con cuidado las ideas que habitan tu mente; la naturaleza de tu atención moldea tu alma."
   },
   {
     "id": 54,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Nos conocemos solo en la medida en que hemos sido puestos a prueba.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Nos conocemos solo en la medida en que hemos sido puestos a prueba.",
     "autor": "SÉNAC DE MEILHAN",
-    "datos_obra": "Consideraciones sobre el espíritu (1795)",
-    "reflexion": "La adversidad saca a la luz aquellos recursos internos que permanecían ocultos en la comodidad."
+    "obra": "Consideraciones sobre el espíritu (1795)",
+    "metafora": "La adversidad saca a la luz aquellos recursos internos que permanecían ocultos en la comodidad."
   },
   {
     "id": 55,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Conocer a los demás es sabiduría; conocerse a uno mismo es iluminación.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Conocer a los demás es sabiduría; conocerse a uno mismo es iluminación.",
     "autor": "LAO TSÉ",
-    "datos_obra": "Tao Te Ching (Siglo VI a.C.)",
-    "reflexion": "Descender a los pliegues del propio ser exige un valor mayor que el necesario para comprender el exterior."
+    "obra": "Tao Te Ching (Siglo VI a.C.)",
+    "metafora": "Descender a los pliegues del propio ser exige un valor mayor que el necesario para comprender el exterior."
   },
   {
     "id": 56,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Nada hay más hondo ni más secreto que el santuario de la propia conciencia.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Nada hay más hondo ni más secreto que el santuario de la propia conciencia.",
     "autor": "CICERÓN",
-    "datos_obra": "De officiis (44 a.C.)",
-    "reflexion": "Al resguardo del ruido del mundo, tu tribunal interno guarda la medida exacta de tu integridad."
+    "obra": "De officiis (44 a.C.)",
+    "metafora": "Al resguardo del ruido del mundo, tu tribunal interno guarda la medida exacta de tu integridad."
   },
   {
     "id": 57,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Me busqué a mí mismo.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Me busqué a mí mismo.",
     "autor": "HERÁCLITO",
-    "datos_obra": "Fragmentos (Siglo VI a.C.)",
-    "reflexion": "El viaje hacia las profundidades personales es la más exigente y fascinante de las indagaciones."
+    "obra": "Fragmentos (Siglo VI a.C.)",
+    "metafora": "El viaje hacia las profundidades personales es la más exigente y fascinante de las indagaciones."
   },
   {
     "id": 58,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "No vayas afuera, vuelve a ti mismo; en el hombre interior habita la verdad.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "No vayas afuera, vuelve a ti mismo; en el hombre interior habita la verdad.",
     "autor": "AGUSTÍN DE HIPONA",
-    "datos_obra": "De vera religione (390)",
-    "reflexion": "Suspende las búsquedas externas; las certezas más definitivas aguardan en la intimidad de la mente."
+    "obra": "De vera religione (390)",
+    "metafora": "Suspende las búsquedas externas; las certezas más definitivas aguardan en la intimidad de la mente."
   },
   {
     "id": 59,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Saber lo que se ignora es la forma más elevada del conocimiento.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Saber lo que se ignora es la forma más elevada del conocimiento.",
     "autor": "CONFUCIO",
-    "datos_obra": "Analectas (Siglo V a.C.)",
-    "reflexion": "La humildad intelectual despeja las ilusiones del ego y abre el camino hacia la comprensión lúcida."
+    "obra": "Analectas (Siglo V a.C.)",
+    "metafora": "La humildad intelectual despeja las ilusiones del ego y abre el camino hacia la comprensión lúcida."
   },
   {
     "id": 60,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "En el laberinto del espíritu, la linterna es la atención despierta.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "En el laberinto del espíritu, la linterna es la atención despierta.",
     "autor": "BARUCH SPINOZA",
-    "datos_obra": "Ética (1677)",
-    "reflexion": "Observa tus afectos y pasiones sin juzgarlos; la observación serena aporta orden a la vida interior."
+    "obra": "Ética (1677)",
+    "metafora": "Observa tus afectos y pasiones sin juzgarlos; la observación serena aporta orden a la vida interior."
   },
   {
     "id": 61,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "El primer deber de un hombre es pensar por sí mismo.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "El primer deber de un hombre es pensar por sí mismo.",
     "autor": "JOSÉ MARTÍ",
-    "datos_obra": "Nuestra América (1891)",
-    "reflexion": "Afianza la autonomía de tu criterio antes de adoptar prejuicios o modas intelectuales ajenas."
+    "obra": "Nuestra América (1891)",
+    "metafora": "Afianza la autonomía de tu criterio antes de adoptar prejuicios o modas intelectuales ajenas."
   },
   {
     "id": 62,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Quien mira adentro no encuentra dogmas, sino un universo en permanente construcción.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Quien mira adentro no encuentra dogmas, sino un universo en permanente construcción.",
     "autor": "SØREN KIERKEGAARD",
-    "datos_obra": "La alternativa (1843)",
-    "reflexion": "Asume la libertad y la responsabilidad de modelar tu propia existencia desde tu núcleo más genuino."
+    "obra": "La alternativa (1843)",
+    "metafora": "Asume la libertad y la responsabilidad de modelar tu propia existencia desde tu núcleo más genuino."
   },
   {
     "id": 63,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "El templo de la verdad se erige sobre la roca del autoexamen.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "El templo de la verdad se erige sobre la roca del autoexamen.",
     "autor": "MICHEL DE MONTAIGNE",
-    "datos_obra": "Ensayos (1580)",
-    "reflexion": "Registra tus contradicciones y flaquezas con honestidad para madurar una perspectiva realista del ser."
+    "obra": "Ensayos (1580)",
+    "metafora": "Registra tus contradicciones y flaquezas con honestidad para madurar una perspectiva realista del ser."
   },
   {
     "id": 64,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Nuestra vida es un experimento continuo cuyo único observador definitivo somos nosotros mismos.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Nuestra vida es un experimento continuo cuyo único observador definitivo somos nosotros mismos.",
     "autor": "ARTHUR SCHOPENHAUER",
-    "datos_obra": "Parerga y paralipómena (1851)",
-    "reflexion": "Concede la debida importancia a la evaluación íntima de tus pasos por encima del veredicto ajeno."
+    "obra": "Parerga y paralipómena (1851)",
+    "metafora": "Concede la debida importancia a la evaluación íntima de tus pasos por encima del veredicto ajeno."
   },
   {
     "id": 65,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "En el corazón de la soledad florece la comprensión.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "En el corazón de la soledad florece la comprensión.",
     "autor": "JEAN-JACQUES ROUSSEAU",
-    "datos_obra": "Las ensoñaciones del paseante solitario (1782)",
-    "reflexion": "Busca espacios de recogimiento; el aislamiento elegido sana las grietas causadas por la agitación social."
+    "obra": "Las ensoñaciones del paseante solitario (1782)",
+    "metafora": "Busca espacios de recogimiento; el aislamiento elegido sana las grietas causadas por la agitación social."
   },
   {
     "id": 66,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "La introspección es el espejo donde la mente aprende a contemplar sus propios contornos.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "La introspección es el espejo donde la mente aprende a contemplar sus propios contornos.",
     "autor": "DAVID HUME",
-    "datos_obra": "Tratado de la naturaleza humana (1739)",
-    "reflexion": "Estudia el flujo de tus pensamientos para comprender los cimientos sobre los que eriges tu realidad."
+    "obra": "Tratado de la naturaleza humana (1739)",
+    "metafora": "Estudia el flujo de tus pensamientos para comprender los cimientos sobre los que eriges tu realidad."
   },
   {
     "id": 67,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "No somos solo lo que hacemos, sino lo que soñamos y guardamos en silencio.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "No somos solo lo que hacemos, sino lo que soñamos y guardamos en silencio.",
     "autor": "FRIEDRICH SCHILLER",
-    "datos_obra": "Cartas sobre la educación estética del hombre (1795)",
-    "reflexion": "Valora la riqueza invisible de tu mundo interior; allí habita la sustancia real de tu sensibilidad."
+    "obra": "Cartas sobre la educación estética del hombre (1795)",
+    "metafora": "Valora la riqueza invisible de tu mundo interior; allí habita la sustancia real de tu sensibilidad."
   },
   {
     "id": 68,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Solo la verdad interna confiere una dignidad que las circunstancias no pueden arrebatar.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Solo la verdad interna confiere una dignidad que las circunstancias no pueden arrebatar.",
     "autor": "IMMANUEL KANT",
-    "datos_obra": "Fundamentación de la metafísica de las costumbres (1785)",
-    "reflexion": "Mantén la fidelidad a tus principios rectores frente a las presiones y conveniencias del entorno."
+    "obra": "Fundamentación de la metafísica de las costumbres (1785)",
+    "metafora": "Mantén la fidelidad a tus principios rectores frente a las presiones y conveniencias del entorno."
   },
   {
     "id": 69,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "El pensamiento que no vuelve sobre sí mismo se desvanece en la dispersión.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "El pensamiento que no vuelve sobre sí mismo se desvanece en la dispersión.",
     "autor": "G. W. F. HEGEL",
-    "datos_obra": "Fenomenología del espíritu (1807)",
-    "reflexion": "Haz pausas periódicas para integrar la experiencia y dotar de continuidad a tu maduración personal."
+    "obra": "Fenomenología del espíritu (1807)",
+    "metafora": "Haz pausas periódicas para integrar la experiencia y dotar de continuidad a tu maduración personal."
   },
   {
     "id": 70,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "La mayor victoria es la conquista de la propia mente.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "La mayor victoria es la conquista de la propia mente.",
     "autor": "DHAMMAPADA",
-    "datos_obra": "Texto canónico budista (Siglo III a.C.)",
-    "reflexion": "Aplaca los impulsos desordenados para gozar de la inquebrantable serenidad del autodominio."
+    "obra": "Texto canónico budista (Siglo III a.C.)",
+    "metafora": "Aplaca los impulsos desordenados para gozar de la inquebrantable serenidad del autodominio."
   },
   {
     "id": 71,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Somos lo que pensamos; todo lo que somos surge con nuestros pensamientos.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Somos lo que pensamos; todo lo que somos surge con nuestros pensamientos.",
     "autor": "BUDA GAUTAMA",
-    "datos_obra": "Dhammapada (Siglo V a.C.)",
-    "reflexion": "Cuida la semilla de cada idea; de ellas brota el paisaje de tus emociones y tus actos."
+    "obra": "Dhammapada (Siglo V a.C.)",
+    "metafora": "Cuida la semilla de cada idea; de ellas brota el paisaje de tus emociones y tus actos."
   },
   {
     "id": 72,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "La contemplación silenciosa revela los lazos invisibles entre el alma y el cosmos.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "La contemplación silenciosa revela los lazos invisibles entre el alma y el cosmos.",
     "autor": "GIORDANO BRUNO",
-    "datos_obra": "Del universo infinito y los mundos (1584)",
-    "reflexion": "Reconoce la escala universal de tu existencia y abre tu sensibilidad al misterio que te rodea."
+    "obra": "Del universo infinito y los mundos (1584)",
+    "metafora": "Reconoce la escala universal de tu existencia y abre tu sensibilidad al misterio que te rodea."
   },
   {
     "id": 73,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "En el examen de nuestras imperfecciones hallamos el germen del verdadero crecimiento.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "En el examen de nuestras imperfecciones hallamos el germen del verdadero crecimiento.",
     "autor": "BENJAMIN FRANKLIN",
-    "datos_obra": "Autobiografía (1791)",
-    "reflexion": "Observa tus yerros sin culpa destructiva, usándolos como escalones hacia una versión más madura."
+    "obra": "Autobiografía (1791)",
+    "metafora": "Observa tus yerros sin culpa destructiva, usándolos como escalones hacia una versión más madura."
   },
   {
     "id": 74,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "Nada humano me es ajeno, porque en mi propio ser hallo el eco de todas las pasiones.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "Nada humano me es ajeno, porque en mi propio ser hallo el eco de todas las pasiones.",
     "autor": "TERENCIO",
-    "datos_obra": "Heautontimorumenos (163 a.C.)",
-    "reflexion": "Comprenderte a ti mismo es la clave para desarrollar una compasión genuina hacia las luchas ajenas."
+    "obra": "Heautontimorumenos (163 a.C.)",
+    "metafora": "Comprenderte a ti mismo es la clave para desarrollar una compasión genuina hacia las luchas ajenas."
   },
   {
     "id": 75,
-    "corriente": "introspectiva",
-    "etiqueta": "PENSAMIENTO INTROSPECTIVO",
-    "categoria": "El Refugio & La Sensibilidad",
-    "texto": "El verdadero viaje de descubrimiento no consiste en buscar nuevos paisajes, sino en tener nuevos ojos.",
+    "categoria": "Pensamiento Introspectivo",
+    "fragmento": "El verdadero viaje de descubrimiento no consiste en buscar nuevos paisajes, sino en tener nuevos ojos.",
     "autor": "MARCEL PROUST",
-    "datos_obra": "En busca del tiempo perdido (1923)",
-    "reflexion": "Transforma la mirada con la que juzgas lo cotidiano y descubrirás la profundidad oculta en lo habitual."
+    "obra": "En busca del tiempo perdido (1923)",
+    "metafora": "Transforma la mirada con la que juzgas lo cotidiano y descubrirás la profundidad oculta en lo habitual."
   }
 ]
