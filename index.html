@@ -660,481 +660,360 @@
 
   <!-- LÓGICA INTERACTIVA Y BANCO DE FRASES -->
   <script>
-    const FRASES_OPORTUNAS = [
-      // 1. PENSAMIENTO ESTOICO
-      {
-        categoria: "Pensamiento Estoico",
-        fragmento: "No son las cosas las que atormentan a los hombres, sino los principios y juicios que los hombres forman acerca de las cosas.",
-        autor: "Epicteto",
-        obra: "Enquiridión o Manual (Siglo I d.C.)",
-        metafora: "El suceso en sí es neutro; el peso o la angustia que experimentas no viene del hecho exterior, sino del relato con el que tu juicio lo viste. Modifica el juicio y el peso desaparecerá."
-      },
-      {
-        categoria: "Pensamiento Estoico",
-        fragmento: "Tienes poder sobre tu mente, no sobre los acontecimientos externos. Comprende esto, y hallarás tu fuerza interior.",
-        autor: "Marco Aurelio",
-        obra: "Meditaciones (Libro XII, Siglo II d.C.)",
-        metafora: "Querer gobernar lo incontrolable engendra impotencia; serenar la ciudadela de tu pensamiento propio es la única verdadera soberanía."
-      },
-      {
-        categoria: "Pensamiento Estoico",
-        fragmento: "A menudo sufrimos más por la imaginación que por la realidad.",
-        autor: "Lucio Anneo Séneca",
-        obra: "Cartas a Lucilio (Carta XIII, Siglo I d.C.)",
-        metafora: "La mente anticipa tormentas que jamás ocurrirán o que resultan menos ásperas al llegar. Regresa al presente: en este instante preciso siempre tienes con qué resistir."
-      },
-      {
-        categoria: "Pensamiento Estoico",
-        fragmento: "La felicidad de tu vida depende de la calidad de tus pensamientos; por tanto, cuida de no albergar nociones incompatibles con la virtud y la naturaleza razonable.",
-        autor: "Marco Aurelio",
-        obra: "Meditaciones (Libro III, Siglo II d.C.)",
-        metafora: "Tus pensamientos tiñen tu ánimo como el tinte tiñe la lana. Si tus reflexiones son nobles y templadas, tu vida entera respirará orden."
-      },
+   <script>
+  // Arreglo dinámico que se llenará desde frases.json
+  let FRASES_OPORTUNAS = [];
+  let corrienteSeleccionada = 'aleatorio';
+  let fraseActual = null;
 
-      // 2. PENSAMIENTO MÍSTICO
-      {
-        categoria: "Pensamiento Místico",
-        fragmento: "La herida es el lugar por donde la Luz entra en ti.",
-        autor: "Yalal al-Din Rumi",
-        obra: "Masnavi (Persia, Siglo XIII)",
-        metafora: "Aquello que hoy te quiebra o te hace vulnerable no es tu destrucción: es la grieta por donde tu entendimiento se abre a una comprensión más profunda y amorosa."
-      },
-      {
-        categoria: "Pensamiento Místico",
-        fragmento: "No busques el agua en el desierto; cultiva la sed, para que el agua brote por sí misma desde el fondo de tu pecho.",
-        autor: "Yalal al-Din Rumi",
-        obra: "Diván de Shams de Tabriz (Persia, Siglo XIII)",
-        metafora: "A veces corremos tras consuelos externos sin darnos cuenta de que la maduración auténtica nace de habitar con devoción el anhelo interior."
-      },
-      {
-        categoria: "Pensamiento Místico",
-        fragmento: "Vivo sin vivir en mí, y tan alta vida espero, que muero porque no muero.",
-        autor: "Santa Teresa de Jesús",
-        obra: "Poesías Líricas (Siglo XVI)",
-        metafora: "Cuando el espíritu roza una belleza o una verdad superior, las distracciones terrenales pierden su brillo y el corazón despierta a lo verdaderamente esencial."
-      },
-      {
-        categoria: "Pensamiento Místico",
-        fragmento: "¿A qué me obligas, vano y ciego mundo? ¿Qué pretendes combatir en mi retiro? Si nada tengo, ¿qué ganarás con despojarme?",
-        autor: "Sor Juana Inés de la Cruz",
-        obra: "Inundación Castálida (Siglo XVII)",
-        metafora: "El desprendimiento y la búsqueda del saber honesto son una armadura invulnerable frente a las vanidades y las exigencias del entorno."
-      },
+  // Cargar dinámicamente el archivo frases.json
+  async function cargarFrasesJSON() {
+    try {
+      const respuesta = await fetch('frases.json');
+      if (!respuesta.ok) throw new Error('No se pudo cargar frases.json');
+      FRASES_OPORTUNAS = await respuesta.json();
+    } catch (error) {
+      console.error('Error al cargar frases:', error);
+      mostrarToast("No se pudieron cargar las frases desde el archivo JSON.");
+    }
+  }
 
-      // 3. PENSAMIENTO INTROSPECTIVO
-      {
-        categoria: "Pensamiento Introspectivo",
-        fragmento: "Llevo sobre mí las heridas de todas las batallas que evité.",
-        autor: "Fernando Pessoa",
-        obra: "Libro del desasosiego (Escrito bajo Bernardo Soares, Siglo XX)",
-        metafora: "La postergación y la huida no nos liberan del combate; solo lo trasladan al interior, donde se vuelve un rumor silencioso pero tenaz. Enfrentar con valor despeja el alma."
-      },
-      {
-        categoria: "Pensamiento Introspectivo",
-        fragmento: "Ten paciencia con todo lo que no esté resuelto en tu corazón e intenta amar las preguntas mismas como si fueran habitaciones cerradas o libros escritos en una lengua extraña.",
-        autor: "Rainer Maria Rilke",
-        obra: "Cartas a un joven poeta (Carta IV, 1903)",
-        metafora: "No fuerces respuestas inmediatas que aún no tienes la madurez de encarnar. Vive ahora las dudas: poco a poco, sin darte cuenta, entrarás en las respuestas."
-      },
-      {
-        categoria: "Pensamiento Introspectivo",
-        fragmento: "Fui a los bosques porque quería vivir deliberadamente, enfrentar solo los hechos esenciales de la vida, y ver si no podía aprender lo que ella tenía que enseñar.",
-        autor: "Henry David Thoreau",
-        obra: "Walden o la vida en los bosques (1854)",
-        metafora: "Desprenderte del exceso y hacer silencio no es una fuga; es un acto de valentía para comprobar qué queda de ti cuando se apagan las opiniones ajenas."
-      },
-      {
-        categoria: "Pensamiento Introspectivo",
-        fragmento: "Para hacer una pradera se necesita un trébol y una abeja. Un trébol y una abeja, y el ensueño. El ensueño bastará, si las abejas son pocas.",
-        autor: "Emily Dickinson",
-        obra: "Poemas reunidos (Siglo XIX)",
-        metafora: "La capacidad de contemplar con belleza no requiere de abundancia exterior: el tesoro y la fertilidad nacen de la mirada atenta y la sensibilidad interior."
-      },
-
-      // 4. PENSAMIENTO ORIENTAL
-      {
-        categoria: "Pensamiento Oriental",
-        fragmento: "El agua es fluida, suave y flexible. Pero el agua desgasta la roca, que es rígida y no cede. Por regla general, lo que es fluido y cede vence siempre a lo duro y quebradizo.",
-        autor: "Lao Tsé",
-        obra: "Tao Te King (China Clásica, Siglo IV a.C.)",
-        metafora: "No respondas a la rigidez con más aspereza. La flexibilidad, la paciencia y la adaptación silenciosa logran superar los obstáculos que la fuerza bruta jamás podría quebrar."
-      },
-      {
-        categoria: "Pensamiento Oriental",
-        fragmento: "Un viaje de mil leguas comienza con un solo paso.",
-        autor: "Lao Tsé",
-        obra: "Tao Te King (Capítulo 64)",
-        metafora: "No permitas que la magnitud de lo que tienes por delante te paralice. La obra entera se reduce a la honestidad del paso humilde que das en este instante."
-      },
-      {
-        categoria: "Pensamiento Oriental",
-        fragmento: "Este viejo estanque. / Salta una rana: / el sonido del agua.",
-        autor: "Matsuo Bashō",
-        obra: "Haiku Zen (Japón, Siglo XVII)",
-        metafora: "La verdad y el sosiego no se descubren en discursos interminables, sino en el despertar pleno de la atención al instante presente que se despliega ante ti."
-      },
-      {
-        categoria: "Pensamiento Oriental",
-        fragmento: "El sabio hace las cosas sin ostentación, enseña sin palabras y actúa sin expectativas de recompensa.",
-        autor: "Lao Tsé",
-        obra: "Tao Te King (Capítulo 2)",
-        metafora: "La eficacia más honda es la que fluye con naturalidad, sin el esfuerzo desmedido del ego por figurar o reclamar aplausos."
-      },
-
-      // 5. PENSAMIENTO PRÁCTICO
-      {
-        categoria: "Pensamiento Práctico",
-        fragmento: "Saber olvidar es más dicha que arte; conviene acordarse de las cosas que más importan y olvidar las que no aprovechan.",
-        autor: "Baltasar Gracián",
-        obra: "Oráculo manual y arte de prudencia (1647)",
-        metafora: "La memoria que almacena ofensas y minucias envenena la marcha. El juicio prudente selecciona con cuidado qué conservar en el alma y qué soltar al olvido."
-      },
-      {
-        categoria: "Pensamiento Práctico",
-        fragmento: "La palabra es mitad de quien la pronuncia y mitad de quien la escucha.",
-        autor: "Michel de Montaigne",
-        obra: "Ensayos (Libro III, Siglo XVI)",
-        metafora: "En el diálogo no basta con tener razón: importa la templanza, la claridad y el cuidado con el que permites que el otro reciba y complete tu mensaje."
-      },
-      {
-        categoria: "Pensamiento Práctico",
-        fragmento: "Más vale maña que fuerza, y el tiempo y la paciencia suelen abrir caminos donde el ímpetu solo halló muros.",
-        autor: "Fábulas Clásicas",
-        obra: "Tradición Esópica (Siglo VI a.C.)",
-        metafora: "El apresuramiento ciego gasta la energía antes de tiempo. Observa el terreno, espera el momento propicio y utiliza la inteligencia antes que el arrebato."
-      },
-      {
-        categoria: "Pensamiento Práctico",
-        fragmento: "El verdadero valor consiste en prever los peligros antes de que lleguen y saber gobernarse serenamente cuando se está en medio de ellos.",
-        autor: "Baltasar Gracián",
-        obra: "El Héroe y el Político (Siglo XVII)",
-        metafora: "La prudencia no es cobardía; es lucidez anticipada para navegar los mares inciertos con compostura y serenidad."
-      }
-    ];
-
-    let corrienteSeleccionada = 'aleatorio';
-    let fraseActual = null;
-
-    function consultarCorriente(corriente) {
-      corrienteSeleccionada = corriente;
-
-      document.querySelectorAll('#grid-corrientes > button').forEach(b => b.classList.remove('tarjeta-activa'));
-      if (corriente !== 'aleatorio') {
-        const tarjeta = document.getElementById(`card-${corriente}`);
-        if (tarjeta) tarjeta.classList.add('tarjeta-activa');
-      }
-
-      let banco = FRASES_OPORTUNAS;
-      if (corriente !== 'aleatorio') {
-        banco = FRASES_OPORTUNAS.filter(f => f.categoria === corriente);
-      }
-
-      let opciones = banco;
-      if (fraseActual && banco.length > 1) {
-        opciones = banco.filter(f => f.fragmento !== fraseActual.fragmento);
-      }
-
-      const indice = Math.floor(Math.random() * opciones.length);
-      fraseActual = opciones[indice];
-
-      mostrarCita(fraseActual);
+  async function consultarCorriente(corriente) {
+    // Si aún no se han cargado las frases desde el JSON, se descargan primero
+    if (FRASES_OPORTUNAS.length === 0) {
+      await cargarFrasesJSON();
     }
 
-    function reconsultarMismaCorriente() {
-      if (!fraseActual) return;
-      consultarCorriente(corrienteSeleccionada);
+    if (FRASES_OPORTUNAS.length === 0) return;
+
+    corrienteSeleccionada = corriente;
+
+    document.querySelectorAll('#grid-corrientes > button').forEach(b => b.classList.remove('tarjeta-activa'));
+    if (corriente !== 'aleatorio') {
+      const tarjeta = document.getElementById(`card-${corriente}`);
+      if (tarjeta) tarjeta.classList.add('tarjeta-activa');
     }
 
-    function mostrarCita(cita) {
-      const contenedor = document.getElementById('contenedor-resultado');
-      const tarjeta = document.getElementById('tarjeta-lectura');
+    let banco = FRASES_OPORTUNAS;
+    if (corriente !== 'aleatorio') {
+      banco = FRASES_OPORTUNAS.filter(f => f.categoria === corriente);
+    }
 
-      tarjeta.classList.remove('anim-revelar');
-      void tarjeta.offsetWidth;
-      tarjeta.classList.add('anim-revelar');
+    if (banco.length === 0) {
+      mostrarToast(`No hay frases disponibles para ${corriente}.`);
+      return;
+    }
 
-      document.getElementById('res-categoria-nombre').textContent = cita.categoria;
-      document.getElementById('res-fragmento').textContent = cita.fragmento;
-      document.getElementById('res-autor').textContent = cita.autor;
-      document.getElementById('res-obra').textContent = cita.obra;
-      document.getElementById('res-metafora').textContent = cita.metafora;
+    let opciones = banco;
+    if (fraseActual && banco.length > 1) {
+      opciones = banco.filter(f => f.fragmento !== fraseActual.fragmento);
+    }
 
-      const btnReconsultar = document.getElementById('btn-reconsultar-mismo');
-      if (corrienteSeleccionada === 'aleatorio') {
-        btnReconsultar.textContent = `↻ Otra frase de ${cita.categoria}`;
+    const indice = Math.floor(Math.random() * opciones.length);
+    fraseActual = opciones[indice];
+
+    mostrarCita(fraseActual);
+  }
+
+  function reconsultarMismaCorriente() {
+    if (!fraseActual) return;
+    consultarCorriente(corrienteSeleccionada);
+  }
+
+  function mostrarCita(cita) {
+    const contenedor = document.getElementById('contenedor-resultado');
+    const tarjeta = document.getElementById('tarjeta-lectura');
+
+    tarjeta.classList.remove('anim-revelar');
+    void tarjeta.offsetWidth;
+    tarjeta.classList.add('anim-revelar');
+
+    document.getElementById('res-categoria-nombre').textContent = cita.categoria;
+    document.getElementById('res-fragmento').textContent = cita.fragmento;
+    document.getElementById('res-autor').textContent = cita.autor;
+    document.getElementById('res-obra').textContent = cita.obra;
+    document.getElementById('res-metafora').textContent = cita.metafora;
+
+    const btnReconsultar = document.getElementById('btn-reconsultar-mismo');
+    if (corrienteSeleccionada === 'aleatorio') {
+      btnReconsultar.textContent = `↻ Otra frase de ${cita.categoria}`;
+    } else {
+      btnReconsultar.textContent = `↻ Otra frase de esta corriente`;
+    }
+
+    contenedor.classList.remove('hidden');
+
+    setTimeout(() => {
+      contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  function copiarCitaTexto() {
+    if (!fraseActual) return;
+    const texto = `“${fraseActual.fragmento}”\n\n— ${fraseActual.autor}, ${fraseActual.obra}\n\nFrase Oportuna • Sabiduría Universal`;
+    
+    const textArea = document.createElement("textarea");
+    textArea.value = texto;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-999999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+      document.execCommand('copy');
+      mostrarToast("Pasaje copiado al portapapeles con éxito.");
+    } catch (err) {
+      mostrarToast("No fue posible copiar automáticamente.");
+    } finally {
+      document.body.removeChild(textArea);
+    }
+  }
+
+  function descargarLámina() {
+    if (!fraseActual) return;
+
+    const canvas = document.getElementById('canvas-export');
+    const ctx = canvas.getContext('2d');
+    const W = 1080;
+    const H = 1920;
+
+    ctx.fillStyle = "#0A1124";
+    ctx.fillRect(0, 0, W, H);
+
+    const cardX = 90;
+    const cardY = 160;
+    const cardW = W - 180;
+    const cardH = H - 320;
+    const radius = 48;
+
+    ctx.save();
+    ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+    ctx.shadowBlur = 40;
+    ctx.shadowOffsetY = 15;
+    
+    ctx.beginPath();
+    ctx.moveTo(cardX + radius, cardY);
+    ctx.lineTo(cardX + cardW - radius, cardY);
+    ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
+    ctx.lineTo(cardX + cardW, cardY + cardH - radius);
+    ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
+    ctx.lineTo(cardX + radius, cardY + cardH);
+    ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
+    ctx.lineTo(cardX, cardY + radius);
+    ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
+    ctx.closePath();
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fill();
+    ctx.restore();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(cardX + radius, cardY);
+    ctx.lineTo(cardX + cardW - radius, cardY);
+    ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
+    ctx.lineTo(cardX + cardW, cardY + cardH - radius);
+    ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
+    ctx.lineTo(cardX + radius, cardY + cardH);
+    ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
+    ctx.lineTo(cardX, cardY + radius);
+    ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
+    ctx.closePath();
+    ctx.strokeStyle = "#E2E2DC";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.restore();
+
+    const tagW = 340;
+    const tagH = 50;
+    const tagX = (W - tagW) / 2;
+    const tagY = cardY + 70;
+    
+    ctx.beginPath();
+    ctx.roundRect(tagX, tagY, tagW, tagH, 25);
+    ctx.fillStyle = "#F3F3EE";
+    ctx.fill();
+    ctx.strokeStyle = "#E2E2DC";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    ctx.fillStyle = "#111827";
+    ctx.font = "bold 18px 'Nunito', sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 32);
+
+    ctx.textAlign = "center";
+    const maxWidth = cardW - 140;
+    const lineHeight = 66;
+    let startY = tagY + 160;
+
+    ctx.fillStyle = "#111827";
+    ctx.font = "300 40px 'Roboto', sans-serif";
+    
+    const words = fraseActual.fragmento.split(' ');
+    let line = '';
+    let lines = [];
+
+    for (let n = 0; n < words.length; n++) {
+      const testLine = line + words[n] + ' ';
+      const metrics = ctx.measureText(testLine);
+      if (metrics.width > maxWidth && n > 0) {
+        lines.push(line.trim());
+        line = words[n] + ' ';
       } else {
-        btnReconsultar.textContent = `↻ Otra frase de esta corriente`;
-      }
-
-      contenedor.classList.remove('hidden');
-
-      setTimeout(() => {
-        contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-    }
-
-    function copiarCitaTexto() {
-      if (!fraseActual) return;
-      const texto = `“${fraseActual.fragmento}”\n\n— ${fraseActual.autor}, ${fraseActual.obra}\n\nFrase Oportuna • Sabiduría Universal`;
-      
-      const textArea = document.createElement("textarea");
-      textArea.value = texto;
-      textArea.style.position = "fixed";
-      textArea.style.left = "-999999px";
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      
-      try {
-        document.execCommand('copy');
-        mostrarToast("Pasaje copiado al portapapeles con éxito.");
-      } catch (err) {
-        mostrarToast("No fue posible copiar automáticamente.");
-      } finally {
-        document.body.removeChild(textArea);
+        line = testLine;
       }
     }
+    lines.push(line.trim());
 
-    function descargarLámina() {
-      if (!fraseActual) return;
+    const firstLineWidth = ctx.measureText(lines[0]).width;
+    const firstLineX = (W / 2) - (firstLineWidth / 2);
+    ctx.save();
+    ctx.font = "italic 56px 'Playfair Display', Georgia, serif";
+    ctx.fillStyle = "#111827";
+    ctx.textAlign = "right";
+    ctx.fillText("“", firstLineX - 10, startY + 5);
+    ctx.restore();
 
-      const canvas = document.getElementById('canvas-export');
-      const ctx = canvas.getContext('2d');
-      const W = 1080;
-      const H = 1920;
-
-      ctx.fillStyle = "#0A1124";
-      ctx.fillRect(0, 0, W, H);
-
-      const cardX = 90;
-      const cardY = 160;
-      const cardW = W - 180;
-      const cardH = H - 320;
-      const radius = 48;
-
-      ctx.save();
-      ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
-      ctx.shadowBlur = 40;
-      ctx.shadowOffsetY = 15;
-      
-      ctx.beginPath();
-      ctx.moveTo(cardX + radius, cardY);
-      ctx.lineTo(cardX + cardW - radius, cardY);
-      ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
-      ctx.lineTo(cardX + cardW, cardY + cardH - radius);
-      ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
-      ctx.lineTo(cardX + radius, cardY + cardH);
-      ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
-      ctx.lineTo(cardX, cardY + radius);
-      ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
-      ctx.closePath();
-      ctx.fillStyle = "#FFFFFF";
-      ctx.fill();
-      ctx.restore();
-
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(cardX + radius, cardY);
-      ctx.lineTo(cardX + cardW - radius, cardY);
-      ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + radius);
-      ctx.lineTo(cardX + cardW, cardY + cardH - radius);
-      ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - radius, cardY + cardH);
-      ctx.lineTo(cardX + radius, cardY + cardH);
-      ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - radius);
-      ctx.lineTo(cardX, cardY + radius);
-      ctx.quadraticCurveTo(cardX, cardY, cardX + radius, cardY);
-      ctx.closePath();
-      ctx.strokeStyle = "#E2E2DC";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-      ctx.restore();
-
-      const tagW = 340;
-      const tagH = 50;
-      const tagX = (W - tagW) / 2;
-      const tagY = cardY + 70;
-      
-      ctx.beginPath();
-      ctx.roundRect(tagX, tagY, tagW, tagH, 25);
-      ctx.fillStyle = "#F3F3EE";
-      ctx.fill();
-      ctx.strokeStyle = "#E2E2DC";
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      ctx.fillStyle = "#111827";
-      ctx.font = "bold 18px 'Nunito', sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 32);
-
-      ctx.textAlign = "center";
-      const maxWidth = cardW - 140;
-      const lineHeight = 66;
-      let startY = tagY + 160;
-
+    for (let i = 0; i < lines.length; i++) {
       ctx.fillStyle = "#111827";
       ctx.font = "300 40px 'Roboto', sans-serif";
-      
-      const words = fraseActual.fragmento.split(' ');
-      let line = '';
-      let lines = [];
-
-      for (let n = 0; n < words.length; n++) {
-        const testLine = line + words[n] + ' ';
-        const metrics = ctx.measureText(testLine);
-        if (metrics.width > maxWidth && n > 0) {
-          lines.push(line.trim());
-          line = words[n] + ' ';
-        } else {
-          line = testLine;
-        }
-      }
-      lines.push(line.trim());
-
-      const firstLineWidth = ctx.measureText(lines[0]).width;
-      const firstLineX = (W / 2) - (firstLineWidth / 2);
-      ctx.save();
-      ctx.font = "italic 56px 'Playfair Display', Georgia, serif";
-      ctx.fillStyle = "#111827";
-      ctx.textAlign = "right";
-      ctx.fillText("“", firstLineX - 10, startY + 5);
-      ctx.restore();
-
-      for (let i = 0; i < lines.length; i++) {
-        ctx.fillStyle = "#111827";
-        ctx.font = "300 40px 'Roboto', sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText(lines[i], W / 2, startY + (i * lineHeight));
-      }
-
-      const lastLineIndex = lines.length - 1;
-      const lastLineWidth = ctx.measureText(lines[lastLineIndex]).width;
-      const lastLineX = (W / 2) + (lastLineWidth / 2);
-      ctx.save();
-      ctx.font = "italic 56px 'Playfair Display', Georgia, serif";
-      ctx.fillStyle = "#111827";
-      ctx.textAlign = "left";
-      ctx.fillText("”", lastLineX + 10, startY + (lastLineIndex * lineHeight) + 5);
-      ctx.restore();
-
-      let currentY = startY + (lines.length * lineHeight) + 40;
-
-      ctx.beginPath();
-      ctx.moveTo((W / 2) - 180, currentY);
-      ctx.lineTo((W / 2) + 180, currentY);
-      ctx.strokeStyle = "#E2E2DC";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      currentY += 50;
-
       ctx.textAlign = "center";
-      ctx.fillStyle = "#111827";
-      ctx.font = "bold 27px 'Nunito', sans-serif";
-      ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
-
-      currentY += 34;
-      ctx.fillStyle = "#4B5563";
-      ctx.font = "300 23px 'Roboto', sans-serif";
-      ctx.fillText(fraseActual.obra, W / 2, currentY);
-
-      currentY += 55;
-      const reflBoxW = cardW - 120;
-      const reflBoxX = (W - reflBoxW) / 2;
-      const reflBoxY = currentY;
-
-      ctx.fillStyle = "#F3F3EE";
-      ctx.beginPath();
-      ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, 230, 24);
-      ctx.fill();
-      ctx.strokeStyle = "#E2E2DC";
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      ctx.textAlign = "center";
-      ctx.fillStyle = "#111827";
-      ctx.font = "bold 19px 'Nunito', sans-serif";
-      ctx.fillText("PAUSA DE REFLEXIÓN", W / 2, reflBoxY + 45);
-
-      ctx.fillStyle = "#374151";
-      ctx.font = "300 23px 'Roboto', sans-serif";
-      
-      const reflWords = fraseActual.metafora.split(' ');
-      let reflLine = '';
-      let reflLines = [];
-      for (let m = 0; m < reflWords.length; m++) {
-        const testLine = reflLine + reflWords[m] + ' ';
-        if (ctx.measureText(testLine).width > reflBoxW - 60 && m > 0) {
-          reflLines.push(reflLine.trim());
-          reflLine = reflWords[m] + ' ';
-        } else {
-          reflLine = testLine;
-        }
-      }
-      reflLines.push(reflLine.trim());
-
-      for (let k = 0; k < reflLines.length; k++) {
-        ctx.fillText(reflLines[k], W / 2, reflBoxY + 95 + (k * 36));
-      }
-
-      ctx.textAlign = "center";
-      ctx.fillStyle = "#111827";
-      ctx.font = "bold 22px 'Nunito', sans-serif";
-      ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, cardY + cardH - 65);
-
-      ctx.fillStyle = "#6B7280";
-      ctx.font = "400 17px 'Roboto', sans-serif";
-      ctx.fillText("frase-oportuna.vercel.app", W / 2, cardY + cardH - 35);
-
-      try {
-        const dataUrl = canvas.toDataURL("image/png");
-        const link = document.createElement('a');
-        link.download = `Frase-Oportuna-${fraseActual.autor.replace(/\s+/g, '-')}.png`;
-        link.href = dataUrl;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        mostrarToast("Lámina generada para Stories.");
-      } catch (e) {
-        mostrarToast("No fue posible generar la imagen en este dispositivo.");
-      }
+      ctx.fillText(lines[i], W / 2, startY + (i * lineHeight));
     }
 
-    function mostrarToast(mensaje) {
-      const toast = document.getElementById('toast-notificacion');
-      const toastTexto = document.getElementById('toast-mensaje');
-      toastTexto.textContent = mensaje;
-      
-      toast.classList.remove('translate-y-20', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
+    const lastLineIndex = lines.length - 1;
+    const lastLineWidth = ctx.measureText(lines[lastLineIndex]).width;
+    const lastLineX = (W / 2) + (lastLineWidth / 2);
+    ctx.save();
+    ctx.font = "italic 56px 'Playfair Display', Georgia, serif";
+    ctx.fillStyle = "#111827";
+    ctx.textAlign = "left";
+    ctx.fillText("”", lastLineX + 10, startY + (lastLineIndex * lineHeight) + 5);
+    ctx.restore();
 
-      setTimeout(() => {
-        toast.classList.remove('translate-y-0', 'opacity-100');
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 3000);
-    }
+    let currentY = startY + (lines.length * lineHeight) + 40;
 
-    function irA(seccion, e) {
-      if (e) e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      document.getElementById('nav-btn-inicio')?.classList.add('nav-activo');
-      document.getElementById('nav-btn-proposito')?.classList.remove('nav-activo');
-    }
+    ctx.beginPath();
+    ctx.moveTo((W / 2) - 180, currentY);
+    ctx.lineTo((W / 2) + 180, currentY);
+    ctx.strokeStyle = "#E2E2DC";
+    ctx.lineWidth = 2;
+    ctx.stroke();
 
-    function irAProposito(e) {
-      if (e) e.preventDefault();
-      const elem = document.getElementById('seccion-proposito-home');
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        document.getElementById('nav-btn-proposito')?.classList.add('nav-activo');
-        document.getElementById('nav-btn-inicio')?.classList.remove('nav-activo');
+    currentY += 50;
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#111827";
+    ctx.font = "bold 27px 'Nunito', sans-serif";
+    ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
+
+    currentY += 34;
+    ctx.fillStyle = "#4B5563";
+    ctx.font = "300 23px 'Roboto', sans-serif";
+    ctx.fillText(fraseActual.obra, W / 2, currentY);
+
+    currentY += 55;
+    const reflBoxW = cardW - 120;
+    const reflBoxX = (W - reflBoxW) / 2;
+    const reflBoxY = currentY;
+
+    ctx.fillStyle = "#F3F3EE";
+    ctx.beginPath();
+    ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, 230, 24);
+    ctx.fill();
+    ctx.strokeStyle = "#E2E2DC";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#111827";
+    ctx.font = "bold 19px 'Nunito', sans-serif";
+    ctx.fillText("PAUSA DE REFLEXIÓN", W / 2, reflBoxY + 45);
+
+    ctx.fillStyle = "#374151";
+    ctx.font = "300 23px 'Roboto', sans-serif";
+    
+    const reflWords = fraseActual.metafora.split(' ');
+    let reflLine = '';
+    let reflLines = [];
+    for (let m = 0; m < reflWords.length; m++) {
+      const testLine = reflLine + reflWords[m] + ' ';
+      if (ctx.measureText(testLine).width > reflBoxW - 60 && m > 0) {
+        reflLines.push(reflLine.trim());
+        reflLine = reflWords[m] + ' ';
+      } else {
+        reflLine = testLine;
       }
     }
+    reflLines.push(reflLine.trim());
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const elYear = document.getElementById('year-copy');
-      if (elYear) elYear.textContent = new Date().getFullYear();
-    });
+    for (let k = 0; k < reflLines.length; k++) {
+      ctx.fillText(reflLines[k], W / 2, reflBoxY + 95 + (k * 36));
+    }
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#111827";
+    ctx.font = "bold 22px 'Nunito', sans-serif";
+    ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, cardY + cardH - 65);
+
+    ctx.fillStyle = "#6B7280";
+    ctx.font = "400 17px 'Roboto', sans-serif";
+    ctx.fillText("frase-oportuna.vercel.app", W / 2, cardY + cardH - 35);
+
+    try {
+      const dataUrl = canvas.toDataURL("image/png");
+      const link = document.createElement('a');
+      link.download = `Frase-Oportuna-${fraseActual.autor.replace(/\s+/g, '-')}.png`;
+      link.href = dataUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      mostrarToast("Lámina generada para Stories.");
+    } catch (e) {
+      mostrarToast("No fue posible generar la imagen en este dispositivo.");
+    }
+  }
+
+  function mostrarToast(mensaje) {
+    const toast = document.getElementById('toast-notificacion');
+    const toastTexto = document.getElementById('toast-mensaje');
+    toastTexto.textContent = mensaje;
+    
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-20', 'opacity-0');
+    }, 3000);
+  }
+
+  function irA(seccion, e) {
+    if (e) e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('nav-btn-inicio')?.classList.add('nav-activo');
+    document.getElementById('nav-btn-proposito')?.classList.remove('nav-activo');
+  }
+
+  function irAProposito(e) {
+    if (e) e.preventDefault();
+    const elem = document.getElementById('seccion-proposito-home');
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('nav-btn-proposito')?.classList.add('nav-activo');
+      document.getElementById('nav-btn-inicio')?.classList.remove('nav-activo');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const elYear = document.getElementById('year-copy');
+    if (elYear) elYear.textContent = new Date().getFullYear();
+    
+    // Carga inicial del archivo JSON al cargar la página
+    cargarFrasesJSON();
+  });
+</script>
   </script>
 
 </body>
