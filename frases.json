@@ -1,4 +1,4 @@
-El problema exacto por el cual te salía el mensaje "No hay frases registradas" es que las propiedades de tu frases.json usaban nombres diferentes a los que buscaba el código de index.html.   Los 3 desajustes que tenía el JSON:El campo para filtrar la categoría: El código de index.html buscaba el texto en la propiedad "categoria", pero en tu JSON la categoría decía "La Fortaleza & La Razón" y el nombre de la corriente estaba en "etiqueta": "PENSAMIENTO ESTOICO".   El texto de la cita: El código buscaba la clave "fragmento", mientras que tu JSON la llamaba "texto".   La reflexión: El código buscaba la clave "metafora", mientras que tu JSON la llamaba "reflexion".   Archivo frases.json corregido y estructuradoA continuación tienes el archivo frases.json completamente adaptado con todos los campos unificados (categoria, fragmento, autor, obra, metafora) para que tu index.html lo lea de forma inmediata:JSON[
+[
   {
     "id": 1,
     "categoria": "Pensamiento Estoico",
