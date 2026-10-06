@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body {
+  background-color: #0A1124;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.borde-noche {
+  border: 1px solid #22355F;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.borde-noche:hover {
+  border-color: #38BDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(56, 189, 248, 0.15);
+}
+
+.tarjeta-activa {
+  outline: 2px solid #38BDF8 !important;
+  outline-offset: 2px;
+  background-color: #182548 !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25) !important;
+}
+
+.anim-revelar {
+  animation: aparecerCita 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes aparecerCita {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-activo {
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #7DD3FC;
+  font-weight: 700;
+}
