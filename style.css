@@ -2,7 +2,7 @@
 
 body {
   background-color: #0A1124;
-  color: #E2E8F0; /* Blanco hielado suavizado para no encandilar */
+  color: #94A3B8; /* Blanco apagado Slate para máxima comodidad de lectura */
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,11 +11,16 @@ body {
 h1, h2, h3, h4, .font-heading {
   font-family: 'Nunito', sans-serif;
   letter-spacing: -0.015em;
-  color: #F0F6FC; /* Blanco suave con tinte cian */
+  color: #CBD5E1; /* Titulares en todo suave desaturado sin halación */
 }
 
 p, article p {
-  color: #E2E8F0; /* Blanco descansado para lectura continua */
+  color: #CBD5E1; /* Párrafos y artículos en blanco mate muy amigable a la vista */
+}
+
+/* Enlaces y destacados */
+a {
+  transition: color 0.2s ease;
 }
 
 .borde-noche {
@@ -33,8 +38,8 @@ p, article p {
 /* Tarjeta principal en la web con degradado estelar central */
 #tarjeta-lectura {
   background: radial-gradient(circle at 50% 45%, #1B2E4B 0%, #121C38 70%, #0D162E 100%) !important;
-  border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
-  box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.2) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.18) !important;
 }
 
 .tarjeta-activa {
@@ -60,7 +65,7 @@ p, article p {
 }
 
 .nav-activo {
-  color: #F0F6FC !important;
-  border-bottom: 2px solid #7DD3FC;
+  color: #CBD5E1 !important;
+  border-bottom: 2px solid #38BDF8;
   font-weight: 700;
 }
