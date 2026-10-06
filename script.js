@@ -151,21 +151,24 @@ function dibujarIconoReloj(ctx, x, y, size) {
   ctx.restore();
 }
 
-// GENERADOR DE FONDOS ALEATORIOS EN CANVAS
+// GENERADOR DE FONDOS CON DEGRADADOS CIRCULARES LUMINOSOS
 function aplicarFondoAleatorio(ctx, W, H) {
-  const opcionesFondo = ['estelar', 'nebulosa', 'pergamino'];
+  const opcionesFondo = ['estelar', 'nebulosa', 'resplandor'];
   const fondoElegido = opcionesFondo[Math.floor(Math.random() * opcionesFondo.length)];
 
   if (fondoElegido === 'estelar') {
     ctx.fillStyle = "#0A1124";
     ctx.fillRect(0, 0, W, H);
 
-    const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 1000);
-    grad.addColorStop(0, "#1A2C4E");
-    grad.addColorStop(1, "#0A1124");
+    // Luz central radial celeste en el área de la frase
+    const grad = ctx.createRadialGradient(W/2, H * 0.45, 50, W/2, H/2, 950);
+    grad.addColorStop(0, "#233A5E");
+    grad.addColorStop(0.5, "#121D36");
+    grad.addColorStop(1, "#070C1B");
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
 
+    // Estrellas
     ctx.fillStyle = "#FFFFFF";
     for (let i = 0; i < 220; i++) {
       const starX = Math.random() * W;
@@ -180,28 +183,39 @@ function aplicarFondoAleatorio(ctx, W, H) {
       ctx.restore();
     }
   } else if (fondoElegido === 'nebulosa') {
+    // Gradiente base
     const grad = ctx.createLinearGradient(0, 0, W, H);
     grad.addColorStop(0, "#0F172A");
-    grad.addColorStop(0.5, "#1E293B");
+    grad.addColorStop(0.5, "#152342");
     grad.addColorStop(1, "#0A1124");
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
 
-    const radGrad = ctx.createRadialGradient(W/2, H/3, 50, W/2, H/3, 700);
-    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.3)");
+    // Círculo degradado central luminoso
+    const radGrad = ctx.createRadialGradient(W/2, H * 0.45, 30, W/2, H * 0.45, 550);
+    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.35)");
+    radGrad.addColorStop(0.6, "rgba(30, 58, 110, 0.2)");
     radGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
     ctx.fillStyle = radGrad;
     ctx.fillRect(0, 0, W, H);
   } else {
-    const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 950);
-    grad.addColorStop(0, "#162544");
-    grad.addColorStop(1, "#070C1B");
+    // Fondo Resplandor Azul Noche
+    const grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, "#080E1C");
+    grad.addColorStop(1, "#040714");
     ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    // Círculo central celeste brillante que elimina la sobriedad
+    const radGrad = ctx.createRadialGradient(W/2, H * 0.45, 20, W/2, H * 0.45, 600);
+    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.4)");
+    radGrad.addColorStop(0.4, "rgba(24, 45, 85, 0.3)");
+    radGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
+    ctx.fillStyle = radGrad;
     ctx.fillRect(0, 0, W, H);
   }
 }
 
-// DESCARGA DE LÁMINA - TIPOGRAFÍA MAXIMIZADA & EXPANSIÓN VERTICAL
 function descargarLámina() {
   if (!fraseActual) return;
 
@@ -210,12 +224,12 @@ function descargarLámina() {
   const W = 1080;
   const H = 1920;
 
-  // 1. Fondo
+  // 1. Fondo con resplandor central
   aplicarFondoAleatorio(ctx, W, H);
 
   // Marco exterior
   ctx.save();
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.45)";
   ctx.lineWidth = 2.5;
   ctx.beginPath();
   ctx.roundRect(45, 45, W - 90, H - 90, 40);
@@ -257,13 +271,13 @@ function descargarLámina() {
   ctx.save();
   ctx.translate(W - 68, H / 2);
   ctx.rotate(Math.PI / 2);
-  ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.55)";
   ctx.font = "500 20px 'Roboto', sans-serif";
   ctx.textAlign = "center";
   ctx.fillText("frase-oportuna.vercel.app", 0, 0);
   ctx.restore();
 
-  // 4. Preparación de Textos (MÁS GRANDES)
+  // 4. Preparación de Textos
   const maxWidth = W - 240;
   const lineHeightFragmento = 96;
   ctx.font = "500 64px 'Roboto', sans-serif";
@@ -306,7 +320,7 @@ function descargarLámina() {
 
   const reflBoxH = 110 + (reflLines.length * reflLineHeight);
 
-  // Centrado vertical ampliado
+  // Centrado vertical
   const alturaComilla = 90;
   const alturaFragmento = fragmentLines.length * lineHeightFragmento;
   const espacioAutor = 130;
@@ -399,7 +413,7 @@ function descargarLámina() {
   }
 
   // 8. Pie de página
-  ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
   ctx.font = "bold 24px 'Nunito', sans-serif";
   ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, H - 75);
 
