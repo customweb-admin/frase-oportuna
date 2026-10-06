@@ -94,9 +94,6 @@ function mostrarCita(cita) {
 
   contenedor.classList.remove('hidden');
 
-  // RENDERIZA LA VISTA PREVIA IDÉNTICA A LA CARTA DESCARGABLE
-  generarVistaPreviaCanvas();
-
   setTimeout(() => {
     contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
@@ -128,7 +125,7 @@ function copiarCitaTexto() {
 function dibujarIconoReloj(ctx, x, y, size) {
   ctx.save();
   ctx.strokeStyle = "#38BDF8";
-  ctx.lineWidth = 3;
+  ctx.lineWidth = 3.5;
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
@@ -164,17 +161,17 @@ function aplicarFondoAleatorio(ctx, W, H) {
     ctx.fillRect(0, 0, W, H);
 
     const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 1000);
-    grad.addColorStop(0, "#182848");
+    grad.addColorStop(0, "#1A2C4E");
     grad.addColorStop(1, "#0A1124");
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
 
     ctx.fillStyle = "#FFFFFF";
-    for (let i = 0; i < 180; i++) {
+    for (let i = 0; i < 220; i++) {
       const starX = Math.random() * W;
       const starY = Math.random() * H;
-      const radius = Math.random() * 2 + 0.5;
-      const alpha = Math.random() * 0.8 + 0.2;
+      const radius = Math.random() * 2.2 + 0.6;
+      const alpha = Math.random() * 0.85 + 0.15;
       ctx.save();
       ctx.globalAlpha = alpha;
       ctx.beginPath();
@@ -190,80 +187,86 @@ function aplicarFondoAleatorio(ctx, W, H) {
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
 
-    const radGrad = ctx.createRadialGradient(W/2, H/3, 50, W/2, H/3, 600);
-    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.25)");
+    const radGrad = ctx.createRadialGradient(W/2, H/3, 50, W/2, H/3, 700);
+    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.3)");
     radGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
     ctx.fillStyle = radGrad;
     ctx.fillRect(0, 0, W, H);
   } else {
-    const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 900);
-    grad.addColorStop(0, "#131F37");
+    const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 950);
+    grad.addColorStop(0, "#162544");
     grad.addColorStop(1, "#070C1B");
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
   }
 }
 
-// GENERA DIBUJO BASE
-function generarVistaPreviaCanvas() {
+// DESCARGA DE LÁMINA - TIPOGRAFÍA MAXIMIZADA & EXPANSIÓN VERTICAL
+function descargarLámina() {
   if (!fraseActual) return;
+
   const canvas = document.getElementById('canvas-export');
-  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const W = 1080;
   const H = 1920;
 
+  // 1. Fondo
   aplicarFondoAleatorio(ctx, W, H);
 
+  // Marco exterior
   ctx.save();
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.3)";
-  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
+  ctx.lineWidth = 2.5;
   ctx.beginPath();
-  ctx.roundRect(40, 40, W - 80, H - 80, 36);
+  ctx.roundRect(45, 45, W - 90, H - 90, 40);
   ctx.stroke();
   ctx.restore();
 
-  const brandY = 130;
-  dibujarIconoReloj(ctx, W / 2, brandY, 34);
+  // 2. Branding superior
+  const brandY = 160;
+  dibujarIconoReloj(ctx, W / 2, brandY, 42);
 
   ctx.fillStyle = "#FFFFFF";
-  ctx.font = "bold 24px 'Nunito', sans-serif";
+  ctx.font = "bold 28px 'Nunito', sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("FRASE OPORTUNA", W / 2, brandY + 45);
+  ctx.fillText("FRASE OPORTUNA", W / 2, brandY + 55);
 
   ctx.fillStyle = "#38BDF8";
-  ctx.font = "extrabold 15px 'Nunito', sans-serif";
-  ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 68);
+  ctx.font = "extrabold 18px 'Nunito', sans-serif";
+  ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 82);
 
-  const tagW = 380;
-  const tagH = 50;
+  // Etiqueta de Categoría
+  const tagW = 420;
+  const tagH = 58;
   const tagX = (W - tagW) / 2;
-  const tagY = brandY + 95;
+  const tagY = brandY + 115;
 
   ctx.beginPath();
-  ctx.roundRect(tagX, tagY, tagW, tagH, 25);
-  ctx.fillStyle = "rgba(18, 28, 56, 0.85)";
+  ctx.roundRect(tagX, tagY, tagW, tagH, 29);
+  ctx.fillStyle = "rgba(18, 28, 56, 0.9)";
   ctx.fill();
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
-  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.5)";
+  ctx.lineWidth = 1.8;
   ctx.stroke();
 
   ctx.fillStyle = "#7DD3FC";
-  ctx.font = "bold 19px 'Nunito', sans-serif";
-  ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 32);
+  ctx.font = "bold 22px 'Nunito', sans-serif";
+  ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 37);
 
+  // 3. Texto vertical en el lateral derecho
   ctx.save();
-  ctx.translate(W - 65, H / 2);
+  ctx.translate(W - 68, H / 2);
   ctx.rotate(Math.PI / 2);
-  ctx.fillStyle = "rgba(255, 255, 255, 0.45)";
-  ctx.font = "500 18px 'Roboto', sans-serif";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+  ctx.font = "500 20px 'Roboto', sans-serif";
   ctx.textAlign = "center";
   ctx.fillText("frase-oportuna.vercel.app", 0, 0);
   ctx.restore();
 
-  const maxWidth = W - 260;
-  const lineHeightFragmento = 82;
-  ctx.font = "400 52px 'Roboto', sans-serif";
+  // 4. Preparación de Textos (MÁS GRANDES)
+  const maxWidth = W - 240;
+  const lineHeightFragmento = 96;
+  ctx.font = "500 64px 'Roboto', sans-serif";
 
   const words = fraseActual.fragmento.split(' ');
   let line = '';
@@ -280,10 +283,11 @@ function generarVistaPreviaCanvas() {
   }
   fragmentLines.push(line.trim());
 
-  const reflBoxW = W - 240;
+  // Preparar Pausa de Reflexión
+  const reflBoxW = W - 220;
   const reflBoxX = (W - reflBoxW) / 2;
-  const reflLineHeight = 48;
-  ctx.font = "300 32px 'Roboto', sans-serif";
+  const reflLineHeight = 56;
+  ctx.font = "300 38px 'Roboto', sans-serif";
 
   const reflWords = fraseActual.metafora.split(' ');
   let reflLine = '';
@@ -291,7 +295,7 @@ function generarVistaPreviaCanvas() {
 
   for (let m = 0; m < reflWords.length; m++) {
     const testLine = reflLine + reflWords[m] + ' ';
-    if (ctx.measureText(testLine).width > reflBoxW - 70 && m > 0) {
+    if (ctx.measureText(testLine).width > reflBoxW - 80 && m > 0) {
       reflLines.push(reflLine.trim());
       reflLine = reflWords[m] + ' ';
     } else {
@@ -300,102 +304,106 @@ function generarVistaPreviaCanvas() {
   }
   reflLines.push(reflLine.trim());
 
-  const reflBoxH = 90 + (reflLines.length * reflLineHeight);
+  const reflBoxH = 110 + (reflLines.length * reflLineHeight);
 
-  const alturaComilla = 70;
+  // Centrado vertical ampliado
+  const alturaComilla = 90;
   const alturaFragmento = fragmentLines.length * lineHeightFragmento;
-  const espacioAutor = 110;
-  const espacioReflexion = 50;
+  const espacioAutor = 130;
+  const espacioReflexion = 60;
 
   const alturaTotal = alturaComilla + alturaFragmento + espacioAutor + espacioReflexion + reflBoxH;
 
-  const zonaTop = tagY + tagH + 30;
-  const zonaBottom = H - 120;
+  const zonaTop = tagY + tagH + 40;
+  const zonaBottom = H - 130;
   const zonaUtil = zonaBottom - zonaTop;
 
   let currentY = zonaTop + Math.max(10, (zonaUtil - alturaTotal) / 2);
 
+  // 5. Comilla Gigante Central
   ctx.fillStyle = "#38BDF8";
-  ctx.font = "italic bold 100px 'Playfair Display', Georgia, serif";
+  ctx.font = "italic bold 120px 'Playfair Display', Georgia, serif";
   ctx.textAlign = "center";
-  ctx.fillText("“", W / 2, currentY + 60);
+  ctx.fillText("“", W / 2, currentY + 80);
 
-  currentY += alturaComilla + 30;
+  currentY += alturaComilla + 35;
 
+  // 6. Fragmento Principal
   ctx.fillStyle = "#FFFFFF";
-  ctx.font = "400 52px 'Roboto', sans-serif";
+  ctx.font = "500 64px 'Roboto', sans-serif";
   ctx.textAlign = "center";
 
   for (let i = 0; i < fragmentLines.length; i++) {
     ctx.fillText(fragmentLines[i], W / 2, currentY + (i * lineHeightFragmento));
   }
 
-  currentY += alturaFragmento + 20;
+  currentY += alturaFragmento + 25;
 
+  // Viñeta divisoria ❧
   ctx.fillStyle = "#38BDF8";
-  ctx.font = "26px Georgia, serif";
+  ctx.font = "32px Georgia, serif";
   ctx.fillText("❧", W / 2, currentY);
 
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
-  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.5)";
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo((W / 2) - 180, currentY - 8);
-  ctx.lineTo((W / 2) - 30, currentY - 8);
+  ctx.moveTo((W / 2) - 200, currentY - 10);
+  ctx.lineTo((W / 2) - 35, currentY - 10);
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.moveTo((W / 2) + 30, currentY - 8);
-  ctx.lineTo((W / 2) + 180, currentY - 8);
+  ctx.moveTo((W / 2) + 35, currentY - 10);
+  ctx.lineTo((W / 2) + 200, currentY - 10);
   ctx.stroke();
+
+  currentY += 55;
+
+  // Autor
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "bold 40px 'Nunito', sans-serif";
+  ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
 
   currentY += 45;
 
-  ctx.fillStyle = "#FFFFFF";
-  ctx.font = "bold 34px 'Nunito', sans-serif";
-  ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
-
-  currentY += 38;
-
-  ctx.fillStyle = "#94A3B8";
-  ctx.font = "300 26px 'Roboto', sans-serif";
+  // Obra
+  ctx.fillStyle = "#CBD5E1";
+  ctx.font = "300 30px 'Roboto', sans-serif";
   ctx.fillText(fraseActual.obra, W / 2, currentY);
 
-  currentY += 50;
+  currentY += 60;
 
+  // 7. Pausa de Reflexión
   const reflBoxY = currentY;
 
   ctx.save();
-  ctx.fillStyle = "rgba(18, 28, 56, 0.75)";
+  ctx.fillStyle = "rgba(18, 28, 56, 0.85)";
   ctx.beginPath();
-  ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, reflBoxH, 28);
+  ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, reflBoxH, 32);
   ctx.fill();
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.35)";
-  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.45)";
+  ctx.lineWidth = 1.8;
   ctx.stroke();
   ctx.restore();
 
+  // Título cuadro
   ctx.fillStyle = "#38BDF8";
-  ctx.font = "bold 22px 'Nunito', sans-serif";
-  ctx.fillText("❧  PAUSA DE REFLEXIÓN  ❧", W / 2, reflBoxY + 45);
+  ctx.font = "bold 26px 'Nunito', sans-serif";
+  ctx.fillText("❧  PAUSA DE REFLEXIÓN  ❧", W / 2, reflBoxY + 52);
 
-  ctx.fillStyle = "#F1F5F9";
-  ctx.font = "300 32px 'Roboto', sans-serif";
+  // Texto de reflexión
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "300 38px 'Roboto', sans-serif";
 
   for (let k = 0; k < reflLines.length; k++) {
-    ctx.fillText(reflLines[k], W / 2, reflBoxY + 100 + (k * reflLineHeight));
+    ctx.fillText(reflLines[k], W / 2, reflBoxY + 115 + (k * reflLineHeight));
   }
 
-  ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-  ctx.font = "bold 22px 'Nunito', sans-serif";
-  ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, H - 70);
-}
+  // 8. Pie de página
+  ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+  ctx.font = "bold 24px 'Nunito', sans-serif";
+  ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, H - 75);
 
-// DESCARGA DE LÁMINA - GENERA NUEVA IMAGEN CON FONDO FRESCO CADA VEZ
-function descargarLámina() {
-  if (!fraseActual) return;
-  generarVistaPreviaCanvas();
-  const canvas = document.getElementById('canvas-export');
-
+  // Exportar PNG
   try {
     const dataUrl = canvas.toDataURL("image/png");
     const link = document.createElement('a');
