@@ -2,6 +2,7 @@ let FRASES_OPORTUNAS = [];
 let corrienteSeleccionada = 'aleatorio';
 let fraseActual = null;
 let promesaCarga = null;
+let ultimoFondoIndice = -1;
 
 function cargarFrasesJSON() {
   if (!promesaCarga) {
@@ -121,7 +122,7 @@ function copiarCitaTexto() {
   }
 }
 
-// DIBUJAR RELOJ DE ARENA EN CANVAS
+// DIBUJAR RELOJ DE ARENA EN CANVAS CON ARENA ACUMULADA (IGUAL AL LOGO WEB)
 function dibujarIconoReloj(ctx, x, y, size) {
   ctx.save();
   ctx.strokeStyle = "#38BDF8";
@@ -130,89 +131,125 @@ function dibujarIconoReloj(ctx, x, y, size) {
   ctx.lineJoin = "round";
 
   ctx.beginPath();
+  // Marcos superior e inferior
   ctx.moveTo(x - size/2, y - size/2);
   ctx.lineTo(x + size/2, y - size/2);
   ctx.moveTo(x - size/2, y + size/2);
   ctx.lineTo(x + size/2, y + size/2);
 
-  ctx.moveTo(x + size/2.5, y - size/2);
-  ctx.lineTo(x + size/2.5, y - size/4);
+  // Cuerpo del reloj (embudo cruzado)
+  ctx.moveTo(x + size/2.2, y - size/2);
   ctx.lineTo(x, y);
-  ctx.lineTo(x - size/2.5, y + size/4);
-  ctx.lineTo(x - size/2.5, y + size/2);
+  ctx.lineTo(x - size/2.2, y + size/2);
 
-  ctx.moveTo(x - size/2.5, y - size/2);
-  ctx.lineTo(x - size/2.5, y - size/4);
+  ctx.moveTo(x - size/2.2, y - size/2);
   ctx.lineTo(x, y);
-  ctx.lineTo(x + size/2.5, y + size/4);
-  ctx.lineTo(x + size/2.5, y + size/2);
+  ctx.lineTo(x + size/2.2, y + size/2);
+
+  // Líneas de arena en la parte inferior (igual que el SVG del logo)
+  ctx.moveTo(x - size/4, y + size/4);
+  ctx.lineTo(x + size/4, y + size/4);
+
+  ctx.moveTo(x - size/3, y + size/2.8);
+  ctx.lineTo(x + size/3, y + size/2.8);
 
   ctx.stroke();
   ctx.restore();
 }
 
-// GENERADOR DE FONDOS CON DEGRADADOS CIRCULARES LUMINOSOS
+// GENERADOR DE 5 FONDOS DISTINTOS QUE NUNCA SE REPITEN CONSECUTIVAMENTE
 function aplicarFondoAleatorio(ctx, W, H) {
-  const opcionesFondo = ['estelar', 'nebulosa', 'resplandor'];
-  const fondoElegido = opcionesFondo[Math.floor(Math.random() * opcionesFondo.length)];
+  const totalFondos = 5;
+  let nuevoIndice;
 
-  if (fondoElegido === 'estelar') {
-    ctx.fillStyle = "#0A1124";
-    ctx.fillRect(0, 0, W, H);
+  do {
+    nuevoIndice = Math.floor(Math.random() * totalFondos);
+  } while (nuevoIndice === ultimoFondoIndice && totalFondos > 1);
 
-    // Luz central radial celeste en el área de la frase
-    const grad = ctx.createRadialGradient(W/2, H * 0.45, 50, W/2, H/2, 950);
-    grad.addColorStop(0, "#233A5E");
-    grad.addColorStop(0.5, "#121D36");
-    grad.addColorStop(1, "#070C1B");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
+  ultimoFondoIndice = nuevoIndice;
 
-    // Estrellas
-    ctx.fillStyle = "#FFFFFF";
-    for (let i = 0; i < 220; i++) {
-      const starX = Math.random() * W;
-      const starY = Math.random() * H;
-      const radius = Math.random() * 2.2 + 0.6;
-      const alpha = Math.random() * 0.85 + 0.15;
-      ctx.save();
-      ctx.globalAlpha = alpha;
-      ctx.beginPath();
-      ctx.arc(starX, starY, radius, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-  } else if (fondoElegido === 'nebulosa') {
-    // Gradiente base
-    const grad = ctx.createLinearGradient(0, 0, W, H);
-    grad.addColorStop(0, "#0F172A");
-    grad.addColorStop(0.5, "#152342");
-    grad.addColorStop(1, "#0A1124");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
+  switch (nuevoIndice) {
+    case 0: // 1. Noche Estelar
+      ctx.fillStyle = "#0A1124";
+      ctx.fillRect(0, 0, W, H);
 
-    // Círculo degradado central luminoso
-    const radGrad = ctx.createRadialGradient(W/2, H * 0.45, 30, W/2, H * 0.45, 550);
-    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.35)");
-    radGrad.addColorStop(0.6, "rgba(30, 58, 110, 0.2)");
-    radGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
-    ctx.fillStyle = radGrad;
-    ctx.fillRect(0, 0, W, H);
-  } else {
-    // Fondo Resplandor Azul Noche
-    const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, "#080E1C");
-    grad.addColorStop(1, "#040714");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
+      const g1 = ctx.createRadialGradient(W/2, H * 0.45, 50, W/2, H/2, 950);
+      g1.addColorStop(0, "#233A5E");
+      g1.addColorStop(0.5, "#121D36");
+      g1.addColorStop(1, "#070C1B");
+      ctx.fillStyle = g1;
+      ctx.fillRect(0, 0, W, H);
 
-    // Círculo central celeste brillante que elimina la sobriedad
-    const radGrad = ctx.createRadialGradient(W/2, H * 0.45, 20, W/2, H * 0.45, 600);
-    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.4)");
-    radGrad.addColorStop(0.4, "rgba(24, 45, 85, 0.3)");
-    radGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
-    ctx.fillStyle = radGrad;
-    ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = "#FFFFFF";
+      for (let i = 0; i < 220; i++) {
+        const starX = Math.random() * W;
+        const starY = Math.random() * H;
+        const radius = Math.random() * 2.2 + 0.6;
+        const alpha = Math.random() * 0.85 + 0.15;
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        ctx.arc(starX, starY, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+      break;
+
+    case 1: // 2. Nebulosa Cobalto
+      const g2 = ctx.createLinearGradient(0, 0, W, H);
+      g2.addColorStop(0, "#0F172A");
+      g2.addColorStop(0.5, "#152342");
+      g2.addColorStop(1, "#0A1124");
+      ctx.fillStyle = g2;
+      ctx.fillRect(0, 0, W, H);
+
+      const rg2 = ctx.createRadialGradient(W/2, H * 0.45, 30, W/2, H * 0.45, 550);
+      rg2.addColorStop(0, "rgba(56, 189, 248, 0.35)");
+      rg2.addColorStop(0.6, "rgba(30, 58, 110, 0.2)");
+      rg2.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = rg2;
+      ctx.fillRect(0, 0, W, H);
+      break;
+
+    case 2: // 3. Aurora Celeste (Luz superior e inferior)
+      const g3 = ctx.createLinearGradient(0, 0, 0, H);
+      g3.addColorStop(0, "#030712");
+      g3.addColorStop(0.5, "#0F172A");
+      g3.addColorStop(1, "#030712");
+      ctx.fillStyle = g3;
+      ctx.fillRect(0, 0, W, H);
+
+      const rg3 = ctx.createRadialGradient(W/2, H * 0.4, 40, W/2, H * 0.4, 650);
+      rg3.addColorStop(0, "rgba(125, 211, 252, 0.35)");
+      rg3.addColorStop(0.5, "rgba(14, 165, 233, 0.15)");
+      rg3.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = rg3;
+      ctx.fillRect(0, 0, W, H);
+      break;
+
+    case 3: // 4. Pergamino Oscuro
+      const g4 = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 900);
+      g4.addColorStop(0, "#1A2846");
+      g4.addColorStop(0.7, "#0D162A");
+      g4.addColorStop(1, "#050814");
+      ctx.fillStyle = g4;
+      ctx.fillRect(0, 0, W, H);
+      break;
+
+    case 4: // 5. Resplandor Azul Zafiro
+      const g5 = ctx.createLinearGradient(0, 0, W, H);
+      g5.addColorStop(0, "#08101E");
+      g5.addColorStop(1, "#02040A");
+      ctx.fillStyle = g5;
+      ctx.fillRect(0, 0, W, H);
+
+      const rg5 = ctx.createRadialGradient(W/2, H * 0.42, 20, W/2, H * 0.42, 600);
+      rg5.addColorStop(0, "rgba(56, 189, 248, 0.4)");
+      rg5.addColorStop(0.4, "rgba(24, 45, 85, 0.3)");
+      rg5.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = rg5;
+      ctx.fillRect(0, 0, W, H);
+      break;
   }
 }
 
@@ -224,7 +261,7 @@ function descargarLámina() {
   const W = 1080;
   const H = 1920;
 
-  // 1. Fondo con resplandor central
+  // 1. Fondo (Garantiza variedad en cada descarga)
   aplicarFondoAleatorio(ctx, W, H);
 
   // Marco exterior
@@ -249,7 +286,7 @@ function descargarLámina() {
   ctx.font = "extrabold 18px 'Nunito', sans-serif";
   ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 82);
 
-  // Etiqueta de Categoría
+  // Etiqueta de Categoría (Sin el emoji de reloj redundante)
   const tagW = 420;
   const tagH = 58;
   const tagX = (W - tagW) / 2;
@@ -265,7 +302,7 @@ function descargarLámina() {
 
   ctx.fillStyle = "#7DD3FC";
   ctx.font = "bold 22px 'Nunito', sans-serif";
-  ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 37);
+  ctx.fillText(fraseActual.categoria.toUpperCase(), W / 2, tagY + 37);
 
   // 3. Texto vertical en el lateral derecho
   ctx.save();
