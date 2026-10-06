@@ -2,7 +2,7 @@ let FRASES_OPORTUNAS = [];
 let corrienteSeleccionada = 'aleatorio';
 let fraseActual = null;
 let promesaCarga = null;
-let contadorFondoRotativo = 0; // Control secuencial estricto para evitar repeticiones
+let contadorFondoRotativo = 0; // Control secuencial estricto para evitar repeticiones de fondo
 
 function cargarFrasesJSON() {
   if (!promesaCarga) {
@@ -168,7 +168,7 @@ function dibujarIconoReloj(ctx, x, y, size) {
 // GENERADOR ROTATIVO DE 5 FONDOS (GARANTIZA NUNCA REPETIR EL MISMO EN DESCARGAS CONSECUTIVAS)
 function aplicarFondoAleatorio(ctx, W, H) {
   const fondoIndice = contadorFondoRotativo % 5;
-  contadorFondoRotativo++; // Avanza el contador para la siguiente descarga
+  contadorFondoRotativo++;
 
   switch (fondoIndice) {
     case 0: // 1. Noche Estelar
@@ -279,7 +279,7 @@ function descargarLámina() {
   const brandY = 160;
   dibujarIconoReloj(ctx, W / 2, brandY, 48);
 
-  ctx.fillStyle = "#FFFFFF";
+  ctx.fillStyle = "#CBD5E1";
   ctx.font = "bold 28px 'Nunito', sans-serif";
   ctx.textAlign = "center";
   ctx.fillText("FRASE OPORTUNA", W / 2, brandY + 62);
@@ -310,7 +310,7 @@ function descargarLámina() {
   ctx.save();
   ctx.translate(W - 68, H / 2);
   ctx.rotate(Math.PI / 2);
-  ctx.fillStyle = "rgba(255, 255, 255, 0.55)";
+  ctx.fillStyle = "rgba(203, 213, 225, 0.55)";
   ctx.font = "500 20px 'Roboto', sans-serif";
   ctx.textAlign = "center";
   ctx.fillText("frase-oportuna.vercel.app", 0, 0);
@@ -347,165 +347,4 @@ function descargarLámina() {
   let reflLines = [];
 
   for (let m = 0; m < reflWords.length; m++) {
-    const testLine = reflLine + reflWords[m] + ' ';
-    if (ctx.measureText(testLine).width > reflBoxW - 80 && m > 0) {
-      reflLines.push(reflLine.trim());
-      reflLine = reflWords[m] + ' ';
-    } else {
-      reflLine = testLine;
-    }
-  }
-  reflLines.push(reflLine.trim());
-
-  const reflBoxH = 110 + (reflLines.length * reflLineHeight);
-
-  // Centrado vertical
-  const alturaComilla = 90;
-  const alturaFragmento = fragmentLines.length * lineHeightFragmento;
-  const espacioAutor = 130;
-  const espacioReflexion = 60;
-
-  const alturaTotal = alturaComilla + alturaFragmento + espacioAutor + espacioReflexion + reflBoxH;
-
-  const zonaTop = tagY + tagH + 40;
-  const zonaBottom = H - 130;
-  const zonaUtil = zonaBottom - zonaTop;
-
-  let currentY = zonaTop + Math.max(10, (zonaUtil - alturaTotal) / 2);
-
-  // 5. Comilla Gigante Central
-  ctx.fillStyle = "#38BDF8";
-  ctx.font = "italic bold 120px 'Playfair Display', Georgia, serif";
-  ctx.textAlign = "center";
-  ctx.fillText("“", W / 2, currentY + 80);
-
-  currentY += alturaComilla + 35;
-
-  // 6. Fragmento Principal
-  ctx.fillStyle = "#FFFFFF";
-  ctx.font = "500 64px 'Roboto', sans-serif";
-  ctx.textAlign = "center";
-
-  for (let i = 0; i < fragmentLines.length; i++) {
-    ctx.fillText(fragmentLines[i], W / 2, currentY + (i * lineHeightFragmento));
-  }
-
-  currentY += alturaFragmento + 25;
-
-  // Viñeta divisoria ❧
-  ctx.fillStyle = "#38BDF8";
-  ctx.font = "32px Georgia, serif";
-  ctx.fillText("❧", W / 2, currentY);
-
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.5)";
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo((W / 2) - 200, currentY - 10);
-  ctx.lineTo((W / 2) - 35, currentY - 10);
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.moveTo((W / 2) + 35, currentY - 10);
-  ctx.lineTo((W / 2) + 200, currentY - 10);
-  ctx.stroke();
-
-  currentY += 55;
-
-  // Autor
-  ctx.fillStyle = "#FFFFFF";
-  ctx.font = "bold 40px 'Nunito', sans-serif";
-  ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
-
-  currentY += 45;
-
-  // Obra
-  ctx.fillStyle = "#CBD5E1";
-  ctx.font = "300 30px 'Roboto', sans-serif";
-  ctx.fillText(fraseActual.obra, W / 2, currentY);
-
-  currentY += 60;
-
-  // 7. Pausa de Reflexión
-  const reflBoxY = currentY;
-
-  ctx.save();
-  ctx.fillStyle = "rgba(18, 28, 56, 0.85)";
-  ctx.beginPath();
-  ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, reflBoxH, 32);
-  ctx.fill();
-  ctx.strokeStyle = "rgba(56, 189, 248, 0.45)";
-  ctx.lineWidth = 1.8;
-  ctx.stroke();
-  ctx.restore();
-
-  // Título cuadro
-  ctx.fillStyle = "#38BDF8";
-  ctx.font = "bold 26px 'Nunito', sans-serif";
-  ctx.fillText("❧  PAUSA DE REFLEXIÓN  ❧", W / 2, reflBoxY + 52);
-
-  // Texto de reflexión
-  ctx.fillStyle = "#FFFFFF";
-  ctx.font = "300 38px 'Roboto', sans-serif";
-
-  for (let k = 0; k < reflLines.length; k++) {
-    ctx.fillText(reflLines[k], W / 2, reflBoxY + 115 + (k * reflLineHeight));
-  }
-
-  // 8. Pie de página
-  ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
-  ctx.font = "bold 24px 'Nunito', sans-serif";
-  ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, H - 75);
-
-  // Exportar PNG
-  try {
-    const dataUrl = canvas.toDataURL("image/png");
-    const link = document.createElement('a');
-    link.download = `Frase-Oportuna-${fraseActual.autor.replace(/\s+/g, '-')}.png`;
-    link.href = dataUrl;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    mostrarToast("Lámina generada para Stories.");
-  } catch (e) {
-    mostrarToast("No fue posible generar la imagen en este dispositivo.");
-  }
-}
-
-function mostrarToast(mensaje) {
-  const toast = document.getElementById('toast-notificacion');
-  const toastTexto = document.getElementById('toast-mensaje');
-  if (!toast || !toastTexto) return;
-  toastTexto.textContent = mensaje;
-  
-  toast.classList.remove('translate-y-20', 'opacity-0');
-  toast.classList.add('translate-y-0', 'opacity-100');
-
-  setTimeout(() => {
-    toast.classList.remove('translate-y-0', 'opacity-100');
-    toast.classList.add('translate-y-20', 'opacity-0');
-  }, 3000);
-}
-
-function irA(seccion, e) {
-  if (e) e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.getElementById('nav-btn-inicio')?.classList.add('nav-activo');
-  document.getElementById('nav-btn-proposito')?.classList.remove('nav-activo');
-}
-
-function irAProposito(e) {
-  if (e) e.preventDefault();
-  const elem = document.getElementById('seccion-proposito-home');
-  if (elem) {
-    elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    document.getElementById('nav-btn-proposito')?.classList.add('nav-activo');
-    document.getElementById('nav-btn-inicio')?.classList.remove('nav-activo');
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const elYear = document.getElementById('year-copy');
-  if (elYear) elYear.textContent = new Date().getFullYear();
-  
-  cargarFrasesJSON();
-});
+    const testLine =
