@@ -768,7 +768,7 @@
       }
     }
 
-    // FUNCIÓN DE DESCARGA CON CENTRADO VERTICAL DINÁMICO Y TIPOGRAFÍAS GRANDES
+   // FUNCIÓN DE DESCARGA CON TIPOGRAFÍA MAXIMIZADA Y DETALLES EDITORIALES (❧)
     function descargarLámina() {
       if (!fraseActual) return;
 
@@ -782,17 +782,17 @@
       ctx.fillRect(0, 0, W, H);
 
       // Tarjeta central blanca
-      const cardX = 80;
-      const cardY = 120;
-      const cardW = W - 160;
-      const cardH = H - 240;
-      const radius = 48;
+      const cardX = 70;
+      const cardY = 100;
+      const cardW = W - 140;
+      const cardH = H - 200;
+      const radius = 52;
 
-      // Sombra de la tarjeta
+      // Sombra elegante
       ctx.save();
-      ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
-      ctx.shadowBlur = 40;
-      ctx.shadowOffsetY = 15;
+      ctx.shadowColor = "rgba(0, 0, 0, 0.45)";
+      ctx.shadowBlur = 45;
+      ctx.shadowOffsetY = 18;
       
       ctx.beginPath();
       ctx.roundRect(cardX, cardY, cardW, cardH, radius);
@@ -800,23 +800,23 @@
       ctx.fill();
       ctx.restore();
 
-      // Borde editorial de la tarjeta
+      // Borde editorial
       ctx.save();
       ctx.beginPath();
       ctx.roundRect(cardX, cardY, cardW, cardH, radius);
       ctx.strokeStyle = "#E2E2DC";
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 2.5;
       ctx.stroke();
       ctx.restore();
 
       // 1. Etiqueta superior de categoría
-      const tagW = 420;
-      const tagH = 60;
+      const tagW = 440;
+      const tagH = 64;
       const tagX = (W - tagW) / 2;
-      const tagY = cardY + 60;
+      const tagY = cardY + 55;
       
       ctx.beginPath();
-      ctx.roundRect(tagX, tagY, tagW, tagH, 30);
+      ctx.roundRect(tagX, tagY, tagW, tagH, 32);
       ctx.fillStyle = "#F3F3EE";
       ctx.fill();
       ctx.strokeStyle = "#E2E2DC";
@@ -824,14 +824,14 @@
       ctx.stroke();
 
       ctx.fillStyle = "#111827";
-      ctx.font = "bold 22px 'Nunito', sans-serif";
+      ctx.font = "bold 23px 'Nunito', sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 38);
+      ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 41);
 
-      // 2. Preparar el fragmento principal (48px font)
-      const maxWidth = cardW - 120;
-      const lineHeightFragmento = 76;
-      ctx.font = "300 48px 'Roboto', sans-serif";
+      // 2. Preparar el fragmento principal (56px font)
+      const maxWidth = cardW - 100;
+      const lineHeightFragmento = 86;
+      ctx.font = "400 56px 'Roboto', sans-serif";
 
       const words = fraseActual.fragmento.split(' ');
       let line = '';
@@ -848,11 +848,11 @@
       }
       fragmentLines.push(line.trim());
 
-      // 3. Preparar la Pausa de Reflexión (30px font)
-      const reflBoxW = cardW - 100;
+      // 3. Preparar la Pausa de Reflexión (34px font)
+      const reflBoxW = cardW - 80;
       const reflBoxX = (W - reflBoxW) / 2;
-      const reflLineHeight = 46;
-      ctx.font = "300 30px 'Roboto', sans-serif";
+      const reflLineHeight = 52;
+      ctx.font = "300 34px 'Roboto', sans-serif";
 
       const reflWords = fraseActual.metafora.split(' ');
       let reflLine = '';
@@ -860,7 +860,7 @@
 
       for (let m = 0; m < reflWords.length; m++) {
         const testLine = reflLine + reflWords[m] + ' ';
-        if (ctx.measureText(testLine).width > reflBoxW - 70 && m > 0) {
+        if (ctx.measureText(testLine).width > reflBoxW - 60 && m > 0) {
           reflLines.push(reflLine.trim());
           reflLine = reflWords[m] + ' ';
         } else {
@@ -870,18 +870,18 @@
       reflLines.push(reflLine.trim());
 
       // Altura del cuadro de reflexión dinámico
-      const reflBoxH = 85 + (reflLines.length * reflLineHeight);
+      const reflBoxH = 95 + (reflLines.length * reflLineHeight);
 
       // 4. CÁLCULO DE POSICIÓN VERTICAL PARA CENTRADO ABSOLUTO
       const alturaFragmento = fragmentLines.length * lineHeightFragmento;
-      const espacioSeparador = 65;
-      const alturaAutorObra = 95;
-      const espacioAntesReflexion = 55;
+      const espacioSeparador = 70;
+      const alturaAutorObra = 100;
+      const espacioAntesReflexion = 60;
 
       const alturaTotalBloque = alturaFragmento + espacioSeparador + alturaAutorObra + espacioAntesReflexion + reflBoxH;
 
-      // Límites útiles dentro de la tarjeta
-      const zonaUtilTop = tagY + tagH + 30;
+      // Límites útiles
+      const zonaUtilTop = tagY + tagH + 25;
       const zonaUtilBottom = cardY + cardH - 120;
       const zonaUtilH = zonaUtilBottom - zonaUtilTop;
 
@@ -890,22 +890,22 @@
 
       // --- RENDERIZADO DEL FRAGMENTO ---
       ctx.fillStyle = "#111827";
-      ctx.font = "300 48px 'Roboto', sans-serif";
+      ctx.font = "400 56px 'Roboto', sans-serif";
       ctx.textAlign = "center";
 
       // Comilla inicial
       const firstLineWidth = ctx.measureText(fragmentLines[0]).width;
       const firstLineX = (W / 2) - (firstLineWidth / 2);
       ctx.save();
-      ctx.font = "italic 68px 'Playfair Display', Georgia, serif";
+      ctx.font = "italic 76px 'Playfair Display', Georgia, serif";
       ctx.fillStyle = "#111827";
       ctx.textAlign = "right";
-      ctx.fillText("“", firstLineX - 12, currentY + 12);
+      ctx.fillText("“", firstLineX - 14, currentY + 16);
       ctx.restore();
 
       for (let i = 0; i < fragmentLines.length; i++) {
         ctx.fillStyle = "#111827";
-        ctx.font = "300 48px 'Roboto', sans-serif";
+        ctx.font = "400 56px 'Roboto', sans-serif";
         ctx.textAlign = "center";
         ctx.fillText(fragmentLines[i], W / 2, currentY + (i * lineHeightFragmento));
       }
@@ -915,72 +915,83 @@
       const lastLineWidth = ctx.measureText(fragmentLines[lastLineIndex]).width;
       const lastLineX = (W / 2) + (lastLineWidth / 2);
       ctx.save();
-      ctx.font = "italic 68px 'Playfair Display', Georgia, serif";
+      ctx.font = "italic 76px 'Playfair Display', Georgia, serif";
       ctx.fillStyle = "#111827";
       ctx.textAlign = "left";
-      ctx.fillText("”", lastLineX + 12, currentY + (lastLineIndex * lineHeightFragmento) + 12);
+      ctx.fillText("”", lastLineX + 14, currentY + (lastLineIndex * lineHeightFragmento) + 16);
       ctx.restore();
 
-      currentY += alturaFragmento + 30;
+      currentY += alturaFragmento + 25;
 
-      // Línea divisoria
-      ctx.beginPath();
-      ctx.moveTo((W / 2) - 180, currentY);
-      ctx.lineTo((W / 2) + 180, currentY);
+      // Adorno viñeta editorial ❧ en la división
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#111827";
+      ctx.font = "28px Georgia, serif";
+      ctx.fillText("❧", W / 2, currentY + 10);
+
+      // Líneas divisorias a los lados de la viñeta
       ctx.strokeStyle = "#E2E2DC";
       ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo((W / 2) - 220, currentY);
+      ctx.lineTo((W / 2) - 30, currentY);
       ctx.stroke();
 
-      currentY += 45;
+      ctx.beginPath();
+      ctx.moveTo((W / 2) + 30, currentY);
+      ctx.lineTo((W / 2) + 220, currentY);
+      ctx.stroke();
+
+      currentY += 55;
 
       // Autor
       ctx.textAlign = "center";
       ctx.fillStyle = "#111827";
-      ctx.font = "bold 32px 'Nunito', sans-serif";
+      ctx.font = "bold 36px 'Nunito', sans-serif";
       ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
 
-      currentY += 38;
+      currentY += 42;
 
       // Obra
       ctx.fillStyle = "#4B5563";
-      ctx.font = "300 26px 'Roboto', sans-serif";
+      ctx.font = "300 28px 'Roboto', sans-serif";
       ctx.fillText(fraseActual.obra, W / 2, currentY);
 
-      currentY += 50;
+      currentY += 55;
 
       // --- RENDERIZADO CUADRO PAUSA DE REFLEXIÓN ---
       const reflBoxY = currentY;
 
       ctx.fillStyle = "#F3F3EE";
       ctx.beginPath();
-      ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, reflBoxH, 24);
+      ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, reflBoxH, 28);
       ctx.fill();
       ctx.strokeStyle = "#E2E2DC";
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Título cuadro
+      // Título del cuadro con viñeta
       ctx.textAlign = "center";
       ctx.fillStyle = "#111827";
-      ctx.font = "bold 22px 'Nunito', sans-serif";
-      ctx.fillText("PAUSA DE REFLEXIÓN", W / 2, reflBoxY + 45);
+      ctx.font = "bold 24px 'Nunito', sans-serif";
+      ctx.fillText("❧  PAUSA DE REFLEXIÓN  ❧", W / 2, reflBoxY + 48);
 
-      // Texto reflexión
+      // Texto de reflexión amplio
       ctx.fillStyle = "#374151";
-      ctx.font = "300 30px 'Roboto', sans-serif";
+      ctx.font = "300 34px 'Roboto', sans-serif";
 
       for (let k = 0; k < reflLines.length; k++) {
-        ctx.fillText(reflLines[k], W / 2, reflBoxY + 98 + (k * reflLineHeight));
+        ctx.fillText(reflLines[k], W / 2, reflBoxY + 106 + (k * reflLineHeight));
       }
 
       // --- MARCA DE AGUA FOOTER DE LA CARD ---
       ctx.textAlign = "center";
       ctx.fillStyle = "#111827";
-      ctx.font = "bold 24px 'Nunito', sans-serif";
+      ctx.font = "bold 25px 'Nunito', sans-serif";
       ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, cardY + cardH - 65);
 
       ctx.fillStyle = "#6B7280";
-      ctx.font = "400 19px 'Roboto', sans-serif";
+      ctx.font = "400 20px 'Roboto', sans-serif";
       ctx.fillText("frase-oportuna.vercel.app", W / 2, cardY + cardH - 35);
 
       // Generar descarga PNG
@@ -997,7 +1008,6 @@
         mostrarToast("No fue posible generar la imagen en este dispositivo.");
       }
     }
-
     function mostrarToast(mensaje) {
       const toast = document.getElementById('toast-notificacion');
       const toastTexto = document.getElementById('toast-mensaje');
