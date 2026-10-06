@@ -94,6 +94,9 @@ function mostrarCita(cita) {
 
   contenedor.classList.remove('hidden');
 
+  // RENDERIZA LA VISTA PREVIA IDÉNTICA A LA CARTA DESCARGABLE
+  generarVistaPreviaCanvas();
+
   setTimeout(() => {
     contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
@@ -121,63 +124,146 @@ function copiarCitaTexto() {
   }
 }
 
-function descargarLámina() {
-  if (!fraseActual) return;
+// DIBUJAR RELOJ DE ARENA EN CANVAS
+function dibujarIconoReloj(ctx, x, y, size) {
+  ctx.save();
+  ctx.strokeStyle = "#38BDF8";
+  ctx.lineWidth = 3;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
 
+  ctx.beginPath();
+  ctx.moveTo(x - size/2, y - size/2);
+  ctx.lineTo(x + size/2, y - size/2);
+  ctx.moveTo(x - size/2, y + size/2);
+  ctx.lineTo(x + size/2, y + size/2);
+
+  ctx.moveTo(x + size/2.5, y - size/2);
+  ctx.lineTo(x + size/2.5, y - size/4);
+  ctx.lineTo(x, y);
+  ctx.lineTo(x - size/2.5, y + size/4);
+  ctx.lineTo(x - size/2.5, y + size/2);
+
+  ctx.moveTo(x - size/2.5, y - size/2);
+  ctx.lineTo(x - size/2.5, y - size/4);
+  ctx.lineTo(x, y);
+  ctx.lineTo(x + size/2.5, y + size/4);
+  ctx.lineTo(x + size/2.5, y + size/2);
+
+  ctx.stroke();
+  ctx.restore();
+}
+
+// GENERADOR DE FONDOS ALEATORIOS EN CANVAS
+function aplicarFondoAleatorio(ctx, W, H) {
+  const opcionesFondo = ['estelar', 'nebulosa', 'pergamino'];
+  const fondoElegido = opcionesFondo[Math.floor(Math.random() * opcionesFondo.length)];
+
+  if (fondoElegido === 'estelar') {
+    ctx.fillStyle = "#0A1124";
+    ctx.fillRect(0, 0, W, H);
+
+    const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 1000);
+    grad.addColorStop(0, "#182848");
+    grad.addColorStop(1, "#0A1124");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.fillStyle = "#FFFFFF";
+    for (let i = 0; i < 180; i++) {
+      const starX = Math.random() * W;
+      const starY = Math.random() * H;
+      const radius = Math.random() * 2 + 0.5;
+      const alpha = Math.random() * 0.8 + 0.2;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.beginPath();
+      ctx.arc(starX, starY, radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  } else if (fondoElegido === 'nebulosa') {
+    const grad = ctx.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, "#0F172A");
+    grad.addColorStop(0.5, "#1E293B");
+    grad.addColorStop(1, "#0A1124");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    const radGrad = ctx.createRadialGradient(W/2, H/3, 50, W/2, H/3, 600);
+    radGrad.addColorStop(0, "rgba(56, 189, 248, 0.25)");
+    radGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
+    ctx.fillStyle = radGrad;
+    ctx.fillRect(0, 0, W, H);
+  } else {
+    const grad = ctx.createRadialGradient(W/2, H/2, 100, W/2, H/2, 900);
+    grad.addColorStop(0, "#131F37");
+    grad.addColorStop(1, "#070C1B");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+  }
+}
+
+// GENERA DIBUJO BASE
+function generarVistaPreviaCanvas() {
+  if (!fraseActual) return;
   const canvas = document.getElementById('canvas-export');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const W = 1080;
   const H = 1920;
 
-  ctx.fillStyle = "#0A1124";
-  ctx.fillRect(0, 0, W, H);
-
-  const cardX = 70;
-  const cardY = 100;
-  const cardW = W - 140;
-  const cardH = H - 200;
-  const radius = 52;
+  aplicarFondoAleatorio(ctx, W, H);
 
   ctx.save();
-  ctx.shadowColor = "rgba(0, 0, 0, 0.45)";
-  ctx.shadowBlur = 45;
-  ctx.shadowOffsetY = 18;
-  
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.3)";
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.roundRect(cardX, cardY, cardW, cardH, radius);
-  ctx.fillStyle = "#FFFFFF";
-  ctx.fill();
-  ctx.restore();
-
-  ctx.save();
-  ctx.beginPath();
-  ctx.roundRect(cardX, cardY, cardW, cardH, radius);
-  ctx.strokeStyle = "#E2E2DC";
-  ctx.lineWidth = 2.5;
+  ctx.roundRect(40, 40, W - 80, H - 80, 36);
   ctx.stroke();
   ctx.restore();
 
-  const tagW = 440;
-  const tagH = 64;
+  const brandY = 130;
+  dibujarIconoReloj(ctx, W / 2, brandY, 34);
+
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "bold 24px 'Nunito', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("FRASE OPORTUNA", W / 2, brandY + 45);
+
+  ctx.fillStyle = "#38BDF8";
+  ctx.font = "extrabold 15px 'Nunito', sans-serif";
+  ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 68);
+
+  const tagW = 380;
+  const tagH = 50;
   const tagX = (W - tagW) / 2;
-  const tagY = cardY + 55;
-  
+  const tagY = brandY + 95;
+
   ctx.beginPath();
-  ctx.roundRect(tagX, tagY, tagW, tagH, 32);
-  ctx.fillStyle = "#F3F3EE";
+  ctx.roundRect(tagX, tagY, tagW, tagH, 25);
+  ctx.fillStyle = "rgba(18, 28, 56, 0.85)";
   ctx.fill();
-  ctx.strokeStyle = "#E2E2DC";
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
   ctx.lineWidth = 1.5;
   ctx.stroke();
 
-  ctx.fillStyle = "#111827";
-  ctx.font = "bold 23px 'Nunito', sans-serif";
-  ctx.textAlign = "center";
-  ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 41);
+  ctx.fillStyle = "#7DD3FC";
+  ctx.font = "bold 19px 'Nunito', sans-serif";
+  ctx.fillText(`⌛ ${fraseActual.categoria.toUpperCase()}`, W / 2, tagY + 32);
 
-  const maxWidth = cardW - 100;
-  const lineHeightFragmento = 86;
-  ctx.font = "400 56px 'Roboto', sans-serif";
+  ctx.save();
+  ctx.translate(W - 65, H / 2);
+  ctx.rotate(Math.PI / 2);
+  ctx.fillStyle = "rgba(255, 255, 255, 0.45)";
+  ctx.font = "500 18px 'Roboto', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("frase-oportuna.vercel.app", 0, 0);
+  ctx.restore();
+
+  const maxWidth = W - 260;
+  const lineHeightFragmento = 82;
+  ctx.font = "400 52px 'Roboto', sans-serif";
 
   const words = fraseActual.fragmento.split(' ');
   let line = '';
@@ -194,10 +280,10 @@ function descargarLámina() {
   }
   fragmentLines.push(line.trim());
 
-  const reflBoxW = cardW - 80;
+  const reflBoxW = W - 240;
   const reflBoxX = (W - reflBoxW) / 2;
-  const reflLineHeight = 52;
-  ctx.font = "300 34px 'Roboto', sans-serif";
+  const reflLineHeight = 48;
+  ctx.font = "300 32px 'Roboto', sans-serif";
 
   const reflWords = fraseActual.metafora.split(' ');
   let reflLine = '';
@@ -205,7 +291,7 @@ function descargarLámina() {
 
   for (let m = 0; m < reflWords.length; m++) {
     const testLine = reflLine + reflWords[m] + ' ';
-    if (ctx.measureText(testLine).width > reflBoxW - 60 && m > 0) {
+    if (ctx.measureText(testLine).width > reflBoxW - 70 && m > 0) {
       reflLines.push(reflLine.trim());
       reflLine = reflWords[m] + ' ';
     } else {
@@ -214,115 +300,101 @@ function descargarLámina() {
   }
   reflLines.push(reflLine.trim());
 
-  const reflBoxH = 95 + (reflLines.length * reflLineHeight);
+  const reflBoxH = 90 + (reflLines.length * reflLineHeight);
 
+  const alturaComilla = 70;
   const alturaFragmento = fragmentLines.length * lineHeightFragmento;
-  const espacioSeparador = 70;
-  const alturaAutorObra = 100;
-  const espacioAntesReflexion = 60;
+  const espacioAutor = 110;
+  const espacioReflexion = 50;
 
-  const alturaTotalBloque = alturaFragmento + espacioSeparador + alturaAutorObra + espacioAntesReflexion + reflBoxH;
+  const alturaTotal = alturaComilla + alturaFragmento + espacioAutor + espacioReflexion + reflBoxH;
 
-  const zonaUtilTop = tagY + tagH + 25;
-  const zonaUtilBottom = cardY + cardH - 120;
-  const zonaUtilH = zonaUtilBottom - zonaUtilTop;
+  const zonaTop = tagY + tagH + 30;
+  const zonaBottom = H - 120;
+  const zonaUtil = zonaBottom - zonaTop;
 
-  let currentY = zonaUtilTop + Math.max(10, (zonaUtilH - alturaTotalBloque) / 2);
+  let currentY = zonaTop + Math.max(10, (zonaUtil - alturaTotal) / 2);
 
-  ctx.fillStyle = "#111827";
-  ctx.font = "400 56px 'Roboto', sans-serif";
+  ctx.fillStyle = "#38BDF8";
+  ctx.font = "italic bold 100px 'Playfair Display', Georgia, serif";
+  ctx.textAlign = "center";
+  ctx.fillText("“", W / 2, currentY + 60);
+
+  currentY += alturaComilla + 30;
+
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "400 52px 'Roboto', sans-serif";
   ctx.textAlign = "center";
 
-  const firstLineWidth = ctx.measureText(fragmentLines[0]).width;
-  const firstLineX = (W / 2) - (firstLineWidth / 2);
-  ctx.save();
-  ctx.font = "italic 76px 'Playfair Display', Georgia, serif";
-  ctx.fillStyle = "#111827";
-  ctx.textAlign = "right";
-  ctx.fillText("“", firstLineX - 14, currentY + 16);
-  ctx.restore();
-
   for (let i = 0; i < fragmentLines.length; i++) {
-    ctx.fillStyle = "#111827";
-    ctx.font = "400 56px 'Roboto', sans-serif";
-    ctx.textAlign = "center";
     ctx.fillText(fragmentLines[i], W / 2, currentY + (i * lineHeightFragmento));
   }
 
-  const lastLineIndex = fragmentLines.length - 1;
-  const lastLineWidth = ctx.measureText(fragmentLines[lastLineIndex]).width;
-  const lastLineX = (W / 2) + (lastLineWidth / 2);
-  ctx.save();
-  ctx.font = "italic 76px 'Playfair Display', Georgia, serif";
-  ctx.fillStyle = "#111827";
-  ctx.textAlign = "left";
-  ctx.fillText("”", lastLineX + 14, currentY + (lastLineIndex * lineHeightFragmento) + 16);
-  ctx.restore();
+  currentY += alturaFragmento + 20;
 
-  currentY += alturaFragmento + 25;
+  ctx.fillStyle = "#38BDF8";
+  ctx.font = "26px Georgia, serif";
+  ctx.fillText("❧", W / 2, currentY);
 
-  ctx.textAlign = "center";
-  ctx.fillStyle = "#111827";
-  ctx.font = "28px Georgia, serif";
-  ctx.fillText("❧", W / 2, currentY + 10);
-
-  ctx.strokeStyle = "#E2E2DC";
-  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
+  ctx.lineWidth = 1.5;
   ctx.beginPath();
-  ctx.moveTo((W / 2) - 220, currentY);
-  ctx.lineTo((W / 2) - 30, currentY);
+  ctx.moveTo((W / 2) - 180, currentY - 8);
+  ctx.lineTo((W / 2) - 30, currentY - 8);
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.moveTo((W / 2) + 30, currentY);
-  ctx.lineTo((W / 2) + 220, currentY);
+  ctx.moveTo((W / 2) + 30, currentY - 8);
+  ctx.lineTo((W / 2) + 180, currentY - 8);
   ctx.stroke();
 
-  currentY += 55;
+  currentY += 45;
 
-  ctx.textAlign = "center";
-  ctx.fillStyle = "#111827";
-  ctx.font = "bold 36px 'Nunito', sans-serif";
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "bold 34px 'Nunito', sans-serif";
   ctx.fillText(fraseActual.autor.toUpperCase(), W / 2, currentY);
 
-  currentY += 42;
+  currentY += 38;
 
-  ctx.fillStyle = "#4B5563";
-  ctx.font = "300 28px 'Roboto', sans-serif";
+  ctx.fillStyle = "#94A3B8";
+  ctx.font = "300 26px 'Roboto', sans-serif";
   ctx.fillText(fraseActual.obra, W / 2, currentY);
 
-  currentY += 55;
+  currentY += 50;
 
   const reflBoxY = currentY;
 
-  ctx.fillStyle = "#F3F3EE";
+  ctx.save();
+  ctx.fillStyle = "rgba(18, 28, 56, 0.75)";
   ctx.beginPath();
   ctx.roundRect(reflBoxX, reflBoxY, reflBoxW, reflBoxH, 28);
   ctx.fill();
-  ctx.strokeStyle = "#E2E2DC";
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.35)";
   ctx.lineWidth = 1.5;
   ctx.stroke();
+  ctx.restore();
 
-  ctx.textAlign = "center";
-  ctx.fillStyle = "#111827";
-  ctx.font = "bold 24px 'Nunito', sans-serif";
-  ctx.fillText("❧  PAUSA DE REFLEXIÓN  ❧", W / 2, reflBoxY + 48);
+  ctx.fillStyle = "#38BDF8";
+  ctx.font = "bold 22px 'Nunito', sans-serif";
+  ctx.fillText("❧  PAUSA DE REFLEXIÓN  ❧", W / 2, reflBoxY + 45);
 
-  ctx.fillStyle = "#374151";
-  ctx.font = "300 34px 'Roboto', sans-serif";
+  ctx.fillStyle = "#F1F5F9";
+  ctx.font = "300 32px 'Roboto', sans-serif";
 
   for (let k = 0; k < reflLines.length; k++) {
-    ctx.fillText(reflLines[k], W / 2, reflBoxY + 106 + (k * reflLineHeight));
+    ctx.fillText(reflLines[k], W / 2, reflBoxY + 100 + (k * reflLineHeight));
   }
 
-  ctx.textAlign = "center";
-  ctx.fillStyle = "#111827";
-  ctx.font = "bold 25px 'Nunito', sans-serif";
-  ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, cardY + cardH - 65);
+  ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+  ctx.font = "bold 22px 'Nunito', sans-serif";
+  ctx.fillText("Frase Oportuna • Sabiduría Universal", W / 2, H - 70);
+}
 
-  ctx.fillStyle = "#6B7280";
-  ctx.font = "400 20px 'Roboto', sans-serif";
-  ctx.fillText("frase-oportuna.vercel.app", W / 2, cardY + cardH - 35);
+// DESCARGA DE LÁMINA - GENERA NUEVA IMAGEN CON FONDO FRESCO CADA VEZ
+function descargarLámina() {
+  if (!fraseActual) return;
+  generarVistaPreviaCanvas();
+  const canvas = document.getElementById('canvas-export');
 
   try {
     const dataUrl = canvas.toDataURL("image/png");
