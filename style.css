@@ -25,6 +25,13 @@ h1, h2, h3, h4, .font-heading {
   box-shadow: 0 12px 28px -4px rgba(56, 189, 248, 0.15);
 }
 
+/* Tarjeta principal en la web con degradado estelar central */
+#tarjeta-lectura {
+  background: radial-gradient(circle at 50% 45%, #1B2E4B 0%, #121C38 70%, #0D162E 100%) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.2) !important;
+}
+
 .tarjeta-activa {
   outline: 2px solid #38BDF8 !important;
   outline-offset: 2px;
