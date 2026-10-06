@@ -2,7 +2,7 @@ let FRASES_OPORTUNAS = [];
 let corrienteSeleccionada = 'aleatorio';
 let fraseActual = null;
 let promesaCarga = null;
-let contadorFondoRotativo = 0; // Control secuencial estricto para evitar repeticiones de fondo
+let contadorFondoRotativo = 0; // Control secuencial para evitar repeticiones de fondo
 
 function cargarFrasesJSON() {
   if (!promesaCarga) {
@@ -33,6 +33,7 @@ async function consultarCorriente(corriente) {
 
   corrienteSeleccionada = corriente;
 
+  // Resaltar tarjeta seleccionada en la grilla
   document.querySelectorAll('#grid-corrientes > button').forEach(b => b.classList.remove('tarjeta-activa'));
   if (corriente !== 'aleatorio') {
     const tarjeta = document.getElementById(`card-${corriente}`);
@@ -76,21 +77,31 @@ function mostrarCita(cita) {
   const contenedor = document.getElementById('contenedor-resultado');
   const tarjeta = document.getElementById('tarjeta-lectura');
 
+  if (!contenedor || !tarjeta) return;
+
   tarjeta.classList.remove('anim-revelar');
   void tarjeta.offsetWidth;
   tarjeta.classList.add('anim-revelar');
 
-  document.getElementById('res-categoria-nombre').textContent = cita.categoria;
-  document.getElementById('res-fragmento').textContent = cita.fragmento;
-  document.getElementById('res-autor').textContent = cita.autor;
-  document.getElementById('res-obra').textContent = cita.obra;
-  document.getElementById('res-metafora').textContent = cita.metafora;
+  const elCat = document.getElementById('res-categoria-nombre');
+  const elFrag = document.getElementById('res-fragmento');
+  const elAut = document.getElementById('res-autor');
+  const elObr = document.getElementById('res-obra');
+  const elMeta = document.getElementById('res-metafora');
+
+  if (elCat) elCat.textContent = cita.categoria;
+  if (elFrag) elFrag.textContent = cita.fragmento;
+  if (elAut) elAut.textContent = cita.autor;
+  if (elObr) elObr.textContent = cita.obra;
+  if (elMeta) elMeta.textContent = cita.metafora;
 
   const btnReconsultar = document.getElementById('btn-reconsultar-mismo');
-  if (corrienteSeleccionada === 'aleatorio') {
-    btnReconsultar.textContent = `↻ Otra frase de ${cita.categoria}`;
-  } else {
-    btnReconsultar.textContent = `↻ Otra frase de esta corriente`;
+  if (btnReconsultar) {
+    if (corrienteSeleccionada === 'aleatorio') {
+      btnReconsultar.textContent = `↻ Otra frase de ${cita.categoria}`;
+    } else {
+      btnReconsultar.textContent = `↻ Otra frase de esta corriente`;
+    }
   }
 
   contenedor.classList.remove('hidden');
@@ -157,7 +168,7 @@ function dibujarIconoReloj(ctx, x, y, size) {
   ctx.bezierCurveTo(7.211, 7.211, 7, 6.702, 7, 6.172);
   ctx.lineTo(7, 2);
 
-  // Arena acumulada en el fondo (idéntico al logo)
+  // Arena acumulada en el fondo
   ctx.moveTo(11, 16.5); ctx.lineTo(13, 16.5);
   ctx.moveTo(10.5, 19); ctx.lineTo(13.5, 19);
 
@@ -165,7 +176,7 @@ function dibujarIconoReloj(ctx, x, y, size) {
   ctx.restore();
 }
 
-// GENERADOR ROTATIVO DE 5 FONDOS (GARANTIZA NUNCA REPETIR EL MISMO EN DESCARGAS CONSECUTIVAS)
+// GENERADOR ROTATIVO DE 5 FONDOS (SECUENCIA 1 -> 2 -> 3 -> 4 -> 5 -> 1...)
 function aplicarFondoAleatorio(ctx, W, H) {
   const fondoIndice = contadorFondoRotativo % 5;
   contadorFondoRotativo++;
@@ -259,11 +270,12 @@ function descargarLámina() {
   if (!fraseActual) return;
 
   const canvas = document.getElementById('canvas-export');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const W = 1080;
   const H = 1920;
 
-  // 1. Fondo rotativo (Secuencia 1 -> 2 -> 3 -> 4 -> 5 -> 1...)
+  // 1. Fondo rotativo
   aplicarFondoAleatorio(ctx, W, H);
 
   // Marco exterior
@@ -275,7 +287,7 @@ function descargarLámina() {
   ctx.stroke();
   ctx.restore();
 
-  // 2. Branding superior con el trazo SVG idéntico al logo
+  // 2. Branding superior
   const brandY = 160;
   dibujarIconoReloj(ctx, W / 2, brandY, 48);
 
@@ -288,7 +300,7 @@ function descargarLámina() {
   ctx.font = "extrabold 18px 'Nunito', sans-serif";
   ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 88);
 
-  // Etiqueta de Categoría (Sin ícono ni emoji redundante dentro)
+  // Etiqueta de Categoría
   const tagW = 420;
   const tagH = 58;
   const tagX = (W - tagW) / 2;
@@ -347,4 +359,54 @@ function descargarLámina() {
   let reflLines = [];
 
   for (let m = 0; m < reflWords.length; m++) {
-    const testLine =
+    const testLine = reflLine + reflWords[m] + ' ';
+    if (ctx.measureText(testLine).width > reflBoxW - 80 && m > 0) {
+      reflLines.push(reflLine.trim());
+      reflLine = reflWords[m] + ' ';
+    } else {
+      reflLine = testLine;
+    }
+  }
+  reflLines.push(reflLine.trim());
+
+  const reflBoxH = 110 + (reflLines.length * reflLineHeight);
+
+  // Centrado vertical
+  const alturaComilla = 90;
+  const alturaFragmento = fragmentLines.length * lineHeightFragmento;
+  const espacioAutor = 130;
+  const espacioReflexion = 60;
+
+  const alturaTotal = alturaComilla + alturaFragmento + espacioAutor + espacioReflexion + reflBoxH;
+
+  const zonaTop = tagY + tagH + 40;
+  const zonaBottom = H - 130;
+  const zonaUtil = zonaBottom - zonaTop;
+
+  let currentY = zonaTop + Math.max(10, (zonaUtil - alturaTotal) / 2);
+
+  // 5. Comilla Gigante Central
+  ctx.fillStyle = "#38BDF8";
+  ctx.font = "italic bold 120px 'Playfair Display', Georgia, serif";
+  ctx.textAlign = "center";
+  ctx.fillText("“", W / 2, currentY + 80);
+
+  currentY += alturaComilla + 35;
+
+  // 6. Fragmento Principal (Blanco mate suave)
+  ctx.fillStyle = "#E2E8F0";
+  ctx.font = "500 64px 'Roboto', sans-serif";
+  ctx.textAlign = "center";
+
+  for (let i = 0; i < fragmentLines.length; i++) {
+    ctx.fillText(fragmentLines[i], W / 2, currentY + (i * lineHeightFragmento));
+  }
+
+  currentY += alturaFragmento + 25;
+
+  // Viñeta divisoria ❧
+  ctx.fillStyle = "#38BDF8";
+  ctx.font = "32px Georgia, serif";
+  ctx.fillText("❧", W / 2, currentY);
+
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.5
