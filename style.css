@@ -2,7 +2,7 @@
 
 body {
   background-color: #0A1124;
-  color: #FFFFFF;
+  color: #E2E8F0; /* Blanco hielado suavizado para no encandilar */
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,6 +11,11 @@ body {
 h1, h2, h3, h4, .font-heading {
   font-family: 'Nunito', sans-serif;
   letter-spacing: -0.015em;
+  color: #F0F6FC; /* Blanco suave con tinte cian */
+}
+
+p, article p {
+  color: #E2E8F0; /* Blanco descansado para lectura continua */
 }
 
 .borde-noche {
@@ -55,7 +60,7 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .nav-activo {
-  color: #FFFFFF !important;
+  color: #F0F6FC !important;
   border-bottom: 2px solid #7DD3FC;
   font-weight: 700;
 }
