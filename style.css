@@ -2,7 +2,7 @@
 
 body {
   background-color: #0A1124;
-  color: #94A3B8; /* Blanco apagado Slate para máxima comodidad de lectura */
+  color: #CBD5E1; /* Blanco suave Slate para máxima comodidad de lectura */
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,14 +11,13 @@ body {
 h1, h2, h3, h4, .font-heading {
   font-family: 'Nunito', sans-serif;
   letter-spacing: -0.015em;
-  color: #CBD5E1; /* Titulares en todo suave desaturado sin halación */
+  color: #CBD5E1; /* Titulares en tono suave desaturado */
 }
 
 p, article p {
-  color: #CBD5E1; /* Párrafos y artículos en blanco mate muy amigable a la vista */
+  color: #CBD5E1; /* Párrafos y artículos en blanco mate muy descansado */
 }
 
-/* Enlaces y destacados */
 a {
   transition: color 0.2s ease;
 }
@@ -35,11 +34,11 @@ a {
   box-shadow: 0 12px 28px -4px rgba(56, 189, 248, 0.15);
 }
 
-/* Tarjeta principal en la web con degradado estelar central */
+/* Tarjeta principal en la web: Sobria, elegante y sin luces que encandilen */
 #tarjeta-lectura {
-  background: radial-gradient(circle at 50% 45%, #1B2E4B 0%, #121C38 70%, #0D162E 100%) !important;
-  border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
-  box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.18) !important;
+  background-color: #121C38 !important;
+  border: 1.5px solid #22355F !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5) !important;
 }
 
 .tarjeta-activa {
