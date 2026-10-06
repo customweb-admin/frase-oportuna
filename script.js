@@ -2,7 +2,7 @@ let FRASES_OPORTUNAS = [];
 let corrienteSeleccionada = 'aleatorio';
 let fraseActual = null;
 let promesaCarga = null;
-let ultimoFondoIndice = -1;
+let contadorFondoRotativo = 0; // Control secuencial estricto para evitar repeticiones
 
 function cargarFrasesJSON() {
   if (!promesaCarga) {
@@ -122,53 +122,55 @@ function copiarCitaTexto() {
   }
 }
 
-// DIBUJAR RELOJ DE ARENA EN CANVAS CON ARENA ACUMULADA (IGUAL AL LOGO WEB)
+// DIBUJAR RELOJ DE ARENA EN CANVAS EXACTO AL SVG DEL LOGO WEB
 function dibujarIconoReloj(ctx, x, y, size) {
   ctx.save();
   ctx.strokeStyle = "#38BDF8";
-  ctx.lineWidth = 3.5;
+  ctx.lineWidth = 2.8;
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
+  const scale = size / 24;
+  ctx.translate(x - size/2, y - size/2);
+  ctx.scale(scale, scale);
+
   ctx.beginPath();
-  // Marcos superior e inferior
-  ctx.moveTo(x - size/2, y - size/2);
-  ctx.lineTo(x + size/2, y - size/2);
-  ctx.moveTo(x - size/2, y + size/2);
-  ctx.lineTo(x + size/2, y + size/2);
+  // Base y techo
+  ctx.moveTo(5, 22); ctx.lineTo(19, 22);
+  ctx.moveTo(5, 2); ctx.lineTo(19, 2);
 
-  // Cuerpo del reloj (embudo cruzado)
-  ctx.moveTo(x + size/2.2, y - size/2);
-  ctx.lineTo(x, y);
-  ctx.lineTo(x - size/2.2, y + size/2);
+  // Pared derecha
+  ctx.moveTo(17, 22);
+  ctx.lineTo(17, 17.828);
+  ctx.bezierCurveTo(17, 17.298, 16.789, 16.789, 16.414, 16.414);
+  ctx.lineTo(12, 12);
+  ctx.lineTo(16.414, 7.586);
+  ctx.bezierCurveTo(16.789, 7.211, 17, 6.702, 17, 6.172);
+  ctx.lineTo(17, 2);
 
-  ctx.moveTo(x - size/2.2, y - size/2);
-  ctx.lineTo(x, y);
-  ctx.lineTo(x + size/2.2, y + size/2);
+  // Pared izquierda
+  ctx.moveTo(7, 22);
+  ctx.lineTo(7, 17.828);
+  ctx.bezierCurveTo(7, 17.298, 7.211, 16.789, 7.586, 16.414);
+  ctx.lineTo(12, 12);
+  ctx.lineTo(7.586, 7.586);
+  ctx.bezierCurveTo(7.211, 7.211, 7, 6.702, 7, 6.172);
+  ctx.lineTo(7, 2);
 
-  // Líneas de arena en la parte inferior (igual que el SVG del logo)
-  ctx.moveTo(x - size/4, y + size/4);
-  ctx.lineTo(x + size/4, y + size/4);
-
-  ctx.moveTo(x - size/3, y + size/2.8);
-  ctx.lineTo(x + size/3, y + size/2.8);
+  // Arena acumulada en el fondo (idéntico al logo)
+  ctx.moveTo(11, 16.5); ctx.lineTo(13, 16.5);
+  ctx.moveTo(10.5, 19); ctx.lineTo(13.5, 19);
 
   ctx.stroke();
   ctx.restore();
 }
 
-// GENERADOR DE 5 FONDOS DISTINTOS QUE NUNCA SE REPITEN CONSECUTIVAMENTE
+// GENERADOR ROTATIVO DE 5 FONDOS (GARANTIZA NUNCA REPETIR EL MISMO EN DESCARGAS CONSECUTIVAS)
 function aplicarFondoAleatorio(ctx, W, H) {
-  const totalFondos = 5;
-  let nuevoIndice;
+  const fondoIndice = contadorFondoRotativo % 5;
+  contadorFondoRotativo++; // Avanza el contador para la siguiente descarga
 
-  do {
-    nuevoIndice = Math.floor(Math.random() * totalFondos);
-  } while (nuevoIndice === ultimoFondoIndice && totalFondos > 1);
-
-  ultimoFondoIndice = nuevoIndice;
-
-  switch (nuevoIndice) {
+  switch (fondoIndice) {
     case 0: // 1. Noche Estelar
       ctx.fillStyle = "#0A1124";
       ctx.fillRect(0, 0, W, H);
@@ -211,7 +213,7 @@ function aplicarFondoAleatorio(ctx, W, H) {
       ctx.fillRect(0, 0, W, H);
       break;
 
-    case 2: // 3. Aurora Celeste (Luz superior e inferior)
+    case 2: // 3. Aurora Celeste
       const g3 = ctx.createLinearGradient(0, 0, 0, H);
       g3.addColorStop(0, "#030712");
       g3.addColorStop(0.5, "#0F172A");
@@ -261,7 +263,7 @@ function descargarLámina() {
   const W = 1080;
   const H = 1920;
 
-  // 1. Fondo (Garantiza variedad en cada descarga)
+  // 1. Fondo rotativo (Secuencia 1 -> 2 -> 3 -> 4 -> 5 -> 1...)
   aplicarFondoAleatorio(ctx, W, H);
 
   // Marco exterior
@@ -273,24 +275,24 @@ function descargarLámina() {
   ctx.stroke();
   ctx.restore();
 
-  // 2. Branding superior
+  // 2. Branding superior con el trazo SVG idéntico al logo
   const brandY = 160;
-  dibujarIconoReloj(ctx, W / 2, brandY, 42);
+  dibujarIconoReloj(ctx, W / 2, brandY, 48);
 
   ctx.fillStyle = "#FFFFFF";
   ctx.font = "bold 28px 'Nunito', sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("FRASE OPORTUNA", W / 2, brandY + 55);
+  ctx.fillText("FRASE OPORTUNA", W / 2, brandY + 62);
 
   ctx.fillStyle = "#38BDF8";
   ctx.font = "extrabold 18px 'Nunito', sans-serif";
-  ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 82);
+  ctx.fillText("SABIDURÍA UNIVERSAL", W / 2, brandY + 88);
 
-  // Etiqueta de Categoría (Sin el emoji de reloj redundante)
+  // Etiqueta de Categoría (Sin ícono ni emoji redundante dentro)
   const tagW = 420;
   const tagH = 58;
   const tagX = (W - tagW) / 2;
-  const tagY = brandY + 115;
+  const tagY = brandY + 120;
 
   ctx.beginPath();
   ctx.roundRect(tagX, tagY, tagW, tagH, 29);
