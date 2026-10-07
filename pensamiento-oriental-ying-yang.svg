@@ -1,0 +1,9 @@
+<svg class="w-8 h-8 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Círculo exterior -->
+  <circle cx="12" cy="12" r="9"/>
+  <!-- Línea divisoria en 'S' -->
+  <path d="M12 3a4.5 4.5 0 0 0 0 9 4.5 4.5 0 0 1 0 9"/>
+  <!-- Puntos internos -->
+  <circle cx="12" cy="7.5" r="1.2" fill="currentColor"/>
+  <circle cx="12" cy="16.5" r="1.2" fill="currentColor"/>
+</svg>
