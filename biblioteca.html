@@ -117,63 +117,70 @@
     <!-- ================================================================= -->
     <div class="flex flex-wrap justify-center gap-6 pt-1">
 
-      <!-- INICIO: LIBRO 1 (Marco Aurelio - Pensamiento Estoico) -->
-      <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[340px] bg-[#121C38] rounded-3xl border border-[#22355F] p-5 flex flex-col justify-between hover:border-sky-400/60 transition-all duration-300 shadow-xl group">
-        
-        <div class="space-y-3">
-          <!-- PORTADA CSS MÁS ANCHA Y COMPACTA EN ALTURA -->
-          <div class="tapa-libro relative w-full aspect-[3/3.2] p-4 flex flex-col justify-between mx-auto">
-            <div class="flex justify-between items-center relative z-10">
-              <span class="tapa-badge text-[9px] px-2 py-0.5">Pensamiento Estoico</span>
-            </div>
-
-            <!-- ÍCONO 1: TEMPLO ESTOICO -->
-            <div class="my-auto text-center space-y-2 relative z-10">
-              <div class="w-10 h-10 rounded-full bg-sky-400/10 border border-sky-400/30 flex items-center justify-center mx-auto text-sky-300">
-                <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 7l10-5 10 5"/>
-                  <path d="M4 7h16"/>
-                  <path d="M6 7v11M10 7v11M14 7v11M18 7v11"/>
-                  <path d="M3 18h18M2 21h20"/>
-                </svg>
-              </div>
-              <h3 class="font-heading text-base font-black text-white leading-tight uppercase tracking-tight">
-                Marco Aurelio
-              </h3>
-              <p class="font-sans text-[10px] text-slate-300 font-medium leading-tight">
-                El emperador que pensaba en su tienda de campaña
-              </p>
-            </div>
-
-            <div class="border-t border-[#22355F] pt-1.5 text-center relative z-10">
-              <span class="text-[8px] font-heading font-extrabold text-sky-300 tracking-widest uppercase">Frase Oportuna</span>
-            </div>
-          </div>
-
-          <!-- DETALLES Y DESCRIPCIÓN -->
-          <div class="space-y-1 text-center sm:text-left">
-            <span class="text-[10px] uppercase font-heading font-bold text-sky-300 tracking-wider">#1 Edición Interactiva</span>
-            <h2 class="font-heading text-base font-bold text-white leading-snug">
-              Marco Aurelio: Meditaciones & Diario
-            </h2>
-            <p class="font-sans text-xs text-slate-200 leading-relaxed">
-              Análisis histórico, texto despojado de distracciones, versión PDF e instrumentos interactivos de práctica.
-            </p>
-          </div>
+     <!-- INICIO: LIBRO 1 (Marco Aurelio - Pensamiento Estoico) -->
+<div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[340px] bg-[#121C38] rounded-3xl border border-[#22355F] p-5 flex flex-col justify-between hover:border-sky-400/60 transition-all duration-300 shadow-xl group">
+  
+  <div class="space-y-3">
+    <!-- PORTADA CSS MÁS ANCHA Y COMPACTA (AHORA ENLAZADA A LIBRO.HTML) -->
+    <a href="libro.html?id=marco-aurelio" class="block cursor-pointer">
+      <div class="tapa-libro relative w-full aspect-[3/3.2] p-4 flex flex-col justify-between mx-auto transition-transform group-hover:scale-[1.02]">
+        <div class="flex justify-between items-center relative z-10">
+          <span class="tapa-badge text-[9px] px-2 py-0.5">Pensamiento Estoico</span>
         </div>
 
-        <!-- PRECIOS Y BOTONES DE COMPRA -->
-        <div class="pt-3 mt-3 border-t border-[#22355F] space-y-2">
-          <a href="URL_LINK_MERCADOPAGO" target="_blank" rel="noopener" class="block text-center w-full py-2.5 rounded-full bg-sky-400 text-[#0A1124] font-heading font-extrabold text-xs uppercase tracking-wider hover:bg-sky-300 transition-colors shadow-md">
-            Comprar ARS ($5.000)
-          </a>
-          <a href="URL_LINK_GUMROAD" target="_blank" rel="noopener" class="block text-center w-full py-2 rounded-full bg-transparent text-slate-300 border border-[#22355F] font-heading font-semibold text-[11px] uppercase tracking-wider hover:bg-[#182548] hover:text-white transition-colors">
-            Comprar USD ($5)
-          </a>
+        <!-- ÍCONO 1: TEMPLO ESTOICO -->
+        <div class="my-auto text-center space-y-2 relative z-10">
+          <div class="w-10 h-10 rounded-full bg-sky-400/10 border border-sky-400/30 flex items-center justify-center mx-auto text-sky-300">
+            <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 7l10-5 10 5"/>
+              <path d="M4 7h16"/>
+              <path d="M6 7v11M10 7v11M14 7v11M18 7v11"/>
+              <path d="M3 18h18M2 21h20"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-base font-black text-white leading-tight uppercase tracking-tight">
+            Marco Aurelio
+          </h3>
+          <p class="font-sans text-[10px] text-slate-300 font-medium leading-tight">
+            El emperador que pensaba en su tienda de campaña
+          </p>
         </div>
 
+        <div class="border-t border-[#22355F] pt-1.5 text-center relative z-10">
+          <span class="text-[8px] font-heading font-extrabold text-sky-300 tracking-widest uppercase">Frase Oportuna</span>
+        </div>
       </div>
-      <!-- FIN: LIBRO 1 -->
+    </a>
+
+    <!-- DETALLES Y DESCRIPCIÓN CON TÍTULO ENLAZADO -->
+    <div class="space-y-1 text-center sm:text-left">
+      <span class="text-[10px] uppercase font-heading font-bold text-sky-300 tracking-wider">#1 Edición Interactiva</span>
+      <h2 class="font-heading text-base font-bold text-white leading-snug">
+        <a href="libro.html?id=marco-aurelio" class="hover:text-sky-300 transition-colors">
+          Marco Aurelio: Meditaciones & Diario
+        </a>
+      </h2>
+      <p class="font-sans text-xs text-slate-200 leading-relaxed">
+        Análisis histórico, texto despojado de distracciones, versión PDF e instrumentos interactivos de práctica.
+      </p>
+    </div>
+  </div>
+
+  <!-- ENLACE A MÁS DETALLES Y BOTONES DE COMPRA DIRECTA -->
+  <div class="pt-3 mt-3 border-t border-[#22355F] space-y-2">
+    <a href="libro.html?id=marco-aurelio" class="block text-center w-full py-2 rounded-full bg-[#182548] text-sky-300 border border-sky-400/40 font-heading font-extrabold text-[11px] uppercase tracking-wider hover:bg-sky-400 hover:text-[#0A1124] transition-all shadow-sm">
+      Ver detalle de la obra →
+    </a>
+    <a href="URL_LINK_MERCADOPAGO" target="_blank" rel="noopener" class="block text-center w-full py-2.5 rounded-full bg-sky-400 text-[#0A1124] font-heading font-extrabold text-xs uppercase tracking-wider hover:bg-sky-300 transition-colors shadow-md">
+      Comprar ARS ($5.000)
+    </a>
+    <a href="URL_LINK_GUMROAD" target="_blank" rel="noopener" class="block text-center w-full py-2 rounded-full bg-transparent text-slate-300 border border-[#22355F] font-heading font-semibold text-[11px] uppercase tracking-wider hover:bg-[#182548] hover:text-white transition-colors">
+      Comprar USD ($5)
+    </a>
+  </div>
+
+</div>
+<!-- FIN: LIBRO 1 -->
 
       <!-- HASTA 3 LIBROS POR FILA (SEGUIRÁN CENTRADOS HASTA COMPLETAR LA FILA) -->
 
