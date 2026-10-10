@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto & Soporte | Frase Oportuna</title>
+  <meta name="description" content="Canal de contacto, asistencia post-compra y canal de aportes para la comunidad de Frase Oportuna.">
+  <meta name="theme-color" content="#0A1124">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://frase-oportuna.vercel.app/contacto.html">
+  <meta property="og:title" content="Contacto & Soporte • Frase Oportuna">
+  <meta property="og:description" content="Resuelve dudas sobre tus ebooks o suma tus autores y citas predilectas.">
+  <meta property="og:site_name" content="Frase Oportuna">
+  <meta property="og:image" content="https://frase-oportuna.vercel.app/preview.png">
+  <meta property="og:image:secure_url" content="https://frase-oportuna.vercel.app/preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon Reloj de Arena -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338BDF8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2'/%3E%3Cpath d='M11 16.5h2M10.5 19h3'/%3E%3C/svg%3E">
+  
+  <!-- Fuentes Nunito + Playfair Display + Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Roboto"', 'sans-serif'],
+            heading: ['"Nunito"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          colors: {
+            noche: {
+              fondo: '#0A1124',
+              card: '#121C38',
+              cardHover: '#182548',
+              borde: '#22355F',
+              bordeLuz: '#38BDF8',
+              destaque: '#7DD3FC',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Personalizados Compartidos (Carga al final) -->
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body class="min-h-screen flex flex-col selection:bg-sky-500 selection:text-white bg-[#0A1124] text-white">
+
+  <!-- CABECERA STICKY -->
+  <header class="border-b border-[#1E293B] bg-[#0A1124]/95 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <div class="w-11 h-11 rounded-xl bg-sky-400 text-[#0A1124] flex items-center justify-center transition-transform group-hover:scale-105 shadow-md">
+            <svg class="w-6 h-6 text-[#0A1124] stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+              <path d="M11 16.5h2M10.5 19h3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-heading text-xl font-bold tracking-tight text-white leading-tight">Frase Oportuna</span>
+            <span class="block text-[11px] font-heading font-extrabold tracking-widest uppercase text-sky-300">SABIDURÍA UNIVERSAL</span>
+          </div>
+        </a>
+
+        <div>
+          <a href="index.html#inicio" class="font-heading font-bold text-sm sm:text-base px-6 py-2.5 rounded-full bg-white text-[#0A1124] hover:bg-sky-100 transition-all cursor-pointer shadow-md inline-block active:scale-95">
+            Consulta al azar
+          </a>
+        </div>
+      </div>
+
+      <!-- NAV EN MAYÚSCULAS CON CONTACTO ACTIVO -->
+      <nav class="pb-3 pt-1 flex items-center justify-center flex-wrap gap-4 sm:gap-9 text-[11px] sm:text-xs font-heading font-bold uppercase tracking-wider text-slate-200">
+        <a href="index.html" class="hover:text-white transition-colors py-1 cursor-pointer">Inicio</a>
+        <a href="index.html#seccion-proposito-home" class="hover:text-white transition-colors py-1 cursor-pointer">Propósito</a>
+        <a href="blog.html" class="hover:text-white transition-colors py-1 cursor-pointer">Blog</a>
+        <a href="biblioteca.html" class="hover:text-white transition-colors py-1 cursor-pointer">Biblioteca</a>
+        <a href="contacto.html" class="nav-activo hover:text-white transition-colors py-1 cursor-pointer">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="flex-grow max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 md:py-16 space-y-12">
+    
+    <!-- Enlace de regreso -->
+    <div>
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs sm:text-sm font-heading font-bold text-sky-300 hover:text-white transition-colors uppercase tracking-wider">
+        ← Volver a la Consulta
+      </a>
+    </div>
+
+    <!-- Encabezado Editorial Nítido sin Halo -->
+    <div class="text-center space-y-4">
+      <span class="inline-block text-xs uppercase tracking-widest text-sky-200 font-heading font-extrabold bg-[#121C38] px-5 py-2 rounded-full border border-[#22355F]">
+        Soporte & Contacto Editorial
+      </span>
+      
+      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 leading-[1.18] tracking-[-0.015em]">
+        Contacto, soporte y <br><span class="text-sky-300">aportes a la comunidad.</span>
+      </h1>
+      
+      <p class="font-sans text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl mx-auto">
+        <strong class="text-white font-semibold">Estamos aquí para acompañarte.</strong> Ya sea para resolver inconvenientes con el acceso a tus ebooks, reportar un detalle técnico, o proponer citas y autores clásicos para sumar al archivo universal.
+      </p>
+    </div>
+
+    <!-- 3 Píldoras de Tranquilidad -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+      <div class="bg-[#121C38] p-5 rounded-2xl border border-[#22355F] space-y-2">
+        <div class="text-sky-300 font-heading text-xs uppercase font-extrabold tracking-wider flex items-center gap-1.5">
+          <span>🔒</span>
+          <span>Asistencia Post-Compra</span>
+        </div>
+        <p class="font-sans text-xs text-slate-200 leading-relaxed">
+          ¿Dudas sobre tu enlace o contraseña? Te respondemos a la brevedad para garantizar tu lectura.
+        </p>
+      </div>
+
+      <div class="bg-[#121C38] p-5 rounded-2xl border border-[#22355F] space-y-2">
+        <div class="text-sky-300 font-heading text-xs uppercase font-extrabold tracking-wider flex items-center gap-1.5">
+          <span>📚</span>
+          <span>Proponer Autores</span>
+        </div>
+        <p class="font-sans text-xs text-slate-200 leading-relaxed">
+          Sugiere pasajes, obras o filósofos predilectos para incorporar a las corrientes de pensamiento.
+        </p>
+      </div>
+
+      <div class="bg-[#121C38] p-5 rounded-2xl border border-[#22355F] space-y-2">
+        <div class="text-sky-300 font-heading text-xs uppercase font-extrabold tracking-wider flex items-center gap-1.5">
+          <span>🛠️</span>
+          <span>Reporte de Errores</span>
+        </div>
+        <p class="font-sans text-xs text-slate-200 leading-relaxed">
+          Ayúdanos a mantener impecable el sitio corrigiendo erratas o aspectos técnicos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <div class="bg-[#121C38] p-8 sm:p-12 rounded-3xl border border-[#22355F] shadow-2xl space-y-6">
+      
+      <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="space-y-6">
+        
+        <!-- Motivo de Consulta -->
+        <div class="space-y-2">
+          <label for="motivo" class="block font-heading text-xs uppercase font-extrabold text-sky-300 tracking-wider">
+            Motivo de tu mensaje
+          </label>
+          <select id="motivo" name="motivo" class="w-full bg-[#0A1124] border border-[#22355F] rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-sky-400 font-sans">
+            <option value="Soporte y Compras">Asistencia con una compra o acceso a Ebook</option>
+            <option value="Propuesta de Autor">Proponer un autor, cita o pasaje clásico</option>
+            <option value="Reporte Técnico">Reportar un error técnico o errata</option>
+            <option value="Otro">Consulta general</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Nombre -->
+          <div class="space-y-2">
+            <label for="nombre" class="block font-heading text-xs uppercase font-extrabold text-sky-300 tracking-wider">
+              Tu Nombre o Alias
+            </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Sofía o Lector silencioso" required class="w-full bg-[#0A1124] border border-[#22355F] rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 font-sans">
+          </div>
+
+          <!-- Correo -->
+          <div class="space-y-2">
+            <label for="email" class="block font-heading text-xs uppercase font-extrabold text-sky-300 tracking-wider">
+              Tu Correo Electrónico
+            </label>
+            <input type="email" id="email" name="email" placeholder="tu-email@ejemplo.com" required class="w-full bg-[#0A1124] border border-[#22355F] rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 font-sans">
+          </div>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="space-y-2">
+          <label for="mensaje" class="block font-heading text-xs uppercase font-extrabold text-sky-300 tracking-wider">
+            Mensaje o Comentario
+          </label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu consulta, el número de pedido o la cita que te gustaría sugerir..." required class="w-full bg-[#0A1124] border border-[#22355F] rounded-xl p-4 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 font-sans resize-none"></textarea>
+        </div>
+
+        <!-- Botón Enviar -->
+        <div class="pt-2">
+          <button type="submit" class="w-full py-4 rounded-full bg-sky-400 text-[#0A1124] font-heading font-extrabold text-xs sm:text-sm uppercase tracking-wider hover:bg-sky-300 transition-all shadow-lg active:scale-95 cursor-pointer">
+            Enviar Mensaje →
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA EDITORIAL -->
+  <footer class="border-t border-[#1E293B] bg-[#0A1124] pt-16 pb-14 text-white mt-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <div class="lg:col-span-4 flex flex-col justify-between space-y-6 text-left">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-sky-400 text-[#0A1124] flex items-center justify-center shadow-sm">
+                <svg class="w-5 h-5 text-[#0A1124] stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+                </svg>
+              </div>
+              <div>
+                <span class="block font-heading font-bold text-lg text-white tracking-tight">Frase Oportuna</span>
+                <span class="block text-[10px] font-heading font-extrabold tracking-widest uppercase text-sky-300">SABIDURÍA UNIVERSAL</span>
+              </div>
+            </div>
+            
+            <p class="font-sans text-sm text-slate-200 font-normal leading-relaxed">
+              Un refugio despojado del ruido digital, con sosiego visual y pensamiento clásico para la contemplación cotidiana.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-5 text-xs font-heading font-bold uppercase tracking-wider text-slate-200 pt-1">
+              <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+              <a href="index.html#seccion-proposito-home" class="hover:text-white transition-colors">Propósito</a>
+              <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
+              <a href="biblioteca.html" class="hover:text-white transition-colors">Biblioteca</a>
+              <a href="contacto.html" class="text-white font-bold">Contacto</a>
+            </div>
+
+            <div class="text-xs text-slate-300 font-sans pt-1 flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span>© <span id="year-copy">2026</span> Frase Oportuna • Todos los derechos reservados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8">
+          <div class="bg-[#121C38] border border-[#22355F] rounded-3xl p-8 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 h-full">
+            <div class="space-y-2 text-center sm:text-left">
+              <h3 class="font-heading font-bold text-lg text-white">Suma tus autores predilectos</h3>
+              <p class="font-sans text-sm text-slate-200 font-normal leading-relaxed max-w-md">
+                ¿Hay un pasaje o filósofo que te acompaña? Ayúdanos a enriquecer este archivo colectivo sugiriendo citas o autores.
+              </p>
+            </div>
+            <a href="contacto.html" class="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-sky-400 text-[#0A1124] hover:bg-sky-300 font-heading font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md cursor-pointer">
+              <span>Proponer autores →</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year-copy');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+
+</body>
+</html>
